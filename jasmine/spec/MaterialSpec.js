@@ -28,24 +28,28 @@ describe("Material", function() {
       material.setDiffuse();
 
       expect(material.setTexture).toHaveBeenCalled();
+      expect(material.setTexture.calls.mostRecent().args[0]).toEqual('diffuse')
     });
 
     it("should be called from setBump", function() {
       material.setBump();
 
       expect(material.setTexture).toHaveBeenCalled();
+      expect(material.setTexture.calls.mostRecent().args[0]).toEqual('bump')
     });
 
     it("should be called from setSpecular", function() {
       material.setSpecular();
 
       expect(material.setTexture).toHaveBeenCalled();
+      expect(material.setTexture.calls.mostRecent().args[0]).toEqual('specular')
     });
 
     it("should be called from setCube", function() {
       material.setCube();
 
       expect(material.setTexture).toHaveBeenCalled();
+      expect(material.setTexture.calls.mostRecent().args[0]).toEqual('cube')
     });
 
   });

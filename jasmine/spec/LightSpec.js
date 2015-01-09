@@ -35,28 +35,4 @@ describe("Light", function() {
 
   });
 
-  describe('#bindAll function', function() {
-
-    xit("should run bindCube function", function() {
-      var shadows = light.shadows;
-
-      spyOn(shadows, 'complete').and.callFake(function() {
-        return 12;
-      });
-
-      light.bindAll();
-
-      expect(light.shadows.bindCube()).toHaveBeenCalled();
-    });
-
-  });
-
-  describe('#setShadow function', function() {
-
-    xit("should set shadows from map texture", function() {
-
-    });
-
-  });
-
 });

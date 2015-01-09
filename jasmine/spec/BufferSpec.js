@@ -12,12 +12,4 @@ describe("Buffer", function() {
     expect(buffer.data).toEqual([]);
   });
 
-  describe("#compile function", function() {
-
-    xit("should add value to buffer map and unique", function() {
-     
-    });
-
-  });
-
 });

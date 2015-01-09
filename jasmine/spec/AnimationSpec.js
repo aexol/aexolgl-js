@@ -50,27 +50,22 @@ describe("Animation", function() {
         animation = new Animation(gameobject);
       });
 
-      xit("should set proper fields", function() {
-        spyOn(gl, 'frame').and.returnValue(100);
+      it("should set proper fields", function() {
+        canvas_temp = document.createElement('canvas')
+        canvas_temp.setAttribute('id', 'canvas_temp')
+        document.body.appendChild(canvas_temp)
+        setGL('canvas_temp')
+        agl = document.createElement('div')
+        agl.setAttribute('id', 'agl')
+        document.body.appendChild(agl)
 
         animation.run();
 
         expect(animation.runs).toEqual(true);
-        expect(animation.start).toEqual(100);
-        expect(animation.end).toEqual(100 + animation.time);
       });
 
     });
 
-    describe('#execute function', function() {
-
-      xit("execute")
-
-    });
-
   });
-
-
-  
 
 });

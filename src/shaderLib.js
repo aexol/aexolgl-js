@@ -315,27 +315,7 @@ var basicMobileShader = function (options) {
 
     bShader.addStruct("Material")
     bShader.addToStruct("Material", "vec3", "color")
-    if (settings.useLights) {
-        bShader.addStruct("Light")
-        bShader.addToStruct("Light", "vec3", "lightPosition")
-        bShader.addToStruct("Light", "vec3", "color")
-        bShader.addToStruct("Light", "float", "attenuation")
-        bShader.addToStruct("Light", "float", "intensity")
-        bShader.addToStruct("Light", "float", "lightType")
-        bShader.addUniform("float", "numlights")
-        bShader.addUniform("Light", "lights[2]")
-        bShader.addToStruct("Light", "bool", "shadow")
-        if (settings.useShadow) {
-            bShader.addUniform("samplerCube", "shadows")
-        }
-    }
-    bShader.addToStruct("Material", "float", "shininess")
-    bShader.addToStruct("Material", "float", "mappingType")
-    bShader.addToStruct("Material", "float", "alpha")
-    bShader.addToStruct("Material", "float", "specularWeight")
     bShader.addUniform("Material", "material")
-    bShader.addUniform("float", "cameraNear")
-    bShader.addUniform("float", "cameraFar")
     if (settings.useAtlas) {
         bShader.addUniform("vec4", "atlas")
     }
@@ -345,63 +325,7 @@ var basicMobileShader = function (options) {
     if (settings.useDiffuse) {
         bShader.addUniform("sampler2D", "diffuse")
     }
-    if (settings.useSpecular) {
-        bShader.addUniform("sampler2D", "specular")
-    }
-    if (settings.useBump) {
-        bShader.addUniform("sampler2D", "bump")
-        bShader.addToStruct("Material", "float", "bumpWeight")
-    }
-    if (settings.useReflection || settings.useSky) {
-        bShader.addUniform("samplerCube", "cube")
-        bShader.addToStruct("Material", "float", "reflectionWeight")
-    }
-    var fragSource = '\
-			float rand(vec2 co){\
-    			return fract(sin(dot(co.xy ,vec2(12.9898,78.233))) * 43758.5453);\
-			}' + (settings.useShadow ? 'float shadowFac(vec3 ld){\
-			vec3 ld2 = vec3(-ld.x,ld.y,ld.z);\
-			float sd = textureCube(shadows,ld2).r;\
-			float eps = 1.0/cameraFar;\
-			float distance = length(ld)/cameraFar;\
-			if(distance<=(sd+eps)){\
-			    return 1.0;\
-			}\
-			else{\
-			    return 0.5;\
-			}\
-			}' : '') +
-        (settings.useLights ?
-            'vec3 lightPow(Light li,vec2 til){\
-                vec3 vpos = vPosition.xyz;\
-                vec3 lp = li.lightPosition;\
-                vec3 lightSub = lp-vpos;\
-                float distance = length(lightSub);\
-                float att = max(li.attenuation-distance,0.0)/li.attenuation;\
-				vec3 lightDirection = normalize(lightSub);\
-				vec3 eyeDirection = normalize(-vpos.xyz);\
-				float dW = max(0.0,dot(normalEye,lightDirection));\
-        		vec3 reflectionDirection = reflect(-lightDirection, normalEye);\
-        		float shininess = material.shininess;\
-        		' + (settings.useBump ? '\
-				vec3 bmpp = texture2D(bump, til).xyz;\
-				bmpp = (bmpp -0.5) * 2.0;\
-				dW = dW*bmpp.x*(material.bumpWeight)+dW*(1.0-material.bumpWeight);' : '') +
-                '\
-                  float specularT = material.specularWeight;'
-                + (settings.useSpecular ? '\
-       				specularT = texture2D(specular, til).r * material.specularWeight;' : '') + '\
-        		    float specularLightWeighting = pow(max(dot(reflectionDirection, eyeDirection), 0.0), shininess);\
-        		    \
-        		' + (settings.useShadow ? '\
-        		    if(li.shadow){\
-       				    dW = dW*shadowFac(lightSub);\
-       				}' : '') +
-                'vec3 returnedLight = li.color*dW + specularLightWeighting*material.specularWeight;\
-                returnedLight *= att;\
-                returnedLight *= li.intensity;\
-                return returnedLight;\
-            }' : '') +
+    var fragSource =
         'void main(void) {\
             vec2 tiler;' + (settings.useAtlas ? "\
             float aU = atlas.y-atlas.x;\
@@ -425,31 +349,9 @@ var basicMobileShader = function (options) {
 				vec3 dWei = vec3(0.0,0.0,0.0);\
 				vec4 clr = vec4(material.color,1.0);\
 				' + (settings.useDiffuse ? 'clr = texture2D(diffuse, tiler);\
-				clr = vec4(clr.rgb*material.color,clr.a);' : '') + (settings.useReflection ? '\
-        vec3 thh = reflect(dZ,normalEye);\
-		vec4 txc = textureCube(cube,thh);\
-		clr = vec4(clr.rgb*(1.0-material.reflectionWeight)+txc.rgb*material.reflectionWeight,clr.a);\
-        ' : '') + (settings.useLights ?
-        '\
-        for(int i = 0;i<2;i++){\
-            if( i >= int(numlights)){\
-            break;\
-            };\
-            Light li = lights[i];\
-            if(li.lightType == 1.0){\
-            dWei += lightPow(li,tiler);\
-            }else{\
-            dWei += li.color*li.intensity;\
-            }\
-        };' : 'dWei = vec3(1.0,1.0,1.0);') + (settings.useSky ? '\
-        vec3 thh = vPosition.xyz;\
-		vec4 txc = textureCube(cube,thh);\
-		clr = vec4(clr.rgb*(1.0-material.reflectionWeight)+txc.rgb*material.reflectionWeight,clr.a);\
-        ' : '') + 'clr = vec4(clr.rgb*dWei,clr.a);' + (settings.useFog ? '\
-        float depth = vPosition.z/fog.zMinMax.y;\
-		clr = vec4(clr.rgb+fog.color*depth*fog.intensity,clr.a);\
-        ' : '') + '\
-        gl_FragColor = vec4(clr.rgb,clr.a*material.alpha);\
+				clr = vec4(clr.rgb*material.color,clr.a);' : '') + 'dWei = vec3(1.0,1.0,1.0);\
+				clr = vec4(clr.rgb*dot(normalEye,normalize(vec3(2.0,10.0,10.0))),clr.a);' + '\
+        gl_FragColor = vec4(clr.rgb,clr.a);\
     }';
     bShader.addFragmentSource(fragSource)
     bShader._build();

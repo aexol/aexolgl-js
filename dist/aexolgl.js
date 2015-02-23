@@ -206,9 +206,9 @@ Math.degToRad = Math.PI / 180.0
   * Vector class
   * @class Vector
   * @constructor
-  * @param {float} x X position 
-  * @param {float} y Y position 
-  * @param {float} z Z position 
+  * @param {float} x X position
+  * @param {float} y Y position
+  * @param {float} z Z position
 */
 var Vector = function(x, y, z) {
 	this.x = x || 0;
@@ -216,7 +216,7 @@ var Vector = function(x, y, z) {
 	this.z = z || 0;
 };
 
-/** 
+/**
 * Returns the opposite vector
 * @method negative
 * @return {Vector} opposite Vector
@@ -224,7 +224,7 @@ var Vector = function(x, y, z) {
 Vector.prototype.negative = function() {
 	return new Vector(-this.x, -this.y, -this.z);
 };
-/** 
+/**
 * Add vector
 * @method add
 * @param {Vector} v Vector to add
@@ -234,7 +234,7 @@ Vector.prototype.add = function(v) {
 	var b = v instanceof Vector;
 	return new Vector(this.x + ( b ? v.x : v), this.y + ( b ? v.y : v), this.z + ( b ? v.z : v));
 };
-/** 
+/**
 * Subtract vector
 * @method subtract
 * @param {Vector} v Vector to subtract
@@ -244,7 +244,7 @@ Vector.prototype.subtract = function(v) {
 	var b = v instanceof Vector;
 	return new Vector(this.x - ( b ? v.x : v), this.y - ( b ? v.y : v), this.z - ( b ? v.z : v));
 };
-/** 
+/**
 * Multiply vector
 * @method multiply
 * @param {Vector} v Vector to multiply
@@ -254,7 +254,7 @@ Vector.prototype.multiply = function(v) {
 	var b = v instanceof Vector;
 	return new Vector(this.x * ( b ? v.x : v), this.y * ( b ? v.y : v), this.z * ( b ? v.z : v));
 };
-/** 
+/**
 * Divide vector
 * @method divide
 * @param {Vector} v Vector to divide
@@ -264,16 +264,16 @@ Vector.prototype.divide = function(v) {
 	var b = v instanceof Vector;
 	return new Vector(this.x / ( b ? v.x : v), this.y / ( b ? v.y : v), this.z / ( b ? v.z : v));
 };
-/** 
+/**
 * Dot product
 * @method dot
-* @param {Vector} v Vector 
+* @param {Vector} v Vector
 * @return {Vector} Dot product of two vectors
 */
 Vector.prototype.dot = function(v) {
 	return this.x * v.x + this.y * v.y + this.z * v.z;
 };
-/** 
+/**
 * Cross product
 * @method cross
 * @param {Vector} v Vector to cross
@@ -282,7 +282,7 @@ Vector.prototype.dot = function(v) {
 Vector.prototype.cross = function(v) {
 	return new Vector(this.y * v.z - this.z * v.y, this.z * v.x - this.x * v.z, this.x * v.y - this.y * v.x);
 };
-/** 
+/**
 * Returns the length of vector
 * @method length
 * @return {float} legth of vector
@@ -291,7 +291,7 @@ Vector.prototype.length = function() {
 	return Math.sqrt(this.dot(this));
 };
 
-/** 
+/**
 * Returns the unit
 * @method unit
 * @return {Vector} Vector divided by its length
@@ -299,7 +299,7 @@ Vector.prototype.length = function() {
 Vector.prototype.unit = function() {
 	return this.divide(this.length());
 };
-/** 
+/**
 * Returns the minimum value of vector axes
 * @method min
 * @return {float} min value of (x,y,z)
@@ -348,7 +348,7 @@ Vector.prototype.toAngles = function() {
 		phi : Math.asin(this.y / this.length())
 	};
 };
-/** 
+/**
 * Returns the array of axes
 * @method toArray
 * @return {array[3]} Array [x,y,z]
@@ -464,7 +464,7 @@ var Matrix3 = function(){
 		this.m - [1,0,0,0,1,0,0,0,1];
 	}
 }
-/** 
+/**
 * Exchanges columns for rows.
 * @method transpose
 * @return {Matrix3} Transposed matrix3
@@ -486,7 +486,7 @@ var Matrix = function() {
 	}
 };
 
-/** 
+/**
 * Returns the matrix that when multiplied with this matrix results in the
 * identity matrix.
 * @method inverse
@@ -503,7 +503,7 @@ Matrix.prototype.inverse = function() {
 };
 
 
-/** 
+/**
 * Returns the matrix that when multiplied with this matrix results in the
 * identity matrix3.
 * @method toInverseMat3
@@ -568,7 +568,7 @@ Matrix.prototype.nfm = function(){
     dest[8] = (a11 * a00 - a01 * a10) * id;
     return newm;
 }
-/** 
+/**
 * Exchanges columns for rows.
 * @method transpose
 * @return {Matrix} Transposed matrix
@@ -578,7 +578,7 @@ Matrix.prototype.transpose = function() {
 	return new Matrix(m[0], m[4], m[8], m[12], m[1], m[5], m[9], m[13], m[2], m[6], m[10], m[14], m[3], m[7], m[11], m[15]);
 };
 
-/** 
+/**
 * Concatenates the transforms for this matrix and `matrix`.
 * @method multiply
 * @param {Matrix} matrix Matrix to multiply
@@ -588,7 +588,7 @@ Matrix.prototype.multiply = function(matrix) {
 	var a = this.m, b = matrix.m;
 	return new Matrix(a[0] * b[0] + a[1] * b[4] + a[2] * b[8] + a[3] * b[12], a[0] * b[1] + a[1] * b[5] + a[2] * b[9] + a[3] * b[13], a[0] * b[2] + a[1] * b[6] + a[2] * b[10] + a[3] * b[14], a[0] * b[3] + a[1] * b[7] + a[2] * b[11] + a[3] * b[15], a[4] * b[0] + a[5] * b[4] + a[6] * b[8] + a[7] * b[12], a[4] * b[1] + a[5] * b[5] + a[6] * b[9] + a[7] * b[13], a[4] * b[2] + a[5] * b[6] + a[6] * b[10] + a[7] * b[14], a[4] * b[3] + a[5] * b[7] + a[6] * b[11] + a[7] * b[15], a[8] * b[0] + a[9] * b[4] + a[10] * b[8] + a[11] * b[12], a[8] * b[1] + a[9] * b[5] + a[10] * b[9] + a[11] * b[13], a[8] * b[2] + a[9] * b[6] + a[10] * b[10] + a[11] * b[14], a[8] * b[3] + a[9] * b[7] + a[10] * b[11] + a[11] * b[15], a[12] * b[0] + a[13] * b[4] + a[14] * b[8] + a[15] * b[12], a[12] * b[1] + a[13] * b[5] + a[14] * b[9] + a[15] * b[13], a[12] * b[2] + a[13] * b[6] + a[14] * b[10] + a[15] * b[14], a[12] * b[3] + a[13] * b[7] + a[14] * b[11] + a[15] * b[15]);
 };
-/** 
+/**
 * Transforms the vector as a point with a w coordinate of 1. This
 * means translations will have an effect, for example.
 * @method transformPoint
@@ -612,7 +612,7 @@ Matrix.prototype.transformPoint = function(v) {
 	}
 };
 
-/** 
+/**
 * Transforms the vector as a vector with a w coordinate of 0. This
 * means translations will have no effect, for example.
 * @method transformVector
@@ -623,11 +623,11 @@ Matrix.prototype.transformVector = function(v) {
 	return new Vector(m[0] * v.x + m[1] * v.y + m[2] * v.z, m[4] * v.x + m[5] * v.y + m[6] * v.z, m[8] * v.x + m[9] * v.y + m[10] * v.z);
 };
 
-/** 
+/**
 * Sets up a perspective transform, which makes far away objects appear smaller
 * than nearby objects. The `aspect` argument is the width divided by the height
 * of your viewport and `fov` is the top-to-bottom angle of the field of view in
-* degrees. 
+* degrees.
 * @method perspective
 * @param {float} fov Field of View
 * @param {float} aspect Aspect ratio
@@ -641,7 +641,7 @@ Matrix.perspective = function(fov, aspect, near, far) {
 	return Matrix.frustum(-x, x, -y, y, near, far);
 };
 
-/** 
+/**
 * Sets up a viewing frustum, which is shaped like a truncated pyramid with the
 * camera where the point of the pyramid would be. This emulates the OpenGL
 * @method frustum
@@ -656,8 +656,23 @@ Matrix.perspective = function(fov, aspect, near, far) {
 Matrix.frustum = function(l, r, b, t, n, f) {
 	return new Matrix(2 * n / ( r - l), 0, (r + l) / ( r - l), 0, 0, 2 * n / ( t - b), (t + b) / ( t - b), 0, 0, 0, -(f + n) / ( f - n), -2 * f * n / ( f - n), 0, 0, -1, 0);
 };
-
-/** 
+/**
+* Sets up an ortho perspective transform. The `aspect` argument is the width divided by the height
+* of your viewport and `fov` is the top-to-bottom angle of the field of view in
+* degrees.
+* @method orthoPerspective
+* @param {float} fov Field of View
+* @param {float} aspect Aspect ratio
+* @param {float} near Near plane
+* @param {float} far Far plane
+* @return {Matrix} Result matrix
+*/
+Matrix.orthoPerspective = function(fov,aspect,near,far) {
+	var y = Math.tan(fov * Math.PI / 360) * near;
+	var x = y * aspect;
+	return Matrix.ortho(-x, x, -y, y, near, far);
+};
+/**
 * Creates an orthographic projection, in which objects are the same size no
 * matter how far away or nearby they are.
 * @method ortho
@@ -672,7 +687,7 @@ Matrix.frustum = function(l, r, b, t, n, f) {
 Matrix.ortho = function(l, r, b, t, n, f) {
 	return new Matrix(2 / ( r - l), 0, 0, (r + l) / ( r - l), 0, 2 / ( t - b), 0, (t + b) / ( t - b), 0, 0, -2 / ( f - n), (f + n) / ( f - n), 0, 0, 0, 1);
 };
-/** 
+/**
 * Creates a matrix that scales by the vector `x, y, z`.
 * @method scale
 * @param {float} x Vector X value
@@ -683,7 +698,7 @@ Matrix.ortho = function(l, r, b, t, n, f) {
 Matrix.scale = function(x, y, z) {
 	return new Matrix(x, 0, 0, 0, 0, y, 0, 0, 0, 0, z, 0, 0, 0, 0, 1);
 };
-/** 
+/**
 * Creates a matrix that translates by the vector `x, y, z`.
 * @method translate
 * @param {float} x Vector X value
@@ -694,7 +709,7 @@ Matrix.scale = function(x, y, z) {
 Matrix.translate = function(x, y, z) {
 	return new Matrix(1, 0, 0, x, 0, 1, 0, y, 0, 0, 1, z, 0, 0, 0, 1);
 };
-/** 
+/**
 * Creates a matrix that rotates by `a` degrees around the vector `x, y, z`.
 * @method rotate
 * @param {float} a Angle in degrees
@@ -731,25 +746,16 @@ Matrix.prototype.rotateVector = function(xAngle,yAngle,zAngle) {
     m = m.multiply(Matrix.rotate(zAngle, 0, 0, 1));
     return m
 };
-/** 
+/**
 * Create a matrix that puts the camera at the eye point `ex, ey, ez` looking
 * toward the center point `cx, cy, cz` with an up direction of `ux, uy, uz`.
 * @method lookAt
-* @param {float} ex Eye point X position
-* @param {float} ey Eye point Y position
-* @param {float} ez Eye point Z position
-* @param {float} cx Center point X position
-* @param {float} cy Center point Y position
-* @param {float} cz Center point Z position
-* @param {float} ux Up vector X 
-* @param {float} uy Up vector Y 
-* @param {float} uz Up vector Z
+* @param {Vector} e Eye point
+* @param {Vector} c Center point
+* @param {Vector} u Up vector
 * @return {Matrix} Result matrix
 */
-Matrix.lookAt = function(ex, ey, ez, cx, cy, cz, ux, uy, uz) {
-	var e = new Vector(ex, ey, ez);
-	var c = new Vector(cx, cy, cz);
-	var u = new Vector(ux, uy, uz);
+Matrix.lookAt = function(e,c,u) {
 	var f = e.subtract(c).unit();
 	var s = u.cross(f).unit();
 	var t = f.cross(s).unit();
@@ -785,14 +791,14 @@ Returns the quaternion matrix
 */
 Quaternion.prototype.getMatrix = function(){
 	var x2, y2, z2, xx, xy, xz, yy, yz, zz, wx, wy, wz;
-	
+
 	var rotMatrix = new Matrix()
 	rotMatrix.m[15] = 1.0
-	
+
 	x2 = this.x+this.x;
 	y2 = this.y+this.y
 	z2 = this.z + this.z
-	
+
 	wx = x2*this.w
 	wy = y2*this.w
 	wz = z2*this.z
@@ -802,7 +808,7 @@ Quaternion.prototype.getMatrix = function(){
 	yy = y2*this.y
 	yz = z2*this.y
 	zz = z2*this.z
-	
+
 	rotMatrix[0] = 1.0 - (yy + zz)
 	rotMatrix[4] =xy - wz
 	rotMatrix[8] =xz + wy
@@ -814,7 +820,7 @@ Quaternion.prototype.getMatrix = function(){
 	rotMatrix[2] =xz - wy
 	rotMatrix[6] =yz + wx
 	rotMatrix[10] =1.0 - (xx + yy)
-	
+
 	return rotMatrix
 }
 /**
@@ -1105,6 +1111,7 @@ Frustum.prototype.sphereInFrustum = function(sphere){
     }
     return true
 }
+
 /**
  @module aexolGL
  */
@@ -3713,27 +3720,7 @@ var basicMobileShader = function (options) {
 
     bShader.addStruct("Material")
     bShader.addToStruct("Material", "vec3", "color")
-    if (settings.useLights) {
-        bShader.addStruct("Light")
-        bShader.addToStruct("Light", "vec3", "lightPosition")
-        bShader.addToStruct("Light", "vec3", "color")
-        bShader.addToStruct("Light", "float", "attenuation")
-        bShader.addToStruct("Light", "float", "intensity")
-        bShader.addToStruct("Light", "float", "lightType")
-        bShader.addUniform("float", "numlights")
-        bShader.addUniform("Light", "lights[2]")
-        bShader.addToStruct("Light", "bool", "shadow")
-        if (settings.useShadow) {
-            bShader.addUniform("samplerCube", "shadows")
-        }
-    }
-    bShader.addToStruct("Material", "float", "shininess")
-    bShader.addToStruct("Material", "float", "mappingType")
-    bShader.addToStruct("Material", "float", "alpha")
-    bShader.addToStruct("Material", "float", "specularWeight")
     bShader.addUniform("Material", "material")
-    bShader.addUniform("float", "cameraNear")
-    bShader.addUniform("float", "cameraFar")
     if (settings.useAtlas) {
         bShader.addUniform("vec4", "atlas")
     }
@@ -3743,63 +3730,7 @@ var basicMobileShader = function (options) {
     if (settings.useDiffuse) {
         bShader.addUniform("sampler2D", "diffuse")
     }
-    if (settings.useSpecular) {
-        bShader.addUniform("sampler2D", "specular")
-    }
-    if (settings.useBump) {
-        bShader.addUniform("sampler2D", "bump")
-        bShader.addToStruct("Material", "float", "bumpWeight")
-    }
-    if (settings.useReflection || settings.useSky) {
-        bShader.addUniform("samplerCube", "cube")
-        bShader.addToStruct("Material", "float", "reflectionWeight")
-    }
-    var fragSource = '\
-			float rand(vec2 co){\
-    			return fract(sin(dot(co.xy ,vec2(12.9898,78.233))) * 43758.5453);\
-			}' + (settings.useShadow ? 'float shadowFac(vec3 ld){\
-			vec3 ld2 = vec3(-ld.x,ld.y,ld.z);\
-			float sd = textureCube(shadows,ld2).r;\
-			float eps = 1.0/cameraFar;\
-			float distance = length(ld)/cameraFar;\
-			if(distance<=(sd+eps)){\
-			    return 1.0;\
-			}\
-			else{\
-			    return 0.5;\
-			}\
-			}' : '') +
-        (settings.useLights ?
-            'vec3 lightPow(Light li,vec2 til){\
-                vec3 vpos = vPosition.xyz;\
-                vec3 lp = li.lightPosition;\
-                vec3 lightSub = lp-vpos;\
-                float distance = length(lightSub);\
-                float att = max(li.attenuation-distance,0.0)/li.attenuation;\
-				vec3 lightDirection = normalize(lightSub);\
-				vec3 eyeDirection = normalize(-vpos.xyz);\
-				float dW = max(0.0,dot(normalEye,lightDirection));\
-        		vec3 reflectionDirection = reflect(-lightDirection, normalEye);\
-        		float shininess = material.shininess;\
-        		' + (settings.useBump ? '\
-				vec3 bmpp = texture2D(bump, til).xyz;\
-				bmpp = (bmpp -0.5) * 2.0;\
-				dW = dW*bmpp.x*(material.bumpWeight)+dW*(1.0-material.bumpWeight);' : '') +
-                '\
-                  float specularT = material.specularWeight;'
-                + (settings.useSpecular ? '\
-       				specularT = texture2D(specular, til).r * material.specularWeight;' : '') + '\
-        		    float specularLightWeighting = pow(max(dot(reflectionDirection, eyeDirection), 0.0), shininess);\
-        		    \
-        		' + (settings.useShadow ? '\
-        		    if(li.shadow){\
-       				    dW = dW*shadowFac(lightSub);\
-       				}' : '') +
-                'vec3 returnedLight = li.color*dW + specularLightWeighting*material.specularWeight;\
-                returnedLight *= att;\
-                returnedLight *= li.intensity;\
-                return returnedLight;\
-            }' : '') +
+    var fragSource =
         'void main(void) {\
             vec2 tiler;' + (settings.useAtlas ? "\
             float aU = atlas.y-atlas.x;\
@@ -3823,31 +3754,9 @@ var basicMobileShader = function (options) {
 				vec3 dWei = vec3(0.0,0.0,0.0);\
 				vec4 clr = vec4(material.color,1.0);\
 				' + (settings.useDiffuse ? 'clr = texture2D(diffuse, tiler);\
-				clr = vec4(clr.rgb*material.color,clr.a);' : '') + (settings.useReflection ? '\
-        vec3 thh = reflect(dZ,normalEye);\
-		vec4 txc = textureCube(cube,thh);\
-		clr = vec4(clr.rgb*(1.0-material.reflectionWeight)+txc.rgb*material.reflectionWeight,clr.a);\
-        ' : '') + (settings.useLights ?
-        '\
-        for(int i = 0;i<2;i++){\
-            if( i >= int(numlights)){\
-            break;\
-            };\
-            Light li = lights[i];\
-            if(li.lightType == 1.0){\
-            dWei += lightPow(li,tiler);\
-            }else{\
-            dWei += li.color*li.intensity;\
-            }\
-        };' : 'dWei = vec3(1.0,1.0,1.0);') + (settings.useSky ? '\
-        vec3 thh = vPosition.xyz;\
-		vec4 txc = textureCube(cube,thh);\
-		clr = vec4(clr.rgb*(1.0-material.reflectionWeight)+txc.rgb*material.reflectionWeight,clr.a);\
-        ' : '') + 'clr = vec4(clr.rgb*dWei,clr.a);' + (settings.useFog ? '\
-        float depth = vPosition.z/fog.zMinMax.y;\
-		clr = vec4(clr.rgb+fog.color*depth*fog.intensity,clr.a);\
-        ' : '') + '\
-        gl_FragColor = vec4(clr.rgb,clr.a*material.alpha);\
+				clr = vec4(clr.rgb*material.color,clr.a);' : '') + 'dWei = vec3(1.0,1.0,1.0);\
+				clr = vec4(clr.rgb*dot(normalEye,normalize(vec3(2.0,10.0,10.0))),clr.a);' + '\
+        gl_FragColor = vec4(clr.rgb,clr.a);\
     }';
     bShader.addFragmentSource(fragSource)
     bShader._build();
@@ -4171,8 +4080,8 @@ Fog.prototype.draw = function(uniforms){
 /**
   * Camera class
   * @class Camera
+	* @extends Aex
   * @constructor
-  * @param {int} editorCam if other than 0 makes Camera react only when mouse buttons are pressed
   * @param {float} [near] near Plane
   * @param {float} [far] far Plane
   * @param {float} [angle] angle of perspective camera
@@ -4181,57 +4090,283 @@ Fog.prototype.draw = function(uniforms){
   *     camera = new Camera()
   *     camera.position = new Vector(0.1, -1, -10);
 */
-Camera = function(editorCam,near,far,angle) {
-	this.position = new Vector(0, 0, 0);
-    this.positionBefore = new Vector();
-	this.rotation = new Vector(0, 0, 0);
-	this.forwardStep = 0.0
-	this.sideStep = 0.0
-	this.upStep = 0.0
-	this.factor = 0.09;
-	 this.forwardReduce = 1.0
-	this.name = "camera";
-	this.sensitivity = 0.5;
-	this.yawStep = 0.0;
-	this.pitchStep = 0.0;
-	this.mesh = null;
-	this.background = null;
-	this.tempX = null;
-	this.tempY = null;
+Camera = function(near,far,angle) {
+	this.__defineSetter__("projectionMatrix", function (val) {
+		this.parentMatrix = val
+	});
+	this.__defineGetter__("projectionMatrix", function () {
+		return this.parentMatrix
+	});
+	/**
+	* Position of object
+	* @property position
+	* @type Vector
+	* @example
+	*     world = new Scene()
+	*     cam = new Camera(0.1,100,45)
+	*     cam.position = new Vector(1.0,2.0,3.0)
+	*/
+	this.__defineSetter__("position", function (val) {
+		this._position = val
+	});
+	this.__defineGetter__("position", function () {
+		return this._position
+	});
+	/**
+	* x Position of object
+	* @property x
+	* @type Float
+	* @example
+	*     world = new Scene()
+	*     cam = new Camera(0.1,100,45)
+	*     cam.x = 20.0
+	*/
+	this.__defineSetter__("x", function (val) {
+		this._position.x = val
+		this.setModelView()
+	});
+	/**
+	* y Position of object
+	* @property y
+	* @type Float
+	* @example
+	*     world = new Scene()
+	*     cam = new Camera(0.1,100,45)
+	*     cam.y = 20.0
+	*/
+	this.__defineSetter__("y", function (val) {
+		this._position.y = val
+		this.setModelView()
+	});
+	/**
+	* z Position of object
+	* @property z
+	* @type Float
+	* @example
+	*     world = new Scene()
+	*     cam = new Camera(0.1,100,45)
+	*     cam.z = 20.0
+	*/
+	this.__defineSetter__("z", function (val) {
+		this._position.z = val
+		this.setModelView()
+	});
+	this.__defineGetter__("x", function () {
+		return this._position.x
+	});
+	this.__defineGetter__("y", function () {
+		return this._position.y
+	});
+	this.__defineGetter__("z", function () {
+		return this._position.z
+	});
+	/**
+	* Rotation of object
+	* @property rotation
+	* @type Vector
+	* @example
+	*     world = new Scene()
+	*     cam = new Camera(0.1,100,45)
+	*     cam.rotation = new Vector(0.0,90.0,0.0)
+	*/
+	this.__defineSetter__("rotation", function (val) {
+		this._rotation = val
+	});
+	this.__defineGetter__("rotation", function () {
+		return this._rotation
+	});
+
+	/**
+	* x Rotation of object
+	* @property rotX
+	* @type Float
+	* @example
+	*     world = new Scene()
+	*     cam = new Camera(0.1,100,45)
+	*     cam.rotX = 20.0
+	*/
+	this.__defineSetter__("rotX", function (val) {
+		this._rotation.x = val
+		this.setModelView()
+	});
+	/**
+	* y Rotation of object
+	* @property rotY
+	* @type Float
+	* @example
+	*     world = new Scene()
+	*     cam = new Camera(0.1,100,45)
+	*     cam.rotY = 20.0
+	*/
+	this.__defineSetter__("rotY", function (val) {
+		this._rotation.y = val;
+		this.setModelView()
+	});
+	/**
+	* z Rotation of object
+	* @property rotZ
+	* @type Float
+	* @example
+	*     world = new Scene()
+	*     cam = new Camera(0.1,100,45)
+	*     cam.rotZ = 20.0
+	*/
+	this.__defineSetter__("rotZ", function (val) {
+		this._rotation.z = val
+		this.setModelView()
+	});
+	this.__defineGetter__("rotX", function () {
+		return this._rotation.x
+	});
+	this.__defineGetter__("rotY", function () {
+		return this._rotation.y
+	});
+	this.__defineGetter__("rotZ", function () {
+		return this._rotation.z
+	});
+
+	this.__defineSetter__("size", function (val) {
+		this._size = val;
+	});
+	this.__defineGetter__("size", function () {
+		return this._size
+	});
+	/**
+	* x scale of object
+	* @property scaleX
+	* @type Float
+	* @example
+	*     world = new Scene()
+	*     cam = new Aex()
+	*     cam.scaleX = 2.0
+	*/
+	this.__defineSetter__("scaleX", function (val) {
+		this._size.x = val;
+		this.setModelView()
+	});
+	/**
+	* y scale of object
+	* @property scaleY
+	* @type Float
+	* @example
+	*     world = new Scene()
+	*     cam = new Camera(0.1,100,45)
+	*     cam.scaleY = 2.0
+	*/
+	this.__defineSetter__("scaleY", function (val) {
+		this._size.y = val
+		this.setModelView()
+	});
+	/**
+	* z scale of object
+	* @property scaleZ
+	* @type Float
+	* @example
+	*     world = new Scene()
+	*     cam = new Camera(0.1,100,45)
+	*     cam.scaleZ = 2.0
+	*/
+	this.__defineSetter__("scaleZ", function (val) {
+		this._size.z = val
+		this.setModelView()
+	});
+	this.__defineGetter__("scaleX", function () {
+		return this._size.x
+	});
+	this.__defineGetter__("scaleY", function () {
+		return this._size.y
+	});
+	this.__defineGetter__("scaleZ", function () {
+		return this._size.z
+	});
+	this.modelView = new Matrix();
+	this.aabb = {};
+	this._size = new Vector(1.0, 1.0, 1.0);
+	this._rotation = new Vector(0.0, 0.0, 0.0);
+	this._position = new Vector(0.0, 0.0, 0.0);
+	this.cameraDefaultMouseController = false
     this.near = near || 0.1;
     this.far = far || 100.0;
     this.angle = angle || 45.0
-	this.eC = editorCam || 0;
-	this.setDisplay()
-    this.setProjectionMatrix()
-    this.uniforms = {
+    this.setPerspective()
+		this.setDisplay()
+		this.uniforms = {
         _gl_ProjectionMatrix:this.projectionMatrix,
         cameraNear:this.near,
         cameraFar:this.far
     }
+}
+Camera.prototype = Object.create(Aex.prototype);
+Camera.prototype.constructor = Camera;
+Camera.prototype.setModelView = function () {
+	var m = this.parentMatrix
+	m = m.multiply(Matrix.translate(-this.position.x, -this.position.y, -this.position.z));
+	m = m.multiply(Matrix.rotate(this.rotation.x, 1, 0, 0));
+	m = m.multiply(Matrix.rotate(this.rotation.y, 0, 1, 0));
+	m = m.multiply(Matrix.rotate(this.rotation.z, 0, 0, 1));
+	m = m.multiply(Matrix.scale(this.size.x, this.size.y, this.size.z));
+	this.modelView = m
+	this.NormalMatrix = this.modelView.toInverseMat3()
 
 }
-Camera.prototype.setProjectionMatrix = function(){
-    this.projectionMatrix = Matrix.perspective(this.angle, gl.canvas.width / gl.canvas.height, this.near, this.far)
+/**
+* set orthographic projection for camera
+* @method setOrthoPerspective
+*/
+Camera.prototype.setOrthoPerspective = function(){
+	this.projectionMatrix = Matrix.orthoPerspective(this.angle, gl.canvas.width / gl.canvas.height, this.near, this.far)
 }
-/** 
+/**
+* set perspective projection for camera
+* @method setPerspective
+*/
+Camera.prototype.setPerspective = function(){
+	this.projectionMatrix = Matrix.perspective(this.angle, gl.canvas.width / gl.canvas.height, this.near, this.far)
+}
+Camera.prototype.setToMatrix = function(m){
+	this.projectionMatrix = m
+}
+/**
+* put the camera at the eye point looking `e`
+* toward the center point `c`  with an up direction of `u`.
+* @method lookAt
+* @param {Vector} e Eye point
+* @param {Vector} c Center point
+* @param {Vector} u Up vector
+* @return {Matrix} Result matrix
+*/
+Camera.prototype.setLookAt = function(e,c,u){
+	this.projectionMatrix = this.projectionMatrix.multiply(Matrix.lookAt(e,c,u))
+	this.setModelView()
+}
+Camera.prototype.transforms = function(){
+	if(this.cameraDefaultMouseController == true){
+		this.onTransforms()
+	}
+	var m = this.modelView
+	this.uniforms._gl_ProjectionMatrix = m.m
+	gl.frustum.fromPerspectiveMatrix(m)
+}
+
+// BACKWARD COMPATIBILITY
+
+/**
 * Set table with screen dimensions and coordinates for 2D games
 * @method setDisplay
 */
 Camera.prototype.setDisplay = function() {
 	var display = []
-    display.height = Math.abs( 2 * this.position.z * Math.tan( (gl.angle * ( Math.PI/180))/2 ) )
-    display.width = Math.abs( display.height * (document.getElementById("agl").width/document.getElementById("agl").height) )
-    display.left = -display.width/2 - this.position.x
-    display.right = display.width/2 - this.position.x
-    display.top = display.height/2 - this.position.y
-    display.bottom = -display.height/2 - this.position.y
-    display.centerX = display.left + display.width/2
-    display.centerY = display.top - display.height/2
-    this.display = display
-
+	display.height = Math.abs( 2 * this.position.z * Math.tan( (gl.angle * ( Math.PI/180))/2 ) )
+	display.width = Math.abs( display.height * (gl.canvas.width/gl.canvas.height) )
+	display.left = -display.width/2 - this.position.x
+	display.right = display.width/2 - this.position.x
+	display.top = display.height/2 - this.position.y
+	display.bottom = -display.height/2 - this.position.y
+	display.centerX = display.left + display.width/2
+	display.centerY = display.top - display.height/2
+	this.display = display
 }
-/** 
+/**
 * Set camera position
 * @method setCameraPosition
 */
@@ -4240,11 +4375,19 @@ Camera.prototype.setCameraPosition = function(vec) {
 	this.setDisplay()
 
 }
-/**
-* Move camera forward & backward
-* @method forward
-* @param {float} f distance to move
-*/
+
+Camera.prototype.onTransforms = function(){
+	this.positionBefore= this.position
+	this.yaw(this.yawStep)
+	this.pitch(this.pitchStep)
+	this.forward(this.forwardStep)
+	this.forwardStep *= this.forwardReduce
+	this.side(this.sideStep)
+	this.updown(this.upStep)
+	this.yawStep *= 0.78
+	this.pitchStep *= 0.78
+	this.setModelView()
+}
 Camera.prototype.forward = function(f) {
 	if(f == 0.0){ return true }
 	var fac = -f;
@@ -4258,7 +4401,8 @@ Camera.prototype.forward = function(f) {
 	this.position.x += xChange;
 }
 
-/** 
+/**
+* DEPRECATED use setters instead
 * Move camera left & right
 * @method side
 * @param {float} f distance to move
@@ -4275,7 +4419,8 @@ Camera.prototype.side = function(f) {
 	this.position.z += zChange;
 	this.position.x += xChange;
 }
-/** 
+/**
+* DEPRECATED use setters instead
 * Move camera up & down
 * @method updown
 * @param {float} f distance to move
@@ -4284,9 +4429,10 @@ Camera.prototype.updown = function(f) {
 	if(f == 0.0){ return true }
 	var fac = f;
 	this.position.y += fac;
-    this.bounds()
+	this.bounds()
 }
-/** 
+/**
+* DEPRECATED use setters instead
 * Rotate on local x axis
 * @method pitch
 * @param {float} change rotation
@@ -4294,7 +4440,8 @@ Camera.prototype.updown = function(f) {
 Camera.prototype.pitch = function(change) {
 	this.rotation.x += this.sensitivity * change;
 }
-/** 
+/**
+* DEPRECATED use setters instead
 * Rotate on local y axis
 * @method pitch
 * @param {float} change rotation
@@ -4302,7 +4449,8 @@ Camera.prototype.pitch = function(change) {
 Camera.prototype.yaw = function(change) {
 	this.rotation.y += this.sensitivity * change;
 }
-/** 
+/**
+* DEPRECATED use setters instead
 * Rotate on local z axis
 * @method roll
 * @param {float} change rotation
@@ -4310,63 +4458,25 @@ Camera.prototype.yaw = function(change) {
 Camera.prototype.roll = function(change) {
 	this.rotation.z += this.sensitivity * change;
 }
-/** 
-* this method is called as the first method in scene draw call transforming the gl.projectionMatrix
-* @method transforms
-*/
-Camera.prototype.transforms = function(){
-    this.positionBefore= this.position
-	this.yaw(this.yawStep)
-	this.pitch(this.pitchStep)
-	this.forward(this.forwardStep)
-	this.forwardStep *= this.forwardReduce
-	this.side(this.sideStep)
-	this.updown(this.upStep)
-	this.yawStep *= 0.78
-	this.pitchStep *= 0.78
-	var m = this.projectionMatrix
-    var r = this.rotation
-    m = m.rotateVector(r.x, r.y, r.z);
-    m = m.multiply(Matrix.translate(-this.position.x, -this.position.y, -this.position.z));
-    this.uniforms._gl_ProjectionMatrix = m.m
-    gl.frustum.fromPerspectiveMatrix(m)
-}
-Camera.prototype.setBounds = function(b){
-        this.bnds = b
-}
-Camera.prototype.bounds = function(){
-        var BOUNDS = this.bnds
-        if(BOUNDS){
-            if (this.position.x > BOUNDS.max.x){
-                this.position = this.positionBefore
-            }
-            else if (this.position.x < BOUNDS.min.x){
-                this.position = this.positionBefore
-            }
-            else if (this.position.y > BOUNDS.max.y){
-                this.position = this.positionBefore
-            }
-            else if (this.position.y < BOUNDS.min.y){
-                this.position = this.positionBefore
-            }
-            else if (this.position.z > BOUNDS.max.z){
-                this.position = this.positionBefore
-            }
-            else if (this.position.z < BOUNDS.min.z){
-                this.position = this.positionBefore
-            }
-        }
-}
-/** 
+/**
+* DEPRECATED use setters instead
 * Turn on standard camera mouse and WSAD operating
 * @method on
+* @param {float} factor sensitivity of camera
 */
 Camera.prototype.on = function(factor) {
+	this.cameraDefaultMouseController = true
+	this.forwardStep = 0.0
+	this.sideStep = 0.0
+	this.upStep = 0.0
+	this.forwardReduce = 1.0
+	this.yawStep = 0.0;
+	this.pitchStep = 0.0;
+	this.tempX = null;
+	this.tempY = null;
+	this.md = 0;
+	this.factor = factor || 0.1;
 	var t = this;
-	t.md = 0;
-    t.factor = factor || t.factor;
-	var fac = t.factor;
-	var sen = t.sensitivity;
 	document.onkeydown = function(e) {
 		var ev = e || window.event;
 		if(ev.keyCode == 87) {
@@ -4431,14 +4541,14 @@ Camera.prototype.on = function(factor) {
 			t.tempX = curX;
 			t.tempY = curY;
 			if( t.mD ==1){
-					t.yawStep = -deltaX;
-					t.pitchStep = -deltaY;
+				t.yawStep = -deltaX;
+				t.pitchStep = -deltaY;
 			}
 			else if(  t.mD ==2){
 				t.side(deltaX*0.05);
 				t.updown(deltaY*0.05);
 			}
-		
+
 		}
 	}
 	mouseUp = function(e) {
@@ -4448,6 +4558,7 @@ Camera.prototype.on = function(factor) {
 	gl.canvas.addEventListener('mousemove', mouseMove, false);
 	gl.canvas.addEventListener('mouseup', mouseUp, false);
 }
+
 /**
  * aexolGL class
  * @class aexolGL
@@ -4599,7 +4710,7 @@ aexolGL.prototype.init = function () {
         var le = Resource.loadedElements
         var allLoaded = Object.keys(le).length
         if (allLoaded == 0) {
-            t.defaultPreload((percentage * 100).toFixed(2));
+            t.defaultPreload(100);
             t.executeInit()
         } else {
             var ready = 0
@@ -5275,6 +5386,7 @@ GameObject.prototype.remove = function () {
 /**
  * Main Class for constructing groups and hierarchy
  * @class Pivot
+ * @extends Aex
  * @constructor
  * @example
  *      wheel = new Pivot()
@@ -5354,6 +5466,7 @@ Pivot.prototype.setPivotToCenter = function(){
     }
     return this
 }
+
 /**
  * @module Font
  */

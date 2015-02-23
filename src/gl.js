@@ -149,7 +149,7 @@ aexolGL.prototype.init = function () {
         var le = Resource.loadedElements
         var allLoaded = Object.keys(le).length
         if (allLoaded == 0) {
-            t.defaultPreload((percentage * 100).toFixed(2));
+            t.defaultPreload(100);
             t.executeInit()
         } else {
             var ready = 0

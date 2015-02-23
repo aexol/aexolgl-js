@@ -5,9 +5,9 @@
   * Vector class
   * @class Vector
   * @constructor
-  * @param {float} x X position 
-  * @param {float} y Y position 
-  * @param {float} z Z position 
+  * @param {float} x X position
+  * @param {float} y Y position
+  * @param {float} z Z position
 */
 var Vector = function(x, y, z) {
 	this.x = x || 0;
@@ -15,7 +15,7 @@ var Vector = function(x, y, z) {
 	this.z = z || 0;
 };
 
-/** 
+/**
 * Returns the opposite vector
 * @method negative
 * @return {Vector} opposite Vector
@@ -23,7 +23,7 @@ var Vector = function(x, y, z) {
 Vector.prototype.negative = function() {
 	return new Vector(-this.x, -this.y, -this.z);
 };
-/** 
+/**
 * Add vector
 * @method add
 * @param {Vector} v Vector to add
@@ -33,7 +33,7 @@ Vector.prototype.add = function(v) {
 	var b = v instanceof Vector;
 	return new Vector(this.x + ( b ? v.x : v), this.y + ( b ? v.y : v), this.z + ( b ? v.z : v));
 };
-/** 
+/**
 * Subtract vector
 * @method subtract
 * @param {Vector} v Vector to subtract
@@ -43,7 +43,7 @@ Vector.prototype.subtract = function(v) {
 	var b = v instanceof Vector;
 	return new Vector(this.x - ( b ? v.x : v), this.y - ( b ? v.y : v), this.z - ( b ? v.z : v));
 };
-/** 
+/**
 * Multiply vector
 * @method multiply
 * @param {Vector} v Vector to multiply
@@ -53,7 +53,7 @@ Vector.prototype.multiply = function(v) {
 	var b = v instanceof Vector;
 	return new Vector(this.x * ( b ? v.x : v), this.y * ( b ? v.y : v), this.z * ( b ? v.z : v));
 };
-/** 
+/**
 * Divide vector
 * @method divide
 * @param {Vector} v Vector to divide
@@ -63,16 +63,16 @@ Vector.prototype.divide = function(v) {
 	var b = v instanceof Vector;
 	return new Vector(this.x / ( b ? v.x : v), this.y / ( b ? v.y : v), this.z / ( b ? v.z : v));
 };
-/** 
+/**
 * Dot product
 * @method dot
-* @param {Vector} v Vector 
+* @param {Vector} v Vector
 * @return {Vector} Dot product of two vectors
 */
 Vector.prototype.dot = function(v) {
 	return this.x * v.x + this.y * v.y + this.z * v.z;
 };
-/** 
+/**
 * Cross product
 * @method cross
 * @param {Vector} v Vector to cross
@@ -81,7 +81,7 @@ Vector.prototype.dot = function(v) {
 Vector.prototype.cross = function(v) {
 	return new Vector(this.y * v.z - this.z * v.y, this.z * v.x - this.x * v.z, this.x * v.y - this.y * v.x);
 };
-/** 
+/**
 * Returns the length of vector
 * @method length
 * @return {float} legth of vector
@@ -90,7 +90,7 @@ Vector.prototype.length = function() {
 	return Math.sqrt(this.dot(this));
 };
 
-/** 
+/**
 * Returns the unit
 * @method unit
 * @return {Vector} Vector divided by its length
@@ -98,7 +98,7 @@ Vector.prototype.length = function() {
 Vector.prototype.unit = function() {
 	return this.divide(this.length());
 };
-/** 
+/**
 * Returns the minimum value of vector axes
 * @method min
 * @return {float} min value of (x,y,z)
@@ -147,7 +147,7 @@ Vector.prototype.toAngles = function() {
 		phi : Math.asin(this.y / this.length())
 	};
 };
-/** 
+/**
 * Returns the array of axes
 * @method toArray
 * @return {array[3]} Array [x,y,z]
@@ -263,7 +263,7 @@ var Matrix3 = function(){
 		this.m - [1,0,0,0,1,0,0,0,1];
 	}
 }
-/** 
+/**
 * Exchanges columns for rows.
 * @method transpose
 * @return {Matrix3} Transposed matrix3
@@ -285,7 +285,7 @@ var Matrix = function() {
 	}
 };
 
-/** 
+/**
 * Returns the matrix that when multiplied with this matrix results in the
 * identity matrix.
 * @method inverse
@@ -302,7 +302,7 @@ Matrix.prototype.inverse = function() {
 };
 
 
-/** 
+/**
 * Returns the matrix that when multiplied with this matrix results in the
 * identity matrix3.
 * @method toInverseMat3
@@ -367,7 +367,7 @@ Matrix.prototype.nfm = function(){
     dest[8] = (a11 * a00 - a01 * a10) * id;
     return newm;
 }
-/** 
+/**
 * Exchanges columns for rows.
 * @method transpose
 * @return {Matrix} Transposed matrix
@@ -377,7 +377,7 @@ Matrix.prototype.transpose = function() {
 	return new Matrix(m[0], m[4], m[8], m[12], m[1], m[5], m[9], m[13], m[2], m[6], m[10], m[14], m[3], m[7], m[11], m[15]);
 };
 
-/** 
+/**
 * Concatenates the transforms for this matrix and `matrix`.
 * @method multiply
 * @param {Matrix} matrix Matrix to multiply
@@ -387,7 +387,7 @@ Matrix.prototype.multiply = function(matrix) {
 	var a = this.m, b = matrix.m;
 	return new Matrix(a[0] * b[0] + a[1] * b[4] + a[2] * b[8] + a[3] * b[12], a[0] * b[1] + a[1] * b[5] + a[2] * b[9] + a[3] * b[13], a[0] * b[2] + a[1] * b[6] + a[2] * b[10] + a[3] * b[14], a[0] * b[3] + a[1] * b[7] + a[2] * b[11] + a[3] * b[15], a[4] * b[0] + a[5] * b[4] + a[6] * b[8] + a[7] * b[12], a[4] * b[1] + a[5] * b[5] + a[6] * b[9] + a[7] * b[13], a[4] * b[2] + a[5] * b[6] + a[6] * b[10] + a[7] * b[14], a[4] * b[3] + a[5] * b[7] + a[6] * b[11] + a[7] * b[15], a[8] * b[0] + a[9] * b[4] + a[10] * b[8] + a[11] * b[12], a[8] * b[1] + a[9] * b[5] + a[10] * b[9] + a[11] * b[13], a[8] * b[2] + a[9] * b[6] + a[10] * b[10] + a[11] * b[14], a[8] * b[3] + a[9] * b[7] + a[10] * b[11] + a[11] * b[15], a[12] * b[0] + a[13] * b[4] + a[14] * b[8] + a[15] * b[12], a[12] * b[1] + a[13] * b[5] + a[14] * b[9] + a[15] * b[13], a[12] * b[2] + a[13] * b[6] + a[14] * b[10] + a[15] * b[14], a[12] * b[3] + a[13] * b[7] + a[14] * b[11] + a[15] * b[15]);
 };
-/** 
+/**
 * Transforms the vector as a point with a w coordinate of 1. This
 * means translations will have an effect, for example.
 * @method transformPoint
@@ -411,7 +411,7 @@ Matrix.prototype.transformPoint = function(v) {
 	}
 };
 
-/** 
+/**
 * Transforms the vector as a vector with a w coordinate of 0. This
 * means translations will have no effect, for example.
 * @method transformVector
@@ -422,11 +422,11 @@ Matrix.prototype.transformVector = function(v) {
 	return new Vector(m[0] * v.x + m[1] * v.y + m[2] * v.z, m[4] * v.x + m[5] * v.y + m[6] * v.z, m[8] * v.x + m[9] * v.y + m[10] * v.z);
 };
 
-/** 
+/**
 * Sets up a perspective transform, which makes far away objects appear smaller
 * than nearby objects. The `aspect` argument is the width divided by the height
 * of your viewport and `fov` is the top-to-bottom angle of the field of view in
-* degrees. 
+* degrees.
 * @method perspective
 * @param {float} fov Field of View
 * @param {float} aspect Aspect ratio
@@ -440,7 +440,7 @@ Matrix.perspective = function(fov, aspect, near, far) {
 	return Matrix.frustum(-x, x, -y, y, near, far);
 };
 
-/** 
+/**
 * Sets up a viewing frustum, which is shaped like a truncated pyramid with the
 * camera where the point of the pyramid would be. This emulates the OpenGL
 * @method frustum
@@ -455,8 +455,23 @@ Matrix.perspective = function(fov, aspect, near, far) {
 Matrix.frustum = function(l, r, b, t, n, f) {
 	return new Matrix(2 * n / ( r - l), 0, (r + l) / ( r - l), 0, 0, 2 * n / ( t - b), (t + b) / ( t - b), 0, 0, 0, -(f + n) / ( f - n), -2 * f * n / ( f - n), 0, 0, -1, 0);
 };
-
-/** 
+/**
+* Sets up an ortho perspective transform. The `aspect` argument is the width divided by the height
+* of your viewport and `fov` is the top-to-bottom angle of the field of view in
+* degrees.
+* @method orthoPerspective
+* @param {float} fov Field of View
+* @param {float} aspect Aspect ratio
+* @param {float} near Near plane
+* @param {float} far Far plane
+* @return {Matrix} Result matrix
+*/
+Matrix.orthoPerspective = function(fov,aspect,near,far) {
+	var y = Math.tan(fov * Math.PI / 360) * near;
+	var x = y * aspect;
+	return Matrix.ortho(-x, x, -y, y, near, far);
+};
+/**
 * Creates an orthographic projection, in which objects are the same size no
 * matter how far away or nearby they are.
 * @method ortho
@@ -471,7 +486,7 @@ Matrix.frustum = function(l, r, b, t, n, f) {
 Matrix.ortho = function(l, r, b, t, n, f) {
 	return new Matrix(2 / ( r - l), 0, 0, (r + l) / ( r - l), 0, 2 / ( t - b), 0, (t + b) / ( t - b), 0, 0, -2 / ( f - n), (f + n) / ( f - n), 0, 0, 0, 1);
 };
-/** 
+/**
 * Creates a matrix that scales by the vector `x, y, z`.
 * @method scale
 * @param {float} x Vector X value
@@ -482,7 +497,7 @@ Matrix.ortho = function(l, r, b, t, n, f) {
 Matrix.scale = function(x, y, z) {
 	return new Matrix(x, 0, 0, 0, 0, y, 0, 0, 0, 0, z, 0, 0, 0, 0, 1);
 };
-/** 
+/**
 * Creates a matrix that translates by the vector `x, y, z`.
 * @method translate
 * @param {float} x Vector X value
@@ -493,7 +508,7 @@ Matrix.scale = function(x, y, z) {
 Matrix.translate = function(x, y, z) {
 	return new Matrix(1, 0, 0, x, 0, 1, 0, y, 0, 0, 1, z, 0, 0, 0, 1);
 };
-/** 
+/**
 * Creates a matrix that rotates by `a` degrees around the vector `x, y, z`.
 * @method rotate
 * @param {float} a Angle in degrees
@@ -530,25 +545,16 @@ Matrix.prototype.rotateVector = function(xAngle,yAngle,zAngle) {
     m = m.multiply(Matrix.rotate(zAngle, 0, 0, 1));
     return m
 };
-/** 
+/**
 * Create a matrix that puts the camera at the eye point `ex, ey, ez` looking
 * toward the center point `cx, cy, cz` with an up direction of `ux, uy, uz`.
 * @method lookAt
-* @param {float} ex Eye point X position
-* @param {float} ey Eye point Y position
-* @param {float} ez Eye point Z position
-* @param {float} cx Center point X position
-* @param {float} cy Center point Y position
-* @param {float} cz Center point Z position
-* @param {float} ux Up vector X 
-* @param {float} uy Up vector Y 
-* @param {float} uz Up vector Z
+* @param {Vector} e Eye point
+* @param {Vector} c Center point
+* @param {Vector} u Up vector
 * @return {Matrix} Result matrix
 */
-Matrix.lookAt = function(ex, ey, ez, cx, cy, cz, ux, uy, uz) {
-	var e = new Vector(ex, ey, ez);
-	var c = new Vector(cx, cy, cz);
-	var u = new Vector(ux, uy, uz);
+Matrix.lookAt = function(e,c,u) {
 	var f = e.subtract(c).unit();
 	var s = u.cross(f).unit();
 	var t = f.cross(s).unit();
@@ -584,14 +590,14 @@ Returns the quaternion matrix
 */
 Quaternion.prototype.getMatrix = function(){
 	var x2, y2, z2, xx, xy, xz, yy, yz, zz, wx, wy, wz;
-	
+
 	var rotMatrix = new Matrix()
 	rotMatrix.m[15] = 1.0
-	
+
 	x2 = this.x+this.x;
 	y2 = this.y+this.y
 	z2 = this.z + this.z
-	
+
 	wx = x2*this.w
 	wy = y2*this.w
 	wz = z2*this.z
@@ -601,7 +607,7 @@ Quaternion.prototype.getMatrix = function(){
 	yy = y2*this.y
 	yz = z2*this.y
 	zz = z2*this.z
-	
+
 	rotMatrix[0] = 1.0 - (yy + zz)
 	rotMatrix[4] =xy - wz
 	rotMatrix[8] =xz + wy
@@ -613,7 +619,7 @@ Quaternion.prototype.getMatrix = function(){
 	rotMatrix[2] =xz - wy
 	rotMatrix[6] =yz + wx
 	rotMatrix[10] =1.0 - (xx + yy)
-	
+
 	return rotMatrix
 }
 /**

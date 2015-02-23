@@ -490,6 +490,7 @@ GameObject.prototype.remove = function () {
 /**
  * Main Class for constructing groups and hierarchy
  * @class Pivot
+ * @extends Aex
  * @constructor
  * @example
  *      wheel = new Pivot()

@@ -160,7 +160,6 @@ ZBufferCube.prototype.draw = function(drawFunction){
         var m = Matrix.perspective(90.0, 1.0, 0.01, 100.0);
         m = m.rotateVector(degs[i][0], degs[i][1], degs[i][2]);
         m = m.multiply(Matrix.translate(-this.position.x, -this.position.y, -this.position.z));
-        gl.matrixMode(gl.MODELVIEW);
         drawFunction({
             _gl_ProjectionMatrix: m,
             lightPosition: this.position.toArray()

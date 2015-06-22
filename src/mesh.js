@@ -597,7 +597,7 @@ Mesh.obj = function (url, callback, opts) {
     })
 }
 
-Mesh.fromData = function(data1,callback){
+Mesh.fromData = function(data1,callback,opts){
   var meshes = {}
   var count = 0
   for (var m in data1) {

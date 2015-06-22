@@ -4362,15 +4362,7 @@ Camera.prototype.onTransforms = function(){
 }
 Camera.prototype.forward = function(f) {
 	if(f == 0.0){ return true }
-	var fac = -f;
-	yRad = this.rotation.y * (Math.PI / 180.0);
-	xRad = this.rotation.x * (Math.PI / 180.0);
-	yChange = fac * Math.sin(xRad);
-	zChange = fac * Math.cos(yRad) * Math.cos(xRad);
-	xChange = -fac * Math.sin(yRad);
-	this.position.y += yChange;
-	this.position.z += zChange;
-	this.position.x += xChange;
+	this.parentMove.z += f
 }
 
 /**
@@ -4381,15 +4373,7 @@ Camera.prototype.forward = function(f) {
 */
 Camera.prototype.side = function(f) {
 	if(f == 0.0){ return true }
-	var fac = -f;
-	yRad = this.rotation.y * (Math.PI / 180.0);
-	zRad = this.rotation.z * (Math.PI / 180.0);
-	yChange = fac * Math.sin(zRad);
-	zChange = fac * Math.sin(yRad);
-	xChange = fac * Math.cos(yRad) * Math.cos(zRad);
-	this.position.y += yChange;
-	this.position.z += zChange;
-	this.position.x += xChange;
+	this.parentMove.x += f
 }
 /**
 * DEPRECATED use setters instead
@@ -4399,9 +4383,7 @@ Camera.prototype.side = function(f) {
 */
 Camera.prototype.updown = function(f) {
 	if(f == 0.0){ return true }
-	var fac = f;
-	this.position.y += fac;
-	this.bounds()
+	this.parentMove.y += f
 }
 /**
 * DEPRECATED use setters instead
@@ -4444,11 +4426,14 @@ Camera.prototype.on = function(factor) {
 	this.forwardReduce = 1.0
 	this.yawStep = 0.0;
 	this.pitchStep = 0.0;
-	this.sensitivity = 0.1
+	this.sensitivity = 1.0
 	this.tempX = null;
 	this.tempY = null;
 	this.md = 0;
 	this.factor = factor || 0.1;
+	this.parentMove = new Pivot()
+	this.parentMove.add(this)
+
 	var t = this;
 	document.onkeydown = function(e) {
 		var ev = e || window.event;

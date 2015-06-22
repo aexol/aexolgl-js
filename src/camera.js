@@ -350,7 +350,6 @@ Camera.prototype.updown = function(f) {
 	if(f == 0.0){ return true }
 	var fac = f;
 	this.position.y += fac;
-	this.bounds()
 }
 /**
 * DEPRECATED use setters instead

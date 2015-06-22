@@ -435,11 +435,11 @@ Aex.prototype.rotateAroundPoint = function (center, x, y, z) {
  */
 Aex.prototype.setModelView = function () {
     var m = this.parentMatrix
-    m = m.multiply(Matrix.translate(this.position.x, this.position.y, this.position.z));
+    m = m.multiply(Matrix.scale(this.size.x, this.size.y, this.size.z));
     m = m.multiply(Matrix.rotate(this.rotation.x, 1, 0, 0));
     m = m.multiply(Matrix.rotate(this.rotation.y, 0, 1, 0));
     m = m.multiply(Matrix.rotate(this.rotation.z, 0, 0, 1));
-    m = m.multiply(Matrix.scale(this.size.x, this.size.y, this.size.z));
+    m = m.multiply(Matrix.translate(this.position.x, this.position.y, this.position.z));
     this.modelView = m
     this.NormalMatrix = this.modelView.toInverseMat3()
 

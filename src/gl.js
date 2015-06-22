@@ -1,3 +1,4 @@
+var gl
 /**
  * aexolGL class
  * @class aexolGL
@@ -104,7 +105,7 @@ aexolGL.prototype.initV2 = function() {
 }
 AexolGL = function(canvasId, options) {
   var lastTime = 0;
-  setGL(canvasId)
+  gl = setGL(canvasId)
   agl = new aexolGL()
   agl.settings = {
     setup: function() {

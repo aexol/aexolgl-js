@@ -31,8 +31,6 @@ TextNode = function (domNodeID) {
 var aGLExists = function (el) {
     /* Need to check if WebGL canvas exists */
     var canvas = document.getElementById(el);
-    var body = document.body;
-    body.background.color = "red";
     if (!canvas)
         return null;
     var gl = canvas.getContext("webgl", {alpha: false}) || canvas.getContext("experimental-webgl", {alpha: false});
@@ -199,6 +197,7 @@ function printInFrame(fr, something, val) {
 }
 Math.radToDeg = 180.0 / Math.PI
 Math.degToRad = Math.PI / 180.0
+
 /**
 @module Math
 */

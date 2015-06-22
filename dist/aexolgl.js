@@ -4444,6 +4444,7 @@ Camera.prototype.on = function(factor) {
 	this.forwardReduce = 1.0
 	this.yawStep = 0.0;
 	this.pitchStep = 0.0;
+	this.sensitivity = 0.1
 	this.tempX = null;
 	this.tempY = null;
 	this.md = 0;

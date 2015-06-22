@@ -4350,12 +4350,12 @@ Camera.prototype.setCameraPosition = function(vec) {
 
 Camera.prototype.onTransforms = function(){
 	this.positionBefore= this.position
-	this.yaw(this.yawStep)
-	this.pitch(this.pitchStep)
 	this.forward(this.forwardStep)
 	this.forwardStep *= this.forwardReduce
 	this.side(this.sideStep)
 	this.updown(this.upStep)
+	this.yaw(this.yawStep)
+	this.pitch(this.pitchStep)
 	this.yawStep *= 0.78
 	this.pitchStep *= 0.78
 	this.setModelView()

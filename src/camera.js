@@ -224,11 +224,11 @@ Camera.prototype = Object.create(Aex.prototype);
 Camera.prototype.constructor = Camera;
 Camera.prototype.setModelView = function () {
 	var m = this.parentMatrix
-	m = m.multiply(Matrix.translate(-this.position.x, -this.position.y, -this.position.z));
+	m = m.multiply(Matrix.scale(this.size.x, this.size.y, this.size.z));
 	m = m.multiply(Matrix.rotate(this.rotation.x, 1, 0, 0));
 	m = m.multiply(Matrix.rotate(this.rotation.y, 0, 1, 0));
 	m = m.multiply(Matrix.rotate(this.rotation.z, 0, 0, 1));
-	m = m.multiply(Matrix.scale(this.size.x, this.size.y, this.size.z));
+	m = m.multiply(Matrix.translate(-this.position.x, -this.position.y, -this.position.z));
 	this.modelView = m
 	this.NormalMatrix = this.modelView.toInverseMat3()
 
@@ -302,12 +302,12 @@ Camera.prototype.setCameraPosition = function(vec) {
 
 Camera.prototype.onTransforms = function(){
 	this.positionBefore= this.position
+	this.yaw(this.yawStep)
+	this.pitch(this.pitchStep)
 	this.forward(this.forwardStep)
 	this.forwardStep *= this.forwardReduce
 	this.side(this.sideStep)
 	this.updown(this.upStep)
-	this.yaw(this.yawStep)
-	this.pitch(this.pitchStep)
 	this.yawStep *= 0.78
 	this.pitchStep *= 0.78
 	this.setModelView()
@@ -315,10 +315,10 @@ Camera.prototype.onTransforms = function(){
 Camera.prototype.forward = function(f) {
 	if(f == 0.0){ return true }
 	var fac = -f;
-	yRad = this.rotation.y * (Math.PI / 180.0);
-	xRad = this.rotation.x * (Math.PI / 180.0);
+	yRad = this.rotY * (Math.PI / 180.0);
+	xRad = this.rotX * (Math.PI / 180.0);
 	yChange = fac * Math.sin(xRad);
-	zChange = fac * Math.cos(yRad) * Math.cos(xRad);
+	zChange = fac * Math.cos(yRad);
 	xChange = -fac * Math.sin(yRad);
 	this.position.y += yChange;
 	this.position.z += zChange;
@@ -334,12 +334,9 @@ Camera.prototype.forward = function(f) {
 Camera.prototype.side = function(f) {
 	if(f == 0.0){ return true }
 	var fac = -f;
-	yRad = this.rotation.y * (Math.PI / 180.0);
-	zRad = this.rotation.z * (Math.PI / 180.0);
-	yChange = fac * Math.sin(zRad);
+	yRad = this.rotation.y * (Math.PI / 180.0)
 	zChange = fac * Math.sin(yRad);
-	xChange = fac * Math.cos(yRad) * Math.cos(zRad);
-	this.position.y += yChange;
+	xChange = fac * Math.cos(yRad);
 	this.position.z += zChange;
 	this.position.x += xChange;
 }

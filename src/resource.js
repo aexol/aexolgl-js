@@ -243,7 +243,142 @@ Resource.parse.fromOBJ = function (buff) {
 
     return returnGroup;
 }
+Resource.parse.fromSTL = function(res) {
+  console.log(res)
+  var buffer = res;
+  var vertices = [];
+  var triangles = [];
+  var vertexmap = {}
+  var nTriBuff = buffer.slice(80, 84);
+  var nTriView = new Uint32Array(nTriBuff);
+  var nTri = nTriView[0];
+  for (var i = 0; i < nTri; i++) {
 
+    var triBuff = buffer.slice(84 + i * 50,
+      84 + (i + 1) * 50 - 2);
+
+    var triFloatBuff = new Float32Array(triBuff);
+
+    var n = [triFloatBuff[0],
+      triFloatBuff[1], triFloatBuff[2]
+    ];
+    var triangle = [];
+    for (var j = 3; j < 12; j += 3) {
+      var p = [triFloatBuff[j],
+        triFloatBuff[j + 1], triFloatBuff[j + 2]
+      ];
+      if (vertexmap[p]) {} else {
+        vertices.push(p)
+        vertexmap[p] = vertices.length - 1
+      }
+      triangle.push(vertexmap[p])
+    }
+    triangles.push(triangle)
+  }
+  return [{
+    "vertices": vertices,
+    "triangles": triangles
+  }];
+};
+
+Resource.parse.fromSTLASCI = function(res) {
+  var vertices = [];
+  var triangles = [];
+  var state = '';
+  var vertexmap = {}
+  var lines = res.split('\n');
+  for (var len = lines.length, i = 0; i < len; i++) {
+    if (done) {
+      break;
+    }
+    line = trim(lines[i]);
+    parts = line.split(' ');
+    switch (state) {
+      case '':
+        if (parts[0] !== 'solid') {
+          console.error(line);
+          console.error('Invalid state "' + parts[0] + '", should be "solid"');
+          return;
+        } else {
+          name = parts[1];
+          state = 'solid';
+        }
+        break;
+      case 'solid':
+        if (parts[0] !== 'facet' || parts[1] !== 'normal') {
+          console.error(line);
+          console.error('Invalid state "' + parts[0] + '", should be "facet normal"');
+          return;
+        } else {
+          normal = [
+            parseFloat(parts[2]),
+            parseFloat(parts[3]),
+            parseFloat(parts[4])
+          ];
+          state = 'facet normal';
+        }
+        break;
+      case 'facet normal':
+        if (parts[0] !== 'outer' || parts[1] !== 'loop') {
+          console.error(line);
+          console.error('Invalid state "' + parts[0] + '", should be "outer loop"');
+          return;
+        } else {
+          state = 'vertex';
+        }
+        break;
+      case 'vertex':
+        if (parts[0] === 'vertex') {
+          vertices.push([
+            parseFloat(parts[1]),
+            parseFloat(parts[2]),
+            parseFloat(parts[3])
+          ]);
+        } else if (parts[0] === 'endloop') {
+          triangles.push([vCount * 3, vCount * 3 + 1, vCount * 3 + 2]);
+          vCount++;
+          state = 'endloop';
+        } else {
+          console.error(line);
+          console.error('Invalid state "' + parts[0] + '", should be "vertex" or "endloop"');
+          return;
+        }
+        break;
+      case 'endloop':
+        if (parts[0] !== 'endfacet') {
+          console.error(line);
+          console.error('Invalid state "' + parts[0] + '", should be "endfacet"');
+          return;
+        } else {
+          state = 'endfacet';
+        }
+        break;
+      case 'endfacet':
+        if (parts[0] === 'endsolid') {
+          done = true;
+        } else if (parts[0] === 'facet' && parts[1] === 'normal') {
+          normal = [
+            parseFloat(parts[2]),
+            parseFloat(parts[3]),
+            parseFloat(parts[4])
+          ];
+          state = 'facet normal';
+        } else {
+          console.error(line);
+          console.error('Invalid state "' + parts[0] + '", should be "endsolid" or "facet normal"');
+          return;
+        }
+        break;
+      default:
+        console.error('Invalid state "' + state + '"');
+        break;
+    }
+  }
+  return [{
+    "vertices": vertices,
+    "triangles": triangles
+  }];
+};
 Resource.parse.from3DS = function (buff) {
     buff = new Uint8Array(buff);
     var res = {};

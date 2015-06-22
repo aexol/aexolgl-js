@@ -593,46 +593,50 @@ Mesh.loadStatic = function (jsn, options) {
 Mesh.obj = function (url, callback, opts) {
     Resource.load(url, function (e) {
         var data1 = Resource.parse.fromOBJ(e)
-        var meshes = {}
-        var count = 0
-        for (var m in data1) {
-            count += 1
-            var data = data1[m];
-            options = {"coords": true};
-            if (!data.coords)
-                options.coords = false;
-            if (!data.normals)
-                options.normals = false;
-            var mesh = new Mesh();
-            mesh.vertices = data.vertices;
-            mesh.coords = data.coords;
-            mesh.normals = data.normals;
-            mesh.triangles = data.triangles;
-            mesh.compile();
-            meshes[m] = mesh;
-        }
-        if (count < 2) {
-            var mm = ""
-            for (var m in meshes) {
-                mm = meshes[m]
-            }
-            callback(mm)
-        } else {
-            if (opts) {
-                if (opts.loadAsTable) {
-                    var meshesT = []
-                    for (var m in meshes) {
-                        mm = meshes[m]
-                        meshesT.push(mm)
-                    }
-                    callback(meshesT)
-                }
-                else {
-                    callback(meshes)
-                }
-            } else {
-                callback(meshes)
-            }
-        }
+        Mesh.fromData(callback)
     })
+}
+
+Mesh.fromData = function(data1,callback){
+  var meshes = {}
+  var count = 0
+  for (var m in data1) {
+      count += 1
+      var data = data1[m];
+      options = {"coords": true};
+      if (!data.coords)
+          options.coords = false;
+      if (!data.normals)
+          options.normals = false;
+      var mesh = new Mesh();
+      mesh.vertices = data.vertices;
+      mesh.coords = data.coords;
+      mesh.normals = data.normals;
+      mesh.triangles = data.triangles;
+      mesh.compile();
+      meshes[m] = mesh;
+  }
+  if (count < 2) {
+      var mm = ""
+      for (var m in meshes) {
+          mm = meshes[m]
+      }
+      callback(mm)
+  } else {
+      if (opts) {
+          if (opts.loadAsTable) {
+              var meshesT = []
+              for (var m in meshes) {
+                  mm = meshes[m]
+                  meshesT.push(mm)
+              }
+              callback(meshesT)
+          }
+          else {
+              callback(meshes)
+          }
+      } else {
+          callback(meshes)
+      }
+  }
 }

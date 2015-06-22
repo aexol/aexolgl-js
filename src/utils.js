@@ -53,7 +53,7 @@ var gl;
  @static
  */
 var setGL = function (el) {
-    gl = aGLExists(el);
+    window.gl = aGLExists(el);
 }
 var returnGL = function (el) {
     return aGLExists(el);

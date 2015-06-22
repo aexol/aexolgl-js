@@ -54,7 +54,6 @@ var gl;
  */
 var setGL = function (el) {
     gl = aGLExists(el);
-    return gl;
 }
 var returnGL = function (el) {
     return aGLExists(el);
@@ -4532,7 +4531,6 @@ Camera.prototype.on = function(factor) {
 	gl.canvas.addEventListener('mouseup', mouseUp, false);
 }
 
-var gl
 /**
  * aexolGL class
  * @class aexolGL
@@ -4639,9 +4637,8 @@ aexolGL.prototype.initV2 = function() {
 }
 AexolGL = function(canvasId, options) {
   var lastTime = 0;
-  gl = setGL(canvasId);
-  console.log(gl);
-  agl = new aexolGL();
+  setGL(canvasId)
+  agl = new aexolGL()
   agl.settings = {
     setup: function() {
 

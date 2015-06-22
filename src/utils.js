@@ -54,7 +54,6 @@ var gl;
  */
 var setGL = function (el) {
     gl = aGLExists(el);
-    return gl;
 }
 var returnGL = function (el) {
     return aGLExists(el);

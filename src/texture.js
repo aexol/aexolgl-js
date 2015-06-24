@@ -214,6 +214,26 @@ Texture.fromCube = function (srcs, options) {
     return texture;
 };
 /**
+ * Creates a texture from image blob
+ * @method fromBlob
+ * @param {String} blob image blov
+ * @param {Dict} options
+ */
+Texture.fromBlob = function (blob, options) {
+    options = options || {};
+    var texture = new Texture(0, 0, options);
+    texture.image = new Image();
+    texture.complete = 0
+    texture.options = options
+    texture.image.src = window.URL.createObjectURL(blob);
+    texture.image.onload = function () {
+        texture.image = this
+        texture.complete = 1
+        window.URL.revokeObjectURL(texture.image.src)
+    }
+    return texture;
+};
+/**
  * Creates a texture atlas
  * @static
  * @method Atlas

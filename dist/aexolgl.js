@@ -3004,11 +3004,10 @@ Texture.fromBlob = function (blob, options) {
     texture.image = new Image();
     texture.complete = 0
     texture.options = options
-    texture.image.src = window.URL.createObjectURL(blob);
+    texture.image.src = blob
     texture.image.onload = function () {
         texture.image = this
         texture.complete = 1
-        window.URL.revokeObjectURL(texture.image.src)
     }
     return texture;
 };

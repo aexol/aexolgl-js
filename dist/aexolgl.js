@@ -195,6 +195,9 @@ function printInFrame(fr, something, val) {
     if (gl.frame == fr) {
     }
 }
+function __error(text){
+  console.log(text);
+}
 Math.radToDeg = 180.0 / Math.PI
 Math.degToRad = Math.PI / 180.0
 

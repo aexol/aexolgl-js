@@ -2311,9 +2311,9 @@ Mesh.loadStatic = function (jsn, options) {
         characterJaw.mesh = meshy
     })
  */
-Mesh.obj = function (url, callback, opts) {
+Mesh.obj = function (url, callback, readmode) {
     Resource.load(url, function (e) {
-        var data1 = Resource.parse.fromOBJ(e)
+        var data1 = Resource.parse.fromOBJ(e,readmode || "g")
         Mesh.fromData(callback)
     })
 }
@@ -5720,7 +5720,7 @@ function _ind(part) {
     }
     return indices.slice(0, 3)
 }
-Resource.parse.fromOBJ = function (buff) {
+Resource.parse.fromOBJ = function (buff,readmode) {
     groups = {}
     var cg = {from: 0, to: 0, triangles: []};
     var lastFrom = 0// current group
@@ -5729,7 +5729,10 @@ Resource.parse.fromOBJ = function (buff) {
     var vertices = [];
     var normals = [];
     var coords = [];
-    var facemode = "usemtl"
+    var facemode = "g"
+    if(readmode){
+      facemode = readmode
+    }
     while (off < a.length) {
         var line = Resource.parse._readLine(a, off);
         off += line.length + 1;

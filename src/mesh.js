@@ -590,9 +590,9 @@ Mesh.loadStatic = function (jsn, options) {
         characterJaw.mesh = meshy
     })
  */
-Mesh.obj = function (url, callback, opts) {
+Mesh.obj = function (url, callback, readmode) {
     Resource.load(url, function (e) {
-        var data1 = Resource.parse.fromOBJ(e)
+        var data1 = Resource.parse.fromOBJ(e,readmode || "g")
         Mesh.fromData(callback)
     })
 }

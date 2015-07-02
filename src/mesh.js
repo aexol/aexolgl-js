@@ -593,7 +593,7 @@ Mesh.loadStatic = function (jsn, options) {
 Mesh.obj = function (url, callback, readmode) {
     Resource.load(url, function (e) {
         var data1 = Resource.parse.fromOBJ(e,readmode || "g")
-        Mesh.fromData(callback)
+        Mesh.fromData(data1,callback)
     })
 }
 

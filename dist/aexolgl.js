@@ -2952,10 +2952,7 @@ Texture.fromImage = function (src, options) {
     texture.options = options
     Resource.load(src, function (e) {
         texture.image.src = window.URL.createObjectURL(e);
-        texture.image.onload = function () {
-            texture.image = this
             texture.complete = 1
-        }
     })
     return texture;
 };

@@ -2951,7 +2951,7 @@ Texture.fromImage = function (src, options) {
     texture.complete = 0
     texture.options = options
     Resource.load(src, function (e) {
-        texture.image.src = window.URL.createObjectURL(e);
+        texture.image = window.URL.createObjectURL(e);
             texture.complete = 1
     })
     return texture;

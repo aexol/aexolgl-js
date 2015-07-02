@@ -2798,9 +2798,9 @@ Texture.prototype.handle2DTexture = function () {
     gl.pixelStorei(gl.UNPACK_FLIP_Y_WEBGL, 1);
     gl.texImage2D(gl.TEXTURE_2D, 0, this.format, this.format, this.type, this.image || null);
     gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MAG_FILTER, options.filter || options.magFilter || gl.LINEAR);
-    gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MIN_FILTER, options.filter || options.minFilter || gl.LINEAR_MIPMAP_LINEAR);
-    gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_S, options.wrap || options.wrapS || gl.REPEAT);
-    gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_T, options.wrap || options.wrapT || gl.REPEAT);
+    gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MIN_FILTER, options.filter || options.minFilter || gl.LINEAR);
+    gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_S, options.wrap || options.wrapS || gl.CLAMP_TO_EDGE);
+    gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_T, options.wrap || options.wrapT || gl.CLAMP_TO_EDGE);
     if (powerof2(this.image.width) && powerof2(this.image.height)) {
         gl.generateMipmap(gl.TEXTURE_2D)
     }
@@ -2955,7 +2955,6 @@ Texture.fromImage = function (src, options) {
         texture.image.onload = function () {
             texture.image = this
             texture.complete = 1
-      	    gl.lTexture +=1;
         }
     })
     return texture;
@@ -3124,7 +3123,6 @@ Material.prototype.constructor = Material
 Material.prototype.draw = function () {
     var all = this.completeTextures()
     if (all) {
-      gl.textCom=1
         this.bindAll()
         var dic ={}
         dic["material"] = this.settings

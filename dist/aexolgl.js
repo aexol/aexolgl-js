@@ -3124,6 +3124,7 @@ Material.prototype.constructor = Material
 Material.prototype.draw = function () {
     var all = this.completeTextures()
     if (all) {
+      gl.textCom=1
         this.bindAll()
         var dic ={}
         dic["material"] = this.settings
@@ -3261,6 +3262,7 @@ Material._settable = [
     "alpha",
     "shininess"
 ]
+
 /**
  @module Light
  */

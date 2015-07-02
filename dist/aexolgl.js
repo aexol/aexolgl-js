@@ -2955,6 +2955,7 @@ Texture.fromImage = function (src, options) {
         texture.image.onload = function () {
             texture.image = this
             texture.complete = 1
+      	    gl.lTexture +=1;
         }
     })
     return texture;

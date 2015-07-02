@@ -2950,10 +2950,11 @@ Texture.fromImage = function (src, options) {
     texture.image = new Image();
     texture.complete = 0
     texture.options = options
-    Resource.load(src, function (e) {
-        texture.image = window.URL.createObjectURL(e);
+        texture.image.src = src;
+        texture.image.onload = function () {
+            texture.image = this
             texture.complete = 1
-    })
+        }
     return texture;
 };
 Texture.fromCanvas = function (canvas, options) {

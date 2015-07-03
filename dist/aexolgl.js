@@ -3563,7 +3563,7 @@ var basicShader = function (options) {
     bShader.addVarying("vec3", "normalEye")
     bShader.addVertexSource('\
 			void main(void) {\
-			    normalEye = normalize(Normal*NormalMatrix);\
+			    normalEye = (NormalMatrix*Normal);\
 			    vNormal = Normal;\
 			    vPosition = gl_ModelViewMatrix * vec4(Vertex, 1.0);\
 			    dZ = (gl_ProjectionMatrix * vPosition).xyz;\
@@ -3629,6 +3629,7 @@ var basicShader = function (options) {
 			vec3 ld2 = vec3(-ld.x,ld.y,ld.z);\
 			float sd = textureCube(shadows,ld2).r;\
 			float eps = 1.0/cameraFar;\
+      vec3 realNormal = normalize(normalEye);\
 			float distance = length(ld)/cameraFar;\
 			if(distance<=(sd+eps)){\
 			    return 1.0;\
@@ -3646,8 +3647,8 @@ var basicShader = function (options) {
                 float att = max(li.attenuation-distance,0.0)/li.attenuation;\
 				vec3 lightDirection = normalize(lightSub);\
 				vec3 eyeDirection = normalize(-vpos.xyz);\
-				float dW = max(0.0,dot(normalEye,lightDirection));\
-        		vec3 reflectionDirection = reflect(-lightDirection, normalize(vNormal));\
+				float dW = max(0.0,dot(realNormal,lightDirection));\
+        		vec3 reflectionDirection = reflect(-lightDirection, realNormal);\
         		float shininess = material.shininess;\
         		' + (settings.useBump ? '\
 				vec3 bmpp = texture2D(bump, til).xyz;\
@@ -3693,7 +3694,7 @@ var basicShader = function (options) {
 				vec4 clr = vec4(material.color,1.0);\
 				' + (settings.useDiffuse ? 'clr = texture2D(diffuse, tiler);\
 				clr = vec4(clr.rgb*material.color,clr.a);' : '') + (settings.useReflection ? '\
-        vec3 thh = reflect(dZ,normalEye);\
+        vec3 thh = reflect(dZ,realNormal);\
 		vec4 txc = textureCube(cube,thh);\
 		clr = vec4(clr.rgb*(1.0-material.reflectionWeight)+txc.rgb*material.reflectionWeight,clr.a);\
         ' : '') + (settings.useLights ?

@@ -3647,7 +3647,7 @@ var basicShader = function (options) {
 				vec3 lightDirection = normalize(lightSub);\
 				vec3 eyeDirection = normalize(-vpos.xyz);\
 				float dW = max(0.0,dot(normalEye,lightDirection));\
-        		vec3 reflectionDirection = reflect(-lightDirection, normalEye);\
+        		vec3 reflectionDirection = reflect(-lightDirection, vNormal);\
         		float shininess = material.shininess;\
         		' + (settings.useBump ? '\
 				vec3 bmpp = texture2D(bump, til).xyz;\
@@ -3656,10 +3656,11 @@ var basicShader = function (options) {
                 '\
                   float specularT = material.specularWeight;'
                 + (settings.useSpecular ? '\
-       				specularT = texture2D(specular, til).r * material.specularWeight;' : '') + '\
-        		    float specularLightWeighting = pow(max(dot(reflectionDirection, eyeDirection), 0.0), shininess);\
+       				specularT = texture2D(specular, til).r*pow(max(dot(reflectionDirection, eyeDirection), 0.0), shininess/4.0);\
+               ' : '\
+        		    float specularLightWeighting = pow(max(dot(reflectionDirection, eyeDirection), 0.0), shininess/4.0);\
         		    \
-        		' + (settings.useShadow ? '\
+        		') + (settings.useShadow ? '\
         		    if(li.shadow){\
        				    dW = dW*shadowFac(lightSub);\
        				}' : '') +

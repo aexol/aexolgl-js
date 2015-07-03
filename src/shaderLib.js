@@ -185,13 +185,13 @@ var basicShader = function (options) {
         bShader.addUniform("Fog", "fog")
     }
     var fragSource = '\
+      vec3 realNormal = normalize(normalEye);\
 			float rand(vec2 co){\
     			return fract(sin(dot(co.xy ,vec2(12.9898,78.233))) * 43758.5453);\
 			}' + (settings.useShadow ? 'float shadowFac(vec3 ld){\
 			vec3 ld2 = vec3(-ld.x,ld.y,ld.z);\
 			float sd = textureCube(shadows,ld2).r;\
 			float eps = 1.0/cameraFar;\
-      vec3 realNormal = normalize(normalEye);\
 			float distance = length(ld)/cameraFar;\
 			if(distance<=(sd+eps)){\
 			    return 1.0;\

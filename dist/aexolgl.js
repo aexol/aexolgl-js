@@ -3650,22 +3650,23 @@ var basicShader = function (options) {
 				float dW = max(0.0,dot(realNormal,lightDirection));\
         		vec3 reflectionDirection = reflect(-lightDirection, realNormal);\
         		float shininess = material.shininess;\
+            float specularT = 0.0;
+            vec3 returnedLight = vec3(0.0,0.0,0.0);\
         		' + (settings.useBump ? '\
 				vec3 bmpp = texture2D(bump, til).xyz;\
 				bmpp = (bmpp -0.5) * 2.0;\
 				dW = dW*bmpp.x*(material.bumpWeight)+dW*(1.0-material.bumpWeight);' : '') +
-                '\
-                  float specularT = material.specularWeight;'
+                'if(dW>0.0){'
                 + (settings.useSpecular ? '\
        				specularT = texture2D(specular, til).r*pow(max(dot(reflectionDirection, eyeDirection), 0.0), shininess/4.0);\
-               ' : '\
-        		    float specularLightWeighting = pow(max(dot(reflectionDirection, eyeDirection), 0.0), shininess/4.0);\
-        		    \
+             }' : '\
+        		    specularT = pow(max(dot(reflectionDirection, eyeDirection), 0.0), shininess/4.0);\
+              }\
         		') + (settings.useShadow ? '\
         		    if(li.shadow){\
        				    dW = dW*shadowFac(lightSub);\
        				}' : '') +
-                'vec3 returnedLight = li.color*dW + specularLightWeighting*material.specularWeight;\
+                'returnedLight = li.color*dW + specularT*material.specularWeight;\
                 returnedLight *= att;\
                 returnedLight *= li.intensity;\
                 return returnedLight;\

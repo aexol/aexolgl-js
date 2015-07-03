@@ -212,7 +212,7 @@ var basicShader = function (options) {
 				float dW = max(0.0,dot(realNormal,lightDirection));\
         		vec3 reflectionDirection = reflect(-lightDirection, realNormal);\
         		float shininess = material.shininess;\
-            float specularT = 0.0;
+            float specularT = 0.0;\
             vec3 returnedLight = vec3(0.0,0.0,0.0);\
         		' + (settings.useBump ? '\
 				vec3 bmpp = texture2D(bump, til).xyz;\

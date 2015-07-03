@@ -3647,7 +3647,7 @@ var basicShader = function (options) {
 				vec3 lightDirection = normalize(lightSub);\
 				vec3 eyeDirection = normalize(-vpos.xyz);\
 				float dW = max(0.0,dot(normalEye,lightDirection));\
-        		vec3 reflectionDirection = reflect(-lightDirection, vNormal);\
+        		vec3 reflectionDirection = reflect(-lightDirection, normalize(vNormal));\
         		float shininess = material.shininess;\
         		' + (settings.useBump ? '\
 				vec3 bmpp = texture2D(bump, til).xyz;\

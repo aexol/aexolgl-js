@@ -1,0 +1,35 @@
+body{
+	.btn-github{
+		color:white;
+		background-color:rgb(55,55,55);
+		&:hover{
+			color:white;
+		}
+	}
+	.btn-docs{
+		border-color:rgb(55,55,55);
+		color:black;
+		background-color:rgb(255,255,255)
+	}
+	.feature{
+		padding-bottom:60px;
+		p{
+			text-align:justify;
+		}
+		h4{
+			font-size:24px;
+			line-height:36px;
+			padding: 0px 0 10px;
+		}
+		.buttons{
+			padding:40px 0 0 0;
+			text-align:right;
+			a{
+				line-height:26px
+			}
+			a:first-child{
+				margin-right:10px;
+			}
+		}
+	}
+}

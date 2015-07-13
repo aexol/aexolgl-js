@@ -1,0 +1,214 @@
+/* Reset */
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video{border:0;font-size:100%;font:inherit;vertical-align:baseline;margin:0;padding:0}article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}body{line-height:1}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:none}table{border-collapse:collapse;border-spacing:0} 
+*, *:before, *:after { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
+
+body {
+	font:16px/1 "Helvetica Neue", Helvetica, Arial, sans-serif;
+	-webkit-font-smoothing: antialiased;
+	text-rendering: optimizeLegibility;
+	color: #777;
+}
+img{
+	max-width: 100%;
+}
+p {
+	line-height:1.8;
+}
+
+strong {
+	font-weight: 500;
+	color: #333;
+}
+
+a {
+	text-decoration: none;
+	color: #5badf0;
+}
+header{
+	width:100%;
+	background-color: #4276B6;
+	color:white;
+	text-align: center;
+}
+#logo{
+	padding:20px 0;
+}
+header h1{
+	font-size:32px;
+	line-height: 48px;
+  text-shadow: rgb(107, 107, 107) 0px 0px 3px;
+  text-transform: uppercase;
+  letter-spacing: 6px;
+}
+header h2{
+	font-size:18px;
+	line-height: 36px;
+}
+nav{
+  z-index: 100;
+  left: 0;
+  right: 50%;
+  height: 50px;
+  margin-right: -382px;
+  position: absolute;
+  text-align: left;
+  top: 115px;
+  background: #ffcc00;
+  border: 1px solid #f0b500;
+  -moz-box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.25);
+  -webkit-box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.25);
+  -o-box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.25);
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.25);
+  -moz-border-radius: 0px 2px 2px 0px;
+  -webkit-border-radius: 0px 2px 2px 0px;
+  -o-border-radius: 0px 2px 2px 0px;
+  -ms-border-radius: 0px 2px 2px 0px;
+  -khtml-border-radius: 0px 2px 2px 0px;
+  border-radius: 0px 2px 2px 0px;
+  padding-right: 10px;
+}
+nav .downloads{
+	float:right;
+  margin: 0 45px 0 0;
+}
+nav  .downloads span {
+  float: left;
+  line-height: 52px;
+  font-size: 90%;
+  color: #9d7f0d;
+  text-transform: uppercase;
+  text-shadow: rgba(255, 255, 255, 0.2) 0 1px 0;
+}
+nav  .button{
+	  border: 1px solid #dba500;
+  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #ffe788), color-stop(100%, #ffce38));
+  background: -webkit-linear-gradient(#ffe788, #ffce38);
+  background: -moz-linear-gradient(#ffe788, #ffce38);
+  background: -o-linear-gradient(#ffe788, #ffce38);
+  background: -ms-linear-gradient(#ffe788, #ffce38);
+  background: linear-gradient(#ffe788, #ffce38);
+  -moz-border-radius: 2px;
+  -webkit-border-radius: 2px;
+  -o-border-radius: 2px;
+  -ms-border-radius: 2px;
+  -khtml-border-radius: 2px;
+  border-radius: 2px;
+  -moz-box-shadow: inset 0px 1px 0px rgba(255, 255, 255, 0.4), 0px 1px 1px rgba(0, 0, 0, 0.1);
+  -webkit-box-shadow: inset 0px 1px 0px rgba(255, 255, 255, 0.4), 0px 1px 1px rgba(0, 0, 0, 0.1);
+  -o-box-shadow: inset 0px 1px 0px rgba(255, 255, 255, 0.4), 0px 1px 1px rgba(0, 0, 0, 0.1);
+  box-shadow: inset 0px 1px 0px rgba(255, 255, 255, 0.4), 0px 1px 1px rgba(0, 0, 0, 0.1);
+  background-color: #FFE788;
+  margin-left: 5px;
+  padding: 10px 12px;
+  margin-top: 6px;
+  line-height: 14px;
+  font-size: 14px;
+  color: #333;
+  font-weight: bold;
+  display: inline-block;
+  text-align: center;
+}
+
+nav .fork {
+  padding: 10px 12px;
+  margin-top: 6px;
+  line-height: 14px;
+  font-size: 14px;
+  background-color: #FFE788;
+}
+.fork strong{
+	font-weight: bold;
+}
+nav  ul {
+  list-style: none;
+  height: 40px;
+  padding: 0;
+  float: left;
+  margin-left: 10px;
+}
+nav ul li{
+	display: inline;
+}
+nav  ul li a.button {
+  background-color: #FFE788;
+}
+#background{
+	height:500px;
+	background-color: red;
+}
+#background canvas{
+	width: 100%; height:100%;
+}
+#aglOverlay{
+	position: absolute;
+	margin-top: -500px;
+	height:500px;
+	width:100%;
+	background-color: rgba(0,0,0,0.7);
+}
+#aglOverlay h3{
+	  text-align: center;
+  line-height: 500px;
+  font-size: 60px;
+  color: rgb(242, 242, 242);
+  font-weight: lighter;
+}
+#wrapper {
+	margin: 0 auto;
+	padding: 160px 0px;
+}
+
+/* Link to Documentation */
+#docs {
+	position: fixed; 
+	top: 8px; 
+	right: 6px;
+	background: #5badf0; 
+	color: #fff;
+	padding: 8px 12px;
+	font-size: 13px; 
+	font-weight: bold; 
+	line-height: 1.35;
+	border-radius: 3px; 
+	z-index: 100;
+}
+
+/* Made with Cactus Badge */
+#badge {
+	position: absolute; 
+	bottom: 8px; 
+	right: 8px;
+	height: 48px; 
+	width: 48px;
+}
+.hljs{
+  line-height: 25px;
+  padding: 0 40px !important;
+}
+footer [class*="col-"]{
+    margin-bottom: -99999px;
+    padding-bottom: 99999px;
+}
+footer .row{
+	overflow: hidden;
+}
+footer p{
+	padding: 20px 0;
+	line-height: 42px;
+}
+footer .col-md-6{
+	text-align: center;
+  	background: #ffcc00;
+	color:#4276B6;
+}
+footer .col-md-6 a{
+	color:#4276B6;
+}
+
+footer .col-md-6:first-child a{
+	color:#ffcc00;
+}
+footer .col-md-6:first-child{
+	color:#ffcc00;
+	background-color: #4276B6;
+}

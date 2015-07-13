@@ -1,0 +1,26 @@
+body .btn-github {
+  color: white;
+  background-color: #373737; }
+  body .btn-github:hover {
+    color: white; }
+body .btn-docs {
+  border-color: #373737;
+  color: black;
+  background-color: white; }
+body .feature {
+  padding-bottom: 60px; }
+  body .feature p {
+    text-align: justify; }
+  body .feature h4 {
+    font-size: 24px;
+    line-height: 36px;
+    padding: 0px 0 10px; }
+  body .feature .buttons {
+    padding: 40px 0 0 0;
+    text-align: right; }
+    body .feature .buttons a {
+      line-height: 26px; }
+    body .feature .buttons a:first-child {
+      margin-right: 10px; }
+
+/*# sourceMappingURL=main.css.map */

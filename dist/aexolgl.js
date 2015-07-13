@@ -1622,7 +1622,6 @@ Scene.prototype.draw = function (camera) {
         this._init = true
     }
     gl.viewport(0, 0, gl.canvas.width, gl.canvas.height);
-    gl.clear(gl.COLOR_BUFFER_BIT | gl.DEPTH_BUFFER_BIT);
     var dic = {}
     if (camera) {
             camera.transforms()

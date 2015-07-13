@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>MObject - aexolGL API</title>
+    <link rel="stylesheet" href="http://yui.yahooapis.com/3.7.0/build/cssgrids/cssgrids-min.css">
+    <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
+    <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
+    <link rel="stylesheet" href="../assets/css/custom.css">
+    <link rel="stylesheet" href="../assets/vendor/bootstrap/css/bootstrap.css">
+    <link rel="shortcut icon" type="image/png" href="../assets/favicon.png">
+</head>
+<body class="yui3-skin-sam">
+<div class="container-fluid" style="padding:0;">
+	<div id="topbar" class="row visible-md visible-lg" style="margin:0;">
+        <div class="span1"></div>
+        <div class="span6 docs">
+            <img src="http://gl.aexol.com/static/img/aexol_gl_logo.png"> Docs for Version: <b>1.0a</b>
+        </div>
+        <div class="span5"></div>
+    </div>
+    <div class="row" style="padding:2em;">
+        <div class="span3">
+	    <div>
+	        <h3>APIs</h3>
+	        <div id="sidebar">
+	            <ul id="main-nav" class="nav nav-tabs" style="margin-bottom:0;">
+	                <li class="active"><a href="#classes" data-toggle="tab">Classes</a></li>
+	                <li><a href="#modules" data-toggle="tab">Modules</a></li>
+	            </ul>
+	    
+	            <div id="api-tabview-filter">
+	                <input type="search" placeholder="Type to filter APIs">
+	            </div>
+	    
+	            <div class="tab-content" style="border: 1px solid #DDD; border-top:0;">
+	                <div class="tab-pane active" id="classes">
+	                    <ul id="api-classes" class="nav nav-list">
+	                            <li><a href="../classes/Aex.html">Aex</a></li>
+	                            <li><a href="../classes/aexolGL.html">aexolGL</a></li>
+	                            <li><a href="../classes/Animation.html">Animation</a></li>
+	                            <li><a href="../classes/Buffer.html">Buffer</a></li>
+	                            <li><a href="../classes/Camera.html">Camera</a></li>
+	                            <li><a href="../classes/Fog.html">Fog</a></li>
+	                            <li><a href="../classes/Frustum.html">Frustum</a></li>
+	                            <li><a href="../classes/GameObject.html">GameObject</a></li>
+	                            <li><a href="../classes/Indexer.html">Indexer</a></li>
+	                            <li><a href="../classes/Label.html">Label</a></li>
+	                            <li><a href="../classes/Light.html">Light</a></li>
+	                            <li><a href="../classes/Material.html">Material</a></li>
+	                            <li><a href="../classes/Matrix.html">Matrix</a></li>
+	                            <li><a href="../classes/Matrix3.html">Matrix3</a></li>
+	                            <li><a href="../classes/Mesh.html">Mesh</a></li>
+	                            <li><a href="../classes/MObject.html">MObject</a></li>
+	                            <li><a href="../classes/Pivot.html">Pivot</a></li>
+	                            <li><a href="../classes/Quaternion.html">Quaternion</a></li>
+	                            <li><a href="../classes/Resource.html">Resource</a></li>
+	                            <li><a href="../classes/Scene.html">Scene</a></li>
+	                            <li><a href="../classes/Shader.html">Shader</a></li>
+	                            <li><a href="../classes/Shadow.html">Shadow</a></li>
+	                            <li><a href="../classes/TextNode.html">TextNode</a></li>
+	                            <li><a href="../classes/Texture.html">Texture</a></li>
+	                            <li><a href="../classes/Vector.html">Vector</a></li>
+	                            <li><a href="../classes/Vector4.html">Vector4</a></li>
+	                            <li><a href="../classes/ZBuffer.html">ZBuffer</a></li>
+	                    </ul>
+	                </div>
+	    
+	                <div class="tab-pane" id="modules">
+	                    <ul id="api-modules" class="nav nav-list">
+	                            <li><a href="../modules/aexolGL.html">aexolGL</a></li>
+	                            <li><a href="../modules/Animation.html">Animation</a></li>
+	                            <li><a href="../modules/Buffer.html">Buffer</a></li>
+	                            <li><a href="../modules/camera.html">camera</a></li>
+	                            <li><a href="../modules/Fog.html">Fog</a></li>
+	                            <li><a href="../modules/Font.html">Font</a></li>
+	                            <li><a href="../modules/Game.html">Game</a></li>
+	                            <li><a href="../modules/Light.html">Light</a></li>
+	                            <li><a href="../modules/materialLib.html">materialLib</a></li>
+	                            <li><a href="../modules/Math.html">Math</a></li>
+	                            <li><a href="../modules/Mesh.html">Mesh</a></li>
+	                            <li><a href="../modules/Physics.html">Physics</a></li>
+	                            <li><a href="../modules/Resource.html">Resource</a></li>
+	                            <li><a href="../modules/ShaderLibrary.html">ShaderLibrary</a></li>
+	                            <li><a href="../modules/Shadow.html">Shadow</a></li>
+	                            <li><a href="../modules/start.html">start</a></li>
+	                            <li><a href="../modules/utils.html">utils</a></li>
+	                    </ul>
+	                </div>
+	            </div>
+	        </div>
+	    </div>
+        </div>
+        <div class="span9">
+                <form id="options-form" class="form-inline pull-right">
+                    Show:
+                    <label for="api-show-inherited" class="checkbox">
+                        <input type="checkbox" id="api-show-inherited" checked>
+                        Inherited
+                    </label>
+            
+                    <label for="api-show-protected" class="checkbox">
+                        <input type="checkbox" id="api-show-protected">
+                        Protected
+                    </label>
+            
+                    <label for="api-show-private" class="checkbox">
+                        <input type="checkbox" id="api-show-private">
+                        Private
+                    </label>
+                    <label for="api-show-deprecated" class="checkbox">
+                        <input type="checkbox" id="api-show-deprecated">
+                        Deprecated
+                    </label>
+            
+                </form>
+            
+            <div class="apidocs">
+                <div id="docs-main">
+                    <div class="content">
+                        <div class="page-header">
+                            <h1>MObject <small>Class</small></h1>
+                        </div>
+                        
+                        <div class="well well-small">
+                        
+                        
+                        <!-- 
+                                <div class="foundat">
+                                    Defined in: <a href="../files/.._aexolgl-js_src_aexolGL.js.html#l4"><code>..&#x2F;aexolgl-js&#x2F;src&#x2F;aexolGL.js:4</code></a>
+                                </div>
+                         -->
+                        
+                                    Module: <a href="../modules/aexolGL.html">aexolGL</a>
+                        
+                        </div>
+                        
+                        
+                        <div class="well well-small">
+                            <p>MObject class</p>
+                        
+                        </div>
+                        
+                            <div class="constructor">
+                                <h2>Constructor</h2>
+                                <div id="method_MObject" class="method item">
+                                    <h3 class="name"><code>MObject</code></h3>
+                                
+                                        <div class="args">
+                                            <span class="paren">(</span><ul class="args-list inline commas">
+                                                <li class="arg">
+                                                        <code>parent</code>
+                                                </li>
+                                            </ul><span class="paren">)</span>
+                                        </div>
+                                
+                                
+                                
+                                
+                                
+                                
+                                
+                                
+                                    <div class="meta">
+                                                <p>
+                                <!-- 
+                                                Defined in
+                                 -->
+                                <!-- 
+                                        <a href="../files/.._aexolgl-js_src_aexolGL.js.html#l4"><code>..&#x2F;aexolgl-js&#x2F;src&#x2F;aexolGL.js:4</code></a>
+                                 -->
+                                        </p>
+                                
+                                
+                                
+                                    </div>
+                                
+                                    <div class="description">
+                                        
+                                    </div>
+                                
+                                        <div class="params">
+                                            <h4>Parameters:</h4>
+                                
+                                            <ul class="params-list">
+                                                <li class="param">
+                                                        <code class="param-name">parent</code>
+                                                        <span class="type"><a href="../classes/MObject.html" class="crosslink">MObject</a></span>
+                                
+                                
+                                                    <div class="param-description">
+                                                        <p>of MObject object<br></p>
+                                
+                                                    </div>
+                                
+                                                </li>
+                                            </ul>
+                                        </div>
+                                
+                                
+                                </div>
+                            </div>
+                        
+                        <div>
+                            <ul class="nav nav-tabs">
+                                <li class="active"><a data-toggle="tab" href="#index">Index</a></li>
+                        
+                                    <li><a data-toggle="tab" href="#methods">Methods</a></li>
+                            </ul>
+                        
+                            <div class="tab-content">
+                                <div id="index" class="tab-pane active">
+                                    <h2 class="off-left">Item Index</h2>
+                        
+                                        <div class="index-section methods">
+                                            <h3>Methods</h3>
+                        
+                                            <ul class="index-list methods">
+                                                    <li class="index-item method">
+                                                        <a href="#" data-tabid="#methods" data-anchor="#method_addChilds" data-tablink="addChilds">addChilds</a>
+                        
+                                                    </li>
+                                                    <li class="index-item method">
+                                                        <a href="#" data-tabid="#methods" data-anchor="#method_remove" data-tablink="remove">remove</a>
+                        
+                                                    </li>
+                                                    <li class="index-item method">
+                                                        <a href="#" data-tabid="#methods" data-anchor="#method_setParent" data-tablink="setParent">setParent</a>
+                        
+                                                    </li>
+                                            </ul>
+                                        </div>
+                        
+                        
+                        
+                                </div>
+                        
+                                    <div id="methods" class="tab-pane">
+                                        <h2 class="off-left">Methods</h2>
+                        
+                                            <div id="method_addChilds" class="method item">
+                                                <h3 class="name"><code>addChilds</code></h3>
+                                            
+                                                    <div class="args">
+                                                        <span class="paren">(</span><ul class="args-list inline commas">
+                                                            <li class="arg">
+                                                                    <code>mobject</code>
+                                                            </li>
+                                                        </ul><span class="paren">)</span>
+                                                    </div>
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                                <div class="meta">
+                                                            <p>
+                                            <!-- 
+                                                            Defined in
+                                             -->
+                                            <!-- 
+                                                    <a href="../files/.._aexolgl-js_src_aexolGL.js.html#l16"><code>..&#x2F;aexolgl-js&#x2F;src&#x2F;aexolGL.js:16</code></a>
+                                             -->
+                                                    </p>
+                                            
+                                            
+                                            
+                                                </div>
+                                            
+                                                <div class="description">
+                                                    <p>Sets parent on MObject and unbinds current parent in RenderTree</p>
+                                            
+                                                </div>
+                                            
+                                                    <div class="params">
+                                                        <h4>Parameters:</h4>
+                                            
+                                                        <ul class="params-list">
+                                                            <li class="param">
+                                                                    <code class="param-name">mobject</code>
+                                                                    <span class="type"><a href="../classes/MObject.html" class="crosslink">MObject</a></span>
+                                            
+                                            
+                                                                <div class="param-description">
+                                                                    <p>mobject object to add as a child to RenderTree</p>
+                                            
+                                                                </div>
+                                            
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                            
+                                            
+                                            </div>
+                                            <div id="method_remove" class="method item">
+                                                <h3 class="name"><code>remove</code></h3>
+                                            
+                                                    <span class="paren">()</span>
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                                <div class="meta">
+                                                            <p>
+                                            <!-- 
+                                                            Defined in
+                                             -->
+                                            <!-- 
+                                                    <a href="../files/.._aexolgl-js_src_aexolGL.js.html#l52"><code>..&#x2F;aexolgl-js&#x2F;src&#x2F;aexolGL.js:52</code></a>
+                                             -->
+                                                    </p>
+                                            
+                                            
+                                            
+                                                </div>
+                                            
+                                                <div class="description">
+                                                    <p>Removes MObject from RenderTree</p>
+                                            
+                                                </div>
+                                            
+                                            
+                                            
+                                            </div>
+                                            <div id="method_setParent" class="method item">
+                                                <h3 class="name"><code>setParent</code></h3>
+                                            
+                                                    <div class="args">
+                                                        <span class="paren">(</span><ul class="args-list inline commas">
+                                                            <li class="arg">
+                                                                    <code>parent</code>
+                                                            </li>
+                                                        </ul><span class="paren">)</span>
+                                                    </div>
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                                <div class="meta">
+                                                            <p>
+                                            <!-- 
+                                                            Defined in
+                                             -->
+                                            <!-- 
+                                                    <a href="../files/.._aexolgl-js_src_aexolGL.js.html#l26"><code>..&#x2F;aexolgl-js&#x2F;src&#x2F;aexolGL.js:26</code></a>
+                                             -->
+                                                    </p>
+                                            
+                                            
+                                            
+                                                </div>
+                                            
+                                                <div class="description">
+                                                    <p>Sets parent on MObject and unbinds current parent in RenderTree.
+                                            Usually this is done inside GameObject, but you have also possibility
+                                            to construct RenderTree by yourself.</p>
+                                            
+                                                </div>
+                                            
+                                                    <div class="params">
+                                                        <h4>Parameters:</h4>
+                                            
+                                                        <ul class="params-list">
+                                                            <li class="param">
+                                                                    <code class="param-name">parent</code>
+                                                                    <span class="type"><a href="../classes/MObject.html" class="crosslink">MObject</a></span>
+                                            
+                                            
+                                                                <div class="param-description">
+                                                                    <p>parent object</p>
+                                            
+                                                                </div>
+                                            
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                            
+                                            
+                                                    <div class="example">
+                                                        <h4>Example:</h4>
+                                            
+                                                        <div class="example-content">
+                                                            <p>world = new Scene()
+                                            gshader = new basicShader()
+                                            someMaterial = new Material({})
+                                            gshader.setParent(world)
+                                            someMaterial.setParent(world)</p>
+                                            
+                                                        </div>
+                                                    </div>
+                                            </div>
+                                    </div>
+                        
+                        
+                        
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../assets/vendor/jquery/jquery-1.8.2.min.js"></script>
+<script src="../assets/vendor/bootstrap/js/bootstrap.js"></script>
+<script src="../assets/vendor/prettify/prettify-min.js"></script>
+<script src="../assets/js/yuidoc-bootstrap.js"></script>
+<script>prettyPrint();</script>
+</body>
+</html>

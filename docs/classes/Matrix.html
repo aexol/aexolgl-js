@@ -1,0 +1,1594 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Matrix - aexolGL API</title>
+    <link rel="stylesheet" href="http://yui.yahooapis.com/3.7.0/build/cssgrids/cssgrids-min.css">
+    <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
+    <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
+    <link rel="stylesheet" href="../assets/css/custom.css">
+    <link rel="stylesheet" href="../assets/vendor/bootstrap/css/bootstrap.css">
+    <link rel="shortcut icon" type="image/png" href="../assets/favicon.png">
+</head>
+<body class="yui3-skin-sam">
+<div class="container-fluid" style="padding:0;">
+	<div id="topbar" class="row visible-md visible-lg" style="margin:0;">
+        <div class="span1"></div>
+        <div class="span6 docs">
+            <img src="http://gl.aexol.com/static/img/aexol_gl_logo.png"> Docs for Version: <b>1.0a</b>
+        </div>
+        <div class="span5"></div>
+    </div>
+    <div class="row" style="padding:2em;">
+        <div class="span3">
+	    <div>
+	        <h3>APIs</h3>
+	        <div id="sidebar">
+	            <ul id="main-nav" class="nav nav-tabs" style="margin-bottom:0;">
+	                <li class="active"><a href="#classes" data-toggle="tab">Classes</a></li>
+	                <li><a href="#modules" data-toggle="tab">Modules</a></li>
+	            </ul>
+	    
+	            <div id="api-tabview-filter">
+	                <input type="search" placeholder="Type to filter APIs">
+	            </div>
+	    
+	            <div class="tab-content" style="border: 1px solid #DDD; border-top:0;">
+	                <div class="tab-pane active" id="classes">
+	                    <ul id="api-classes" class="nav nav-list">
+	                            <li><a href="../classes/Aex.html">Aex</a></li>
+	                            <li><a href="../classes/aexolGL.html">aexolGL</a></li>
+	                            <li><a href="../classes/Animation.html">Animation</a></li>
+	                            <li><a href="../classes/Buffer.html">Buffer</a></li>
+	                            <li><a href="../classes/Camera.html">Camera</a></li>
+	                            <li><a href="../classes/Fog.html">Fog</a></li>
+	                            <li><a href="../classes/Frustum.html">Frustum</a></li>
+	                            <li><a href="../classes/GameObject.html">GameObject</a></li>
+	                            <li><a href="../classes/Indexer.html">Indexer</a></li>
+	                            <li><a href="../classes/Label.html">Label</a></li>
+	                            <li><a href="../classes/Light.html">Light</a></li>
+	                            <li><a href="../classes/Material.html">Material</a></li>
+	                            <li><a href="../classes/Matrix.html">Matrix</a></li>
+	                            <li><a href="../classes/Matrix3.html">Matrix3</a></li>
+	                            <li><a href="../classes/Mesh.html">Mesh</a></li>
+	                            <li><a href="../classes/MObject.html">MObject</a></li>
+	                            <li><a href="../classes/Pivot.html">Pivot</a></li>
+	                            <li><a href="../classes/Quaternion.html">Quaternion</a></li>
+	                            <li><a href="../classes/Resource.html">Resource</a></li>
+	                            <li><a href="../classes/Scene.html">Scene</a></li>
+	                            <li><a href="../classes/Shader.html">Shader</a></li>
+	                            <li><a href="../classes/Shadow.html">Shadow</a></li>
+	                            <li><a href="../classes/TextNode.html">TextNode</a></li>
+	                            <li><a href="../classes/Texture.html">Texture</a></li>
+	                            <li><a href="../classes/Vector.html">Vector</a></li>
+	                            <li><a href="../classes/Vector4.html">Vector4</a></li>
+	                            <li><a href="../classes/ZBuffer.html">ZBuffer</a></li>
+	                    </ul>
+	                </div>
+	    
+	                <div class="tab-pane" id="modules">
+	                    <ul id="api-modules" class="nav nav-list">
+	                            <li><a href="../modules/aexolGL.html">aexolGL</a></li>
+	                            <li><a href="../modules/Animation.html">Animation</a></li>
+	                            <li><a href="../modules/Buffer.html">Buffer</a></li>
+	                            <li><a href="../modules/camera.html">camera</a></li>
+	                            <li><a href="../modules/Fog.html">Fog</a></li>
+	                            <li><a href="../modules/Font.html">Font</a></li>
+	                            <li><a href="../modules/Game.html">Game</a></li>
+	                            <li><a href="../modules/Light.html">Light</a></li>
+	                            <li><a href="../modules/materialLib.html">materialLib</a></li>
+	                            <li><a href="../modules/Math.html">Math</a></li>
+	                            <li><a href="../modules/Mesh.html">Mesh</a></li>
+	                            <li><a href="../modules/Physics.html">Physics</a></li>
+	                            <li><a href="../modules/Resource.html">Resource</a></li>
+	                            <li><a href="../modules/ShaderLibrary.html">ShaderLibrary</a></li>
+	                            <li><a href="../modules/Shadow.html">Shadow</a></li>
+	                            <li><a href="../modules/start.html">start</a></li>
+	                            <li><a href="../modules/utils.html">utils</a></li>
+	                    </ul>
+	                </div>
+	            </div>
+	        </div>
+	    </div>
+        </div>
+        <div class="span9">
+                <form id="options-form" class="form-inline pull-right">
+                    Show:
+                    <label for="api-show-inherited" class="checkbox">
+                        <input type="checkbox" id="api-show-inherited" checked>
+                        Inherited
+                    </label>
+            
+                    <label for="api-show-protected" class="checkbox">
+                        <input type="checkbox" id="api-show-protected">
+                        Protected
+                    </label>
+            
+                    <label for="api-show-private" class="checkbox">
+                        <input type="checkbox" id="api-show-private">
+                        Private
+                    </label>
+                    <label for="api-show-deprecated" class="checkbox">
+                        <input type="checkbox" id="api-show-deprecated">
+                        Deprecated
+                    </label>
+            
+                </form>
+            
+            <div class="apidocs">
+                <div id="docs-main">
+                    <div class="content">
+                        <div class="page-header">
+                            <h1>Matrix <small>Class</small></h1>
+                        </div>
+                        
+                        <div class="well well-small">
+                        
+                        
+                        <!-- 
+                                <div class="foundat">
+                                    Defined in: <a href="../files/.._aexolgl-js_src_math.js.html#l276"><code>..&#x2F;aexolgl-js&#x2F;src&#x2F;math.js:276</code></a>
+                                </div>
+                         -->
+                        
+                                    Module: <a href="../modules/Math.html">Math</a>
+                        
+                        </div>
+                        
+                        
+                        <div class="well well-small">
+                            <p>Matrix class</p>
+                        
+                        </div>
+                        
+                            <div class="constructor">
+                                <h2>Constructor</h2>
+                                <div id="method_Matrix" class="method item">
+                                    <h3 class="name"><code>Matrix</code></h3>
+                                
+                                        <span class="paren">()</span>
+                                
+                                
+                                
+                                
+                                
+                                
+                                
+                                
+                                    <div class="meta">
+                                                <p>
+                                <!-- 
+                                                Defined in
+                                 -->
+                                <!-- 
+                                        <a href="../files/.._aexolgl-js_src_math.js.html#l276"><code>..&#x2F;aexolgl-js&#x2F;src&#x2F;math.js:276</code></a>
+                                 -->
+                                        </p>
+                                
+                                
+                                
+                                    </div>
+                                
+                                    <div class="description">
+                                        
+                                    </div>
+                                
+                                
+                                
+                                </div>
+                            </div>
+                        
+                        <div>
+                            <ul class="nav nav-tabs">
+                                <li class="active"><a data-toggle="tab" href="#index">Index</a></li>
+                        
+                                    <li><a data-toggle="tab" href="#methods">Methods</a></li>
+                            </ul>
+                        
+                            <div class="tab-content">
+                                <div id="index" class="tab-pane active">
+                                    <h2 class="off-left">Item Index</h2>
+                        
+                                        <div class="index-section methods">
+                                            <h3>Methods</h3>
+                        
+                                            <ul class="index-list methods">
+                                                    <li class="index-item method">
+                                                        <a href="#" data-tabid="#methods" data-anchor="#method_frustum" data-tablink="frustum">frustum</a>
+                        
+                                                    </li>
+                                                    <li class="index-item method">
+                                                        <a href="#" data-tabid="#methods" data-anchor="#method_inverse" data-tablink="inverse">inverse</a>
+                        
+                                                    </li>
+                                                    <li class="index-item method">
+                                                        <a href="#" data-tabid="#methods" data-anchor="#method_lookAt" data-tablink="lookAt">lookAt</a>
+                        
+                                                    </li>
+                                                    <li class="index-item method">
+                                                        <a href="#" data-tabid="#methods" data-anchor="#method_multiply" data-tablink="multiply">multiply</a>
+                        
+                                                    </li>
+                                                    <li class="index-item method">
+                                                        <a href="#" data-tabid="#methods" data-anchor="#method_ortho" data-tablink="ortho">ortho</a>
+                        
+                                                    </li>
+                                                    <li class="index-item method">
+                                                        <a href="#" data-tabid="#methods" data-anchor="#method_orthoPerspective" data-tablink="orthoPerspective">orthoPerspective</a>
+                        
+                                                    </li>
+                                                    <li class="index-item method">
+                                                        <a href="#" data-tabid="#methods" data-anchor="#method_perspective" data-tablink="perspective">perspective</a>
+                        
+                                                    </li>
+                                                    <li class="index-item method">
+                                                        <a href="#" data-tabid="#methods" data-anchor="#method_rotate" data-tablink="rotate">rotate</a>
+                        
+                                                    </li>
+                                                    <li class="index-item method">
+                                                        <a href="#" data-tabid="#methods" data-anchor="#method_rotate" data-tablink="rotate">rotate</a>
+                        
+                                                    </li>
+                                                    <li class="index-item method">
+                                                        <a href="#" data-tabid="#methods" data-anchor="#method_scale" data-tablink="scale">scale</a>
+                        
+                                                    </li>
+                                                    <li class="index-item method">
+                                                        <a href="#" data-tabid="#methods" data-anchor="#method_toInverseMat3" data-tablink="toInverseMat3">toInverseMat3</a>
+                        
+                                                    </li>
+                                                    <li class="index-item method">
+                                                        <a href="#" data-tabid="#methods" data-anchor="#method_transformPoint" data-tablink="transformPoint">transformPoint</a>
+                        
+                                                    </li>
+                                                    <li class="index-item method">
+                                                        <a href="#" data-tabid="#methods" data-anchor="#method_transformVector" data-tablink="transformVector">transformVector</a>
+                        
+                                                    </li>
+                                                    <li class="index-item method">
+                                                        <a href="#" data-tabid="#methods" data-anchor="#method_translate" data-tablink="translate">translate</a>
+                        
+                                                    </li>
+                                                    <li class="index-item method">
+                                                        <a href="#" data-tabid="#methods" data-anchor="#method_transpose" data-tablink="transpose">transpose</a>
+                        
+                                                    </li>
+                                            </ul>
+                                        </div>
+                        
+                        
+                        
+                                </div>
+                        
+                                    <div id="methods" class="tab-pane">
+                                        <h2 class="off-left">Methods</h2>
+                        
+                                            <div id="method_frustum" class="method item">
+                                                <h3 class="name"><code>frustum</code></h3>
+                                            
+                                                    <div class="args">
+                                                        <span class="paren">(</span><ul class="args-list inline commas">
+                                                            <li class="arg">
+                                                                    <code>l</code>
+                                                            </li>
+                                                            <li class="arg">
+                                                                    <code>r</code>
+                                                            </li>
+                                                            <li class="arg">
+                                                                    <code>b</code>
+                                                            </li>
+                                                            <li class="arg">
+                                                                    <code>t</code>
+                                                            </li>
+                                                            <li class="arg">
+                                                                    <code>n</code>
+                                                            </li>
+                                                            <li class="arg">
+                                                                    <code>f</code>
+                                                            </li>
+                                                        </ul><span class="paren">)</span>
+                                                    </div>
+                                            
+                                                    <span class="returns-inline">
+                                                        <span class="type"><a href="../classes/Matrix.html" class="crosslink">Matrix</a></span>
+                                                    </span>
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                                <div class="meta">
+                                                            <p>
+                                            <!-- 
+                                                            Defined in
+                                             -->
+                                            <!-- 
+                                                    <a href="../files/.._aexolgl-js_src_math.js.html#l443"><code>..&#x2F;aexolgl-js&#x2F;src&#x2F;math.js:443</code></a>
+                                             -->
+                                                    </p>
+                                            
+                                            
+                                            
+                                                </div>
+                                            
+                                                <div class="description">
+                                                    <p>Sets up a viewing frustum, which is shaped like a truncated pyramid with the
+                                            camera where the point of the pyramid would be. This emulates the OpenGL</p>
+                                            
+                                                </div>
+                                            
+                                                    <div class="params">
+                                                        <h4>Parameters:</h4>
+                                            
+                                                        <ul class="params-list">
+                                                            <li class="param">
+                                                                    <code class="param-name">l</code>
+                                                                    <span class="type">Float</span>
+                                            
+                                            
+                                                                <div class="param-description">
+                                                                    <p>Left</p>
+                                            
+                                                                </div>
+                                            
+                                                            </li>
+                                                            <li class="param">
+                                                                    <code class="param-name">r</code>
+                                                                    <span class="type">Float</span>
+                                            
+                                            
+                                                                <div class="param-description">
+                                                                    <p>Right</p>
+                                            
+                                                                </div>
+                                            
+                                                            </li>
+                                                            <li class="param">
+                                                                    <code class="param-name">b</code>
+                                                                    <span class="type">Float</span>
+                                            
+                                            
+                                                                <div class="param-description">
+                                                                    <p>Bottom</p>
+                                            
+                                                                </div>
+                                            
+                                                            </li>
+                                                            <li class="param">
+                                                                    <code class="param-name">t</code>
+                                                                    <span class="type">Float</span>
+                                            
+                                            
+                                                                <div class="param-description">
+                                                                    <p>Top</p>
+                                            
+                                                                </div>
+                                            
+                                                            </li>
+                                                            <li class="param">
+                                                                    <code class="param-name">n</code>
+                                                                    <span class="type">Float</span>
+                                            
+                                            
+                                                                <div class="param-description">
+                                                                    <p>Near</p>
+                                            
+                                                                </div>
+                                            
+                                                            </li>
+                                                            <li class="param">
+                                                                    <code class="param-name">f</code>
+                                                                    <span class="type">Float</span>
+                                            
+                                            
+                                                                <div class="param-description">
+                                                                    <p>Far</p>
+                                            
+                                                                </div>
+                                            
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                            
+                                                    <div class="returns">
+                                                        <h4>Returns:</h4>
+                                            
+                                                        <div class="returns-description">
+                                                                    <span class="type"><a href="../classes/Matrix.html" class="crosslink">Matrix</a></span>:
+                                                                <p>Result matrix</p>
+                                            
+                                                        </div>
+                                                    </div>
+                                            
+                                            </div>
+                                            <div id="method_inverse" class="method item">
+                                                <h3 class="name"><code>inverse</code></h3>
+                                            
+                                                    <span class="paren">()</span>
+                                            
+                                                    <span class="returns-inline">
+                                                        <span class="type"><a href="../classes/Matrix.html" class="crosslink">Matrix</a></span>
+                                                    </span>
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                                <div class="meta">
+                                                            <p>
+                                            <!-- 
+                                                            Defined in
+                                             -->
+                                            <!-- 
+                                                    <a href="../files/.._aexolgl-js_src_math.js.html#l288"><code>..&#x2F;aexolgl-js&#x2F;src&#x2F;math.js:288</code></a>
+                                             -->
+                                                    </p>
+                                            
+                                            
+                                            
+                                                </div>
+                                            
+                                                <div class="description">
+                                                    <p>Returns the matrix that when multiplied with this matrix results in the
+                                            identity matrix.</p>
+                                            
+                                                </div>
+                                            
+                                            
+                                                    <div class="returns">
+                                                        <h4>Returns:</h4>
+                                            
+                                                        <div class="returns-description">
+                                                                    <span class="type"><a href="../classes/Matrix.html" class="crosslink">Matrix</a></span>:
+                                                                <p>Inverted matrix</p>
+                                            
+                                                        </div>
+                                                    </div>
+                                            
+                                            </div>
+                                            <div id="method_lookAt" class="method item">
+                                                <h3 class="name"><code>lookAt</code></h3>
+                                            
+                                                    <div class="args">
+                                                        <span class="paren">(</span><ul class="args-list inline commas">
+                                                            <li class="arg">
+                                                                    <code>e</code>
+                                                            </li>
+                                                            <li class="arg">
+                                                                    <code>c</code>
+                                                            </li>
+                                                            <li class="arg">
+                                                                    <code>u</code>
+                                                            </li>
+                                                        </ul><span class="paren">)</span>
+                                                    </div>
+                                            
+                                                    <span class="returns-inline">
+                                                        <span class="type"><a href="../classes/Matrix.html" class="crosslink">Matrix</a></span>
+                                                    </span>
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                                <div class="meta">
+                                                            <p>
+                                            <!-- 
+                                                            Defined in
+                                             -->
+                                            <!-- 
+                                                    <a href="../files/.._aexolgl-js_src_math.js.html#l548"><code>..&#x2F;aexolgl-js&#x2F;src&#x2F;math.js:548</code></a>
+                                             -->
+                                                    </p>
+                                            
+                                            
+                                            
+                                                </div>
+                                            
+                                                <div class="description">
+                                                    <p>Create a matrix that puts the camera at the eye point <code>ex, ey, ez</code> looking
+                                            toward the center point <code>cx, cy, cz</code> with an up direction of <code>ux, uy, uz</code>.</p>
+                                            
+                                                </div>
+                                            
+                                                    <div class="params">
+                                                        <h4>Parameters:</h4>
+                                            
+                                                        <ul class="params-list">
+                                                            <li class="param">
+                                                                    <code class="param-name">e</code>
+                                                                    <span class="type"><a href="../classes/Vector.html" class="crosslink">Vector</a></span>
+                                            
+                                            
+                                                                <div class="param-description">
+                                                                    <p>Eye point</p>
+                                            
+                                                                </div>
+                                            
+                                                            </li>
+                                                            <li class="param">
+                                                                    <code class="param-name">c</code>
+                                                                    <span class="type"><a href="../classes/Vector.html" class="crosslink">Vector</a></span>
+                                            
+                                            
+                                                                <div class="param-description">
+                                                                    <p>Center point</p>
+                                            
+                                                                </div>
+                                            
+                                                            </li>
+                                                            <li class="param">
+                                                                    <code class="param-name">u</code>
+                                                                    <span class="type"><a href="../classes/Vector.html" class="crosslink">Vector</a></span>
+                                            
+                                            
+                                                                <div class="param-description">
+                                                                    <p>Up vector</p>
+                                            
+                                                                </div>
+                                            
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                            
+                                                    <div class="returns">
+                                                        <h4>Returns:</h4>
+                                            
+                                                        <div class="returns-description">
+                                                                    <span class="type"><a href="../classes/Matrix.html" class="crosslink">Matrix</a></span>:
+                                                                <p>Result matrix</p>
+                                            
+                                                        </div>
+                                                    </div>
+                                            
+                                            </div>
+                                            <div id="method_multiply" class="method item">
+                                                <h3 class="name"><code>multiply</code></h3>
+                                            
+                                                    <div class="args">
+                                                        <span class="paren">(</span><ul class="args-list inline commas">
+                                                            <li class="arg">
+                                                                    <code>matrix</code>
+                                                            </li>
+                                                        </ul><span class="paren">)</span>
+                                                    </div>
+                                            
+                                                    <span class="returns-inline">
+                                                        <span class="type"><a href="../classes/Matrix.html" class="crosslink">Matrix</a></span>
+                                                    </span>
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                                <div class="meta">
+                                                            <p>
+                                            <!-- 
+                                                            Defined in
+                                             -->
+                                            <!-- 
+                                                    <a href="../files/.._aexolgl-js_src_math.js.html#l380"><code>..&#x2F;aexolgl-js&#x2F;src&#x2F;math.js:380</code></a>
+                                             -->
+                                                    </p>
+                                            
+                                            
+                                            
+                                                </div>
+                                            
+                                                <div class="description">
+                                                    <p>Concatenates the transforms for this matrix and <code>matrix</code>.</p>
+                                            
+                                                </div>
+                                            
+                                                    <div class="params">
+                                                        <h4>Parameters:</h4>
+                                            
+                                                        <ul class="params-list">
+                                                            <li class="param">
+                                                                    <code class="param-name">matrix</code>
+                                                                    <span class="type"><a href="../classes/Matrix.html" class="crosslink">Matrix</a></span>
+                                            
+                                            
+                                                                <div class="param-description">
+                                                                    <p>Matrix to multiply</p>
+                                            
+                                                                </div>
+                                            
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                            
+                                                    <div class="returns">
+                                                        <h4>Returns:</h4>
+                                            
+                                                        <div class="returns-description">
+                                                                    <span class="type"><a href="../classes/Matrix.html" class="crosslink">Matrix</a></span>:
+                                                                <p>Multiplied matrix</p>
+                                            
+                                                        </div>
+                                                    </div>
+                                            
+                                            </div>
+                                            <div id="method_ortho" class="method item">
+                                                <h3 class="name"><code>ortho</code></h3>
+                                            
+                                                    <div class="args">
+                                                        <span class="paren">(</span><ul class="args-list inline commas">
+                                                            <li class="arg">
+                                                                    <code>l</code>
+                                                            </li>
+                                                            <li class="arg">
+                                                                    <code>r</code>
+                                                            </li>
+                                                            <li class="arg">
+                                                                    <code>b</code>
+                                                            </li>
+                                                            <li class="arg">
+                                                                    <code>t</code>
+                                                            </li>
+                                                            <li class="arg">
+                                                                    <code>n</code>
+                                                            </li>
+                                                            <li class="arg">
+                                                                    <code>f</code>
+                                                            </li>
+                                                        </ul><span class="paren">)</span>
+                                                    </div>
+                                            
+                                                    <span class="returns-inline">
+                                                        <span class="type"><a href="../classes/Matrix.html" class="crosslink">Matrix</a></span>
+                                                    </span>
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                                <div class="meta">
+                                                            <p>
+                                            <!-- 
+                                                            Defined in
+                                             -->
+                                            <!-- 
+                                                    <a href="../files/.._aexolgl-js_src_math.js.html#l474"><code>..&#x2F;aexolgl-js&#x2F;src&#x2F;math.js:474</code></a>
+                                             -->
+                                                    </p>
+                                            
+                                            
+                                            
+                                                </div>
+                                            
+                                                <div class="description">
+                                                    <p>Creates an orthographic projection, in which objects are the same size no
+                                            matter how far away or nearby they are.</p>
+                                            
+                                                </div>
+                                            
+                                                    <div class="params">
+                                                        <h4>Parameters:</h4>
+                                            
+                                                        <ul class="params-list">
+                                                            <li class="param">
+                                                                    <code class="param-name">l</code>
+                                                                    <span class="type">Float</span>
+                                            
+                                            
+                                                                <div class="param-description">
+                                                                    <p>Left</p>
+                                            
+                                                                </div>
+                                            
+                                                            </li>
+                                                            <li class="param">
+                                                                    <code class="param-name">r</code>
+                                                                    <span class="type">Float</span>
+                                            
+                                            
+                                                                <div class="param-description">
+                                                                    <p>Right</p>
+                                            
+                                                                </div>
+                                            
+                                                            </li>
+                                                            <li class="param">
+                                                                    <code class="param-name">b</code>
+                                                                    <span class="type">Float</span>
+                                            
+                                            
+                                                                <div class="param-description">
+                                                                    <p>Bottom</p>
+                                            
+                                                                </div>
+                                            
+                                                            </li>
+                                                            <li class="param">
+                                                                    <code class="param-name">t</code>
+                                                                    <span class="type">Float</span>
+                                            
+                                            
+                                                                <div class="param-description">
+                                                                    <p>Top</p>
+                                            
+                                                                </div>
+                                            
+                                                            </li>
+                                                            <li class="param">
+                                                                    <code class="param-name">n</code>
+                                                                    <span class="type">Float</span>
+                                            
+                                            
+                                                                <div class="param-description">
+                                                                    <p>Near</p>
+                                            
+                                                                </div>
+                                            
+                                                            </li>
+                                                            <li class="param">
+                                                                    <code class="param-name">f</code>
+                                                                    <span class="type">Float</span>
+                                            
+                                            
+                                                                <div class="param-description">
+                                                                    <p>Far</p>
+                                            
+                                                                </div>
+                                            
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                            
+                                                    <div class="returns">
+                                                        <h4>Returns:</h4>
+                                            
+                                                        <div class="returns-description">
+                                                                    <span class="type"><a href="../classes/Matrix.html" class="crosslink">Matrix</a></span>:
+                                                                <p>Result matrix</p>
+                                            
+                                                        </div>
+                                                    </div>
+                                            
+                                            </div>
+                                            <div id="method_orthoPerspective" class="method item">
+                                                <h3 class="name"><code>orthoPerspective</code></h3>
+                                            
+                                                    <div class="args">
+                                                        <span class="paren">(</span><ul class="args-list inline commas">
+                                                            <li class="arg">
+                                                                    <code>fov</code>
+                                                            </li>
+                                                            <li class="arg">
+                                                                    <code>aspect</code>
+                                                            </li>
+                                                            <li class="arg">
+                                                                    <code>near</code>
+                                                            </li>
+                                                            <li class="arg">
+                                                                    <code>far</code>
+                                                            </li>
+                                                        </ul><span class="paren">)</span>
+                                                    </div>
+                                            
+                                                    <span class="returns-inline">
+                                                        <span class="type"><a href="../classes/Matrix.html" class="crosslink">Matrix</a></span>
+                                                    </span>
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                                <div class="meta">
+                                                            <p>
+                                            <!-- 
+                                                            Defined in
+                                             -->
+                                            <!-- 
+                                                    <a href="../files/.._aexolgl-js_src_math.js.html#l458"><code>..&#x2F;aexolgl-js&#x2F;src&#x2F;math.js:458</code></a>
+                                             -->
+                                                    </p>
+                                            
+                                            
+                                            
+                                                </div>
+                                            
+                                                <div class="description">
+                                                    <p>Sets up an ortho perspective transform. The <code>aspect</code> argument is the width divided by the height
+                                            of your viewport and <code>fov</code> is the top-to-bottom angle of the field of view in
+                                            degrees.</p>
+                                            
+                                                </div>
+                                            
+                                                    <div class="params">
+                                                        <h4>Parameters:</h4>
+                                            
+                                                        <ul class="params-list">
+                                                            <li class="param">
+                                                                    <code class="param-name">fov</code>
+                                                                    <span class="type">Float</span>
+                                            
+                                            
+                                                                <div class="param-description">
+                                                                    <p>Field of View</p>
+                                            
+                                                                </div>
+                                            
+                                                            </li>
+                                                            <li class="param">
+                                                                    <code class="param-name">aspect</code>
+                                                                    <span class="type">Float</span>
+                                            
+                                            
+                                                                <div class="param-description">
+                                                                    <p>Aspect ratio</p>
+                                            
+                                                                </div>
+                                            
+                                                            </li>
+                                                            <li class="param">
+                                                                    <code class="param-name">near</code>
+                                                                    <span class="type">Float</span>
+                                            
+                                            
+                                                                <div class="param-description">
+                                                                    <p>Near plane</p>
+                                            
+                                                                </div>
+                                            
+                                                            </li>
+                                                            <li class="param">
+                                                                    <code class="param-name">far</code>
+                                                                    <span class="type">Float</span>
+                                            
+                                            
+                                                                <div class="param-description">
+                                                                    <p>Far plane</p>
+                                            
+                                                                </div>
+                                            
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                            
+                                                    <div class="returns">
+                                                        <h4>Returns:</h4>
+                                            
+                                                        <div class="returns-description">
+                                                                    <span class="type"><a href="../classes/Matrix.html" class="crosslink">Matrix</a></span>:
+                                                                <p>Result matrix</p>
+                                            
+                                                        </div>
+                                                    </div>
+                                            
+                                            </div>
+                                            <div id="method_perspective" class="method item">
+                                                <h3 class="name"><code>perspective</code></h3>
+                                            
+                                                    <div class="args">
+                                                        <span class="paren">(</span><ul class="args-list inline commas">
+                                                            <li class="arg">
+                                                                    <code>fov</code>
+                                                            </li>
+                                                            <li class="arg">
+                                                                    <code>aspect</code>
+                                                            </li>
+                                                            <li class="arg">
+                                                                    <code>near</code>
+                                                            </li>
+                                                            <li class="arg">
+                                                                    <code>far</code>
+                                                            </li>
+                                                        </ul><span class="paren">)</span>
+                                                    </div>
+                                            
+                                                    <span class="returns-inline">
+                                                        <span class="type"><a href="../classes/Matrix.html" class="crosslink">Matrix</a></span>
+                                                    </span>
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                                <div class="meta">
+                                                            <p>
+                                            <!-- 
+                                                            Defined in
+                                             -->
+                                            <!-- 
+                                                    <a href="../files/.._aexolgl-js_src_math.js.html#l425"><code>..&#x2F;aexolgl-js&#x2F;src&#x2F;math.js:425</code></a>
+                                             -->
+                                                    </p>
+                                            
+                                            
+                                            
+                                                </div>
+                                            
+                                                <div class="description">
+                                                    <p>Sets up a perspective transform, which makes far away objects appear smaller
+                                            than nearby objects. The <code>aspect</code> argument is the width divided by the height
+                                            of your viewport and <code>fov</code> is the top-to-bottom angle of the field of view in
+                                            degrees.</p>
+                                            
+                                                </div>
+                                            
+                                                    <div class="params">
+                                                        <h4>Parameters:</h4>
+                                            
+                                                        <ul class="params-list">
+                                                            <li class="param">
+                                                                    <code class="param-name">fov</code>
+                                                                    <span class="type">Float</span>
+                                            
+                                            
+                                                                <div class="param-description">
+                                                                    <p>Field of View</p>
+                                            
+                                                                </div>
+                                            
+                                                            </li>
+                                                            <li class="param">
+                                                                    <code class="param-name">aspect</code>
+                                                                    <span class="type">Float</span>
+                                            
+                                            
+                                                                <div class="param-description">
+                                                                    <p>Aspect ratio</p>
+                                            
+                                                                </div>
+                                            
+                                                            </li>
+                                                            <li class="param">
+                                                                    <code class="param-name">near</code>
+                                                                    <span class="type">Float</span>
+                                            
+                                            
+                                                                <div class="param-description">
+                                                                    <p>Near plane</p>
+                                            
+                                                                </div>
+                                            
+                                                            </li>
+                                                            <li class="param">
+                                                                    <code class="param-name">far</code>
+                                                                    <span class="type">Float</span>
+                                            
+                                            
+                                                                <div class="param-description">
+                                                                    <p>Far plane</p>
+                                            
+                                                                </div>
+                                            
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                            
+                                                    <div class="returns">
+                                                        <h4>Returns:</h4>
+                                            
+                                                        <div class="returns-description">
+                                                                    <span class="type"><a href="../classes/Matrix.html" class="crosslink">Matrix</a></span>:
+                                                                <p>Result matrix</p>
+                                            
+                                                        </div>
+                                                    </div>
+                                            
+                                            </div>
+                                            <div id="method_rotate" class="method item">
+                                                <h3 class="name"><code>rotate</code></h3>
+                                            
+                                                    <div class="args">
+                                                        <span class="paren">(</span><ul class="args-list inline commas">
+                                                            <li class="arg">
+                                                                    <code>a</code>
+                                                            </li>
+                                                            <li class="arg">
+                                                                    <code>x</code>
+                                                            </li>
+                                                            <li class="arg">
+                                                                    <code>y</code>
+                                                            </li>
+                                                            <li class="arg">
+                                                                    <code>z</code>
+                                                            </li>
+                                                        </ul><span class="paren">)</span>
+                                                    </div>
+                                            
+                                                    <span class="returns-inline">
+                                                        <span class="type"><a href="../classes/Matrix.html" class="crosslink">Matrix</a></span>
+                                                    </span>
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                                <div class="meta">
+                                                            <p>
+                                            <!-- 
+                                                            Defined in
+                                             -->
+                                            <!-- 
+                                                    <a href="../files/.._aexolgl-js_src_math.js.html#l511"><code>..&#x2F;aexolgl-js&#x2F;src&#x2F;math.js:511</code></a>
+                                             -->
+                                                    </p>
+                                            
+                                            
+                                            
+                                                </div>
+                                            
+                                                <div class="description">
+                                                    <p>Creates a matrix that rotates by <code>a</code> degrees around the vector <code>x, y, z</code>.</p>
+                                            
+                                                </div>
+                                            
+                                                    <div class="params">
+                                                        <h4>Parameters:</h4>
+                                            
+                                                        <ul class="params-list">
+                                                            <li class="param">
+                                                                    <code class="param-name">a</code>
+                                                                    <span class="type">Float</span>
+                                            
+                                            
+                                                                <div class="param-description">
+                                                                    <p>Angle in degrees</p>
+                                            
+                                                                </div>
+                                            
+                                                            </li>
+                                                            <li class="param">
+                                                                    <code class="param-name">x</code>
+                                                                    <span class="type">Float</span>
+                                            
+                                            
+                                                                <div class="param-description">
+                                                                    <p>Vector X value</p>
+                                            
+                                                                </div>
+                                            
+                                                            </li>
+                                                            <li class="param">
+                                                                    <code class="param-name">y</code>
+                                                                    <span class="type">Float</span>
+                                            
+                                            
+                                                                <div class="param-description">
+                                                                    <p>Vector Y value</p>
+                                            
+                                                                </div>
+                                            
+                                                            </li>
+                                                            <li class="param">
+                                                                    <code class="param-name">z</code>
+                                                                    <span class="type">Float</span>
+                                            
+                                            
+                                                                <div class="param-description">
+                                                                    <p>Vector Z value</p>
+                                            
+                                                                </div>
+                                            
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                            
+                                                    <div class="returns">
+                                                        <h4>Returns:</h4>
+                                            
+                                                        <div class="returns-description">
+                                                                    <span class="type"><a href="../classes/Matrix.html" class="crosslink">Matrix</a></span>:
+                                                                <p>Result matrix</p>
+                                            
+                                                        </div>
+                                                    </div>
+                                            
+                                            </div>
+                                            <div id="method_rotate" class="method item">
+                                                <h3 class="name"><code>rotate</code></h3>
+                                            
+                                                    <div class="args">
+                                                        <span class="paren">(</span><ul class="args-list inline commas">
+                                                            <li class="arg">
+                                                                    <code>xAngle</code>
+                                                            </li>
+                                                            <li class="arg">
+                                                                    <code>yAngle</code>
+                                                            </li>
+                                                            <li class="arg">
+                                                                    <code>zAngle</code>
+                                                            </li>
+                                                        </ul><span class="paren">)</span>
+                                                    </div>
+                                            
+                                                    <span class="returns-inline">
+                                                        <span class="type"><a href="../classes/Matrix.html" class="crosslink">Matrix</a></span>
+                                                    </span>
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                                <div class="meta">
+                                                            <p>
+                                            <!-- 
+                                                            Defined in
+                                             -->
+                                            <!-- 
+                                                    <a href="../files/.._aexolgl-js_src_math.js.html#l533"><code>..&#x2F;aexolgl-js&#x2F;src&#x2F;math.js:533</code></a>
+                                             -->
+                                                    </p>
+                                            
+                                            
+                                            
+                                                </div>
+                                            
+                                                <div class="description">
+                                                    <p>Creates a matrix that rotates in three axes <code>x, y, z</code>.</p>
+                                            
+                                                </div>
+                                            
+                                                    <div class="params">
+                                                        <h4>Parameters:</h4>
+                                            
+                                                        <ul class="params-list">
+                                                            <li class="param">
+                                                                    <code class="param-name">xAngle</code>
+                                                                    <span class="type">Float</span>
+                                            
+                                            
+                                                                <div class="param-description">
+                                                                    <p>in degrees</p>
+                                            
+                                                                </div>
+                                            
+                                                            </li>
+                                                            <li class="param">
+                                                                    <code class="param-name">yAngle</code>
+                                                                    <span class="type">Float</span>
+                                            
+                                            
+                                                                <div class="param-description">
+                                                                    <p>in degrees</p>
+                                            
+                                                                </div>
+                                            
+                                                            </li>
+                                                            <li class="param">
+                                                                    <code class="param-name">zAngle</code>
+                                                                    <span class="type">Float</span>
+                                            
+                                            
+                                                                <div class="param-description">
+                                                                    <p>in degrees</p>
+                                            
+                                                                </div>
+                                            
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                            
+                                                    <div class="returns">
+                                                        <h4>Returns:</h4>
+                                            
+                                                        <div class="returns-description">
+                                                                    <span class="type"><a href="../classes/Matrix.html" class="crosslink">Matrix</a></span>:
+                                                                <p>Result matrix</p>
+                                            
+                                                        </div>
+                                                    </div>
+                                            
+                                            </div>
+                                            <div id="method_scale" class="method item">
+                                                <h3 class="name"><code>scale</code></h3>
+                                            
+                                                    <div class="args">
+                                                        <span class="paren">(</span><ul class="args-list inline commas">
+                                                            <li class="arg">
+                                                                    <code>x</code>
+                                                            </li>
+                                                            <li class="arg">
+                                                                    <code>y</code>
+                                                            </li>
+                                                            <li class="arg">
+                                                                    <code>z</code>
+                                                            </li>
+                                                        </ul><span class="paren">)</span>
+                                                    </div>
+                                            
+                                                    <span class="returns-inline">
+                                                        <span class="type"><a href="../classes/Matrix.html" class="crosslink">Matrix</a></span>
+                                                    </span>
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                                <div class="meta">
+                                                            <p>
+                                            <!-- 
+                                                            Defined in
+                                             -->
+                                            <!-- 
+                                                    <a href="../files/.._aexolgl-js_src_math.js.html#l489"><code>..&#x2F;aexolgl-js&#x2F;src&#x2F;math.js:489</code></a>
+                                             -->
+                                                    </p>
+                                            
+                                            
+                                            
+                                                </div>
+                                            
+                                                <div class="description">
+                                                    <p>Creates a matrix that scales by the vector <code>x, y, z</code>.</p>
+                                            
+                                                </div>
+                                            
+                                                    <div class="params">
+                                                        <h4>Parameters:</h4>
+                                            
+                                                        <ul class="params-list">
+                                                            <li class="param">
+                                                                    <code class="param-name">x</code>
+                                                                    <span class="type">Float</span>
+                                            
+                                            
+                                                                <div class="param-description">
+                                                                    <p>Vector X value</p>
+                                            
+                                                                </div>
+                                            
+                                                            </li>
+                                                            <li class="param">
+                                                                    <code class="param-name">y</code>
+                                                                    <span class="type">Float</span>
+                                            
+                                            
+                                                                <div class="param-description">
+                                                                    <p>Vector Y value</p>
+                                            
+                                                                </div>
+                                            
+                                                            </li>
+                                                            <li class="param">
+                                                                    <code class="param-name">z</code>
+                                                                    <span class="type">Float</span>
+                                            
+                                            
+                                                                <div class="param-description">
+                                                                    <p>Vector Z value</p>
+                                            
+                                                                </div>
+                                            
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                            
+                                                    <div class="returns">
+                                                        <h4>Returns:</h4>
+                                            
+                                                        <div class="returns-description">
+                                                                    <span class="type"><a href="../classes/Matrix.html" class="crosslink">Matrix</a></span>:
+                                                                <p>Result matrix</p>
+                                            
+                                                        </div>
+                                                    </div>
+                                            
+                                            </div>
+                                            <div id="method_toInverseMat3" class="method item">
+                                                <h3 class="name"><code>toInverseMat3</code></h3>
+                                            
+                                                    <span class="paren">()</span>
+                                            
+                                                    <span class="returns-inline">
+                                                        <span class="type"><a href="../classes/Matrix3.html" class="crosslink">Matrix3</a></span>
+                                                    </span>
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                                <div class="meta">
+                                                            <p>
+                                            <!-- 
+                                                            Defined in
+                                             -->
+                                            <!-- 
+                                                    <a href="../files/.._aexolgl-js_src_math.js.html#l305"><code>..&#x2F;aexolgl-js&#x2F;src&#x2F;math.js:305</code></a>
+                                             -->
+                                                    </p>
+                                            
+                                            
+                                            
+                                                </div>
+                                            
+                                                <div class="description">
+                                                    <p>Returns the matrix that when multiplied with this matrix results in the
+                                            identity matrix3.</p>
+                                            
+                                                </div>
+                                            
+                                            
+                                                    <div class="returns">
+                                                        <h4>Returns:</h4>
+                                            
+                                                        <div class="returns-description">
+                                                                    <span class="type"><a href="../classes/Matrix3.html" class="crosslink">Matrix3</a></span>:
+                                                                <p>Inverted matrix3</p>
+                                            
+                                                        </div>
+                                                    </div>
+                                            
+                                            </div>
+                                            <div id="method_transformPoint" class="method item">
+                                                <h3 class="name"><code>transformPoint</code></h3>
+                                            
+                                                    <span class="paren">()</span>
+                                            
+                                                    <span class="returns-inline">
+                                                        <span class="type"><a href="../classes/Vector.html" class="crosslink">Vector</a></span>
+                                                    </span>
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                                <div class="meta">
+                                                            <p>
+                                            <!-- 
+                                                            Defined in
+                                             -->
+                                            <!-- 
+                                                    <a href="../files/.._aexolgl-js_src_math.js.html#l390"><code>..&#x2F;aexolgl-js&#x2F;src&#x2F;math.js:390</code></a>
+                                             -->
+                                                    </p>
+                                            
+                                            
+                                            
+                                                </div>
+                                            
+                                                <div class="description">
+                                                    <p>Transforms the vector as a point with a w coordinate of 1. This
+                                            means translations will have an effect, for example.</p>
+                                            
+                                                </div>
+                                            
+                                            
+                                                    <div class="returns">
+                                                        <h4>Returns:</h4>
+                                            
+                                                        <div class="returns-description">
+                                                                    <span class="type"><a href="../classes/Vector.html" class="crosslink">Vector</a></span>:
+                                                                <p>Transformed Vector</p>
+                                            
+                                                        </div>
+                                                    </div>
+                                            
+                                            </div>
+                                            <div id="method_transformVector" class="method item">
+                                                <h3 class="name"><code>transformVector</code></h3>
+                                            
+                                                    <span class="paren">()</span>
+                                            
+                                                    <span class="returns-inline">
+                                                        <span class="type"><a href="../classes/Vector.html" class="crosslink">Vector</a></span>
+                                                    </span>
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                                <div class="meta">
+                                                            <p>
+                                            <!-- 
+                                                            Defined in
+                                             -->
+                                            <!-- 
+                                                    <a href="../files/.._aexolgl-js_src_math.js.html#l414"><code>..&#x2F;aexolgl-js&#x2F;src&#x2F;math.js:414</code></a>
+                                             -->
+                                                    </p>
+                                            
+                                            
+                                            
+                                                </div>
+                                            
+                                                <div class="description">
+                                                    <p>Transforms the vector as a vector with a w coordinate of 0. This
+                                            means translations will have no effect, for example.</p>
+                                            
+                                                </div>
+                                            
+                                            
+                                                    <div class="returns">
+                                                        <h4>Returns:</h4>
+                                            
+                                                        <div class="returns-description">
+                                                                    <span class="type"><a href="../classes/Vector.html" class="crosslink">Vector</a></span>:
+                                                                <p>Transformed Vector</p>
+                                            
+                                                        </div>
+                                                    </div>
+                                            
+                                            </div>
+                                            <div id="method_translate" class="method item">
+                                                <h3 class="name"><code>translate</code></h3>
+                                            
+                                                    <div class="args">
+                                                        <span class="paren">(</span><ul class="args-list inline commas">
+                                                            <li class="arg">
+                                                                    <code>x</code>
+                                                            </li>
+                                                            <li class="arg">
+                                                                    <code>y</code>
+                                                            </li>
+                                                            <li class="arg">
+                                                                    <code>z</code>
+                                                            </li>
+                                                        </ul><span class="paren">)</span>
+                                                    </div>
+                                            
+                                                    <span class="returns-inline">
+                                                        <span class="type"><a href="../classes/Matrix.html" class="crosslink">Matrix</a></span>
+                                                    </span>
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                                <div class="meta">
+                                                            <p>
+                                            <!-- 
+                                                            Defined in
+                                             -->
+                                            <!-- 
+                                                    <a href="../files/.._aexolgl-js_src_math.js.html#l500"><code>..&#x2F;aexolgl-js&#x2F;src&#x2F;math.js:500</code></a>
+                                             -->
+                                                    </p>
+                                            
+                                            
+                                            
+                                                </div>
+                                            
+                                                <div class="description">
+                                                    <p>Creates a matrix that translates by the vector <code>x, y, z</code>.</p>
+                                            
+                                                </div>
+                                            
+                                                    <div class="params">
+                                                        <h4>Parameters:</h4>
+                                            
+                                                        <ul class="params-list">
+                                                            <li class="param">
+                                                                    <code class="param-name">x</code>
+                                                                    <span class="type">Float</span>
+                                            
+                                            
+                                                                <div class="param-description">
+                                                                    <p>Vector X value</p>
+                                            
+                                                                </div>
+                                            
+                                                            </li>
+                                                            <li class="param">
+                                                                    <code class="param-name">y</code>
+                                                                    <span class="type">Float</span>
+                                            
+                                            
+                                                                <div class="param-description">
+                                                                    <p>Vector Y value</p>
+                                            
+                                                                </div>
+                                            
+                                                            </li>
+                                                            <li class="param">
+                                                                    <code class="param-name">z</code>
+                                                                    <span class="type">Float</span>
+                                            
+                                            
+                                                                <div class="param-description">
+                                                                    <p>Vector Z value</p>
+                                            
+                                                                </div>
+                                            
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                            
+                                                    <div class="returns">
+                                                        <h4>Returns:</h4>
+                                            
+                                                        <div class="returns-description">
+                                                                    <span class="type"><a href="../classes/Matrix.html" class="crosslink">Matrix</a></span>:
+                                                                <p>Result matrix</p>
+                                            
+                                                        </div>
+                                                    </div>
+                                            
+                                            </div>
+                                            <div id="method_transpose" class="method item">
+                                                <h3 class="name"><code>transpose</code></h3>
+                                            
+                                                    <span class="paren">()</span>
+                                            
+                                                    <span class="returns-inline">
+                                                        <span class="type"><a href="../classes/Matrix.html" class="crosslink">Matrix</a></span>
+                                                    </span>
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                                <div class="meta">
+                                                            <p>
+                                            <!-- 
+                                                            Defined in
+                                             -->
+                                            <!-- 
+                                                    <a href="../files/.._aexolgl-js_src_math.js.html#l370"><code>..&#x2F;aexolgl-js&#x2F;src&#x2F;math.js:370</code></a>
+                                             -->
+                                                    </p>
+                                            
+                                            
+                                            
+                                                </div>
+                                            
+                                                <div class="description">
+                                                    <p>Exchanges columns for rows.</p>
+                                            
+                                                </div>
+                                            
+                                            
+                                                    <div class="returns">
+                                                        <h4>Returns:</h4>
+                                            
+                                                        <div class="returns-description">
+                                                                    <span class="type"><a href="../classes/Matrix.html" class="crosslink">Matrix</a></span>:
+                                                                <p>Transposed matrix</p>
+                                            
+                                                        </div>
+                                                    </div>
+                                            
+                                            </div>
+                                    </div>
+                        
+                        
+                        
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../assets/vendor/jquery/jquery-1.8.2.min.js"></script>
+<script src="../assets/vendor/bootstrap/js/bootstrap.js"></script>
+<script src="../assets/vendor/prettify/prettify-min.js"></script>
+<script src="../assets/js/yuidoc-bootstrap.js"></script>
+<script>prettyPrint();</script>
+</body>
+</html>

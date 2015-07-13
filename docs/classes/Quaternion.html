@@ -1,0 +1,1415 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Quaternion - aexolGL API</title>
+    <link rel="stylesheet" href="http://yui.yahooapis.com/3.7.0/build/cssgrids/cssgrids-min.css">
+    <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
+    <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
+    <link rel="stylesheet" href="../assets/css/custom.css">
+    <link rel="stylesheet" href="../assets/vendor/bootstrap/css/bootstrap.css">
+    <link rel="shortcut icon" type="image/png" href="../assets/favicon.png">
+</head>
+<body class="yui3-skin-sam">
+<div class="container-fluid" style="padding:0;">
+	<div id="topbar" class="row visible-md visible-lg" style="margin:0;">
+        <div class="span1"></div>
+        <div class="span6 docs">
+            <img src="http://gl.aexol.com/static/img/aexol_gl_logo.png"> Docs for Version: <b>1.0a</b>
+        </div>
+        <div class="span5"></div>
+    </div>
+    <div class="row" style="padding:2em;">
+        <div class="span3">
+	    <div>
+	        <h3>APIs</h3>
+	        <div id="sidebar">
+	            <ul id="main-nav" class="nav nav-tabs" style="margin-bottom:0;">
+	                <li class="active"><a href="#classes" data-toggle="tab">Classes</a></li>
+	                <li><a href="#modules" data-toggle="tab">Modules</a></li>
+	            </ul>
+	    
+	            <div id="api-tabview-filter">
+	                <input type="search" placeholder="Type to filter APIs">
+	            </div>
+	    
+	            <div class="tab-content" style="border: 1px solid #DDD; border-top:0;">
+	                <div class="tab-pane active" id="classes">
+	                    <ul id="api-classes" class="nav nav-list">
+	                            <li><a href="../classes/Aex.html">Aex</a></li>
+	                            <li><a href="../classes/aexolGL.html">aexolGL</a></li>
+	                            <li><a href="../classes/Animation.html">Animation</a></li>
+	                            <li><a href="../classes/Buffer.html">Buffer</a></li>
+	                            <li><a href="../classes/Camera.html">Camera</a></li>
+	                            <li><a href="../classes/Fog.html">Fog</a></li>
+	                            <li><a href="../classes/Frustum.html">Frustum</a></li>
+	                            <li><a href="../classes/GameObject.html">GameObject</a></li>
+	                            <li><a href="../classes/Indexer.html">Indexer</a></li>
+	                            <li><a href="../classes/Label.html">Label</a></li>
+	                            <li><a href="../classes/Light.html">Light</a></li>
+	                            <li><a href="../classes/Material.html">Material</a></li>
+	                            <li><a href="../classes/Matrix.html">Matrix</a></li>
+	                            <li><a href="../classes/Matrix3.html">Matrix3</a></li>
+	                            <li><a href="../classes/Mesh.html">Mesh</a></li>
+	                            <li><a href="../classes/MObject.html">MObject</a></li>
+	                            <li><a href="../classes/Pivot.html">Pivot</a></li>
+	                            <li><a href="../classes/Quaternion.html">Quaternion</a></li>
+	                            <li><a href="../classes/Resource.html">Resource</a></li>
+	                            <li><a href="../classes/Scene.html">Scene</a></li>
+	                            <li><a href="../classes/Shader.html">Shader</a></li>
+	                            <li><a href="../classes/Shadow.html">Shadow</a></li>
+	                            <li><a href="../classes/TextNode.html">TextNode</a></li>
+	                            <li><a href="../classes/Texture.html">Texture</a></li>
+	                            <li><a href="../classes/Vector.html">Vector</a></li>
+	                            <li><a href="../classes/Vector4.html">Vector4</a></li>
+	                            <li><a href="../classes/ZBuffer.html">ZBuffer</a></li>
+	                    </ul>
+	                </div>
+	    
+	                <div class="tab-pane" id="modules">
+	                    <ul id="api-modules" class="nav nav-list">
+	                            <li><a href="../modules/aexolGL.html">aexolGL</a></li>
+	                            <li><a href="../modules/Animation.html">Animation</a></li>
+	                            <li><a href="../modules/Buffer.html">Buffer</a></li>
+	                            <li><a href="../modules/camera.html">camera</a></li>
+	                            <li><a href="../modules/Fog.html">Fog</a></li>
+	                            <li><a href="../modules/Font.html">Font</a></li>
+	                            <li><a href="../modules/Game.html">Game</a></li>
+	                            <li><a href="../modules/Light.html">Light</a></li>
+	                            <li><a href="../modules/materialLib.html">materialLib</a></li>
+	                            <li><a href="../modules/Math.html">Math</a></li>
+	                            <li><a href="../modules/Mesh.html">Mesh</a></li>
+	                            <li><a href="../modules/Physics.html">Physics</a></li>
+	                            <li><a href="../modules/Resource.html">Resource</a></li>
+	                            <li><a href="../modules/ShaderLibrary.html">ShaderLibrary</a></li>
+	                            <li><a href="../modules/Shadow.html">Shadow</a></li>
+	                            <li><a href="../modules/start.html">start</a></li>
+	                            <li><a href="../modules/utils.html">utils</a></li>
+	                    </ul>
+	                </div>
+	            </div>
+	        </div>
+	    </div>
+        </div>
+        <div class="span9">
+                <form id="options-form" class="form-inline pull-right">
+                    Show:
+                    <label for="api-show-inherited" class="checkbox">
+                        <input type="checkbox" id="api-show-inherited" checked>
+                        Inherited
+                    </label>
+            
+                    <label for="api-show-protected" class="checkbox">
+                        <input type="checkbox" id="api-show-protected">
+                        Protected
+                    </label>
+            
+                    <label for="api-show-private" class="checkbox">
+                        <input type="checkbox" id="api-show-private">
+                        Private
+                    </label>
+                    <label for="api-show-deprecated" class="checkbox">
+                        <input type="checkbox" id="api-show-deprecated">
+                        Deprecated
+                    </label>
+            
+                </form>
+            
+            <div class="apidocs">
+                <div id="docs-main">
+                    <div class="content">
+                        <div class="page-header">
+                            <h1>Quaternion <small>Class</small></h1>
+                        </div>
+                        
+                        <div class="well well-small">
+                        
+                        
+                        <!-- 
+                                <div class="foundat">
+                                    Defined in: <a href="../files/.._aexolgl-js_src_math.js.html#l564"><code>..&#x2F;aexolgl-js&#x2F;src&#x2F;math.js:564</code></a>
+                                </div>
+                         -->
+                        
+                                    Module: <a href="../modules/Math.html">Math</a>
+                        
+                        </div>
+                        
+                        
+                        <div class="well well-small">
+                            <p>Quaternion class</p>
+                        
+                        </div>
+                        
+                            <div class="constructor">
+                                <h2>Constructor</h2>
+                                <div id="method_Quaternion" class="method item">
+                                    <h3 class="name"><code>Quaternion</code></h3>
+                                
+                                        <span class="paren">()</span>
+                                
+                                
+                                
+                                
+                                
+                                
+                                
+                                
+                                    <div class="meta">
+                                                <p>
+                                <!-- 
+                                                Defined in
+                                 -->
+                                <!-- 
+                                        <a href="../files/.._aexolgl-js_src_math.js.html#l564"><code>..&#x2F;aexolgl-js&#x2F;src&#x2F;math.js:564</code></a>
+                                 -->
+                                        </p>
+                                
+                                
+                                
+                                    </div>
+                                
+                                    <div class="description">
+                                        
+                                    </div>
+                                
+                                
+                                
+                                </div>
+                            </div>
+                        
+                        <div>
+                            <ul class="nav nav-tabs">
+                                <li class="active"><a data-toggle="tab" href="#index">Index</a></li>
+                        
+                                    <li><a data-toggle="tab" href="#methods">Methods</a></li>
+                            </ul>
+                        
+                            <div class="tab-content">
+                                <div id="index" class="tab-pane active">
+                                    <h2 class="off-left">Item Index</h2>
+                        
+                                        <div class="index-section methods">
+                                            <h3>Methods</h3>
+                        
+                                            <ul class="index-list methods">
+                                                    <li class="index-item method">
+                                                        <a href="#" data-tabid="#methods" data-anchor="#method_add" data-tablink="add">add</a>
+                        
+                                                    </li>
+                                                    <li class="index-item method">
+                                                        <a href="#" data-tabid="#methods" data-anchor="#method_divide" data-tablink="divide">divide</a>
+                        
+                                                    </li>
+                                                    <li class="index-item method">
+                                                        <a href="#" data-tabid="#methods" data-anchor="#method_getMatrix
+                        Returns the quaternion matrix" data-tablink="getMatrix
+                        Returns the quaternion matrix">getMatrix
+                        Returns the quaternion matrix</a>
+                        
+                                                    </li>
+                                                    <li class="index-item method">
+                                                        <a href="#" data-tabid="#methods" data-anchor="#method_getQuaternionFromAxisAngle" data-tablink="getQuaternionFromAxisAngle">getQuaternionFromAxisAngle</a>
+                        
+                                                    </li>
+                                                    <li class="index-item method">
+                                                        <a href="#" data-tabid="#methods" data-anchor="#method_getQuaternionFromAxisAngle" data-tablink="getQuaternionFromAxisAngle">getQuaternionFromAxisAngle</a>
+                        
+                                                    </li>
+                                                    <li class="index-item method">
+                                                        <a href="#" data-tabid="#methods" data-anchor="#method_getQuaternionFromEulerAnglesRad" data-tablink="getQuaternionFromEulerAnglesRad">getQuaternionFromEulerAnglesRad</a>
+                        
+                                                    </li>
+                                                    <li class="index-item method">
+                                                        <a href="#" data-tabid="#methods" data-anchor="#method_getQuaternionFromEulerAnglesRad" data-tablink="getQuaternionFromEulerAnglesRad">getQuaternionFromEulerAnglesRad</a>
+                        
+                                                    </li>
+                                                    <li class="index-item method">
+                                                        <a href="#" data-tabid="#methods" data-anchor="#method_getQuaternionFromMatrix" data-tablink="getQuaternionFromMatrix">getQuaternionFromMatrix</a>
+                        
+                                                    </li>
+                                                    <li class="index-item method">
+                                                        <a href="#" data-tabid="#methods" data-anchor="#method_getQuaternionFromSpherical" data-tablink="getQuaternionFromSpherical">getQuaternionFromSpherical</a>
+                        
+                                                    </li>
+                                                    <li class="index-item method">
+                                                        <a href="#" data-tabid="#methods" data-anchor="#method_getRotationTo" data-tablink="getRotationTo">getRotationTo</a>
+                        
+                                                    </li>
+                                                    <li class="index-item method">
+                                                        <a href="#" data-tabid="#methods" data-anchor="#method_inverse
+                        Returns inverted quaternion" data-tablink="inverse
+                        Returns inverted quaternion">inverse
+                        Returns inverted quaternion</a>
+                        
+                                                    </li>
+                                                    <li class="index-item method">
+                                                        <a href="#" data-tabid="#methods" data-anchor="#method_magnitude
+                        Returns the length of quaternion" data-tablink="magnitude
+                        Returns the length of quaternion">magnitude
+                        Returns the length of quaternion</a>
+                        
+                                                    </li>
+                                                    <li class="index-item method">
+                                                        <a href="#" data-tabid="#methods" data-anchor="#method_magnitudeSquared
+                        Returns the squared length of quaternion" data-tablink="magnitudeSquared
+                        Returns the squared length of quaternion">magnitudeSquared
+                        Returns the squared length of quaternion</a>
+                        
+                                                    </li>
+                                                    <li class="index-item method">
+                                                        <a href="#" data-tabid="#methods" data-anchor="#method_multiply" data-tablink="multiply">multiply</a>
+                        
+                                                    </li>
+                                                    <li class="index-item method">
+                                                        <a href="#" data-tabid="#methods" data-anchor="#method_negative
+                        Returns negative quaternion" data-tablink="negative
+                        Returns negative quaternion">negative
+                        Returns negative quaternion</a>
+                        
+                                                    </li>
+                                                    <li class="index-item method">
+                                                        <a href="#" data-tabid="#methods" data-anchor="#method_rotateVector" data-tablink="rotateVector">rotateVector</a>
+                        
+                                                    </li>
+                                                    <li class="index-item method">
+                                                        <a href="#" data-tabid="#methods" data-anchor="#method_subtract" data-tablink="subtract">subtract</a>
+                        
+                                                    </li>
+                                            </ul>
+                                        </div>
+                        
+                        
+                        
+                                </div>
+                        
+                                    <div id="methods" class="tab-pane">
+                                        <h2 class="off-left">Methods</h2>
+                        
+                                            <div id="method_add" class="method item">
+                                                <h3 class="name"><code>add</code></h3>
+                                            
+                                                    <div class="args">
+                                                        <span class="paren">(</span><ul class="args-list inline commas">
+                                                            <li class="arg">
+                                                                    <code>q</code>
+                                                            </li>
+                                                        </ul><span class="paren">)</span>
+                                                    </div>
+                                            
+                                                    <span class="returns-inline">
+                                                        <span class="type"><a href="../classes/Quaternion.html" class="crosslink">Quaternion</a></span>
+                                                    </span>
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                                <div class="meta">
+                                                            <p>
+                                            <!-- 
+                                                            Defined in
+                                             -->
+                                            <!-- 
+                                                    <a href="../files/.._aexolgl-js_src_math.js.html#l642"><code>..&#x2F;aexolgl-js&#x2F;src&#x2F;math.js:642</code></a>
+                                             -->
+                                                    </p>
+                                            
+                                            
+                                            
+                                                </div>
+                                            
+                                                <div class="description">
+                                                    
+                                                </div>
+                                            
+                                                    <div class="params">
+                                                        <h4>Parameters:</h4>
+                                            
+                                                        <ul class="params-list">
+                                                            <li class="param">
+                                                                    <code class="param-name">q</code>
+                                                                    <span class="type"><a href="../classes/Quaternion.html" class="crosslink">Quaternion</a></span>
+                                            
+                                            
+                                                                <div class="param-description">
+                                                                    <p>Adds 2 quaternions</p>
+                                            
+                                                                </div>
+                                            
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                            
+                                                    <div class="returns">
+                                                        <h4>Returns:</h4>
+                                            
+                                                        <div class="returns-description">
+                                                                    <span class="type"><a href="../classes/Quaternion.html" class="crosslink">Quaternion</a></span>:
+                                                        </div>
+                                                    </div>
+                                            
+                                            </div>
+                                            <div id="method_divide" class="method item">
+                                                <h3 class="name"><code>divide</code></h3>
+                                            
+                                                    <div class="args">
+                                                        <span class="paren">(</span><ul class="args-list inline commas">
+                                                            <li class="arg">
+                                                                    <code>q</code>
+                                                            </li>
+                                                        </ul><span class="paren">)</span>
+                                                    </div>
+                                            
+                                                    <span class="returns-inline">
+                                                        <span class="type"><a href="../classes/Quaternion.html" class="crosslink">Quaternion</a></span>
+                                                    </span>
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                                <div class="meta">
+                                                            <p>
+                                            <!-- 
+                                                            Defined in
+                                             -->
+                                            <!-- 
+                                                    <a href="../files/.._aexolgl-js_src_math.js.html#l664"><code>..&#x2F;aexolgl-js&#x2F;src&#x2F;math.js:664</code></a>
+                                             -->
+                                                    </p>
+                                            
+                                            
+                                            
+                                                </div>
+                                            
+                                                <div class="description">
+                                                    
+                                                </div>
+                                            
+                                                    <div class="params">
+                                                        <h4>Parameters:</h4>
+                                            
+                                                        <ul class="params-list">
+                                                            <li class="param">
+                                                                    <code class="param-name">q</code>
+                                                                    <span class="type"><a href="../classes/Quaternion.html" class="crosslink">Quaternion</a></span>
+                                            
+                                            
+                                                                <div class="param-description">
+                                                                    <p>Divides 2 quaternions</p>
+                                            
+                                                                </div>
+                                            
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                            
+                                                    <div class="returns">
+                                                        <h4>Returns:</h4>
+                                            
+                                                        <div class="returns-description">
+                                                                    <span class="type"><a href="../classes/Quaternion.html" class="crosslink">Quaternion</a></span>:
+                                                        </div>
+                                                    </div>
+                                            
+                                            </div>
+                                            <div id="method_getMatrix
+                                            Returns the quaternion matrix" class="method item">
+                                                <h3 class="name"><code>getMatrix
+                                            Returns the quaternion matrix</code></h3>
+                                            
+                                                    <span class="paren">()</span>
+                                            
+                                                    <span class="returns-inline">
+                                                        <span class="type"><a href="../classes/Matrix.html" class="crosslink">Matrix</a></span>
+                                                    </span>
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                                <div class="meta">
+                                                            <p>
+                                            <!-- 
+                                                            Defined in
+                                             -->
+                                            <!-- 
+                                                    <a href="../files/.._aexolgl-js_src_math.js.html#l586"><code>..&#x2F;aexolgl-js&#x2F;src&#x2F;math.js:586</code></a>
+                                             -->
+                                                    </p>
+                                            
+                                            
+                                            
+                                                </div>
+                                            
+                                                <div class="description">
+                                                    
+                                                </div>
+                                            
+                                            
+                                                    <div class="returns">
+                                                        <h4>Returns:</h4>
+                                            
+                                                        <div class="returns-description">
+                                                                    <span class="type"><a href="../classes/Matrix.html" class="crosslink">Matrix</a></span>:
+                                                        </div>
+                                                    </div>
+                                            
+                                            </div>
+                                            <div id="method_getQuaternionFromAxisAngle" class="method item">
+                                                <h3 class="name"><code>getQuaternionFromAxisAngle</code></h3>
+                                            
+                                                    <div class="args">
+                                                        <span class="paren">(</span><ul class="args-list inline commas">
+                                                            <li class="arg">
+                                                                    <code>v</code>
+                                                            </li>
+                                                        </ul><span class="paren">)</span>
+                                                    </div>
+                                            
+                                                    <span class="returns-inline">
+                                                        <span class="type"><a href="../classes/Quaternion.html" class="crosslink">Quaternion</a></span>
+                                                    </span>
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                                <div class="meta">
+                                                            <p>
+                                            <!-- 
+                                                            Defined in
+                                             -->
+                                            <!-- 
+                                                    <a href="../files/.._aexolgl-js_src_math.js.html#l772"><code>..&#x2F;aexolgl-js&#x2F;src&#x2F;math.js:772</code></a>
+                                             -->
+                                                    </p>
+                                            
+                                            
+                                            
+                                                </div>
+                                            
+                                                <div class="description">
+                                                    
+                                                </div>
+                                            
+                                                    <div class="params">
+                                                        <h4>Parameters:</h4>
+                                            
+                                                        <ul class="params-list">
+                                                            <li class="param">
+                                                                    <code class="param-name">v</code>
+                                                                    <span class="type"><a href="../classes/Vector.html" class="crosslink">Vector</a></span>
+                                            
+                                            
+                                                                <div class="param-description">
+                                                                    <p>Create quaternion from axis angle in degrees</p>
+                                            
+                                                                </div>
+                                            
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                            
+                                                    <div class="returns">
+                                                        <h4>Returns:</h4>
+                                            
+                                                        <div class="returns-description">
+                                                                    <span class="type"><a href="../classes/Quaternion.html" class="crosslink">Quaternion</a></span>:
+                                                        </div>
+                                                    </div>
+                                            
+                                            </div>
+                                            <div id="method_getQuaternionFromAxisAngle" class="method item">
+                                                <h3 class="name"><code>getQuaternionFromAxisAngle</code></h3>
+                                            
+                                                    <div class="args">
+                                                        <span class="paren">(</span><ul class="args-list inline commas">
+                                                            <li class="arg">
+                                                                    <code>v</code>
+                                                            </li>
+                                                        </ul><span class="paren">)</span>
+                                                    </div>
+                                            
+                                                    <span class="returns-inline">
+                                                        <span class="type"><a href="../classes/Quaternion.html" class="crosslink">Quaternion</a></span>
+                                                    </span>
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                                <div class="meta">
+                                                            <p>
+                                            <!-- 
+                                                            Defined in
+                                             -->
+                                            <!-- 
+                                                    <a href="../files/.._aexolgl-js_src_math.js.html#l749"><code>..&#x2F;aexolgl-js&#x2F;src&#x2F;math.js:749</code></a>
+                                             -->
+                                                    </p>
+                                            
+                                            
+                                            
+                                                </div>
+                                            
+                                                <div class="description">
+                                                    
+                                                </div>
+                                            
+                                                    <div class="params">
+                                                        <h4>Parameters:</h4>
+                                            
+                                                        <ul class="params-list">
+                                                            <li class="param">
+                                                                    <code class="param-name">v</code>
+                                                                    <span class="type"><a href="../classes/Vector.html" class="crosslink">Vector</a></span>
+                                            
+                                            
+                                                                <div class="param-description">
+                                                                    <p>Create quaternion from axis angle in radians</p>
+                                            
+                                                                </div>
+                                            
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                            
+                                                    <div class="returns">
+                                                        <h4>Returns:</h4>
+                                            
+                                                        <div class="returns-description">
+                                                                    <span class="type"><a href="../classes/Quaternion.html" class="crosslink">Quaternion</a></span>:
+                                                        </div>
+                                                    </div>
+                                            
+                                            </div>
+                                            <div id="method_getQuaternionFromEulerAnglesRad" class="method item">
+                                                <h3 class="name"><code>getQuaternionFromEulerAnglesRad</code></h3>
+                                            
+                                                    <div class="args">
+                                                        <span class="paren">(</span><ul class="args-list inline commas">
+                                                            <li class="arg">
+                                                                    <code>x</code>
+                                                            </li>
+                                                            <li class="arg">
+                                                                    <code>y</code>
+                                                            </li>
+                                                            <li class="arg">
+                                                                    <code>z</code>
+                                                            </li>
+                                                        </ul><span class="paren">)</span>
+                                                    </div>
+                                            
+                                                    <span class="returns-inline">
+                                                        <span class="type"><a href="../classes/Quaternion.html" class="crosslink">Quaternion</a></span>
+                                                    </span>
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                                <div class="meta">
+                                                            <p>
+                                            <!-- 
+                                                            Defined in
+                                             -->
+                                            <!-- 
+                                                    <a href="../files/.._aexolgl-js_src_math.js.html#l738"><code>..&#x2F;aexolgl-js&#x2F;src&#x2F;math.js:738</code></a>
+                                             -->
+                                                    </p>
+                                            
+                                            
+                                            
+                                                </div>
+                                            
+                                                <div class="description">
+                                                    
+                                                </div>
+                                            
+                                                    <div class="params">
+                                                        <h4>Parameters:</h4>
+                                            
+                                                        <ul class="params-list">
+                                                            <li class="param">
+                                                                    <code class="param-name">x</code>
+                                                                    <span class="type">Float</span>
+                                            
+                                            
+                                                                <div class="param-description">
+                                                                     
+                                                                </div>
+                                            
+                                                            </li>
+                                                            <li class="param">
+                                                                    <code class="param-name">y</code>
+                                                                    <span class="type">Float</span>
+                                            
+                                            
+                                                                <div class="param-description">
+                                                                     
+                                                                </div>
+                                            
+                                                            </li>
+                                                            <li class="param">
+                                                                    <code class="param-name">z</code>
+                                                                    <span class="type">Float</span>
+                                            
+                                            
+                                                                <div class="param-description">
+                                                                    <p>Create quaternion from rotation XYZ in Degrees</p>
+                                            
+                                                                </div>
+                                            
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                            
+                                                    <div class="returns">
+                                                        <h4>Returns:</h4>
+                                            
+                                                        <div class="returns-description">
+                                                                    <span class="type"><a href="../classes/Quaternion.html" class="crosslink">Quaternion</a></span>:
+                                                        </div>
+                                                    </div>
+                                            
+                                            </div>
+                                            <div id="method_getQuaternionFromEulerAnglesRad" class="method item">
+                                                <h3 class="name"><code>getQuaternionFromEulerAnglesRad</code></h3>
+                                            
+                                                    <div class="args">
+                                                        <span class="paren">(</span><ul class="args-list inline commas">
+                                                            <li class="arg">
+                                                                    <code>x</code>
+                                                            </li>
+                                                            <li class="arg">
+                                                                    <code>y</code>
+                                                            </li>
+                                                            <li class="arg">
+                                                                    <code>z</code>
+                                                            </li>
+                                                        </ul><span class="paren">)</span>
+                                                    </div>
+                                            
+                                                    <span class="returns-inline">
+                                                        <span class="type"><a href="../classes/Quaternion.html" class="crosslink">Quaternion</a></span>
+                                                    </span>
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                                <div class="meta">
+                                                            <p>
+                                            <!-- 
+                                                            Defined in
+                                             -->
+                                            <!-- 
+                                                    <a href="../files/.._aexolgl-js_src_math.js.html#l714"><code>..&#x2F;aexolgl-js&#x2F;src&#x2F;math.js:714</code></a>
+                                             -->
+                                                    </p>
+                                            
+                                            
+                                            
+                                                </div>
+                                            
+                                                <div class="description">
+                                                    
+                                                </div>
+                                            
+                                                    <div class="params">
+                                                        <h4>Parameters:</h4>
+                                            
+                                                        <ul class="params-list">
+                                                            <li class="param">
+                                                                    <code class="param-name">x</code>
+                                                                    <span class="type">Float</span>
+                                            
+                                            
+                                                                <div class="param-description">
+                                                                     
+                                                                </div>
+                                            
+                                                            </li>
+                                                            <li class="param">
+                                                                    <code class="param-name">y</code>
+                                                                    <span class="type">Float</span>
+                                            
+                                            
+                                                                <div class="param-description">
+                                                                     
+                                                                </div>
+                                            
+                                                            </li>
+                                                            <li class="param">
+                                                                    <code class="param-name">z</code>
+                                                                    <span class="type">Float</span>
+                                            
+                                            
+                                                                <div class="param-description">
+                                                                    <p>Create quaternion from rotation XYZ in Radians</p>
+                                            
+                                                                </div>
+                                            
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                            
+                                                    <div class="returns">
+                                                        <h4>Returns:</h4>
+                                            
+                                                        <div class="returns-description">
+                                                                    <span class="type"><a href="../classes/Quaternion.html" class="crosslink">Quaternion</a></span>:
+                                                        </div>
+                                                    </div>
+                                            
+                                            </div>
+                                            <div id="method_getQuaternionFromMatrix" class="method item">
+                                                <h3 class="name"><code>getQuaternionFromMatrix</code></h3>
+                                            
+                                                    <div class="args">
+                                                        <span class="paren">(</span><ul class="args-list inline commas">
+                                                            <li class="arg">
+                                                                    <code>m</code>
+                                                            </li>
+                                                        </ul><span class="paren">)</span>
+                                                    </div>
+                                            
+                                                    <span class="returns-inline">
+                                                        <span class="type"><a href="../classes/Quaternion.html" class="crosslink">Quaternion</a></span>
+                                                    </span>
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                                <div class="meta">
+                                                            <p>
+                                            <!-- 
+                                                            Defined in
+                                             -->
+                                            <!-- 
+                                                    <a href="../files/.._aexolgl-js_src_math.js.html#l781"><code>..&#x2F;aexolgl-js&#x2F;src&#x2F;math.js:781</code></a>
+                                             -->
+                                                    </p>
+                                            
+                                            
+                                            
+                                                </div>
+                                            
+                                                <div class="description">
+                                                    
+                                                </div>
+                                            
+                                                    <div class="params">
+                                                        <h4>Parameters:</h4>
+                                            
+                                                        <ul class="params-list">
+                                                            <li class="param">
+                                                                    <code class="param-name">m</code>
+                                                                    <span class="type"><a href="../classes/Matrix.html" class="crosslink">Matrix</a></span>
+                                            
+                                            
+                                                                <div class="param-description">
+                                                                    <p>Create quaternion from Matrix</p>
+                                            
+                                                                </div>
+                                            
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                            
+                                                    <div class="returns">
+                                                        <h4>Returns:</h4>
+                                            
+                                                        <div class="returns-description">
+                                                                    <span class="type"><a href="../classes/Quaternion.html" class="crosslink">Quaternion</a></span>:
+                                                        </div>
+                                                    </div>
+                                            
+                                            </div>
+                                            <div id="method_getQuaternionFromSpherical" class="method item">
+                                                <h3 class="name"><code>getQuaternionFromSpherical</code></h3>
+                                            
+                                                    <div class="args">
+                                                        <span class="paren">(</span><ul class="args-list inline commas">
+                                                            <li class="arg">
+                                                                    <code>latitude</code>
+                                                            </li>
+                                                            <li class="arg">
+                                                                    <code>longtitude</code>
+                                                            </li>
+                                                            <li class="arg">
+                                                                    <code>angle</code>
+                                                            </li>
+                                                        </ul><span class="paren">)</span>
+                                                    </div>
+                                            
+                                                    <span class="returns-inline">
+                                                        <span class="type"><a href="../classes/Quaternion.html" class="crosslink">Quaternion</a></span>
+                                                    </span>
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                                <div class="meta">
+                                                            <p>
+                                            <!-- 
+                                                            Defined in
+                                             -->
+                                            <!-- 
+                                                    <a href="../files/.._aexolgl-js_src_math.js.html#l818"><code>..&#x2F;aexolgl-js&#x2F;src&#x2F;math.js:818</code></a>
+                                             -->
+                                                    </p>
+                                            
+                                            
+                                            
+                                                </div>
+                                            
+                                                <div class="description">
+                                                    
+                                                </div>
+                                            
+                                                    <div class="params">
+                                                        <h4>Parameters:</h4>
+                                            
+                                                        <ul class="params-list">
+                                                            <li class="param">
+                                                                    <code class="param-name">latitude</code>
+                                                                    <span class="type">Float</span>
+                                            
+                                            
+                                                                <div class="param-description">
+                                                                     
+                                                                </div>
+                                            
+                                                            </li>
+                                                            <li class="param">
+                                                                    <code class="param-name">longtitude</code>
+                                                                    <span class="type">Float</span>
+                                            
+                                            
+                                                                <div class="param-description">
+                                                                     
+                                                                </div>
+                                            
+                                                            </li>
+                                                            <li class="param">
+                                                                    <code class="param-name">angle</code>
+                                                                    <span class="type">Float</span>
+                                            
+                                            
+                                                                <div class="param-description">
+                                                                    <p>Create quaternion from spherical coordinates</p>
+                                            
+                                                                </div>
+                                            
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                            
+                                                    <div class="returns">
+                                                        <h4>Returns:</h4>
+                                            
+                                                        <div class="returns-description">
+                                                                    <span class="type"><a href="../classes/Quaternion.html" class="crosslink">Quaternion</a></span>:
+                                                        </div>
+                                                    </div>
+                                            
+                                            </div>
+                                            <div id="method_getRotationTo" class="method item">
+                                                <h3 class="name"><code>getRotationTo</code></h3>
+                                            
+                                                    <div class="args">
+                                                        <span class="paren">(</span><ul class="args-list inline commas">
+                                                            <li class="arg">
+                                                                    <code>fromV</code>
+                                                            </li>
+                                                            <li class="arg">
+                                                                    <code>toV</code>
+                                                            </li>
+                                                        </ul><span class="paren">)</span>
+                                                    </div>
+                                            
+                                                    <span class="returns-inline">
+                                                        <span class="type"><a href="../classes/Quaternion.html" class="crosslink">Quaternion</a></span>
+                                                    </span>
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                                <div class="meta">
+                                                            <p>
+                                            <!-- 
+                                                            Defined in
+                                             -->
+                                            <!-- 
+                                                    <a href="../files/.._aexolgl-js_src_math.js.html#l842"><code>..&#x2F;aexolgl-js&#x2F;src&#x2F;math.js:842</code></a>
+                                             -->
+                                                    </p>
+                                            
+                                            
+                                            
+                                                </div>
+                                            
+                                                <div class="description">
+                                                    
+                                                </div>
+                                            
+                                                    <div class="params">
+                                                        <h4>Parameters:</h4>
+                                            
+                                                        <ul class="params-list">
+                                                            <li class="param">
+                                                                    <code class="param-name">fromV</code>
+                                                                    <span class="type"><a href="../classes/Vector.html" class="crosslink">Vector</a></span>
+                                            
+                                            
+                                                                <div class="param-description">
+                                                                     
+                                                                </div>
+                                            
+                                                            </li>
+                                                            <li class="param">
+                                                                    <code class="param-name">toV</code>
+                                                                    <span class="type"><a href="../classes/Vector.html" class="crosslink">Vector</a></span>
+                                            
+                                            
+                                                                <div class="param-description">
+                                                                    <p>get Quaternion from rotation from one Vector to another.</p>
+                                            
+                                                                </div>
+                                            
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                            
+                                                    <div class="returns">
+                                                        <h4>Returns:</h4>
+                                            
+                                                        <div class="returns-description">
+                                                                    <span class="type"><a href="../classes/Quaternion.html" class="crosslink">Quaternion</a></span>:
+                                                        </div>
+                                                    </div>
+                                            
+                                            </div>
+                                            <div id="method_inverse
+                                            Returns inverted quaternion" class="method item">
+                                                <h3 class="name"><code>inverse
+                                            Returns inverted quaternion</code></h3>
+                                            
+                                                    <span class="paren">()</span>
+                                            
+                                                    <span class="returns-inline">
+                                                        <span class="type"><a href="../classes/Quaternion.html" class="crosslink">Quaternion</a></span>
+                                                    </span>
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                                <div class="meta">
+                                                            <p>
+                                            <!-- 
+                                                            Defined in
+                                             -->
+                                            <!-- 
+                                                    <a href="../files/.._aexolgl-js_src_math.js.html#l693"><code>..&#x2F;aexolgl-js&#x2F;src&#x2F;math.js:693</code></a>
+                                             -->
+                                                    </p>
+                                            
+                                            
+                                            
+                                                </div>
+                                            
+                                                <div class="description">
+                                                    
+                                                </div>
+                                            
+                                            
+                                                    <div class="returns">
+                                                        <h4>Returns:</h4>
+                                            
+                                                        <div class="returns-description">
+                                                                    <span class="type"><a href="../classes/Quaternion.html" class="crosslink">Quaternion</a></span>:
+                                                        </div>
+                                                    </div>
+                                            
+                                            </div>
+                                            <div id="method_magnitude
+                                            Returns the length of quaternion" class="method item">
+                                                <h3 class="name"><code>magnitude
+                                            Returns the length of quaternion</code></h3>
+                                            
+                                                    <span class="paren">()</span>
+                                            
+                                                    <span class="returns-inline">
+                                                        <span class="type">Float</span>
+                                                    </span>
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                                <div class="meta">
+                                                            <p>
+                                            <!-- 
+                                                            Defined in
+                                             -->
+                                            <!-- 
+                                                    <a href="../files/.._aexolgl-js_src_math.js.html#l685"><code>..&#x2F;aexolgl-js&#x2F;src&#x2F;math.js:685</code></a>
+                                             -->
+                                                    </p>
+                                            
+                                            
+                                            
+                                                </div>
+                                            
+                                                <div class="description">
+                                                    
+                                                </div>
+                                            
+                                            
+                                                    <div class="returns">
+                                                        <h4>Returns:</h4>
+                                            
+                                                        <div class="returns-description">
+                                                                    <span class="type">Float</span>:
+                                                        </div>
+                                                    </div>
+                                            
+                                            </div>
+                                            <div id="method_magnitudeSquared
+                                            Returns the squared length of quaternion" class="method item">
+                                                <h3 class="name"><code>magnitudeSquared
+                                            Returns the squared length of quaternion</code></h3>
+                                            
+                                                    <span class="paren">()</span>
+                                            
+                                                    <span class="returns-inline">
+                                                        <span class="type">Float</span>
+                                                    </span>
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                                <div class="meta">
+                                                            <p>
+                                            <!-- 
+                                                            Defined in
+                                             -->
+                                            <!-- 
+                                                    <a href="../files/.._aexolgl-js_src_math.js.html#l677"><code>..&#x2F;aexolgl-js&#x2F;src&#x2F;math.js:677</code></a>
+                                             -->
+                                                    </p>
+                                            
+                                            
+                                            
+                                                </div>
+                                            
+                                                <div class="description">
+                                                    
+                                                </div>
+                                            
+                                            
+                                                    <div class="returns">
+                                                        <h4>Returns:</h4>
+                                            
+                                                        <div class="returns-description">
+                                                                    <span class="type">Float</span>:
+                                                        </div>
+                                                    </div>
+                                            
+                                            </div>
+                                            <div id="method_multiply" class="method item">
+                                                <h3 class="name"><code>multiply</code></h3>
+                                            
+                                                    <div class="args">
+                                                        <span class="paren">(</span><ul class="args-list inline commas">
+                                                            <li class="arg">
+                                                                    <code>q</code>
+                                                            </li>
+                                                        </ul><span class="paren">)</span>
+                                                    </div>
+                                            
+                                                    <span class="returns-inline">
+                                                        <span class="type"><a href="../classes/Quaternion.html" class="crosslink">Quaternion</a></span>
+                                                    </span>
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                                <div class="meta">
+                                                            <p>
+                                            <!-- 
+                                                            Defined in
+                                             -->
+                                            <!-- 
+                                                    <a href="../files/.._aexolgl-js_src_math.js.html#l651"><code>..&#x2F;aexolgl-js&#x2F;src&#x2F;math.js:651</code></a>
+                                             -->
+                                                    </p>
+                                            
+                                            
+                                            
+                                                </div>
+                                            
+                                                <div class="description">
+                                                    
+                                                </div>
+                                            
+                                                    <div class="params">
+                                                        <h4>Parameters:</h4>
+                                            
+                                                        <ul class="params-list">
+                                                            <li class="param">
+                                                                    <code class="param-name">q</code>
+                                                                    <span class="type"><a href="../classes/Quaternion.html" class="crosslink">Quaternion</a></span>
+                                            
+                                            
+                                                                <div class="param-description">
+                                                                    <p>Multiplies 2 quaternions</p>
+                                            
+                                                                </div>
+                                            
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                            
+                                                    <div class="returns">
+                                                        <h4>Returns:</h4>
+                                            
+                                                        <div class="returns-description">
+                                                                    <span class="type"><a href="../classes/Quaternion.html" class="crosslink">Quaternion</a></span>:
+                                                        </div>
+                                                    </div>
+                                            
+                                            </div>
+                                            <div id="method_negative
+                                            Returns negative quaternion" class="method item">
+                                                <h3 class="name"><code>negative
+                                            Returns negative quaternion</code></h3>
+                                            
+                                                    <span class="paren">()</span>
+                                            
+                                                    <span class="returns-inline">
+                                                        <span class="type"><a href="../classes/Quaternion.html" class="crosslink">Quaternion</a></span>
+                                                    </span>
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                                <div class="meta">
+                                                            <p>
+                                            <!-- 
+                                                            Defined in
+                                             -->
+                                            <!-- 
+                                                    <a href="../files/.._aexolgl-js_src_math.js.html#l625"><code>..&#x2F;aexolgl-js&#x2F;src&#x2F;math.js:625</code></a>
+                                             -->
+                                                    </p>
+                                            
+                                            
+                                            
+                                                </div>
+                                            
+                                                <div class="description">
+                                                    
+                                                </div>
+                                            
+                                            
+                                                    <div class="returns">
+                                                        <h4>Returns:</h4>
+                                            
+                                                        <div class="returns-description">
+                                                                    <span class="type"><a href="../classes/Quaternion.html" class="crosslink">Quaternion</a></span>:
+                                                        </div>
+                                                    </div>
+                                            
+                                            </div>
+                                            <div id="method_rotateVector" class="method item">
+                                                <h3 class="name"><code>rotateVector</code></h3>
+                                            
+                                                    <div class="args">
+                                                        <span class="paren">(</span><ul class="args-list inline commas">
+                                                            <li class="arg">
+                                                                    <code>v</code>
+                                                            </li>
+                                                        </ul><span class="paren">)</span>
+                                                    </div>
+                                            
+                                                    <span class="returns-inline">
+                                                        <span class="type"><a href="../classes/Vector.html" class="crosslink">Vector</a></span>
+                                                    </span>
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                                <div class="meta">
+                                                            <p>
+                                            <!-- 
+                                                            Defined in
+                                             -->
+                                            <!-- 
+                                                    <a href="../files/.._aexolgl-js_src_math.js.html#l702"><code>..&#x2F;aexolgl-js&#x2F;src&#x2F;math.js:702</code></a>
+                                             -->
+                                                    </p>
+                                            
+                                            
+                                            
+                                                </div>
+                                            
+                                                <div class="description">
+                                                    
+                                                </div>
+                                            
+                                                    <div class="params">
+                                                        <h4>Parameters:</h4>
+                                            
+                                                        <ul class="params-list">
+                                                            <li class="param">
+                                                                    <code class="param-name">v</code>
+                                                                    <span class="type"><a href="../classes/Vector.html" class="crosslink">Vector</a></span>
+                                            
+                                            
+                                                                <div class="param-description">
+                                                                    <p>Rotate Vector with quaternion</p>
+                                            
+                                                                </div>
+                                            
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                            
+                                                    <div class="returns">
+                                                        <h4>Returns:</h4>
+                                            
+                                                        <div class="returns-description">
+                                                                    <span class="type"><a href="../classes/Vector.html" class="crosslink">Vector</a></span>:
+                                                        </div>
+                                                    </div>
+                                            
+                                            </div>
+                                            <div id="method_subtract" class="method item">
+                                                <h3 class="name"><code>subtract</code></h3>
+                                            
+                                                    <div class="args">
+                                                        <span class="paren">(</span><ul class="args-list inline commas">
+                                                            <li class="arg">
+                                                                    <code>q</code>
+                                                            </li>
+                                                        </ul><span class="paren">)</span>
+                                                    </div>
+                                            
+                                                    <span class="returns-inline">
+                                                        <span class="type"><a href="../classes/Quaternion.html" class="crosslink">Quaternion</a></span>
+                                                    </span>
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                                <div class="meta">
+                                                            <p>
+                                            <!-- 
+                                                            Defined in
+                                             -->
+                                            <!-- 
+                                                    <a href="../files/.._aexolgl-js_src_math.js.html#l633"><code>..&#x2F;aexolgl-js&#x2F;src&#x2F;math.js:633</code></a>
+                                             -->
+                                                    </p>
+                                            
+                                            
+                                            
+                                                </div>
+                                            
+                                                <div class="description">
+                                                    
+                                                </div>
+                                            
+                                                    <div class="params">
+                                                        <h4>Parameters:</h4>
+                                            
+                                                        <ul class="params-list">
+                                                            <li class="param">
+                                                                    <code class="param-name">q</code>
+                                                                    <span class="type"><a href="../classes/Quaternion.html" class="crosslink">Quaternion</a></span>
+                                            
+                                            
+                                                                <div class="param-description">
+                                                                    <p>Subtracts one quaternion from another</p>
+                                            
+                                                                </div>
+                                            
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                            
+                                                    <div class="returns">
+                                                        <h4>Returns:</h4>
+                                            
+                                                        <div class="returns-description">
+                                                                    <span class="type"><a href="../classes/Quaternion.html" class="crosslink">Quaternion</a></span>:
+                                                        </div>
+                                                    </div>
+                                            
+                                            </div>
+                                    </div>
+                        
+                        
+                        
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../assets/vendor/jquery/jquery-1.8.2.min.js"></script>
+<script src="../assets/vendor/bootstrap/js/bootstrap.js"></script>
+<script src="../assets/vendor/prettify/prettify-min.js"></script>
+<script src="../assets/js/yuidoc-bootstrap.js"></script>
+<script>prettyPrint();</script>
+</body>
+</html>

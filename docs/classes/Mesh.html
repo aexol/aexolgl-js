@@ -1,0 +1,2259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Mesh - aexolGL API</title>
+    <link rel="stylesheet" href="http://yui.yahooapis.com/3.7.0/build/cssgrids/cssgrids-min.css">
+    <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
+    <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
+    <link rel="stylesheet" href="../assets/css/custom.css">
+    <link rel="stylesheet" href="../assets/vendor/bootstrap/css/bootstrap.css">
+    <link rel="shortcut icon" type="image/png" href="../assets/favicon.png">
+</head>
+<body class="yui3-skin-sam">
+<div class="container-fluid" style="padding:0;">
+	<div id="topbar" class="row visible-md visible-lg" style="margin:0;">
+        <div class="span1"></div>
+        <div class="span6 docs">
+            <img src="http://gl.aexol.com/static/img/aexol_gl_logo.png"> Docs for Version: <b>1.0a</b>
+        </div>
+        <div class="span5"></div>
+    </div>
+    <div class="row" style="padding:2em;">
+        <div class="span3">
+	    <div>
+	        <h3>APIs</h3>
+	        <div id="sidebar">
+	            <ul id="main-nav" class="nav nav-tabs" style="margin-bottom:0;">
+	                <li class="active"><a href="#classes" data-toggle="tab">Classes</a></li>
+	                <li><a href="#modules" data-toggle="tab">Modules</a></li>
+	            </ul>
+	    
+	            <div id="api-tabview-filter">
+	                <input type="search" placeholder="Type to filter APIs">
+	            </div>
+	    
+	            <div class="tab-content" style="border: 1px solid #DDD; border-top:0;">
+	                <div class="tab-pane active" id="classes">
+	                    <ul id="api-classes" class="nav nav-list">
+	                            <li><a href="../classes/Aex.html">Aex</a></li>
+	                            <li><a href="../classes/aexolGL.html">aexolGL</a></li>
+	                            <li><a href="../classes/Animation.html">Animation</a></li>
+	                            <li><a href="../classes/Buffer.html">Buffer</a></li>
+	                            <li><a href="../classes/Camera.html">Camera</a></li>
+	                            <li><a href="../classes/Fog.html">Fog</a></li>
+	                            <li><a href="../classes/Frustum.html">Frustum</a></li>
+	                            <li><a href="../classes/GameObject.html">GameObject</a></li>
+	                            <li><a href="../classes/Indexer.html">Indexer</a></li>
+	                            <li><a href="../classes/Label.html">Label</a></li>
+	                            <li><a href="../classes/Light.html">Light</a></li>
+	                            <li><a href="../classes/Material.html">Material</a></li>
+	                            <li><a href="../classes/Matrix.html">Matrix</a></li>
+	                            <li><a href="../classes/Matrix3.html">Matrix3</a></li>
+	                            <li><a href="../classes/Mesh.html">Mesh</a></li>
+	                            <li><a href="../classes/MObject.html">MObject</a></li>
+	                            <li><a href="../classes/Pivot.html">Pivot</a></li>
+	                            <li><a href="../classes/Quaternion.html">Quaternion</a></li>
+	                            <li><a href="../classes/Resource.html">Resource</a></li>
+	                            <li><a href="../classes/Scene.html">Scene</a></li>
+	                            <li><a href="../classes/Shader.html">Shader</a></li>
+	                            <li><a href="../classes/Shadow.html">Shadow</a></li>
+	                            <li><a href="../classes/TextNode.html">TextNode</a></li>
+	                            <li><a href="../classes/Texture.html">Texture</a></li>
+	                            <li><a href="../classes/Vector.html">Vector</a></li>
+	                            <li><a href="../classes/Vector4.html">Vector4</a></li>
+	                            <li><a href="../classes/ZBuffer.html">ZBuffer</a></li>
+	                    </ul>
+	                </div>
+	    
+	                <div class="tab-pane" id="modules">
+	                    <ul id="api-modules" class="nav nav-list">
+	                            <li><a href="../modules/aexolGL.html">aexolGL</a></li>
+	                            <li><a href="../modules/Animation.html">Animation</a></li>
+	                            <li><a href="../modules/Buffer.html">Buffer</a></li>
+	                            <li><a href="../modules/camera.html">camera</a></li>
+	                            <li><a href="../modules/Fog.html">Fog</a></li>
+	                            <li><a href="../modules/Font.html">Font</a></li>
+	                            <li><a href="../modules/Game.html">Game</a></li>
+	                            <li><a href="../modules/Light.html">Light</a></li>
+	                            <li><a href="../modules/materialLib.html">materialLib</a></li>
+	                            <li><a href="../modules/Math.html">Math</a></li>
+	                            <li><a href="../modules/Mesh.html">Mesh</a></li>
+	                            <li><a href="../modules/Physics.html">Physics</a></li>
+	                            <li><a href="../modules/Resource.html">Resource</a></li>
+	                            <li><a href="../modules/ShaderLibrary.html">ShaderLibrary</a></li>
+	                            <li><a href="../modules/Shadow.html">Shadow</a></li>
+	                            <li><a href="../modules/start.html">start</a></li>
+	                            <li><a href="../modules/utils.html">utils</a></li>
+	                    </ul>
+	                </div>
+	            </div>
+	        </div>
+	    </div>
+        </div>
+        <div class="span9">
+                <form id="options-form" class="form-inline pull-right">
+                    Show:
+                    <label for="api-show-inherited" class="checkbox">
+                        <input type="checkbox" id="api-show-inherited" checked>
+                        Inherited
+                    </label>
+            
+                    <label for="api-show-protected" class="checkbox">
+                        <input type="checkbox" id="api-show-protected">
+                        Protected
+                    </label>
+            
+                    <label for="api-show-private" class="checkbox">
+                        <input type="checkbox" id="api-show-private">
+                        Private
+                    </label>
+                    <label for="api-show-deprecated" class="checkbox">
+                        <input type="checkbox" id="api-show-deprecated">
+                        Deprecated
+                    </label>
+            
+                </form>
+            
+            <div class="apidocs">
+                <div id="docs-main">
+                    <div class="content">
+                        <div class="page-header">
+                            <h1>Mesh <small>Class</small></h1>
+                        </div>
+                        
+                        <div class="well well-small">
+                        
+                                <div class="extends">
+                                    Extends <a href="../classes/MObject.html" class="crosslink">MObject</a>
+                                </div>
+                        
+                        <!-- 
+                                <div class="foundat">
+                                    Defined in: <a href="../files/.._aexolgl-js_src_mesh.js.html#l4"><code>..&#x2F;aexolgl-js&#x2F;src&#x2F;mesh.js:4</code></a>
+                                </div>
+                         -->
+                        
+                                    Module: <a href="../modules/Mesh.html">Mesh</a>
+                        
+                        </div>
+                        
+                        
+                        <div class="well well-small">
+                            <p>Mesh class contains buffers for 3d objects</p>
+                        
+                        </div>
+                        
+                            <div class="constructor">
+                                <h2>Constructor</h2>
+                                <div id="method_Mesh" class="method item">
+                                    <h3 class="name"><code>Mesh</code></h3>
+                                
+                                        <div class="args">
+                                            <span class="paren">(</span><ul class="args-list inline commas">
+                                                <li class="arg">
+                                                        <code class="optional">[options]</code>
+                                                </li>
+                                            </ul><span class="paren">)</span>
+                                        </div>
+                                
+                                        <span class="returns-inline">
+                                            <span class="type"><a href="../classes/Mesh.html" class="crosslink">Mesh</a></span>
+                                        </span>
+                                
+                                
+                                
+                                
+                                
+                                
+                                
+                                    <div class="meta">
+                                                <p>
+                                <!-- 
+                                                Defined in
+                                 -->
+                                <!-- 
+                                        <a href="../files/.._aexolgl-js_src_mesh.js.html#l4"><code>..&#x2F;aexolgl-js&#x2F;src&#x2F;mesh.js:4</code></a>
+                                 -->
+                                        </p>
+                                
+                                
+                                
+                                    </div>
+                                
+                                    <div class="description">
+                                        
+                                    </div>
+                                
+                                        <div class="params">
+                                            <h4>Parameters:</h4>
+                                
+                                            <ul class="params-list">
+                                                <li class="param">
+                                                        <code class="param-name optional">[options]</code>
+                                                        <span class="type">Object</span>
+                                                        <span class="flag optional" title="This parameter is optional.">optional</span>
+                                
+                                
+                                                    <div class="param-description">
+                                                        <p>{Dict} Dictionary of options when creating Aex object<br></p>
+                                
+                                                    </div>
+                                
+                                                </li>
+                                            </ul>
+                                        </div>
+                                
+                                        <div class="returns">
+                                            <h4>Returns:</h4>
+                                
+                                            <div class="returns-description">
+                                                        <span class="type"><a href="../classes/Mesh.html" class="crosslink">Mesh</a></span>:
+                                                    <p>Returns Mesh Object</p>
+                                
+                                            </div>
+                                        </div>
+                                
+                                        <div class="example">
+                                            <h4>Example:</h4>
+                                
+                                            <div class="example-content">
+                                                <pre class="code prettyprint"><code>//Draw a simple triangle
+                                var mesh = new Mesh()
+                                mesh.vertices = [[0,0,0],[1,1,0],[0,0,-1]]
+                                mesh.coords = [[0.0,0.0],[1.0,1.0],[0.0,0.0]]
+                                mesh.traingles = [[0,1,2]]
+                                mesh.computeNormals()
+                                mesh.compile()</code></pre>
+                                
+                                            </div>
+                                        </div>
+                                </div>
+                            </div>
+                        
+                        <div>
+                            <ul class="nav nav-tabs">
+                                <li class="active"><a data-toggle="tab" href="#index">Index</a></li>
+                        
+                                    <li><a data-toggle="tab" href="#methods">Methods</a></li>
+                            </ul>
+                        
+                            <div class="tab-content">
+                                <div id="index" class="tab-pane active">
+                                    <h2 class="off-left">Item Index</h2>
+                        
+                                        <div class="index-section methods">
+                                            <h3>Methods</h3>
+                        
+                                            <ul class="index-list methods extends">
+                                                    <li class="index-item method inherited">
+                                                        <a href="#" data-tabid="#methods" data-anchor="#method_addChilds" data-tablink="addChilds">addChilds</a>
+                        
+                                                    </li>
+                                                    <li class="index-item method">
+                                                        <a href="#" data-tabid="#methods" data-anchor="#method_addIndexBuffer" data-tablink="addIndexBuffer">addIndexBuffer</a>
+                        
+                                                    </li>
+                                                    <li class="index-item method">
+                                                        <a href="#" data-tabid="#methods" data-anchor="#method_addVertexBuffer" data-tablink="addVertexBuffer">addVertexBuffer</a>
+                        
+                                                    </li>
+                                                    <li class="index-item method">
+                                                        <a href="#" data-tabid="#methods" data-anchor="#method_checkRepeat" data-tablink="checkRepeat">checkRepeat</a>
+                        
+                                                    </li>
+                                                    <li class="index-item method">
+                                                        <a href="#" data-tabid="#methods" data-anchor="#method_combine" data-tablink="combine">combine</a>
+                        
+                                                    </li>
+                                                    <li class="index-item method">
+                                                        <a href="#" data-tabid="#methods" data-anchor="#method_compile" data-tablink="compile">compile</a>
+                        
+                                                    </li>
+                                                    <li class="index-item method">
+                                                        <a href="#" data-tabid="#methods" data-anchor="#method_computeNormals" data-tablink="computeNormals">computeNormals</a>
+                        
+                                                    </li>
+                                                    <li class="index-item method">
+                                                        <a href="#" data-tabid="#methods" data-anchor="#method_computeWireframe" data-tablink="computeWireframe">computeWireframe</a>
+                        
+                                                    </li>
+                                                    <li class="index-item method">
+                                                        <a href="#" data-tabid="#methods" data-anchor="#method_cube" data-tablink="cube">cube</a>
+                        
+                                                            <span class="flag static">static</span>
+                                                    </li>
+                                                    <li class="index-item method">
+                                                        <a href="#" data-tabid="#methods" data-anchor="#method_draw" data-tablink="draw">draw</a>
+                        
+                                                    </li>
+                                                    <li class="index-item method">
+                                                        <a href="#" data-tabid="#methods" data-anchor="#method_getAABB" data-tablink="getAABB">getAABB</a>
+                        
+                                                    </li>
+                                                    <li class="index-item method">
+                                                        <a href="#" data-tabid="#methods" data-anchor="#method_getBoundingSphere" data-tablink="getBoundingSphere">getBoundingSphere</a>
+                        
+                                                    </li>
+                                                    <li class="index-item method">
+                                                        <a href="#" data-tabid="#methods" data-anchor="#method_getCenter" data-tablink="getCenter">getCenter</a>
+                        
+                                                    </li>
+                                                    <li class="index-item method">
+                                                        <a href="#" data-tabid="#methods" data-anchor="#method_getVertex" data-tablink="getVertex">getVertex</a>
+                        
+                                                    </li>
+                                                    <li class="index-item method">
+                                                        <a href="#" data-tabid="#methods" data-anchor="#method_getVertex" data-tablink="getVertex">getVertex</a>
+                        
+                                                    </li>
+                                                    <li class="index-item method">
+                                                        <a href="#" data-tabid="#methods" data-anchor="#method_load" data-tablink="load">load</a>
+                        
+                                                    </li>
+                                                    <li class="index-item method">
+                                                        <a href="#" data-tabid="#methods" data-anchor="#method_load" data-tablink="load">load</a>
+                        
+                                                    </li>
+                                                    <li class="index-item method">
+                                                        <a href="#" data-tabid="#methods" data-anchor="#method_load" data-tablink="load">load</a>
+                        
+                                                    </li>
+                                                    <li class="index-item method">
+                                                        <a href="#" data-tabid="#methods" data-anchor="#method_move" data-tablink="move">move</a>
+                        
+                                                    </li>
+                                                    <li class="index-item method">
+                                                        <a href="#" data-tabid="#methods" data-anchor="#method_obj" data-tablink="obj">obj</a>
+                        
+                                                    </li>
+                                                    <li class="index-item method">
+                                                        <a href="#" data-tabid="#methods" data-anchor="#method_plane" data-tablink="plane">plane</a>
+                        
+                                                            <span class="flag static">static</span>
+                                                    </li>
+                                                    <li class="index-item method inherited">
+                                                        <a href="#" data-tabid="#methods" data-anchor="#method_remove" data-tablink="remove">remove</a>
+                        
+                                                    </li>
+                                                    <li class="index-item method">
+                                                        <a href="#" data-tabid="#methods" data-anchor="#method_rotate" data-tablink="rotate">rotate</a>
+                        
+                                                    </li>
+                                                    <li class="index-item method">
+                                                        <a href="#" data-tabid="#methods" data-anchor="#method_scale" data-tablink="scale">scale</a>
+                        
+                                                    </li>
+                                                    <li class="index-item method">
+                                                        <a href="#" data-tabid="#methods" data-anchor="#method_scaleUniform" data-tablink="scaleUniform">scaleUniform</a>
+                        
+                                                    </li>
+                                                    <li class="index-item method inherited">
+                                                        <a href="#" data-tabid="#methods" data-anchor="#method_setParent" data-tablink="setParent">setParent</a>
+                        
+                                                    </li>
+                                                    <li class="index-item method">
+                                                        <a href="#" data-tabid="#methods" data-anchor="#method_setVertex" data-tablink="setVertex">setVertex</a>
+                        
+                                                    </li>
+                                                    <li class="index-item method">
+                                                        <a href="#" data-tabid="#methods" data-anchor="#method_sphere" data-tablink="sphere">sphere</a>
+                        
+                                                            <span class="flag static">static</span>
+                                                    </li>
+                                                    <li class="index-item method">
+                                                        <a href="#" data-tabid="#methods" data-anchor="#method_transform" data-tablink="transform">transform</a>
+                        
+                                                    </li>
+                                            </ul>
+                                        </div>
+                        
+                        
+                        
+                                </div>
+                        
+                                    <div id="methods" class="tab-pane">
+                                        <h2 class="off-left">Methods</h2>
+                        
+                                            <div id="method_addChilds" class="method item inherited">
+                                                <h3 class="name"><code>addChilds</code></h3>
+                                            
+                                                    <div class="args">
+                                                        <span class="paren">(</span><ul class="args-list inline commas">
+                                                            <li class="arg">
+                                                                    <code>mobject</code>
+                                                            </li>
+                                                        </ul><span class="paren">)</span>
+                                                    </div>
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                                <div class="meta">
+                                                            <p>Inherited from
+                                                            <a href="../classes/MObject.html#method_addChilds">MObject</a>:
+                                            <!-- 
+                                                    <a href="../files/.._aexolgl-js_src_aexolGL.js.html#l16"><code>..&#x2F;aexolgl-js&#x2F;src&#x2F;aexolGL.js:16</code></a>
+                                             -->
+                                                    </p>
+                                            
+                                            
+                                            
+                                                </div>
+                                            
+                                                <div class="description">
+                                                    <p>Sets parent on MObject and unbinds current parent in RenderTree</p>
+                                            
+                                                </div>
+                                            
+                                                    <div class="params">
+                                                        <h4>Parameters:</h4>
+                                            
+                                                        <ul class="params-list">
+                                                            <li class="param">
+                                                                    <code class="param-name">mobject</code>
+                                                                    <span class="type"><a href="../classes/MObject.html" class="crosslink">MObject</a></span>
+                                            
+                                            
+                                                                <div class="param-description">
+                                                                    <p>mobject object to add as a child to RenderTree</p>
+                                            
+                                                                </div>
+                                            
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                            
+                                            
+                                            </div>
+                                            <div id="method_addIndexBuffer" class="method item">
+                                                <h3 class="name"><code>addIndexBuffer</code></h3>
+                                            
+                                                    <div class="args">
+                                                        <span class="paren">(</span><ul class="args-list inline commas">
+                                                            <li class="arg">
+                                                                    <code>name</code>
+                                                            </li>
+                                                        </ul><span class="paren">)</span>
+                                                    </div>
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                                <div class="meta">
+                                                            <p>
+                                            <!-- 
+                                                            Defined in
+                                             -->
+                                            <!-- 
+                                                    <a href="../files/.._aexolgl-js_src_mesh.js.html#l90"><code>..&#x2F;aexolgl-js&#x2F;src&#x2F;mesh.js:90</code></a>
+                                             -->
+                                                    </p>
+                                            
+                                            
+                                            
+                                                </div>
+                                            
+                                                <div class="description">
+                                                    <p>Creates a index Buffer
+                                            for example:
+                                            this.addIndexBuffer('triangles');</p>
+                                            
+                                                </div>
+                                            
+                                                    <div class="params">
+                                                        <h4>Parameters:</h4>
+                                            
+                                                        <ul class="params-list">
+                                                            <li class="param">
+                                                                    <code class="param-name">name</code>
+                                                                    <span class="type">String</span>
+                                            
+                                            
+                                                                <div class="param-description">
+                                                                    <p>Name of buffer</p>
+                                            
+                                                                </div>
+                                            
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                            
+                                            
+                                            </div>
+                                            <div id="method_addVertexBuffer" class="method item">
+                                                <h3 class="name"><code>addVertexBuffer</code></h3>
+                                            
+                                                    <div class="args">
+                                                        <span class="paren">(</span><ul class="args-list inline commas">
+                                                            <li class="arg">
+                                                                    <code>name</code>
+                                                            </li>
+                                                            <li class="arg">
+                                                                    <code>attribute</code>
+                                                            </li>
+                                                        </ul><span class="paren">)</span>
+                                                    </div>
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                                <div class="meta">
+                                                            <p>
+                                            <!-- 
+                                                            Defined in
+                                             -->
+                                            <!-- 
+                                                    <a href="../files/.._aexolgl-js_src_mesh.js.html#l77"><code>..&#x2F;aexolgl-js&#x2F;src&#x2F;mesh.js:77</code></a>
+                                             -->
+                                                    </p>
+                                            
+                                            
+                                            
+                                                </div>
+                                            
+                                                <div class="description">
+                                                    <p>Creates a vertex Buffer
+                                            for example:
+                                            this.addVertexBuffer('normals', 'gl_Normal');</p>
+                                            
+                                                </div>
+                                            
+                                                    <div class="params">
+                                                        <h4>Parameters:</h4>
+                                            
+                                                        <ul class="params-list">
+                                                            <li class="param">
+                                                                    <code class="param-name">name</code>
+                                                                    <span class="type">String</span>
+                                            
+                                            
+                                                                <div class="param-description">
+                                                                    <p>Name of buffer</p>
+                                            
+                                                                </div>
+                                            
+                                                            </li>
+                                                            <li class="param">
+                                                                    <code class="param-name">attribute</code>
+                                                                    <span class="type">String</span>
+                                            
+                                            
+                                                                <div class="param-description">
+                                                                    <p>gl name</p>
+                                            
+                                                                </div>
+                                            
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                            
+                                            
+                                            </div>
+                                            <div id="method_checkRepeat" class="method item">
+                                                <h3 class="name"><code>checkRepeat</code></h3>
+                                            
+                                                    <span class="paren">()</span>
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                                <div class="meta">
+                                                            <p>
+                                            <!-- 
+                                                            Defined in
+                                             -->
+                                            <!-- 
+                                                    <a href="../files/.._aexolgl-js_src_mesh.js.html#l301"><code>..&#x2F;aexolgl-js&#x2F;src&#x2F;mesh.js:301</code></a>
+                                             -->
+                                                    </p>
+                                            
+                                            
+                                            
+                                                </div>
+                                            
+                                                <div class="description">
+                                                    <p>Check if there are two vertices in the same place( useful to recognize bad import)</p>
+                                            
+                                                </div>
+                                            
+                                            
+                                            
+                                            </div>
+                                            <div id="method_combine" class="method item">
+                                                <h3 class="name"><code>combine</code></h3>
+                                            
+                                                    <div class="args">
+                                                        <span class="paren">(</span><ul class="args-list inline commas">
+                                                            <li class="arg">
+                                                                    <code>mesh</code>
+                                                            </li>
+                                                            <li class="arg">
+                                                                    <code>noCompile</code>
+                                                            </li>
+                                                        </ul><span class="paren">)</span>
+                                                    </div>
+                                            
+                                                    <span class="returns-inline">
+                                                        <span class="type"><a href="../classes/Mesh.html" class="crosslink">Mesh</a></span>
+                                                    </span>
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                                <div class="meta">
+                                                            <p>
+                                            <!-- 
+                                                            Defined in
+                                             -->
+                                            <!-- 
+                                                    <a href="../files/.._aexolgl-js_src_mesh.js.html#l412"><code>..&#x2F;aexolgl-js&#x2F;src&#x2F;mesh.js:412</code></a>
+                                             -->
+                                                    </p>
+                                            
+                                            
+                                            
+                                                </div>
+                                            
+                                                <div class="description">
+                                                    <p>Coombine two meshes into one</p>
+                                            
+                                                </div>
+                                            
+                                                    <div class="params">
+                                                        <h4>Parameters:</h4>
+                                            
+                                                        <ul class="params-list">
+                                                            <li class="param">
+                                                                    <code class="param-name">mesh</code>
+                                                                    <span class="type"><a href="../classes/Mesh.html" class="crosslink">Mesh</a></span>
+                                            
+                                            
+                                                                <div class="param-description">
+                                                                    <p>additional mesh</p>
+                                            
+                                                                </div>
+                                            
+                                                            </li>
+                                                            <li class="param">
+                                                                    <code class="param-name">noCompile</code>
+                                                                    <span class="type">Boolean</span>
+                                            
+                                            
+                                                                <div class="param-description">
+                                                                    <p>flag if set to true doesnt compile mesh</p>
+                                            
+                                                                </div>
+                                            
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                            
+                                                    <div class="returns">
+                                                        <h4>Returns:</h4>
+                                            
+                                                        <div class="returns-description">
+                                                                    <span class="type"><a href="../classes/Mesh.html" class="crosslink">Mesh</a></span>:
+                                                                <p>Compiled mesh (cube)</p>
+                                            
+                                                        </div>
+                                                    </div>
+                                            
+                                            </div>
+                                            <div id="method_compile" class="method item">
+                                                <h3 class="name"><code>compile</code></h3>
+                                            
+                                                    <span class="paren">()</span>
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                                <div class="meta">
+                                                            <p>
+                                            <!-- 
+                                                            Defined in
+                                             -->
+                                            <!-- 
+                                                    <a href="../files/.._aexolgl-js_src_mesh.js.html#l101"><code>..&#x2F;aexolgl-js&#x2F;src&#x2F;mesh.js:101</code></a>
+                                             -->
+                                                    </p>
+                                            
+                                            
+                                            
+                                                </div>
+                                            
+                                                <div class="description">
+                                                    <p>Recompile the mesh ( for example: if vertices were edited )</p>
+                                            
+                                                </div>
+                                            
+                                            
+                                            
+                                            </div>
+                                            <div id="method_computeNormals" class="method item">
+                                                <h3 class="name"><code>computeNormals</code></h3>
+                                            
+                                                    <span class="paren">()</span>
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                                <div class="meta">
+                                                            <p>
+                                            <!-- 
+                                                            Defined in
+                                             -->
+                                            <!-- 
+                                                    <a href="../files/.._aexolgl-js_src_mesh.js.html#l194"><code>..&#x2F;aexolgl-js&#x2F;src&#x2F;mesh.js:194</code></a>
+                                             -->
+                                                    </p>
+                                            
+                                            
+                                            
+                                                </div>
+                                            
+                                                <div class="description">
+                                                    <p>Recompute normals</p>
+                                            
+                                                </div>
+                                            
+                                            
+                                            
+                                            </div>
+                                            <div id="method_computeWireframe" class="method item">
+                                                <h3 class="name"><code>computeWireframe</code></h3>
+                                            
+                                                    <span class="paren">()</span>
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                                <div class="meta">
+                                                            <p>
+                                            <!-- 
+                                                            Defined in
+                                             -->
+                                            <!-- 
+                                                    <a href="../files/.._aexolgl-js_src_mesh.js.html#l220"><code>..&#x2F;aexolgl-js&#x2F;src&#x2F;mesh.js:220</code></a>
+                                             -->
+                                                    </p>
+                                            
+                                            
+                                            
+                                                </div>
+                                            
+                                                <div class="description">
+                                                    <p>Recompute wireframe</p>
+                                            
+                                                </div>
+                                            
+                                            
+                                            
+                                            </div>
+                                            <div id="method_cube" class="method item">
+                                                <h3 class="name"><code>cube</code></h3>
+                                            
+                                                    <span class="paren">()</span>
+                                            
+                                                    <span class="returns-inline">
+                                                        <span class="type"><a href="../classes/Mesh.html" class="crosslink">Mesh</a></span>
+                                                    </span>
+                                            
+                                            
+                                            
+                                            
+                                                    <span class="flag static">static</span>
+                                            
+                                            
+                                            
+                                                <div class="meta">
+                                                            <p>
+                                            <!-- 
+                                                            Defined in
+                                             -->
+                                            <!-- 
+                                                    <a href="../files/.._aexolgl-js_src_mesh.js.html#l383"><code>..&#x2F;aexolgl-js&#x2F;src&#x2F;mesh.js:383</code></a>
+                                             -->
+                                                    </p>
+                                            
+                                            
+                                            
+                                                </div>
+                                            
+                                                <div class="description">
+                                                    <p>Create a cube</p>
+                                            
+                                                </div>
+                                            
+                                            
+                                                    <div class="returns">
+                                                        <h4>Returns:</h4>
+                                            
+                                                        <div class="returns-description">
+                                                                    <span class="type"><a href="../classes/Mesh.html" class="crosslink">Mesh</a></span>:
+                                                                <p>Compiled mesh (cube)</p>
+                                            
+                                                        </div>
+                                                    </div>
+                                            
+                                                    <div class="example">
+                                                        <h4>Example:</h4>
+                                            
+                                                        <div class="example-content">
+                                                            <p>someMesh = Mesh.cube()</p>
+                                            
+                                                        </div>
+                                                    </div>
+                                            </div>
+                                            <div id="method_draw" class="method item">
+                                                <h3 class="name"><code>draw</code></h3>
+                                            
+                                                    <div class="args">
+                                                        <span class="paren">(</span><ul class="args-list inline commas">
+                                                            <li class="arg">
+                                                                    <code>name</code>
+                                                            </li>
+                                                            <li class="arg">
+                                                                    <code>attribute</code>
+                                                            </li>
+                                                        </ul><span class="paren">)</span>
+                                                    </div>
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                                <div class="meta">
+                                                            <p>
+                                            <!-- 
+                                                            Defined in
+                                             -->
+                                            <!-- 
+                                                    <a href="../files/.._aexolgl-js_src_mesh.js.html#l47"><code>..&#x2F;aexolgl-js&#x2F;src&#x2F;mesh.js:47</code></a>
+                                             -->
+                                                    </p>
+                                            
+                                            
+                                            
+                                                </div>
+                                            
+                                                <div class="description">
+                                                    <p>Drawes a Mesh</p>
+                                            
+                                                </div>
+                                            
+                                                    <div class="params">
+                                                        <h4>Parameters:</h4>
+                                            
+                                                        <ul class="params-list">
+                                                            <li class="param">
+                                                                    <code class="param-name">name</code>
+                                                                    <span class="type">String</span>
+                                            
+                                            
+                                                                <div class="param-description">
+                                                                    <p>Name of buffer</p>
+                                            
+                                                                </div>
+                                            
+                                                            </li>
+                                                            <li class="param">
+                                                                    <code class="param-name">attribute</code>
+                                                                    <span class="type">String</span>
+                                            
+                                            
+                                                                <div class="param-description">
+                                                                    <p>gl name</p>
+                                            
+                                                                </div>
+                                            
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                            
+                                            
+                                            </div>
+                                            <div id="method_getAABB" class="method item">
+                                                <h3 class="name"><code>getAABB</code></h3>
+                                            
+                                                    <span class="paren">()</span>
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                                <div class="meta">
+                                                            <p>
+                                            <!-- 
+                                                            Defined in
+                                             -->
+                                            <!-- 
+                                                    <a href="../files/.._aexolgl-js_src_mesh.js.html#l237"><code>..&#x2F;aexolgl-js&#x2F;src&#x2F;mesh.js:237</code></a>
+                                             -->
+                                                    </p>
+                                            
+                                            
+                                            
+                                                </div>
+                                            
+                                                <div class="description">
+                                                    <p>Get mesh bounding box</p>
+                                            
+                                                </div>
+                                            
+                                            
+                                            
+                                            </div>
+                                            <div id="method_getBoundingSphere" class="method item">
+                                                <h3 class="name"><code>getBoundingSphere</code></h3>
+                                            
+                                                    <div class="args">
+                                                        <span class="paren">(</span><ul class="args-list inline commas">
+                                                            <li class="arg">
+                                                                    <code>aabb</code>
+                                                            </li>
+                                                        </ul><span class="paren">)</span>
+                                                    </div>
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                                <div class="meta">
+                                                            <p>
+                                            <!-- 
+                                                            Defined in
+                                             -->
+                                            <!-- 
+                                                    <a href="../files/.._aexolgl-js_src_mesh.js.html#l253"><code>..&#x2F;aexolgl-js&#x2F;src&#x2F;mesh.js:253</code></a>
+                                             -->
+                                                    </p>
+                                            
+                                            
+                                            
+                                                </div>
+                                            
+                                                <div class="description">
+                                                    <p>Get mesh bounding sphere</p>
+                                            
+                                                </div>
+                                            
+                                                    <div class="params">
+                                                        <h4>Parameters:</h4>
+                                            
+                                                        <ul class="params-list">
+                                                            <li class="param">
+                                                                    <code class="param-name">aabb</code>
+                                                                    <span class="type">Object</span>
+                                            
+                                            
+                                                                <div class="param-description">
+                                                                     
+                                                                </div>
+                                            
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                            
+                                            
+                                            </div>
+                                            <div id="method_getCenter" class="method item">
+                                                <h3 class="name"><code>getCenter</code></h3>
+                                            
+                                                    <span class="paren">()</span>
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                                <div class="meta">
+                                                            <p>
+                                            <!-- 
+                                                            Defined in
+                                             -->
+                                            <!-- 
+                                                    <a href="../files/.._aexolgl-js_src_mesh.js.html#l268"><code>..&#x2F;aexolgl-js&#x2F;src&#x2F;mesh.js:268</code></a>
+                                             -->
+                                                    </p>
+                                            
+                                            
+                                            
+                                                </div>
+                                            
+                                                <div class="description">
+                                                    <p>Get center point of meshcar.t</p>
+                                            
+                                                </div>
+                                            
+                                            
+                                            
+                                            </div>
+                                            <div id="method_getVertex" class="method item">
+                                                <h3 class="name"><code>getVertex</code></h3>
+                                            
+                                                    <div class="args">
+                                                        <span class="paren">(</span><ul class="args-list inline commas">
+                                                            <li class="arg">
+                                                                    <code>id</code>
+                                                            </li>
+                                                        </ul><span class="paren">)</span>
+                                                    </div>
+                                            
+                                                    <span class="returns-inline">
+                                                        <span class="type"><a href="../classes/Vector.html" class="crosslink">Vector</a></span>
+                                                    </span>
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                                <div class="meta">
+                                                            <p>
+                                            <!-- 
+                                                            Defined in
+                                             -->
+                                            <!-- 
+                                                    <a href="../files/.._aexolgl-js_src_mesh.js.html#l314"><code>..&#x2F;aexolgl-js&#x2F;src&#x2F;mesh.js:314</code></a>
+                                             -->
+                                                    </p>
+                                            
+                                            
+                                            
+                                                </div>
+                                            
+                                                <div class="description">
+                                                    <p>Get vertex by id</p>
+                                            
+                                                </div>
+                                            
+                                                    <div class="params">
+                                                        <h4>Parameters:</h4>
+                                            
+                                                        <ul class="params-list">
+                                                            <li class="param">
+                                                                    <code class="param-name">id</code>
+                                                                    <span class="type">Int</span>
+                                            
+                                            
+                                                                <div class="param-description">
+                                                                    <p>Vertex id</p>
+                                            
+                                                                </div>
+                                            
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                            
+                                                    <div class="returns">
+                                                        <h4>Returns:</h4>
+                                            
+                                                        <div class="returns-description">
+                                                                    <span class="type"><a href="../classes/Vector.html" class="crosslink">Vector</a></span>:
+                                                                <p>position of vertex</p>
+                                            
+                                                        </div>
+                                                    </div>
+                                            
+                                            </div>
+                                            <div id="method_getVertex" class="method item">
+                                                <h3 class="name"><code>getVertex</code></h3>
+                                            
+                                                    <div class="args">
+                                                        <span class="paren">(</span><ul class="args-list inline commas">
+                                                            <li class="arg">
+                                                                    <code>id</code>
+                                                            </li>
+                                                        </ul><span class="paren">)</span>
+                                                    </div>
+                                            
+                                                    <span class="returns-inline">
+                                                        <span class="type">Array3</span>
+                                                    </span>
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                                <div class="meta">
+                                                            <p>
+                                            <!-- 
+                                                            Defined in
+                                             -->
+                                            <!-- 
+                                                    <a href="../files/.._aexolgl-js_src_mesh.js.html#l277"><code>..&#x2F;aexolgl-js&#x2F;src&#x2F;mesh.js:277</code></a>
+                                             -->
+                                                    </p>
+                                            
+                                            
+                                            
+                                                </div>
+                                            
+                                                <div class="description">
+                                                    <p>Get vertex by id</p>
+                                            
+                                                </div>
+                                            
+                                                    <div class="params">
+                                                        <h4>Parameters:</h4>
+                                            
+                                                        <ul class="params-list">
+                                                            <li class="param">
+                                                                    <code class="param-name">id</code>
+                                                                    <span class="type">Int</span>
+                                            
+                                            
+                                                                <div class="param-description">
+                                                                    <p>Vertex id</p>
+                                            
+                                                                </div>
+                                            
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                            
+                                                    <div class="returns">
+                                                        <h4>Returns:</h4>
+                                            
+                                                        <div class="returns-description">
+                                                                    <span class="type">Array3</span>:
+                                                                <p>position of vertex</p>
+                                            
+                                                        </div>
+                                                    </div>
+                                            
+                                            </div>
+                                            <div id="method_load" class="method item">
+                                                <h3 class="name"><code>load</code></h3>
+                                            
+                                                    <div class="args">
+                                                        <span class="paren">(</span><ul class="args-list inline commas">
+                                                            <li class="arg">
+                                                                    <code>json</code>
+                                                            </li>
+                                                            <li class="arg">
+                                                                    <code>options</code>
+                                                            </li>
+                                                        </ul><span class="paren">)</span>
+                                                    </div>
+                                            
+                                                    <span class="returns-inline">
+                                                        <span class="type"><a href="../classes/Mesh.html" class="crosslink">Mesh</a></span>
+                                                    </span>
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                                <div class="meta">
+                                                            <p>
+                                            <!-- 
+                                                            Defined in
+                                             -->
+                                            <!-- 
+                                                    <a href="../files/.._aexolgl-js_src_mesh.js.html#l506"><code>..&#x2F;aexolgl-js&#x2F;src&#x2F;mesh.js:506</code></a>
+                                             -->
+                                                    </p>
+                                            
+                                            
+                                            
+                                                </div>
+                                            
+                                                <div class="description">
+                                                    <p>Load 3d model from json</p>
+                                            
+                                                </div>
+                                            
+                                                    <div class="params">
+                                                        <h4>Parameters:</h4>
+                                            
+                                                        <ul class="params-list">
+                                                            <li class="param">
+                                                                    <code class="param-name">json</code>
+                                                                    <span class="type">String</span>
+                                            
+                                            
+                                                                <div class="param-description">
+                                                                    <p>model in json format</p>
+                                            
+                                                                </div>
+                                            
+                                                            </li>
+                                                            <li class="param">
+                                                                    <code class="param-name">options</code>
+                                                                    <span class="type">Dict</span>
+                                            
+                                            
+                                                                <div class="param-description">
+                                                                    <p>additional options</p>
+                                            
+                                                                </div>
+                                            
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                            
+                                                    <div class="returns">
+                                                        <h4>Returns:</h4>
+                                            
+                                                        <div class="returns-description">
+                                                                    <span class="type"><a href="../classes/Mesh.html" class="crosslink">Mesh</a></span>:
+                                                                <p>Compiled mesh (loaded model)</p>
+                                            
+                                                        </div>
+                                                    </div>
+                                            
+                                            </div>
+                                            <div id="method_load" class="method item">
+                                                <h3 class="name"><code>load</code></h3>
+                                            
+                                                    <div class="args">
+                                                        <span class="paren">(</span><ul class="args-list inline commas">
+                                                            <li class="arg">
+                                                                    <code>dict</code>
+                                                            </li>
+                                                            <li class="arg">
+                                                                    <code>options</code>
+                                                            </li>
+                                                        </ul><span class="paren">)</span>
+                                                    </div>
+                                            
+                                                    <span class="returns-inline">
+                                                        <span class="type"><a href="../classes/Mesh.html" class="crosslink">Mesh</a></span>
+                                                    </span>
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                                <div class="meta">
+                                                            <p>
+                                            <!-- 
+                                                            Defined in
+                                             -->
+                                            <!-- 
+                                                    <a href="../files/.._aexolgl-js_src_mesh.js.html#l550"><code>..&#x2F;aexolgl-js&#x2F;src&#x2F;mesh.js:550</code></a>
+                                             -->
+                                                    </p>
+                                            
+                                            
+                                            
+                                                </div>
+                                            
+                                                <div class="description">
+                                                    <p>Load 3d model from itself</p>
+                                            
+                                                </div>
+                                            
+                                                    <div class="params">
+                                                        <h4>Parameters:</h4>
+                                            
+                                                        <ul class="params-list">
+                                                            <li class="param">
+                                                                    <code class="param-name">dict</code>
+                                                                    <span class="type">String</span>
+                                            
+                                            
+                                                                <div class="param-description">
+                                                                    <p>of model</p>
+                                            
+                                                                </div>
+                                            
+                                                            </li>
+                                                            <li class="param">
+                                                                    <code class="param-name">options</code>
+                                                                    <span class="type">Dict</span>
+                                            
+                                            
+                                                                <div class="param-description">
+                                                                    <p>additional options</p>
+                                            
+                                                                </div>
+                                            
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                            
+                                                    <div class="returns">
+                                                        <h4>Returns:</h4>
+                                            
+                                                        <div class="returns-description">
+                                                                    <span class="type"><a href="../classes/Mesh.html" class="crosslink">Mesh</a></span>:
+                                                                <p>Compiled mesh (loaded model)</p>
+                                            
+                                                        </div>
+                                                    </div>
+                                            
+                                            </div>
+                                            <div id="method_load" class="method item">
+                                                <h3 class="name"><code>load</code></h3>
+                                            
+                                                    <div class="args">
+                                                        <span class="paren">(</span><ul class="args-list inline commas">
+                                                            <li class="arg">
+                                                                    <code>mesh</code>
+                                                            </li>
+                                                        </ul><span class="paren">)</span>
+                                                    </div>
+                                            
+                                                    <span class="returns-inline">
+                                                        <span class="type"><a href="../classes/Mesh.html" class="crosslink">Mesh</a></span>
+                                                    </span>
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                                <div class="meta">
+                                                            <p>
+                                            <!-- 
+                                                            Defined in
+                                             -->
+                                            <!-- 
+                                                    <a href="../files/.._aexolgl-js_src_mesh.js.html#l529"><code>..&#x2F;aexolgl-js&#x2F;src&#x2F;mesh.js:529</code></a>
+                                             -->
+                                                    </p>
+                                            
+                                            
+                                            
+                                                </div>
+                                            
+                                                <div class="description">
+                                                    <p>Copy mesh</p>
+                                            
+                                                </div>
+                                            
+                                                    <div class="params">
+                                                        <h4>Parameters:</h4>
+                                            
+                                                        <ul class="params-list">
+                                                            <li class="param">
+                                                                    <code class="param-name">mesh</code>
+                                                                    <span class="type"><a href="../classes/Mesh.html" class="crosslink">Mesh</a></span>
+                                            
+                                            
+                                                                <div class="param-description">
+                                                                    <p>to copy</p>
+                                            
+                                                                </div>
+                                            
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                            
+                                                    <div class="returns">
+                                                        <h4>Returns:</h4>
+                                            
+                                                        <div class="returns-description">
+                                                                    <span class="type"><a href="../classes/Mesh.html" class="crosslink">Mesh</a></span>:
+                                                                <p>Compiled mesh (copied model)</p>
+                                            
+                                                        </div>
+                                                    </div>
+                                            
+                                            </div>
+                                            <div id="method_move" class="method item">
+                                                <h3 class="name"><code>move</code></h3>
+                                            
+                                                    <div class="args">
+                                                        <span class="paren">(</span><ul class="args-list inline commas">
+                                                            <li class="arg">
+                                                                    <code>x</code>
+                                                            </li>
+                                                            <li class="arg">
+                                                                    <code>y</code>
+                                                            </li>
+                                                            <li class="arg">
+                                                                    <code>z</code>
+                                                            </li>
+                                                        </ul><span class="paren">)</span>
+                                                    </div>
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                                <div class="meta">
+                                                            <p>
+                                            <!-- 
+                                                            Defined in
+                                             -->
+                                            <!-- 
+                                                    <a href="../files/.._aexolgl-js_src_mesh.js.html#l153"><code>..&#x2F;aexolgl-js&#x2F;src&#x2F;mesh.js:153</code></a>
+                                             -->
+                                                    </p>
+                                            
+                                            
+                                            
+                                                </div>
+                                            
+                                                <div class="description">
+                                                    <p>Moves mesh</p>
+                                            
+                                                </div>
+                                            
+                                                    <div class="params">
+                                                        <h4>Parameters:</h4>
+                                            
+                                                        <ul class="params-list">
+                                                            <li class="param">
+                                                                    <code class="param-name">x</code>
+                                                                    <span class="type">Float</span>
+                                            
+                                            
+                                                                <div class="param-description">
+                                                                     
+                                                                </div>
+                                            
+                                                            </li>
+                                                            <li class="param">
+                                                                    <code class="param-name">y</code>
+                                                                    <span class="type">Float</span>
+                                            
+                                            
+                                                                <div class="param-description">
+                                                                     
+                                                                </div>
+                                            
+                                                            </li>
+                                                            <li class="param">
+                                                                    <code class="param-name">z</code>
+                                                                    <span class="type">Float</span>
+                                            
+                                            
+                                                                <div class="param-description">
+                                                                     
+                                                                </div>
+                                            
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                            
+                                            
+                                            </div>
+                                            <div id="method_obj" class="method item">
+                                                <h3 class="name"><code>obj</code></h3>
+                                            
+                                                    <div class="args">
+                                                        <span class="paren">(</span><ul class="args-list inline commas">
+                                                            <li class="arg">
+                                                                    <code>url</code>
+                                                            </li>
+                                                            <li class="arg">
+                                                                    <code>callback</code>
+                                                            </li>
+                                                            <li class="arg">
+                                                                    <code class="optional">[opts]</code>
+                                                            </li>
+                                                        </ul><span class="paren">)</span>
+                                                    </div>
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                                <div class="meta">
+                                                            <p>
+                                            <!-- 
+                                                            Defined in
+                                             -->
+                                            <!-- 
+                                                    <a href="../files/.._aexolgl-js_src_mesh.js.html#l573"><code>..&#x2F;aexolgl-js&#x2F;src&#x2F;mesh.js:573</code></a>
+                                             -->
+                                                    </p>
+                                            
+                                            
+                                            
+                                                </div>
+                                            
+                                                <div class="description">
+                                                    <p>Load 3d model from obj</p>
+                                            
+                                                </div>
+                                            
+                                                    <div class="params">
+                                                        <h4>Parameters:</h4>
+                                            
+                                                        <ul class="params-list">
+                                                            <li class="param">
+                                                                    <code class="param-name">url</code>
+                                                                    <span class="type">String</span>
+                                            
+                                            
+                                                                <div class="param-description">
+                                                                    <p>path to .obj file</p>
+                                            
+                                                                </div>
+                                            
+                                                            </li>
+                                                            <li class="param">
+                                                                    <code class="param-name">callback</code>
+                                                                    <span class="type">Function</span>
+                                            
+                                            
+                                                                <div class="param-description">
+                                                                    <p>function that happen after successful mesh loading</p>
+                                            
+                                                                </div>
+                                            
+                                                            </li>
+                                                            <li class="param">
+                                                                    <code class="param-name optional">[opts]</code>
+                                                                    <span class="type">Dict</span>
+                                                                    <span class="flag optional" title="This parameter is optional.">optional</span>
+                                            
+                                            
+                                                                <div class="param-description">
+                                                                    <p>optional parameters listed in example</p>
+                                            
+                                                                </div>
+                                            
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                            
+                                            
+                                                    <div class="example">
+                                                        <h4>Example:</h4>
+                                            
+                                                        <div class="example-content">
+                                                            <p>characterJaw = new GameObject(world, {
+                                            shader: gshader,
+                                            material: planetMat,
+                                            mesh: ludekMesh2,
+                                            })
+                                            Mesh.obj("obj/jaw.obj", function (e) {
+                                            var meshy = e
+                                            meshy.rotate(0, 90, 0)
+                                            meshy.scale(-0.25, 0.25, 0.25)
+                                            meshy.move(0, 0.05, 0)
+                                            characterJaw.mesh = meshy
+                                            })</p>
+                                            
+                                                        </div>
+                                                    </div>
+                                            </div>
+                                            <div id="method_plane" class="method item">
+                                                <h3 class="name"><code>plane</code></h3>
+                                            
+                                                    <div class="args">
+                                                        <span class="paren">(</span><ul class="args-list inline commas">
+                                                            <li class="arg">
+                                                                    <code>detailX</code>
+                                                            </li>
+                                                            <li class="arg">
+                                                                    <code>detailY</code>
+                                                            </li>
+                                                            <li class="arg">
+                                                                    <code>options</code>
+                                                            </li>
+                                                        </ul><span class="paren">)</span>
+                                                    </div>
+                                            
+                                                    <span class="returns-inline">
+                                                        <span class="type"><a href="../classes/Mesh.html" class="crosslink">Mesh</a></span>
+                                                    </span>
+                                            
+                                            
+                                            
+                                            
+                                                    <span class="flag static">static</span>
+                                            
+                                            
+                                            
+                                                <div class="meta">
+                                                            <p>
+                                            <!-- 
+                                                            Defined in
+                                             -->
+                                            <!-- 
+                                                    <a href="../files/.._aexolgl-js_src_mesh.js.html#l335"><code>..&#x2F;aexolgl-js&#x2F;src&#x2F;mesh.js:335</code></a>
+                                             -->
+                                                    </p>
+                                            
+                                            
+                                            
+                                                </div>
+                                            
+                                                <div class="description">
+                                                    <p>Create a plane</p>
+                                            
+                                                </div>
+                                            
+                                                    <div class="params">
+                                                        <h4>Parameters:</h4>
+                                            
+                                                        <ul class="params-list">
+                                                            <li class="param">
+                                                                    <code class="param-name">detailX</code>
+                                                                    <span class="type">Integer</span>
+                                            
+                                            
+                                                                <div class="param-description">
+                                                                    <p>X segments</p>
+                                            
+                                                                </div>
+                                            
+                                                            </li>
+                                                            <li class="param">
+                                                                    <code class="param-name">detailY</code>
+                                                                    <span class="type">Integer</span>
+                                            
+                                            
+                                                                <div class="param-description">
+                                                                    <p>Y segments</p>
+                                            
+                                                                </div>
+                                            
+                                                            </li>
+                                                            <li class="param">
+                                                                    <code class="param-name">options</code>
+                                                                    <span class="type">Dict</span>
+                                            
+                                            
+                                                                <div class="param-description">
+                                                                    <p>additional options</p>
+                                            
+                                                                </div>
+                                            
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                            
+                                                    <div class="returns">
+                                                        <h4>Returns:</h4>
+                                            
+                                                        <div class="returns-description">
+                                                                    <span class="type"><a href="../classes/Mesh.html" class="crosslink">Mesh</a></span>:
+                                                                <p>Compiled mesh (plane)</p>
+                                            
+                                                        </div>
+                                                    </div>
+                                            
+                                                    <div class="example">
+                                                        <h4>Example:</h4>
+                                            
+                                                        <div class="example-content">
+                                                            <p>someMesh = Mesh.plane(10,10)</p>
+                                            
+                                                        </div>
+                                                    </div>
+                                            </div>
+                                            <div id="method_remove" class="method item inherited">
+                                                <h3 class="name"><code>remove</code></h3>
+                                            
+                                                    <span class="paren">()</span>
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                                <div class="meta">
+                                                            <p>Inherited from
+                                                            <a href="../classes/MObject.html#method_remove">MObject</a>:
+                                            <!-- 
+                                                    <a href="../files/.._aexolgl-js_src_aexolGL.js.html#l52"><code>..&#x2F;aexolgl-js&#x2F;src&#x2F;aexolGL.js:52</code></a>
+                                             -->
+                                                    </p>
+                                            
+                                            
+                                            
+                                                </div>
+                                            
+                                                <div class="description">
+                                                    <p>Removes MObject from RenderTree</p>
+                                            
+                                                </div>
+                                            
+                                            
+                                            
+                                            </div>
+                                            <div id="method_rotate" class="method item">
+                                                <h3 class="name"><code>rotate</code></h3>
+                                            
+                                                    <div class="args">
+                                                        <span class="paren">(</span><ul class="args-list inline commas">
+                                                            <li class="arg">
+                                                                    <code>x</code>
+                                                            </li>
+                                                            <li class="arg">
+                                                                    <code>y</code>
+                                                            </li>
+                                                            <li class="arg">
+                                                                    <code>z</code>
+                                                            </li>
+                                                        </ul><span class="paren">)</span>
+                                                    </div>
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                                <div class="meta">
+                                                            <p>
+                                            <!-- 
+                                                            Defined in
+                                             -->
+                                            <!-- 
+                                                    <a href="../files/.._aexolgl-js_src_mesh.js.html#l163"><code>..&#x2F;aexolgl-js&#x2F;src&#x2F;mesh.js:163</code></a>
+                                             -->
+                                                    </p>
+                                            
+                                            
+                                            
+                                                </div>
+                                            
+                                                <div class="description">
+                                                    <p>Rotates mesh</p>
+                                            
+                                                </div>
+                                            
+                                                    <div class="params">
+                                                        <h4>Parameters:</h4>
+                                            
+                                                        <ul class="params-list">
+                                                            <li class="param">
+                                                                    <code class="param-name">x</code>
+                                                                    <span class="type">Float</span>
+                                            
+                                            
+                                                                <div class="param-description">
+                                                                     
+                                                                </div>
+                                            
+                                                            </li>
+                                                            <li class="param">
+                                                                    <code class="param-name">y</code>
+                                                                    <span class="type">Float</span>
+                                            
+                                            
+                                                                <div class="param-description">
+                                                                     
+                                                                </div>
+                                            
+                                                            </li>
+                                                            <li class="param">
+                                                                    <code class="param-name">z</code>
+                                                                    <span class="type">Float</span>
+                                            
+                                            
+                                                                <div class="param-description">
+                                                                     
+                                                                </div>
+                                            
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                            
+                                            
+                                            </div>
+                                            <div id="method_scale" class="method item">
+                                                <h3 class="name"><code>scale</code></h3>
+                                            
+                                                    <div class="args">
+                                                        <span class="paren">(</span><ul class="args-list inline commas">
+                                                            <li class="arg">
+                                                                    <code>x</code>
+                                                            </li>
+                                                            <li class="arg">
+                                                                    <code>y</code>
+                                                            </li>
+                                                            <li class="arg">
+                                                                    <code>z</code>
+                                                            </li>
+                                                        </ul><span class="paren">)</span>
+                                                    </div>
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                                <div class="meta">
+                                                            <p>
+                                            <!-- 
+                                                            Defined in
+                                             -->
+                                            <!-- 
+                                                    <a href="../files/.._aexolgl-js_src_mesh.js.html#l176"><code>..&#x2F;aexolgl-js&#x2F;src&#x2F;mesh.js:176</code></a>
+                                             -->
+                                                    </p>
+                                            
+                                            
+                                            
+                                                </div>
+                                            
+                                                <div class="description">
+                                                    <p>Scales mesh</p>
+                                            
+                                                </div>
+                                            
+                                                    <div class="params">
+                                                        <h4>Parameters:</h4>
+                                            
+                                                        <ul class="params-list">
+                                                            <li class="param">
+                                                                    <code class="param-name">x</code>
+                                                                    <span class="type">Float</span>
+                                            
+                                            
+                                                                <div class="param-description">
+                                                                     
+                                                                </div>
+                                            
+                                                            </li>
+                                                            <li class="param">
+                                                                    <code class="param-name">y</code>
+                                                                    <span class="type">Float</span>
+                                            
+                                            
+                                                                <div class="param-description">
+                                                                     
+                                                                </div>
+                                            
+                                                            </li>
+                                                            <li class="param">
+                                                                    <code class="param-name">z</code>
+                                                                    <span class="type">Float</span>
+                                            
+                                            
+                                                                <div class="param-description">
+                                                                     
+                                                                </div>
+                                            
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                            
+                                            
+                                            </div>
+                                            <div id="method_scaleUniform" class="method item">
+                                                <h3 class="name"><code>scaleUniform</code></h3>
+                                            
+                                                    <div class="args">
+                                                        <span class="paren">(</span><ul class="args-list inline commas">
+                                                            <li class="arg">
+                                                                    <code>f</code>
+                                                            </li>
+                                                        </ul><span class="paren">)</span>
+                                                    </div>
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                                <div class="meta">
+                                                            <p>
+                                            <!-- 
+                                                            Defined in
+                                             -->
+                                            <!-- 
+                                                    <a href="../files/.._aexolgl-js_src_mesh.js.html#l186"><code>..&#x2F;aexolgl-js&#x2F;src&#x2F;mesh.js:186</code></a>
+                                             -->
+                                                    </p>
+                                            
+                                            
+                                            
+                                                </div>
+                                            
+                                                <div class="description">
+                                                    <p>Scales uniformly mesh</p>
+                                            
+                                                </div>
+                                            
+                                                    <div class="params">
+                                                        <h4>Parameters:</h4>
+                                            
+                                                        <ul class="params-list">
+                                                            <li class="param">
+                                                                    <code class="param-name">f</code>
+                                                                    <span class="type">Float</span>
+                                            
+                                            
+                                                                <div class="param-description">
+                                                                     
+                                                                </div>
+                                            
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                            
+                                            
+                                            </div>
+                                            <div id="method_setParent" class="method item inherited">
+                                                <h3 class="name"><code>setParent</code></h3>
+                                            
+                                                    <div class="args">
+                                                        <span class="paren">(</span><ul class="args-list inline commas">
+                                                            <li class="arg">
+                                                                    <code>parent</code>
+                                                            </li>
+                                                        </ul><span class="paren">)</span>
+                                                    </div>
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                                <div class="meta">
+                                                            <p>Inherited from
+                                                            <a href="../classes/MObject.html#method_setParent">MObject</a>:
+                                            <!-- 
+                                                    <a href="../files/.._aexolgl-js_src_aexolGL.js.html#l26"><code>..&#x2F;aexolgl-js&#x2F;src&#x2F;aexolGL.js:26</code></a>
+                                             -->
+                                                    </p>
+                                            
+                                            
+                                            
+                                                </div>
+                                            
+                                                <div class="description">
+                                                    <p>Sets parent on MObject and unbinds current parent in RenderTree.
+                                            Usually this is done inside GameObject, but you have also possibility
+                                            to construct RenderTree by yourself.</p>
+                                            
+                                                </div>
+                                            
+                                                    <div class="params">
+                                                        <h4>Parameters:</h4>
+                                            
+                                                        <ul class="params-list">
+                                                            <li class="param">
+                                                                    <code class="param-name">parent</code>
+                                                                    <span class="type"><a href="../classes/MObject.html" class="crosslink">MObject</a></span>
+                                            
+                                            
+                                                                <div class="param-description">
+                                                                    <p>parent object</p>
+                                            
+                                                                </div>
+                                            
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                            
+                                            
+                                                    <div class="example">
+                                                        <h4>Example:</h4>
+                                            
+                                                        <div class="example-content">
+                                                            <p>world = new Scene()
+                                            gshader = new basicShader()
+                                            someMaterial = new Material({})
+                                            gshader.setParent(world)
+                                            someMaterial.setParent(world)</p>
+                                            
+                                                        </div>
+                                                    </div>
+                                            </div>
+                                            <div id="method_setVertex" class="method item">
+                                                <h3 class="name"><code>setVertex</code></h3>
+                                            
+                                                    <div class="args">
+                                                        <span class="paren">(</span><ul class="args-list inline commas">
+                                                            <li class="arg">
+                                                                    <code>id</code>
+                                                            </li>
+                                                            <li class="arg">
+                                                                    <code>vector</code>
+                                                            </li>
+                                                        </ul><span class="paren">)</span>
+                                                    </div>
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                                <div class="meta">
+                                                            <p>
+                                            <!-- 
+                                                            Defined in
+                                             -->
+                                            <!-- 
+                                                    <a href="../files/.._aexolgl-js_src_mesh.js.html#l323"><code>..&#x2F;aexolgl-js&#x2F;src&#x2F;mesh.js:323</code></a>
+                                             -->
+                                                    </p>
+                                            
+                                            
+                                            
+                                                </div>
+                                            
+                                                <div class="description">
+                                                    <p>Set Position of Vertex</p>
+                                            
+                                                </div>
+                                            
+                                                    <div class="params">
+                                                        <h4>Parameters:</h4>
+                                            
+                                                        <ul class="params-list">
+                                                            <li class="param">
+                                                                    <code class="param-name">id</code>
+                                                                    <span class="type">Int</span>
+                                            
+                                            
+                                                                <div class="param-description">
+                                                                    <p>Vertex id</p>
+                                            
+                                                                </div>
+                                            
+                                                            </li>
+                                                            <li class="param">
+                                                                    <code class="param-name">vector</code>
+                                                                    <span class="type">Vector or array</span>
+                                            
+                                            
+                                                                <div class="param-description">
+                                                                    <p>New vertex position</p>
+                                            
+                                                                </div>
+                                            
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                            
+                                            
+                                            </div>
+                                            <div id="method_sphere" class="method item">
+                                                <h3 class="name"><code>sphere</code></h3>
+                                            
+                                                    <div class="args">
+                                                        <span class="paren">(</span><ul class="args-list inline commas">
+                                                            <li class="arg">
+                                                                    <code>detail</code>
+                                                            </li>
+                                                            <li class="arg">
+                                                                    <code>options</code>
+                                                            </li>
+                                                        </ul><span class="paren">)</span>
+                                                    </div>
+                                            
+                                                    <span class="returns-inline">
+                                                        <span class="type"><a href="../classes/Mesh.html" class="crosslink">Mesh</a></span>
+                                                    </span>
+                                            
+                                            
+                                            
+                                            
+                                                    <span class="flag static">static</span>
+                                            
+                                            
+                                            
+                                                <div class="meta">
+                                                            <p>
+                                            <!-- 
+                                                            Defined in
+                                             -->
+                                            <!-- 
+                                                    <a href="../files/.._aexolgl-js_src_mesh.js.html#l437"><code>..&#x2F;aexolgl-js&#x2F;src&#x2F;mesh.js:437</code></a>
+                                             -->
+                                                    </p>
+                                            
+                                            
+                                            
+                                                </div>
+                                            
+                                                <div class="description">
+                                                    <p>Create a sphere</p>
+                                            
+                                                </div>
+                                            
+                                                    <div class="params">
+                                                        <h4>Parameters:</h4>
+                                            
+                                                        <ul class="params-list">
+                                                            <li class="param">
+                                                                    <code class="param-name">detail</code>
+                                                                    <span class="type">Int</span>
+                                            
+                                            
+                                                                <div class="param-description">
+                                                                    <p>sphere resolution</p>
+                                            
+                                                                </div>
+                                            
+                                                            </li>
+                                                            <li class="param">
+                                                                    <code class="param-name">options</code>
+                                                                    <span class="type">Dict</span>
+                                            
+                                            
+                                                                <div class="param-description">
+                                                                    <p>additional options</p>
+                                            
+                                                                </div>
+                                            
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                            
+                                                    <div class="returns">
+                                                        <h4>Returns:</h4>
+                                            
+                                                        <div class="returns-description">
+                                                                    <span class="type"><a href="../classes/Mesh.html" class="crosslink">Mesh</a></span>:
+                                                                <p>Compiled mesh (sphere)</p>
+                                            
+                                                        </div>
+                                                    </div>
+                                            
+                                                    <div class="example">
+                                                        <h4>Example:</h4>
+                                            
+                                                        <div class="example-content">
+                                                            <p>someMesh = Mesh.sphere(10)</p>
+                                            
+                                                        </div>
+                                                    </div>
+                                            </div>
+                                            <div id="method_transform" class="method item">
+                                                <h3 class="name"><code>transform</code></h3>
+                                            
+                                                    <div class="args">
+                                                        <span class="paren">(</span><ul class="args-list inline commas">
+                                                            <li class="arg">
+                                                                    <code>matV</code>
+                                                            </li>
+                                                        </ul><span class="paren">)</span>
+                                                    </div>
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                                <div class="meta">
+                                                            <p>
+                                            <!-- 
+                                                            Defined in
+                                             -->
+                                            <!-- 
+                                                    <a href="../files/.._aexolgl-js_src_mesh.js.html#l121"><code>..&#x2F;aexolgl-js&#x2F;src&#x2F;mesh.js:121</code></a>
+                                             -->
+                                                    </p>
+                                            
+                                            
+                                            
+                                                </div>
+                                            
+                                                <div class="description">
+                                                    <p>Transform the mesh with matrix</p>
+                                            
+                                                </div>
+                                            
+                                                    <div class="params">
+                                                        <h4>Parameters:</h4>
+                                            
+                                                        <ul class="params-list">
+                                                            <li class="param">
+                                                                    <code class="param-name">matV</code>
+                                                                    <span class="type"><a href="../classes/Matrix.html" class="crosslink">Matrix</a></span>
+                                            
+                                            
+                                                                <div class="param-description">
+                                                                    <p>Transformation matrix</p>
+                                            
+                                                                </div>
+                                            
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                            
+                                            
+                                            </div>
+                                    </div>
+                        
+                        
+                        
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../assets/vendor/jquery/jquery-1.8.2.min.js"></script>
+<script src="../assets/vendor/bootstrap/js/bootstrap.js"></script>
+<script src="../assets/vendor/prettify/prettify-min.js"></script>
+<script src="../assets/js/yuidoc-bootstrap.js"></script>
+<script>prettyPrint();</script>
+</body>
+</html>

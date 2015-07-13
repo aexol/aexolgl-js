@@ -1,0 +1,2737 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Camera - aexolGL API</title>
+    <link rel="stylesheet" href="http://yui.yahooapis.com/3.7.0/build/cssgrids/cssgrids-min.css">
+    <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
+    <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
+    <link rel="stylesheet" href="../assets/css/custom.css">
+    <link rel="stylesheet" href="../assets/vendor/bootstrap/css/bootstrap.css">
+    <link rel="shortcut icon" type="image/png" href="../assets/favicon.png">
+</head>
+<body class="yui3-skin-sam">
+<div class="container-fluid" style="padding:0;">
+	<div id="topbar" class="row visible-md visible-lg" style="margin:0;">
+        <div class="span1"></div>
+        <div class="span6 docs">
+            <img src="http://gl.aexol.com/static/img/aexol_gl_logo.png"> Docs for Version: <b>1.0a</b>
+        </div>
+        <div class="span5"></div>
+    </div>
+    <div class="row" style="padding:2em;">
+        <div class="span3">
+	    <div>
+	        <h3>APIs</h3>
+	        <div id="sidebar">
+	            <ul id="main-nav" class="nav nav-tabs" style="margin-bottom:0;">
+	                <li class="active"><a href="#classes" data-toggle="tab">Classes</a></li>
+	                <li><a href="#modules" data-toggle="tab">Modules</a></li>
+	            </ul>
+	    
+	            <div id="api-tabview-filter">
+	                <input type="search" placeholder="Type to filter APIs">
+	            </div>
+	    
+	            <div class="tab-content" style="border: 1px solid #DDD; border-top:0;">
+	                <div class="tab-pane active" id="classes">
+	                    <ul id="api-classes" class="nav nav-list">
+	                            <li><a href="../classes/Aex.html">Aex</a></li>
+	                            <li><a href="../classes/aexolGL.html">aexolGL</a></li>
+	                            <li><a href="../classes/Animation.html">Animation</a></li>
+	                            <li><a href="../classes/Buffer.html">Buffer</a></li>
+	                            <li><a href="../classes/Camera.html">Camera</a></li>
+	                            <li><a href="../classes/Fog.html">Fog</a></li>
+	                            <li><a href="../classes/Frustum.html">Frustum</a></li>
+	                            <li><a href="../classes/GameObject.html">GameObject</a></li>
+	                            <li><a href="../classes/Indexer.html">Indexer</a></li>
+	                            <li><a href="../classes/Label.html">Label</a></li>
+	                            <li><a href="../classes/Light.html">Light</a></li>
+	                            <li><a href="../classes/Material.html">Material</a></li>
+	                            <li><a href="../classes/Matrix.html">Matrix</a></li>
+	                            <li><a href="../classes/Matrix3.html">Matrix3</a></li>
+	                            <li><a href="../classes/Mesh.html">Mesh</a></li>
+	                            <li><a href="../classes/MObject.html">MObject</a></li>
+	                            <li><a href="../classes/Pivot.html">Pivot</a></li>
+	                            <li><a href="../classes/Quaternion.html">Quaternion</a></li>
+	                            <li><a href="../classes/Resource.html">Resource</a></li>
+	                            <li><a href="../classes/Scene.html">Scene</a></li>
+	                            <li><a href="../classes/Shader.html">Shader</a></li>
+	                            <li><a href="../classes/Shadow.html">Shadow</a></li>
+	                            <li><a href="../classes/TextNode.html">TextNode</a></li>
+	                            <li><a href="../classes/Texture.html">Texture</a></li>
+	                            <li><a href="../classes/Vector.html">Vector</a></li>
+	                            <li><a href="../classes/Vector4.html">Vector4</a></li>
+	                            <li><a href="../classes/ZBuffer.html">ZBuffer</a></li>
+	                    </ul>
+	                </div>
+	    
+	                <div class="tab-pane" id="modules">
+	                    <ul id="api-modules" class="nav nav-list">
+	                            <li><a href="../modules/aexolGL.html">aexolGL</a></li>
+	                            <li><a href="../modules/Animation.html">Animation</a></li>
+	                            <li><a href="../modules/Buffer.html">Buffer</a></li>
+	                            <li><a href="../modules/camera.html">camera</a></li>
+	                            <li><a href="../modules/Fog.html">Fog</a></li>
+	                            <li><a href="../modules/Font.html">Font</a></li>
+	                            <li><a href="../modules/Game.html">Game</a></li>
+	                            <li><a href="../modules/Light.html">Light</a></li>
+	                            <li><a href="../modules/materialLib.html">materialLib</a></li>
+	                            <li><a href="../modules/Math.html">Math</a></li>
+	                            <li><a href="../modules/Mesh.html">Mesh</a></li>
+	                            <li><a href="../modules/Physics.html">Physics</a></li>
+	                            <li><a href="../modules/Resource.html">Resource</a></li>
+	                            <li><a href="../modules/ShaderLibrary.html">ShaderLibrary</a></li>
+	                            <li><a href="../modules/Shadow.html">Shadow</a></li>
+	                            <li><a href="../modules/start.html">start</a></li>
+	                            <li><a href="../modules/utils.html">utils</a></li>
+	                    </ul>
+	                </div>
+	            </div>
+	        </div>
+	    </div>
+        </div>
+        <div class="span9">
+                <form id="options-form" class="form-inline pull-right">
+                    Show:
+                    <label for="api-show-inherited" class="checkbox">
+                        <input type="checkbox" id="api-show-inherited" checked>
+                        Inherited
+                    </label>
+            
+                    <label for="api-show-protected" class="checkbox">
+                        <input type="checkbox" id="api-show-protected">
+                        Protected
+                    </label>
+            
+                    <label for="api-show-private" class="checkbox">
+                        <input type="checkbox" id="api-show-private">
+                        Private
+                    </label>
+                    <label for="api-show-deprecated" class="checkbox">
+                        <input type="checkbox" id="api-show-deprecated">
+                        Deprecated
+                    </label>
+            
+                </form>
+            
+            <div class="apidocs">
+                <div id="docs-main">
+                    <div class="content">
+                        <div class="page-header">
+                            <h1>Camera <small>Class</small></h1>
+                        </div>
+                        
+                        <div class="well well-small">
+                        
+                                <div class="extends">
+                                    Extends <a href="../classes/Aex.html" class="crosslink">Aex</a>
+                                </div>
+                        
+                        <!-- 
+                                <div class="foundat">
+                                    Defined in: <a href="../files/.._aexolgl-js_src_oldcamera.js.html#l4"><code>..&#x2F;aexolgl-js&#x2F;src&#x2F;oldcamera.js:4</code></a>
+                                </div>
+                         -->
+                        
+                                    Module: <a href="../modules/camera.html">camera</a>
+                        
+                        </div>
+                        
+                        
+                        <div class="well well-small">
+                            <p>Camera class</p>
+                        
+                        </div>
+                        
+                            <div class="constructor">
+                                <h2>Constructor</h2>
+                                <div id="method_Camera" class="method item">
+                                    <h3 class="name"><code>Camera</code></h3>
+                                
+                                        <div class="args">
+                                            <span class="paren">(</span><ul class="args-list inline commas">
+                                                <li class="arg">
+                                                        <code class="optional">[near]</code>
+                                                </li>
+                                                <li class="arg">
+                                                        <code class="optional">[far]</code>
+                                                </li>
+                                                <li class="arg">
+                                                        <code class="optional">[angle]</code>
+                                                </li>
+                                            </ul><span class="paren">)</span>
+                                        </div>
+                                
+                                
+                                
+                                
+                                
+                                
+                                
+                                
+                                    <div class="meta">
+                                                <p>
+                                <!-- 
+                                                Defined in
+                                 -->
+                                <!-- 
+                                        <a href="../files/.._aexolgl-js_src_oldcamera.js.html#l4"><code>..&#x2F;aexolgl-js&#x2F;src&#x2F;oldcamera.js:4</code></a>
+                                 -->
+                                        </p>
+                                
+                                
+                                
+                                    </div>
+                                
+                                    <div class="description">
+                                        
+                                    </div>
+                                
+                                        <div class="params">
+                                            <h4>Parameters:</h4>
+                                
+                                            <ul class="params-list">
+                                                <li class="param">
+                                                        <code class="param-name optional">[near]</code>
+                                                        <span class="type">Float</span>
+                                                        <span class="flag optional" title="This parameter is optional.">optional</span>
+                                
+                                
+                                                    <div class="param-description">
+                                                        <p>near Plane</p>
+                                
+                                                    </div>
+                                
+                                                </li>
+                                                <li class="param">
+                                                        <code class="param-name optional">[far]</code>
+                                                        <span class="type">Float</span>
+                                                        <span class="flag optional" title="This parameter is optional.">optional</span>
+                                
+                                
+                                                    <div class="param-description">
+                                                        <p>far Plane</p>
+                                
+                                                    </div>
+                                
+                                                </li>
+                                                <li class="param">
+                                                        <code class="param-name optional">[angle]</code>
+                                                        <span class="type">Float</span>
+                                                        <span class="flag optional" title="This parameter is optional.">optional</span>
+                                
+                                
+                                                    <div class="param-description">
+                                                        <p>angle of perspective camera</p>
+                                
+                                                    </div>
+                                
+                                                </li>
+                                            </ul>
+                                        </div>
+                                
+                                
+                                        <div class="example">
+                                            <h4>Example:</h4>
+                                
+                                            <div class="example-content">
+                                                <pre class="code prettyprint"><code>world = new Scene()
+                                camera = new Camera()
+                                camera.position = new Vector(0.1, -1, -10);</code></pre>
+                                
+                                            </div>
+                                        </div>
+                                </div>
+                            </div>
+                        
+                        <div>
+                            <ul class="nav nav-tabs">
+                                <li class="active"><a data-toggle="tab" href="#index">Index</a></li>
+                        
+                                    <li><a data-toggle="tab" href="#methods">Methods</a></li>
+                                    <li><a data-toggle="tab" href="#properties">Properties</a></li>
+                            </ul>
+                        
+                            <div class="tab-content">
+                                <div id="index" class="tab-pane active">
+                                    <h2 class="off-left">Item Index</h2>
+                        
+                                        <div class="index-section methods">
+                                            <h3>Methods</h3>
+                        
+                                            <ul class="index-list methods extends">
+                                                    <li class="index-item method inherited">
+                                                        <a href="#" data-tabid="#methods" data-anchor="#method_addChilds" data-tablink="addChilds">addChilds</a>
+                        
+                                                    </li>
+                                                    <li class="index-item method inherited">
+                                                        <a href="#" data-tabid="#methods" data-anchor="#method_centerPivot" data-tablink="centerPivot">centerPivot</a>
+                        
+                                                    </li>
+                                                    <li class="index-item method inherited">
+                                                        <a href="#" data-tabid="#methods" data-anchor="#method_draw" data-tablink="draw">draw</a>
+                        
+                                                    </li>
+                                                    <li class="index-item method">
+                                                        <a href="#" data-tabid="#methods" data-anchor="#method_forward" data-tablink="forward">forward</a>
+                        
+                                                    </li>
+                                                    <li class="index-item method">
+                                                        <a href="#" data-tabid="#methods" data-anchor="#method_lookAt" data-tablink="lookAt">lookAt</a>
+                        
+                                                    </li>
+                                                    <li class="index-item method inherited">
+                                                        <a href="#" data-tabid="#methods" data-anchor="#method_move" data-tablink="move">move</a>
+                        
+                                                    </li>
+                                                    <li class="index-item method">
+                                                        <a href="#" data-tabid="#methods" data-anchor="#method_on" data-tablink="on">on</a>
+                        
+                                                    </li>
+                                                    <li class="index-item method">
+                                                        <a href="#" data-tabid="#methods" data-anchor="#method_on" data-tablink="on">on</a>
+                        
+                                                    </li>
+                                                    <li class="index-item method">
+                                                        <a href="#" data-tabid="#methods" data-anchor="#method_pitch" data-tablink="pitch">pitch</a>
+                        
+                                                    </li>
+                                                    <li class="index-item method">
+                                                        <a href="#" data-tabid="#methods" data-anchor="#method_pitch" data-tablink="pitch">pitch</a>
+                        
+                                                    </li>
+                                                    <li class="index-item method">
+                                                        <a href="#" data-tabid="#methods" data-anchor="#method_pitch" data-tablink="pitch">pitch</a>
+                        
+                                                    </li>
+                                                    <li class="index-item method">
+                                                        <a href="#" data-tabid="#methods" data-anchor="#method_pitch" data-tablink="pitch">pitch</a>
+                        
+                                                    </li>
+                                                    <li class="index-item method inherited">
+                                                        <a href="#" data-tabid="#methods" data-anchor="#method_remove" data-tablink="remove">remove</a>
+                        
+                                                    </li>
+                                                    <li class="index-item method">
+                                                        <a href="#" data-tabid="#methods" data-anchor="#method_roll" data-tablink="roll">roll</a>
+                        
+                                                    </li>
+                                                    <li class="index-item method">
+                                                        <a href="#" data-tabid="#methods" data-anchor="#method_roll" data-tablink="roll">roll</a>
+                        
+                                                    </li>
+                                                    <li class="index-item method inherited">
+                                                        <a href="#" data-tabid="#methods" data-anchor="#method_rotate" data-tablink="rotate">rotate</a>
+                        
+                                                    </li>
+                                                    <li class="index-item method inherited">
+                                                        <a href="#" data-tabid="#methods" data-anchor="#method_rotateAroundPoint" data-tablink="rotateAroundPoint">rotateAroundPoint</a>
+                        
+                                                    </li>
+                                                    <li class="index-item method inherited">
+                                                        <a href="#" data-tabid="#methods" data-anchor="#method_scale" data-tablink="scale">scale</a>
+                        
+                                                    </li>
+                                                    <li class="index-item method">
+                                                        <a href="#" data-tabid="#methods" data-anchor="#method_setCameraPosition" data-tablink="setCameraPosition">setCameraPosition</a>
+                        
+                                                    </li>
+                                                    <li class="index-item method">
+                                                        <a href="#" data-tabid="#methods" data-anchor="#method_setCameraPosition" data-tablink="setCameraPosition">setCameraPosition</a>
+                        
+                                                    </li>
+                                                    <li class="index-item method">
+                                                        <a href="#" data-tabid="#methods" data-anchor="#method_setDisplay" data-tablink="setDisplay">setDisplay</a>
+                        
+                                                    </li>
+                                                    <li class="index-item method">
+                                                        <a href="#" data-tabid="#methods" data-anchor="#method_setDisplay" data-tablink="setDisplay">setDisplay</a>
+                        
+                                                    </li>
+                                                    <li class="index-item method inherited">
+                                                        <a href="#" data-tabid="#methods" data-anchor="#method_setModelView" data-tablink="setModelView">setModelView</a>
+                        
+                                                    </li>
+                                                    <li class="index-item method">
+                                                        <a href="#" data-tabid="#methods" data-anchor="#method_setOrthoPerspective" data-tablink="setOrthoPerspective">setOrthoPerspective</a>
+                        
+                                                    </li>
+                                                    <li class="index-item method inherited">
+                                                        <a href="#" data-tabid="#methods" data-anchor="#method_setParent" data-tablink="setParent">setParent</a>
+                        
+                                                    </li>
+                                                    <li class="index-item method">
+                                                        <a href="#" data-tabid="#methods" data-anchor="#method_setPerspective" data-tablink="setPerspective">setPerspective</a>
+                        
+                                                    </li>
+                                                    <li class="index-item method inherited">
+                                                        <a href="#" data-tabid="#methods" data-anchor="#method_setUniforms" data-tablink="setUniforms">setUniforms</a>
+                        
+                                                    </li>
+                                                    <li class="index-item method">
+                                                        <a href="#" data-tabid="#methods" data-anchor="#method_side" data-tablink="side">side</a>
+                        
+                                                    </li>
+                                                    <li class="index-item method">
+                                                        <a href="#" data-tabid="#methods" data-anchor="#method_side" data-tablink="side">side</a>
+                        
+                                                    </li>
+                                                    <li class="index-item method">
+                                                        <a href="#" data-tabid="#methods" data-anchor="#method_transforms" data-tablink="transforms">transforms</a>
+                        
+                                                    </li>
+                                                    <li class="index-item method">
+                                                        <a href="#" data-tabid="#methods" data-anchor="#method_updown" data-tablink="updown">updown</a>
+                        
+                                                    </li>
+                                                    <li class="index-item method">
+                                                        <a href="#" data-tabid="#methods" data-anchor="#method_updown" data-tablink="updown">updown</a>
+                        
+                                                    </li>
+                                            </ul>
+                                        </div>
+                        
+                                        <div class="index-section properties">
+                                            <h3>Properties</h3>
+                        
+                                            <ul class="index-list properties extends">
+                                                    <li class="index-item property inherited">
+                                                        <a href="#" data-tabid="#properties" data-anchor="#property_position" data-tablink="position">position</a>
+                        
+                                                    </li>
+                                                    <li class="index-item property inherited">
+                                                        <a href="#" data-tabid="#properties" data-anchor="#property_rotation" data-tablink="rotation">rotation</a>
+                        
+                                                    </li>
+                                                    <li class="index-item property inherited">
+                                                        <a href="#" data-tabid="#properties" data-anchor="#property_rotX" data-tablink="rotX">rotX</a>
+                        
+                                                    </li>
+                                                    <li class="index-item property inherited">
+                                                        <a href="#" data-tabid="#properties" data-anchor="#property_rotY" data-tablink="rotY">rotY</a>
+                        
+                                                    </li>
+                                                    <li class="index-item property inherited">
+                                                        <a href="#" data-tabid="#properties" data-anchor="#property_rotZ" data-tablink="rotZ">rotZ</a>
+                        
+                                                    </li>
+                                                    <li class="index-item property inherited">
+                                                        <a href="#" data-tabid="#properties" data-anchor="#property_scaleX" data-tablink="scaleX">scaleX</a>
+                        
+                                                    </li>
+                                                    <li class="index-item property inherited">
+                                                        <a href="#" data-tabid="#properties" data-anchor="#property_scaleY" data-tablink="scaleY">scaleY</a>
+                        
+                                                    </li>
+                                                    <li class="index-item property inherited">
+                                                        <a href="#" data-tabid="#properties" data-anchor="#property_scaleZ" data-tablink="scaleZ">scaleZ</a>
+                        
+                                                    </li>
+                                                    <li class="index-item property inherited">
+                                                        <a href="#" data-tabid="#properties" data-anchor="#property_x" data-tablink="x">x</a>
+                        
+                                                    </li>
+                                                    <li class="index-item property inherited">
+                                                        <a href="#" data-tabid="#properties" data-anchor="#property_y" data-tablink="y">y</a>
+                        
+                                                    </li>
+                                                    <li class="index-item property inherited">
+                                                        <a href="#" data-tabid="#properties" data-anchor="#property_z" data-tablink="z">z</a>
+                        
+                                                    </li>
+                                            </ul>
+                                        </div>
+                        
+                        
+                                </div>
+                        
+                                    <div id="methods" class="tab-pane">
+                                        <h2 class="off-left">Methods</h2>
+                        
+                                            <div id="method_addChilds" class="method item inherited">
+                                                <h3 class="name"><code>addChilds</code></h3>
+                                            
+                                                    <div class="args">
+                                                        <span class="paren">(</span><ul class="args-list inline commas">
+                                                            <li class="arg">
+                                                                    <code>mobject</code>
+                                                            </li>
+                                                        </ul><span class="paren">)</span>
+                                                    </div>
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                                <div class="meta">
+                                                            <p>Inherited from
+                                                            <a href="../classes/MObject.html#method_addChilds">MObject</a>:
+                                            <!-- 
+                                                    <a href="../files/.._aexolgl-js_src_aexolGL.js.html#l16"><code>..&#x2F;aexolgl-js&#x2F;src&#x2F;aexolGL.js:16</code></a>
+                                             -->
+                                                    </p>
+                                            
+                                            
+                                            
+                                                </div>
+                                            
+                                                <div class="description">
+                                                    <p>Sets parent on MObject and unbinds current parent in RenderTree</p>
+                                            
+                                                </div>
+                                            
+                                                    <div class="params">
+                                                        <h4>Parameters:</h4>
+                                            
+                                                        <ul class="params-list">
+                                                            <li class="param">
+                                                                    <code class="param-name">mobject</code>
+                                                                    <span class="type"><a href="../classes/MObject.html" class="crosslink">MObject</a></span>
+                                            
+                                            
+                                                                <div class="param-description">
+                                                                    <p>mobject object to add as a child to RenderTree</p>
+                                            
+                                                                </div>
+                                            
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                            
+                                            
+                                            </div>
+                                            <div id="method_centerPivot" class="method item inherited">
+                                                <h3 class="name"><code>centerPivot</code></h3>
+                                            
+                                                    <span class="paren">()</span>
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                                <div class="meta">
+                                                            <p>Inherited from
+                                                            <a href="../classes/Aex.html#method_centerPivot">Aex</a>:
+                                            <!-- 
+                                                    <a href="../files/.._aexolgl-js_src_aexolGL.js.html#l314"><code>..&#x2F;aexolgl-js&#x2F;src&#x2F;aexolGL.js:314</code></a>
+                                             -->
+                                                    </p>
+                                            
+                                            
+                                            
+                                                </div>
+                                            
+                                                <div class="description">
+                                                    <p>Centers pivot of an Aex to parent Mesh</p>
+                                            
+                                                </div>
+                                            
+                                            
+                                            
+                                            </div>
+                                            <div id="method_draw" class="method item inherited">
+                                                <h3 class="name"><code>draw</code></h3>
+                                            
+                                                    <span class="paren">()</span>
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                                <div class="meta">
+                                                            <p>Inherited from
+                                                            <a href="../classes/Aex.html#method_draw">Aex</a>:
+                                            <!-- 
+                                                    <a href="../files/.._aexolgl-js_src_aexolGL.js.html#l447"><code>..&#x2F;aexolgl-js&#x2F;src&#x2F;aexolGL.js:447</code></a>
+                                             -->
+                                                    </p>
+                                            
+                                            
+                                            
+                                                </div>
+                                            
+                                                <div class="description">
+                                                    <p>Draw the Aex inside draw function of your Scene</p>
+                                            
+                                                </div>
+                                            
+                                            
+                                            
+                                            </div>
+                                            <div id="method_forward" class="method item">
+                                                <h3 class="name"><code>forward</code></h3>
+                                            
+                                                    <div class="args">
+                                                        <span class="paren">(</span><ul class="args-list inline commas">
+                                                            <li class="arg">
+                                                                    <code>f</code>
+                                                            </li>
+                                                        </ul><span class="paren">)</span>
+                                                    </div>
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                                <div class="meta">
+                                                            <p>
+                                            <!-- 
+                                                            Defined in
+                                             -->
+                                            <!-- 
+                                                    <a href="../files/.._aexolgl-js_src_oldcamera.js.html#l76"><code>..&#x2F;aexolgl-js&#x2F;src&#x2F;oldcamera.js:76</code></a>
+                                             -->
+                                                    </p>
+                                            
+                                            
+                                            
+                                                </div>
+                                            
+                                                <div class="description">
+                                                    <p>Move camera forward &amp; backward</p>
+                                            
+                                                </div>
+                                            
+                                                    <div class="params">
+                                                        <h4>Parameters:</h4>
+                                            
+                                                        <ul class="params-list">
+                                                            <li class="param">
+                                                                    <code class="param-name">f</code>
+                                                                    <span class="type">Float</span>
+                                            
+                                            
+                                                                <div class="param-description">
+                                                                    <p>distance to move</p>
+                                            
+                                                                </div>
+                                            
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                            
+                                            
+                                            </div>
+                                            <div id="method_lookAt" class="method item">
+                                                <h3 class="name"><code>lookAt</code></h3>
+                                            
+                                                    <div class="args">
+                                                        <span class="paren">(</span><ul class="args-list inline commas">
+                                                            <li class="arg">
+                                                                    <code>e</code>
+                                                            </li>
+                                                            <li class="arg">
+                                                                    <code>c</code>
+                                                            </li>
+                                                            <li class="arg">
+                                                                    <code>u</code>
+                                                            </li>
+                                                        </ul><span class="paren">)</span>
+                                                    </div>
+                                            
+                                                    <span class="returns-inline">
+                                                        <span class="type"><a href="../classes/Matrix.html" class="crosslink">Matrix</a></span>
+                                                    </span>
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                                <div class="meta">
+                                                            <p>
+                                            <!-- 
+                                                            Defined in
+                                             -->
+                                            <!-- 
+                                                    <a href="../files/.._aexolgl-js_src_camera.js.html#l253"><code>..&#x2F;aexolgl-js&#x2F;src&#x2F;camera.js:253</code></a>
+                                             -->
+                                                    </p>
+                                            
+                                            
+                                            
+                                                </div>
+                                            
+                                                <div class="description">
+                                                    <p>put the camera at the eye point looking <code>e</code>
+                                            toward the center point <code>c</code>  with an up direction of <code>u</code>.</p>
+                                            
+                                                </div>
+                                            
+                                                    <div class="params">
+                                                        <h4>Parameters:</h4>
+                                            
+                                                        <ul class="params-list">
+                                                            <li class="param">
+                                                                    <code class="param-name">e</code>
+                                                                    <span class="type"><a href="../classes/Vector.html" class="crosslink">Vector</a></span>
+                                            
+                                            
+                                                                <div class="param-description">
+                                                                    <p>Eye point</p>
+                                            
+                                                                </div>
+                                            
+                                                            </li>
+                                                            <li class="param">
+                                                                    <code class="param-name">c</code>
+                                                                    <span class="type"><a href="../classes/Vector.html" class="crosslink">Vector</a></span>
+                                            
+                                            
+                                                                <div class="param-description">
+                                                                    <p>Center point</p>
+                                            
+                                                                </div>
+                                            
+                                                            </li>
+                                                            <li class="param">
+                                                                    <code class="param-name">u</code>
+                                                                    <span class="type"><a href="../classes/Vector.html" class="crosslink">Vector</a></span>
+                                            
+                                            
+                                                                <div class="param-description">
+                                                                    <p>Up vector</p>
+                                            
+                                                                </div>
+                                            
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                            
+                                                    <div class="returns">
+                                                        <h4>Returns:</h4>
+                                            
+                                                        <div class="returns-description">
+                                                                    <span class="type"><a href="../classes/Matrix.html" class="crosslink">Matrix</a></span>:
+                                                                <p>Result matrix</p>
+                                            
+                                                        </div>
+                                                    </div>
+                                            
+                                            </div>
+                                            <div id="method_move" class="method item inherited">
+                                                <h3 class="name"><code>move</code></h3>
+                                            
+                                                    <div class="args">
+                                                        <span class="paren">(</span><ul class="args-list inline commas">
+                                                            <li class="arg">
+                                                                    <code>x</code>
+                                                            </li>
+                                                            <li class="arg">
+                                                                    <code>y</code>
+                                                            </li>
+                                                            <li class="arg">
+                                                                    <code>z</code>
+                                                            </li>
+                                                            <li class="arg">
+                                                                    <code>r</code>
+                                                            </li>
+                                                        </ul><span class="paren">)</span>
+                                                    </div>
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                                <div class="meta">
+                                                            <p>Inherited from
+                                                            <a href="../classes/Aex.html#method_move">Aex</a>:
+                                            <!-- 
+                                                    <a href="../files/.._aexolgl-js_src_aexolGL.js.html#l327"><code>..&#x2F;aexolgl-js&#x2F;src&#x2F;aexolGL.js:327</code></a>
+                                             -->
+                                                    </p>
+                                            
+                                            
+                                            
+                                                </div>
+                                            
+                                                <div class="description">
+                                                    <p>Move object</p>
+                                            
+                                                </div>
+                                            
+                                                    <div class="params">
+                                                        <h4>Parameters:</h4>
+                                            
+                                                        <ul class="params-list">
+                                                            <li class="param">
+                                                                    <code class="param-name">x</code>
+                                                                    <span class="type">Object</span>
+                                            
+                                            
+                                                                <div class="param-description">
+                                                                    <ul>
+                                            <li>x axis</li>
+                                            </ul>
+                                            
+                                                                </div>
+                                            
+                                                            </li>
+                                                            <li class="param">
+                                                                    <code class="param-name">y</code>
+                                                                    <span class="type">Object</span>
+                                            
+                                            
+                                                                <div class="param-description">
+                                                                    <ul>
+                                            <li>y axis</li>
+                                            </ul>
+                                            
+                                                                </div>
+                                            
+                                                            </li>
+                                                            <li class="param">
+                                                                    <code class="param-name">z</code>
+                                                                    <span class="type">Object</span>
+                                            
+                                            
+                                                                <div class="param-description">
+                                                                    <ul>
+                                            <li>z axis</li>
+                                            </ul>
+                                            
+                                                                </div>
+                                            
+                                                            </li>
+                                                            <li class="param">
+                                                                    <code class="param-name">r</code>
+                                                                    <span class="type">Object</span>
+                                            
+                                            
+                                                                <div class="param-description">
+                                                                    <ul>
+                                            <li>relative transform</li>
+                                            </ul>
+                                            
+                                                                </div>
+                                            
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                            
+                                            
+                                                    <div class="example">
+                                                        <h4>Example:</h4>
+                                            
+                                                        <div class="example-content">
+                                                            <pre class="code prettyprint"><code> var aex = new Aex()
+                                             aex.move(0,1,2)</code></pre>
+                                            
+                                                        </div>
+                                                    </div>
+                                            </div>
+                                            <div id="method_on" class="method item">
+                                                <h3 class="name"><code>on</code></h3>
+                                            
+                                                    <span class="paren">()</span>
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                                <div class="meta">
+                                                            <p>
+                                            <!-- 
+                                                            Defined in
+                                             -->
+                                            <!-- 
+                                                    <a href="../files/.._aexolgl-js_src_oldcamera.js.html#l193"><code>..&#x2F;aexolgl-js&#x2F;src&#x2F;oldcamera.js:193</code></a>
+                                             -->
+                                                    </p>
+                                            
+                                            
+                                            
+                                                </div>
+                                            
+                                                <div class="description">
+                                                    <p>Turn on standard camera mouse and WSAD operating</p>
+                                            
+                                                </div>
+                                            
+                                            
+                                            
+                                            </div>
+                                            <div id="method_on" class="method item">
+                                                <h3 class="name"><code>on</code></h3>
+                                            
+                                                    <div class="args">
+                                                        <span class="paren">(</span><ul class="args-list inline commas">
+                                                            <li class="arg">
+                                                                    <code>factor</code>
+                                                            </li>
+                                                        </ul><span class="paren">)</span>
+                                                    </div>
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                                <div class="meta">
+                                                            <p>
+                                            <!-- 
+                                                            Defined in
+                                             -->
+                                            <!-- 
+                                                    <a href="../files/.._aexolgl-js_src_camera.js.html#l381"><code>..&#x2F;aexolgl-js&#x2F;src&#x2F;camera.js:381</code></a>
+                                             -->
+                                                    </p>
+                                            
+                                            
+                                            
+                                                </div>
+                                            
+                                                <div class="description">
+                                                    <p>DEPRECATED use setters instead
+                                            Turn on standard camera mouse and WSAD operating</p>
+                                            
+                                                </div>
+                                            
+                                                    <div class="params">
+                                                        <h4>Parameters:</h4>
+                                            
+                                                        <ul class="params-list">
+                                                            <li class="param">
+                                                                    <code class="param-name">factor</code>
+                                                                    <span class="type">Float</span>
+                                            
+                                            
+                                                                <div class="param-description">
+                                                                    <p>sensitivity of camera</p>
+                                            
+                                                                </div>
+                                            
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                            
+                                            
+                                            </div>
+                                            <div id="method_pitch" class="method item">
+                                                <h3 class="name"><code>pitch</code></h3>
+                                            
+                                                    <div class="args">
+                                                        <span class="paren">(</span><ul class="args-list inline commas">
+                                                            <li class="arg">
+                                                                    <code>change</code>
+                                                            </li>
+                                                        </ul><span class="paren">)</span>
+                                                    </div>
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                                <div class="meta">
+                                                            <p>
+                                            <!-- 
+                                                            Defined in
+                                             -->
+                                            <!-- 
+                                                    <a href="../files/.._aexolgl-js_src_oldcamera.js.html#l122"><code>..&#x2F;aexolgl-js&#x2F;src&#x2F;oldcamera.js:122</code></a>
+                                             -->
+                                                    </p>
+                                            
+                                            
+                                            
+                                                </div>
+                                            
+                                                <div class="description">
+                                                    <p>Rotate on local x axis</p>
+                                            
+                                                </div>
+                                            
+                                                    <div class="params">
+                                                        <h4>Parameters:</h4>
+                                            
+                                                        <ul class="params-list">
+                                                            <li class="param">
+                                                                    <code class="param-name">change</code>
+                                                                    <span class="type">Float</span>
+                                            
+                                            
+                                                                <div class="param-description">
+                                                                    <p>rotation</p>
+                                            
+                                                                </div>
+                                            
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                            
+                                            
+                                            </div>
+                                            <div id="method_pitch" class="method item">
+                                                <h3 class="name"><code>pitch</code></h3>
+                                            
+                                                    <div class="args">
+                                                        <span class="paren">(</span><ul class="args-list inline commas">
+                                                            <li class="arg">
+                                                                    <code>change</code>
+                                                            </li>
+                                                        </ul><span class="paren">)</span>
+                                                    </div>
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                                <div class="meta">
+                                                            <p>
+                                            <!-- 
+                                                            Defined in
+                                             -->
+                                            <!-- 
+                                                    <a href="../files/.._aexolgl-js_src_camera.js.html#l363"><code>..&#x2F;aexolgl-js&#x2F;src&#x2F;camera.js:363</code></a>
+                                             -->
+                                                    </p>
+                                            
+                                            
+                                            
+                                                </div>
+                                            
+                                                <div class="description">
+                                                    <p>DEPRECATED use setters instead
+                                            Rotate on local y axis</p>
+                                            
+                                                </div>
+                                            
+                                                    <div class="params">
+                                                        <h4>Parameters:</h4>
+                                            
+                                                        <ul class="params-list">
+                                                            <li class="param">
+                                                                    <code class="param-name">change</code>
+                                                                    <span class="type">Float</span>
+                                            
+                                            
+                                                                <div class="param-description">
+                                                                    <p>rotation</p>
+                                            
+                                                                </div>
+                                            
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                            
+                                            
+                                            </div>
+                                            <div id="method_pitch" class="method item">
+                                                <h3 class="name"><code>pitch</code></h3>
+                                            
+                                                    <div class="args">
+                                                        <span class="paren">(</span><ul class="args-list inline commas">
+                                                            <li class="arg">
+                                                                    <code>change</code>
+                                                            </li>
+                                                        </ul><span class="paren">)</span>
+                                                    </div>
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                                <div class="meta">
+                                                            <p>
+                                            <!-- 
+                                                            Defined in
+                                             -->
+                                            <!-- 
+                                                    <a href="../files/.._aexolgl-js_src_oldcamera.js.html#l130"><code>..&#x2F;aexolgl-js&#x2F;src&#x2F;oldcamera.js:130</code></a>
+                                             -->
+                                                    </p>
+                                            
+                                            
+                                            
+                                                </div>
+                                            
+                                                <div class="description">
+                                                    <p>Rotate on local y axis</p>
+                                            
+                                                </div>
+                                            
+                                                    <div class="params">
+                                                        <h4>Parameters:</h4>
+                                            
+                                                        <ul class="params-list">
+                                                            <li class="param">
+                                                                    <code class="param-name">change</code>
+                                                                    <span class="type">Float</span>
+                                            
+                                            
+                                                                <div class="param-description">
+                                                                    <p>rotation</p>
+                                            
+                                                                </div>
+                                            
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                            
+                                            
+                                            </div>
+                                            <div id="method_pitch" class="method item">
+                                                <h3 class="name"><code>pitch</code></h3>
+                                            
+                                                    <div class="args">
+                                                        <span class="paren">(</span><ul class="args-list inline commas">
+                                                            <li class="arg">
+                                                                    <code>change</code>
+                                                            </li>
+                                                        </ul><span class="paren">)</span>
+                                                    </div>
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                                <div class="meta">
+                                                            <p>
+                                            <!-- 
+                                                            Defined in
+                                             -->
+                                            <!-- 
+                                                    <a href="../files/.._aexolgl-js_src_camera.js.html#l354"><code>..&#x2F;aexolgl-js&#x2F;src&#x2F;camera.js:354</code></a>
+                                             -->
+                                                    </p>
+                                            
+                                            
+                                            
+                                                </div>
+                                            
+                                                <div class="description">
+                                                    <p>DEPRECATED use setters instead
+                                            Rotate on local x axis</p>
+                                            
+                                                </div>
+                                            
+                                                    <div class="params">
+                                                        <h4>Parameters:</h4>
+                                            
+                                                        <ul class="params-list">
+                                                            <li class="param">
+                                                                    <code class="param-name">change</code>
+                                                                    <span class="type">Float</span>
+                                            
+                                            
+                                                                <div class="param-description">
+                                                                    <p>rotation</p>
+                                            
+                                                                </div>
+                                            
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                            
+                                            
+                                            </div>
+                                            <div id="method_remove" class="method item inherited">
+                                                <h3 class="name"><code>remove</code></h3>
+                                            
+                                                    <span class="paren">()</span>
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                                <div class="meta">
+                                                            <p>Inherited from
+                                                            <a href="../classes/MObject.html#method_remove">MObject</a>:
+                                            <!-- 
+                                                    <a href="../files/.._aexolgl-js_src_aexolGL.js.html#l52"><code>..&#x2F;aexolgl-js&#x2F;src&#x2F;aexolGL.js:52</code></a>
+                                             -->
+                                                    </p>
+                                            
+                                            
+                                            
+                                                </div>
+                                            
+                                                <div class="description">
+                                                    <p>Removes MObject from RenderTree</p>
+                                            
+                                                </div>
+                                            
+                                            
+                                            
+                                            </div>
+                                            <div id="method_roll" class="method item">
+                                                <h3 class="name"><code>roll</code></h3>
+                                            
+                                                    <div class="args">
+                                                        <span class="paren">(</span><ul class="args-list inline commas">
+                                                            <li class="arg">
+                                                                    <code>change</code>
+                                                            </li>
+                                                        </ul><span class="paren">)</span>
+                                                    </div>
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                                <div class="meta">
+                                                            <p>
+                                            <!-- 
+                                                            Defined in
+                                             -->
+                                            <!-- 
+                                                    <a href="../files/.._aexolgl-js_src_oldcamera.js.html#l138"><code>..&#x2F;aexolgl-js&#x2F;src&#x2F;oldcamera.js:138</code></a>
+                                             -->
+                                                    </p>
+                                            
+                                            
+                                            
+                                                </div>
+                                            
+                                                <div class="description">
+                                                    <p>Rotate on local z axis</p>
+                                            
+                                                </div>
+                                            
+                                                    <div class="params">
+                                                        <h4>Parameters:</h4>
+                                            
+                                                        <ul class="params-list">
+                                                            <li class="param">
+                                                                    <code class="param-name">change</code>
+                                                                    <span class="type">Float</span>
+                                            
+                                            
+                                                                <div class="param-description">
+                                                                    <p>rotation</p>
+                                            
+                                                                </div>
+                                            
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                            
+                                            
+                                            </div>
+                                            <div id="method_roll" class="method item">
+                                                <h3 class="name"><code>roll</code></h3>
+                                            
+                                                    <div class="args">
+                                                        <span class="paren">(</span><ul class="args-list inline commas">
+                                                            <li class="arg">
+                                                                    <code>change</code>
+                                                            </li>
+                                                        </ul><span class="paren">)</span>
+                                                    </div>
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                                <div class="meta">
+                                                            <p>
+                                            <!-- 
+                                                            Defined in
+                                             -->
+                                            <!-- 
+                                                    <a href="../files/.._aexolgl-js_src_camera.js.html#l372"><code>..&#x2F;aexolgl-js&#x2F;src&#x2F;camera.js:372</code></a>
+                                             -->
+                                                    </p>
+                                            
+                                            
+                                            
+                                                </div>
+                                            
+                                                <div class="description">
+                                                    <p>DEPRECATED use setters instead
+                                            Rotate on local z axis</p>
+                                            
+                                                </div>
+                                            
+                                                    <div class="params">
+                                                        <h4>Parameters:</h4>
+                                            
+                                                        <ul class="params-list">
+                                                            <li class="param">
+                                                                    <code class="param-name">change</code>
+                                                                    <span class="type">Float</span>
+                                            
+                                            
+                                                                <div class="param-description">
+                                                                    <p>rotation</p>
+                                            
+                                                                </div>
+                                            
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                            
+                                            
+                                            </div>
+                                            <div id="method_rotate" class="method item inherited">
+                                                <h3 class="name"><code>rotate</code></h3>
+                                            
+                                                    <div class="args">
+                                                        <span class="paren">(</span><ul class="args-list inline commas">
+                                                            <li class="arg">
+                                                                    <code>x</code>
+                                                            </li>
+                                                            <li class="arg">
+                                                                    <code>y</code>
+                                                            </li>
+                                                            <li class="arg">
+                                                                    <code>z</code>
+                                                            </li>
+                                                            <li class="arg">
+                                                                    <code>r</code>
+                                                            </li>
+                                                        </ul><span class="paren">)</span>
+                                                    </div>
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                                <div class="meta">
+                                                            <p>Inherited from
+                                                            <a href="../classes/Aex.html#method_rotate">Aex</a>:
+                                            <!-- 
+                                                    <a href="../files/.._aexolgl-js_src_aexolGL.js.html#l347"><code>..&#x2F;aexolgl-js&#x2F;src&#x2F;aexolGL.js:347</code></a>
+                                             -->
+                                                    </p>
+                                            
+                                            
+                                            
+                                                </div>
+                                            
+                                                <div class="description">
+                                                    <p>Rotate object</p>
+                                            
+                                                </div>
+                                            
+                                                    <div class="params">
+                                                        <h4>Parameters:</h4>
+                                            
+                                                        <ul class="params-list">
+                                                            <li class="param">
+                                                                    <code class="param-name">x</code>
+                                                                    <span class="type">Object</span>
+                                            
+                                            
+                                                                <div class="param-description">
+                                                                    <ul>
+                                            <li>angle around x axis</li>
+                                            </ul>
+                                            
+                                                                </div>
+                                            
+                                                            </li>
+                                                            <li class="param">
+                                                                    <code class="param-name">y</code>
+                                                                    <span class="type">Object</span>
+                                            
+                                            
+                                                                <div class="param-description">
+                                                                    <ul>
+                                            <li>angle around y axis</li>
+                                            </ul>
+                                            
+                                                                </div>
+                                            
+                                                            </li>
+                                                            <li class="param">
+                                                                    <code class="param-name">z</code>
+                                                                    <span class="type">Object</span>
+                                            
+                                            
+                                                                <div class="param-description">
+                                                                    <ul>
+                                            <li>angle around z axis</li>
+                                            </ul>
+                                            
+                                                                </div>
+                                            
+                                                            </li>
+                                                            <li class="param">
+                                                                    <code class="param-name">r</code>
+                                                                    <span class="type">Object</span>
+                                            
+                                            
+                                                                <div class="param-description">
+                                                                    <ul>
+                                            <li>relative transform</li>
+                                            </ul>
+                                            
+                                                                </div>
+                                            
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                            
+                                            
+                                                    <div class="example">
+                                                        <h4>Example:</h4>
+                                            
+                                                        <div class="example-content">
+                                                            <pre class="code prettyprint"><code> var aex = new Aex()
+                                             aex.rotate(0,1,2)</code></pre>
+                                            
+                                                        </div>
+                                                    </div>
+                                            </div>
+                                            <div id="method_rotateAroundPoint" class="method item inherited">
+                                                <h3 class="name"><code>rotateAroundPoint</code></h3>
+                                            
+                                                    <div class="args">
+                                                        <span class="paren">(</span><ul class="args-list inline commas">
+                                                            <li class="arg">
+                                                                    <code>center</code>
+                                                            </li>
+                                                            <li class="arg">
+                                                                    <code>angle</code>
+                                                            </li>
+                                                            <li class="arg">
+                                                                    <code>x</code>
+                                                            </li>
+                                                            <li class="arg">
+                                                                    <code>y</code>
+                                                            </li>
+                                                            <li class="arg">
+                                                                    <code>z</code>
+                                                            </li>
+                                                        </ul><span class="paren">)</span>
+                                                    </div>
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                                <div class="meta">
+                                                            <p>Inherited from
+                                                            <a href="../classes/Aex.html#method_rotateAroundPoint">Aex</a>:
+                                            <!-- 
+                                                    <a href="../files/.._aexolgl-js_src_aexolGL.js.html#l387"><code>..&#x2F;aexolgl-js&#x2F;src&#x2F;aexolGL.js:387</code></a>
+                                             -->
+                                                    </p>
+                                            
+                                            
+                                            
+                                                </div>
+                                            
+                                                <div class="description">
+                                                    <p>Rotate object around point</p>
+                                            
+                                                </div>
+                                            
+                                                    <div class="params">
+                                                        <h4>Parameters:</h4>
+                                            
+                                                        <ul class="params-list">
+                                                            <li class="param">
+                                                                    <code class="param-name">center</code>
+                                                                    <span class="type"><a href="../classes/Vector.html" class="crosslink">Vector</a></span>
+                                            
+                                            
+                                                                <div class="param-description">
+                                                                    <p>pivot point location</p>
+                                            
+                                                                </div>
+                                            
+                                                            </li>
+                                                            <li class="param">
+                                                                    <code class="param-name">angle</code>
+                                                                    <span class="type">Object</span>
+                                            
+                                            
+                                                                <div class="param-description">
+                                                                    <ul>
+                                            <li>rotation in degrees</li>
+                                            </ul>
+                                            
+                                                                </div>
+                                            
+                                                            </li>
+                                                            <li class="param">
+                                                                    <code class="param-name">x</code>
+                                                                    <span class="type">Object</span>
+                                            
+                                            
+                                                                <div class="param-description">
+                                                                    <ul>
+                                            <li>usage of x axis</li>
+                                            </ul>
+                                            
+                                                                </div>
+                                            
+                                                            </li>
+                                                            <li class="param">
+                                                                    <code class="param-name">y</code>
+                                                                    <span class="type">Object</span>
+                                            
+                                            
+                                                                <div class="param-description">
+                                                                    <ul>
+                                            <li>usage of y axis</li>
+                                            </ul>
+                                            
+                                                                </div>
+                                            
+                                                            </li>
+                                                            <li class="param">
+                                                                    <code class="param-name">z</code>
+                                                                    <span class="type">Object</span>
+                                            
+                                            
+                                                                <div class="param-description">
+                                                                    <ul>
+                                            <li>usage of z axis</li>
+                                            </ul>
+                                            
+                                                                </div>
+                                            
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                            
+                                            
+                                                    <div class="example">
+                                                        <h4>Example:</h4>
+                                            
+                                                        <div class="example-content">
+                                                            <pre class="code prettyprint"><code> var aex = new Aex()
+                                             aex.rotateAroundPoint(new Vector(0,1,1),90,0,1,0)</code></pre>
+                                            
+                                                        </div>
+                                                    </div>
+                                            </div>
+                                            <div id="method_scale" class="method item inherited">
+                                                <h3 class="name"><code>scale</code></h3>
+                                            
+                                                    <div class="args">
+                                                        <span class="paren">(</span><ul class="args-list inline commas">
+                                                            <li class="arg">
+                                                                    <code>x</code>
+                                                            </li>
+                                                            <li class="arg">
+                                                                    <code>y</code>
+                                                            </li>
+                                                            <li class="arg">
+                                                                    <code>z</code>
+                                                            </li>
+                                                            <li class="arg">
+                                                                    <code>r</code>
+                                                            </li>
+                                                        </ul><span class="paren">)</span>
+                                                    </div>
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                                <div class="meta">
+                                                            <p>Inherited from
+                                                            <a href="../classes/Aex.html#method_scale">Aex</a>:
+                                            <!-- 
+                                                    <a href="../files/.._aexolgl-js_src_aexolGL.js.html#l367"><code>..&#x2F;aexolgl-js&#x2F;src&#x2F;aexolGL.js:367</code></a>
+                                             -->
+                                                    </p>
+                                            
+                                            
+                                            
+                                                </div>
+                                            
+                                                <div class="description">
+                                                    <p>Scale object</p>
+                                            
+                                                </div>
+                                            
+                                                    <div class="params">
+                                                        <h4>Parameters:</h4>
+                                            
+                                                        <ul class="params-list">
+                                                            <li class="param">
+                                                                    <code class="param-name">x</code>
+                                                                    <span class="type">Object</span>
+                                            
+                                            
+                                                                <div class="param-description">
+                                                                    <ul>
+                                            <li>x axis</li>
+                                            </ul>
+                                            
+                                                                </div>
+                                            
+                                                            </li>
+                                                            <li class="param">
+                                                                    <code class="param-name">y</code>
+                                                                    <span class="type">Object</span>
+                                            
+                                            
+                                                                <div class="param-description">
+                                                                    <ul>
+                                            <li>y axis</li>
+                                            </ul>
+                                            
+                                                                </div>
+                                            
+                                                            </li>
+                                                            <li class="param">
+                                                                    <code class="param-name">z</code>
+                                                                    <span class="type">Object</span>
+                                            
+                                            
+                                                                <div class="param-description">
+                                                                    <ul>
+                                            <li>z axis</li>
+                                            </ul>
+                                            
+                                                                </div>
+                                            
+                                                            </li>
+                                                            <li class="param">
+                                                                    <code class="param-name">r</code>
+                                                                    <span class="type">Object</span>
+                                            
+                                            
+                                                                <div class="param-description">
+                                                                    <ul>
+                                            <li>relative transform</li>
+                                            </ul>
+                                            
+                                                                </div>
+                                            
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                            
+                                            
+                                                    <div class="example">
+                                                        <h4>Example:</h4>
+                                            
+                                                        <div class="example-content">
+                                                            <pre class="code prettyprint"><code> var aex = new Aex()
+                                             aex.scale(0,1,2)</code></pre>
+                                            
+                                                        </div>
+                                                    </div>
+                                            </div>
+                                            <div id="method_setCameraPosition" class="method item">
+                                                <h3 class="name"><code>setCameraPosition</code></h3>
+                                            
+                                                    <span class="paren">()</span>
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                                <div class="meta">
+                                                            <p>
+                                            <!-- 
+                                                            Defined in
+                                             -->
+                                            <!-- 
+                                                    <a href="../files/.._aexolgl-js_src_oldcamera.js.html#l67"><code>..&#x2F;aexolgl-js&#x2F;src&#x2F;oldcamera.js:67</code></a>
+                                             -->
+                                                    </p>
+                                            
+                                            
+                                            
+                                                </div>
+                                            
+                                                <div class="description">
+                                                    <p>Set camera position</p>
+                                            
+                                                </div>
+                                            
+                                            
+                                            
+                                            </div>
+                                            <div id="method_setCameraPosition" class="method item">
+                                                <h3 class="name"><code>setCameraPosition</code></h3>
+                                            
+                                                    <span class="paren">()</span>
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                                <div class="meta">
+                                                            <p>
+                                            <!-- 
+                                                            Defined in
+                                             -->
+                                            <!-- 
+                                                    <a href="../files/.._aexolgl-js_src_camera.js.html#l293"><code>..&#x2F;aexolgl-js&#x2F;src&#x2F;camera.js:293</code></a>
+                                             -->
+                                                    </p>
+                                            
+                                            
+                                            
+                                                </div>
+                                            
+                                                <div class="description">
+                                                    <p>Set camera position</p>
+                                            
+                                                </div>
+                                            
+                                            
+                                            
+                                            </div>
+                                            <div id="method_setDisplay" class="method item">
+                                                <h3 class="name"><code>setDisplay</code></h3>
+                                            
+                                                    <span class="paren">()</span>
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                                <div class="meta">
+                                                            <p>
+                                            <!-- 
+                                                            Defined in
+                                             -->
+                                            <!-- 
+                                                    <a href="../files/.._aexolgl-js_src_camera.js.html#l277"><code>..&#x2F;aexolgl-js&#x2F;src&#x2F;camera.js:277</code></a>
+                                             -->
+                                                    </p>
+                                            
+                                            
+                                            
+                                                </div>
+                                            
+                                                <div class="description">
+                                                    <p>Set table with screen dimensions and coordinates for 2D games</p>
+                                            
+                                                </div>
+                                            
+                                            
+                                            
+                                            </div>
+                                            <div id="method_setDisplay" class="method item">
+                                                <h3 class="name"><code>setDisplay</code></h3>
+                                            
+                                                    <span class="paren">()</span>
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                                <div class="meta">
+                                                            <p>
+                                            <!-- 
+                                                            Defined in
+                                             -->
+                                            <!-- 
+                                                    <a href="../files/.._aexolgl-js_src_oldcamera.js.html#l50"><code>..&#x2F;aexolgl-js&#x2F;src&#x2F;oldcamera.js:50</code></a>
+                                             -->
+                                                    </p>
+                                            
+                                            
+                                            
+                                                </div>
+                                            
+                                                <div class="description">
+                                                    <p>Set table with screen dimensions and coordinates for 2D games</p>
+                                            
+                                                </div>
+                                            
+                                            
+                                            
+                                            </div>
+                                            <div id="method_setModelView" class="method item inherited">
+                                                <h3 class="name"><code>setModelView</code></h3>
+                                            
+                                                    <span class="paren">()</span>
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                                <div class="meta">
+                                                            <p>Inherited from
+                                                            <a href="../classes/Aex.html#method_setModelView">Aex</a>:
+                                            <!-- 
+                                                    <a href="../files/.._aexolgl-js_src_aexolGL.js.html#l431"><code>..&#x2F;aexolgl-js&#x2F;src&#x2F;aexolGL.js:431</code></a>
+                                             -->
+                                                    </p>
+                                            
+                                            
+                                            
+                                                </div>
+                                            
+                                                <div class="description">
+                                                    <p>Sets aex modelview and Normal matrix. Internal function done after transformations as move, rotate etc..</p>
+                                            
+                                                </div>
+                                            
+                                            
+                                            
+                                            </div>
+                                            <div id="method_setOrthoPerspective" class="method item">
+                                                <h3 class="name"><code>setOrthoPerspective</code></h3>
+                                            
+                                                    <span class="paren">()</span>
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                                <div class="meta">
+                                                            <p>
+                                            <!-- 
+                                                            Defined in
+                                             -->
+                                            <!-- 
+                                                    <a href="../files/.._aexolgl-js_src_camera.js.html#l236"><code>..&#x2F;aexolgl-js&#x2F;src&#x2F;camera.js:236</code></a>
+                                             -->
+                                                    </p>
+                                            
+                                            
+                                            
+                                                </div>
+                                            
+                                                <div class="description">
+                                                    <p>set orthographic projection for camera</p>
+                                            
+                                                </div>
+                                            
+                                            
+                                            
+                                            </div>
+                                            <div id="method_setParent" class="method item inherited">
+                                                <h3 class="name"><code>setParent</code></h3>
+                                            
+                                                    <div class="args">
+                                                        <span class="paren">(</span><ul class="args-list inline commas">
+                                                            <li class="arg">
+                                                                    <code>parent</code>
+                                                            </li>
+                                                        </ul><span class="paren">)</span>
+                                                    </div>
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                                <div class="meta">
+                                                            <p>Inherited from
+                                                            <a href="../classes/MObject.html#method_setParent">MObject</a>:
+                                            <!-- 
+                                                    <a href="../files/.._aexolgl-js_src_aexolGL.js.html#l26"><code>..&#x2F;aexolgl-js&#x2F;src&#x2F;aexolGL.js:26</code></a>
+                                             -->
+                                                    </p>
+                                            
+                                            
+                                            
+                                                </div>
+                                            
+                                                <div class="description">
+                                                    <p>Sets parent on MObject and unbinds current parent in RenderTree.
+                                            Usually this is done inside GameObject, but you have also possibility
+                                            to construct RenderTree by yourself.</p>
+                                            
+                                                </div>
+                                            
+                                                    <div class="params">
+                                                        <h4>Parameters:</h4>
+                                            
+                                                        <ul class="params-list">
+                                                            <li class="param">
+                                                                    <code class="param-name">parent</code>
+                                                                    <span class="type"><a href="../classes/MObject.html" class="crosslink">MObject</a></span>
+                                            
+                                            
+                                                                <div class="param-description">
+                                                                    <p>parent object</p>
+                                            
+                                                                </div>
+                                            
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                            
+                                            
+                                                    <div class="example">
+                                                        <h4>Example:</h4>
+                                            
+                                                        <div class="example-content">
+                                                            <p>world = new Scene()
+                                            gshader = new basicShader()
+                                            someMaterial = new Material({})
+                                            gshader.setParent(world)
+                                            someMaterial.setParent(world)</p>
+                                            
+                                                        </div>
+                                                    </div>
+                                            </div>
+                                            <div id="method_setPerspective" class="method item">
+                                                <h3 class="name"><code>setPerspective</code></h3>
+                                            
+                                                    <span class="paren">()</span>
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                                <div class="meta">
+                                                            <p>
+                                            <!-- 
+                                                            Defined in
+                                             -->
+                                            <!-- 
+                                                    <a href="../files/.._aexolgl-js_src_camera.js.html#l243"><code>..&#x2F;aexolgl-js&#x2F;src&#x2F;camera.js:243</code></a>
+                                             -->
+                                                    </p>
+                                            
+                                            
+                                            
+                                                </div>
+                                            
+                                                <div class="description">
+                                                    <p>set perspective projection for camera</p>
+                                            
+                                                </div>
+                                            
+                                            
+                                            
+                                            </div>
+                                            <div id="method_setUniforms" class="method item inherited">
+                                                <h3 class="name"><code>setUniforms</code></h3>
+                                            
+                                                    <span class="paren">()</span>
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                                <div class="meta">
+                                                            <p>Inherited from
+                                                            <a href="../classes/Aex.html#method_setUniforms">Aex</a>:
+                                            <!-- 
+                                                    <a href="../files/.._aexolgl-js_src_aexolGL.js.html#l302"><code>..&#x2F;aexolgl-js&#x2F;src&#x2F;aexolGL.js:302</code></a>
+                                             -->
+                                                    </p>
+                                            
+                                            
+                                            
+                                                </div>
+                                            
+                                                <div class="description">
+                                                    <p>Force set shader uniforms</p>
+                                            
+                                                </div>
+                                            
+                                            
+                                            
+                                                    <div class="example">
+                                                        <h4>Example:</h4>
+                                            
+                                                        <div class="example-content">
+                                                            <pre class="code prettyprint"><code> var aex = new Aex()
+                                             aex.setUniforms()</code></pre>
+                                            
+                                                        </div>
+                                                    </div>
+                                            </div>
+                                            <div id="method_side" class="method item">
+                                                <h3 class="name"><code>side</code></h3>
+                                            
+                                                    <div class="args">
+                                                        <span class="paren">(</span><ul class="args-list inline commas">
+                                                            <li class="arg">
+                                                                    <code>f</code>
+                                                            </li>
+                                                        </ul><span class="paren">)</span>
+                                                    </div>
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                                <div class="meta">
+                                                            <p>
+                                            <!-- 
+                                                            Defined in
+                                             -->
+                                            <!-- 
+                                                    <a href="../files/.._aexolgl-js_src_camera.js.html#l328"><code>..&#x2F;aexolgl-js&#x2F;src&#x2F;camera.js:328</code></a>
+                                             -->
+                                                    </p>
+                                            
+                                            
+                                            
+                                                </div>
+                                            
+                                                <div class="description">
+                                                    <p>DEPRECATED use setters instead
+                                            Move camera left &amp; right</p>
+                                            
+                                                </div>
+                                            
+                                                    <div class="params">
+                                                        <h4>Parameters:</h4>
+                                            
+                                                        <ul class="params-list">
+                                                            <li class="param">
+                                                                    <code class="param-name">f</code>
+                                                                    <span class="type">Float</span>
+                                            
+                                            
+                                                                <div class="param-description">
+                                                                    <p>distance to move</p>
+                                            
+                                                                </div>
+                                            
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                            
+                                            
+                                            </div>
+                                            <div id="method_side" class="method item">
+                                                <h3 class="name"><code>side</code></h3>
+                                            
+                                                    <div class="args">
+                                                        <span class="paren">(</span><ul class="args-list inline commas">
+                                                            <li class="arg">
+                                                                    <code>f</code>
+                                                            </li>
+                                                        </ul><span class="paren">)</span>
+                                                    </div>
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                                <div class="meta">
+                                                            <p>
+                                            <!-- 
+                                                            Defined in
+                                             -->
+                                            <!-- 
+                                                    <a href="../files/.._aexolgl-js_src_oldcamera.js.html#l94"><code>..&#x2F;aexolgl-js&#x2F;src&#x2F;oldcamera.js:94</code></a>
+                                             -->
+                                                    </p>
+                                            
+                                            
+                                            
+                                                </div>
+                                            
+                                                <div class="description">
+                                                    <p>Move camera left &amp; right</p>
+                                            
+                                                </div>
+                                            
+                                                    <div class="params">
+                                                        <h4>Parameters:</h4>
+                                            
+                                                        <ul class="params-list">
+                                                            <li class="param">
+                                                                    <code class="param-name">f</code>
+                                                                    <span class="type">Float</span>
+                                            
+                                            
+                                                                <div class="param-description">
+                                                                    <p>distance to move</p>
+                                            
+                                                                </div>
+                                            
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                            
+                                            
+                                            </div>
+                                            <div id="method_transforms" class="method item">
+                                                <h3 class="name"><code>transforms</code></h3>
+                                            
+                                                    <span class="paren">()</span>
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                                <div class="meta">
+                                                            <p>
+                                            <!-- 
+                                                            Defined in
+                                             -->
+                                            <!-- 
+                                                    <a href="../files/.._aexolgl-js_src_oldcamera.js.html#l146"><code>..&#x2F;aexolgl-js&#x2F;src&#x2F;oldcamera.js:146</code></a>
+                                             -->
+                                                    </p>
+                                            
+                                            
+                                            
+                                                </div>
+                                            
+                                                <div class="description">
+                                                    <p>this method is called as the first method in scene draw call transforming the gl.projectionMatrix</p>
+                                            
+                                                </div>
+                                            
+                                            
+                                            
+                                            </div>
+                                            <div id="method_updown" class="method item">
+                                                <h3 class="name"><code>updown</code></h3>
+                                            
+                                                    <div class="args">
+                                                        <span class="paren">(</span><ul class="args-list inline commas">
+                                                            <li class="arg">
+                                                                    <code>f</code>
+                                                            </li>
+                                                        </ul><span class="paren">)</span>
+                                                    </div>
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                                <div class="meta">
+                                                            <p>
+                                            <!-- 
+                                                            Defined in
+                                             -->
+                                            <!-- 
+                                                    <a href="../files/.._aexolgl-js_src_oldcamera.js.html#l111"><code>..&#x2F;aexolgl-js&#x2F;src&#x2F;oldcamera.js:111</code></a>
+                                             -->
+                                                    </p>
+                                            
+                                            
+                                            
+                                                </div>
+                                            
+                                                <div class="description">
+                                                    <p>Move camera up &amp; down</p>
+                                            
+                                                </div>
+                                            
+                                                    <div class="params">
+                                                        <h4>Parameters:</h4>
+                                            
+                                                        <ul class="params-list">
+                                                            <li class="param">
+                                                                    <code class="param-name">f</code>
+                                                                    <span class="type">Float</span>
+                                            
+                                            
+                                                                <div class="param-description">
+                                                                    <p>distance to move</p>
+                                            
+                                                                </div>
+                                            
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                            
+                                            
+                                            </div>
+                                            <div id="method_updown" class="method item">
+                                                <h3 class="name"><code>updown</code></h3>
+                                            
+                                                    <div class="args">
+                                                        <span class="paren">(</span><ul class="args-list inline commas">
+                                                            <li class="arg">
+                                                                    <code>f</code>
+                                                            </li>
+                                                        </ul><span class="paren">)</span>
+                                                    </div>
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                                <div class="meta">
+                                                            <p>
+                                            <!-- 
+                                                            Defined in
+                                             -->
+                                            <!-- 
+                                                    <a href="../files/.._aexolgl-js_src_camera.js.html#l343"><code>..&#x2F;aexolgl-js&#x2F;src&#x2F;camera.js:343</code></a>
+                                             -->
+                                                    </p>
+                                            
+                                            
+                                            
+                                                </div>
+                                            
+                                                <div class="description">
+                                                    <p>DEPRECATED use setters instead
+                                            Move camera up &amp; down</p>
+                                            
+                                                </div>
+                                            
+                                                    <div class="params">
+                                                        <h4>Parameters:</h4>
+                                            
+                                                        <ul class="params-list">
+                                                            <li class="param">
+                                                                    <code class="param-name">f</code>
+                                                                    <span class="type">Float</span>
+                                            
+                                            
+                                                                <div class="param-description">
+                                                                    <p>distance to move</p>
+                                            
+                                                                </div>
+                                            
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                            
+                                            
+                                            </div>
+                                    </div>
+                        
+                                    <div id="properties" class="tab-pane">
+                                        <h2 class="off-left">Properties</h2>
+                        
+                                            <div id="property_position" class="property item">
+                                                <h3 class="name"><code>position</code></h3>
+                                                <span class="type"><a href="../classes/Vector.html" class="crosslink">Vector</a></span>
+                                            
+                                            
+                                            
+                                            
+                                            
+                                                <div class="meta">
+                                                        <p>Inherited from
+                                                        <a href="../classes/Aex.html#property_position">
+                                                            Aex
+                                                        </a>
+                                                        but overwritten in
+                                            <!-- 
+                                                    <a href="../files/.._aexolgl-js_src_camera.js.html#l24"><code>..&#x2F;aexolgl-js&#x2F;src&#x2F;camera.js:24</code></a>
+                                             -->
+                                                    </p>
+                                            
+                                            
+                                                </div>
+                                            
+                                                <div class="description">
+                                                    <p>Position of object</p>
+                                            
+                                                </div>
+                                            
+                                            
+                                                    <div class="example">
+                                                        <h4>Example:</h4>
+                                            
+                                                        <div class="example-content">
+                                                            <pre class="code prettyprint"><code>world = new Scene()
+                                            cam = new Camera(0.1,100,45)
+                                            cam.position = new Vector(1.0,2.0,3.0)</code></pre>
+                                            
+                                                        </div>
+                                                    </div>
+                                            
+                                            </div>
+                                            <div id="property_rotation" class="property item">
+                                                <h3 class="name"><code>rotation</code></h3>
+                                                <span class="type"><a href="../classes/Vector.html" class="crosslink">Vector</a></span>
+                                            
+                                            
+                                            
+                                            
+                                            
+                                                <div class="meta">
+                                                        <p>Inherited from
+                                                        <a href="../classes/Aex.html#property_rotation">
+                                                            Aex
+                                                        </a>
+                                                        but overwritten in
+                                            <!-- 
+                                                    <a href="../files/.._aexolgl-js_src_camera.js.html#l87"><code>..&#x2F;aexolgl-js&#x2F;src&#x2F;camera.js:87</code></a>
+                                             -->
+                                                    </p>
+                                            
+                                            
+                                                </div>
+                                            
+                                                <div class="description">
+                                                    <p>Rotation of object</p>
+                                            
+                                                </div>
+                                            
+                                            
+                                                    <div class="example">
+                                                        <h4>Example:</h4>
+                                            
+                                                        <div class="example-content">
+                                                            <pre class="code prettyprint"><code>world = new Scene()
+                                            cam = new Camera(0.1,100,45)
+                                            cam.rotation = new Vector(0.0,90.0,0.0)</code></pre>
+                                            
+                                                        </div>
+                                                    </div>
+                                            
+                                            </div>
+                                            <div id="property_rotX" class="property item">
+                                                <h3 class="name"><code>rotX</code></h3>
+                                                <span class="type">Float</span>
+                                            
+                                            
+                                            
+                                            
+                                            
+                                                <div class="meta">
+                                                        <p>Inherited from
+                                                        <a href="../classes/Aex.html#property_rotX">
+                                                            Aex
+                                                        </a>
+                                                        but overwritten in
+                                            <!-- 
+                                                    <a href="../files/.._aexolgl-js_src_camera.js.html#l103"><code>..&#x2F;aexolgl-js&#x2F;src&#x2F;camera.js:103</code></a>
+                                             -->
+                                                    </p>
+                                            
+                                            
+                                                </div>
+                                            
+                                                <div class="description">
+                                                    <p>x Rotation of object</p>
+                                            
+                                                </div>
+                                            
+                                            
+                                                    <div class="example">
+                                                        <h4>Example:</h4>
+                                            
+                                                        <div class="example-content">
+                                                            <pre class="code prettyprint"><code>world = new Scene()
+                                            cam = new Camera(0.1,100,45)
+                                            cam.rotX = 20.0</code></pre>
+                                            
+                                                        </div>
+                                                    </div>
+                                            
+                                            </div>
+                                            <div id="property_rotY" class="property item">
+                                                <h3 class="name"><code>rotY</code></h3>
+                                                <span class="type">Float</span>
+                                            
+                                            
+                                            
+                                            
+                                            
+                                                <div class="meta">
+                                                        <p>Inherited from
+                                                        <a href="../classes/Aex.html#property_rotY">
+                                                            Aex
+                                                        </a>
+                                                        but overwritten in
+                                            <!-- 
+                                                    <a href="../files/.._aexolgl-js_src_camera.js.html#l116"><code>..&#x2F;aexolgl-js&#x2F;src&#x2F;camera.js:116</code></a>
+                                             -->
+                                                    </p>
+                                            
+                                            
+                                                </div>
+                                            
+                                                <div class="description">
+                                                    <p>y Rotation of object</p>
+                                            
+                                                </div>
+                                            
+                                            
+                                                    <div class="example">
+                                                        <h4>Example:</h4>
+                                            
+                                                        <div class="example-content">
+                                                            <pre class="code prettyprint"><code>world = new Scene()
+                                            cam = new Camera(0.1,100,45)
+                                            cam.rotY = 20.0</code></pre>
+                                            
+                                                        </div>
+                                                    </div>
+                                            
+                                            </div>
+                                            <div id="property_rotZ" class="property item">
+                                                <h3 class="name"><code>rotZ</code></h3>
+                                                <span class="type">Float</span>
+                                            
+                                            
+                                            
+                                            
+                                            
+                                                <div class="meta">
+                                                        <p>Inherited from
+                                                        <a href="../classes/Aex.html#property_rotZ">
+                                                            Aex
+                                                        </a>
+                                                        but overwritten in
+                                            <!-- 
+                                                    <a href="../files/.._aexolgl-js_src_camera.js.html#l129"><code>..&#x2F;aexolgl-js&#x2F;src&#x2F;camera.js:129</code></a>
+                                             -->
+                                                    </p>
+                                            
+                                            
+                                                </div>
+                                            
+                                                <div class="description">
+                                                    <p>z Rotation of object</p>
+                                            
+                                                </div>
+                                            
+                                            
+                                                    <div class="example">
+                                                        <h4>Example:</h4>
+                                            
+                                                        <div class="example-content">
+                                                            <pre class="code prettyprint"><code>world = new Scene()
+                                            cam = new Camera(0.1,100,45)
+                                            cam.rotZ = 20.0</code></pre>
+                                            
+                                                        </div>
+                                                    </div>
+                                            
+                                            </div>
+                                            <div id="property_scaleX" class="property item">
+                                                <h3 class="name"><code>scaleX</code></h3>
+                                                <span class="type">Float</span>
+                                            
+                                            
+                                            
+                                            
+                                            
+                                                <div class="meta">
+                                                        <p>Inherited from
+                                                        <a href="../classes/Aex.html#property_scaleX">
+                                                            Aex
+                                                        </a>
+                                                        but overwritten in
+                                            <!-- 
+                                                    <a href="../files/.._aexolgl-js_src_camera.js.html#l158"><code>..&#x2F;aexolgl-js&#x2F;src&#x2F;camera.js:158</code></a>
+                                             -->
+                                                    </p>
+                                            
+                                            
+                                                </div>
+                                            
+                                                <div class="description">
+                                                    <p>x scale of object</p>
+                                            
+                                                </div>
+                                            
+                                            
+                                                    <div class="example">
+                                                        <h4>Example:</h4>
+                                            
+                                                        <div class="example-content">
+                                                            <pre class="code prettyprint"><code>world = new Scene()
+                                            cam = new Aex()
+                                            cam.scaleX = 2.0</code></pre>
+                                            
+                                                        </div>
+                                                    </div>
+                                            
+                                            </div>
+                                            <div id="property_scaleY" class="property item">
+                                                <h3 class="name"><code>scaleY</code></h3>
+                                                <span class="type">Float</span>
+                                            
+                                            
+                                            
+                                            
+                                            
+                                                <div class="meta">
+                                                        <p>Inherited from
+                                                        <a href="../classes/Aex.html#property_scaleY">
+                                                            Aex
+                                                        </a>
+                                                        but overwritten in
+                                            <!-- 
+                                                    <a href="../files/.._aexolgl-js_src_camera.js.html#l171"><code>..&#x2F;aexolgl-js&#x2F;src&#x2F;camera.js:171</code></a>
+                                             -->
+                                                    </p>
+                                            
+                                            
+                                                </div>
+                                            
+                                                <div class="description">
+                                                    <p>y scale of object</p>
+                                            
+                                                </div>
+                                            
+                                            
+                                                    <div class="example">
+                                                        <h4>Example:</h4>
+                                            
+                                                        <div class="example-content">
+                                                            <pre class="code prettyprint"><code>world = new Scene()
+                                            cam = new Camera(0.1,100,45)
+                                            cam.scaleY = 2.0</code></pre>
+                                            
+                                                        </div>
+                                                    </div>
+                                            
+                                            </div>
+                                            <div id="property_scaleZ" class="property item">
+                                                <h3 class="name"><code>scaleZ</code></h3>
+                                                <span class="type">Float</span>
+                                            
+                                            
+                                            
+                                            
+                                            
+                                                <div class="meta">
+                                                        <p>Inherited from
+                                                        <a href="../classes/Aex.html#property_scaleZ">
+                                                            Aex
+                                                        </a>
+                                                        but overwritten in
+                                            <!-- 
+                                                    <a href="../files/.._aexolgl-js_src_camera.js.html#l184"><code>..&#x2F;aexolgl-js&#x2F;src&#x2F;camera.js:184</code></a>
+                                             -->
+                                                    </p>
+                                            
+                                            
+                                                </div>
+                                            
+                                                <div class="description">
+                                                    <p>z scale of object</p>
+                                            
+                                                </div>
+                                            
+                                            
+                                                    <div class="example">
+                                                        <h4>Example:</h4>
+                                            
+                                                        <div class="example-content">
+                                                            <pre class="code prettyprint"><code>world = new Scene()
+                                            cam = new Camera(0.1,100,45)
+                                            cam.scaleZ = 2.0</code></pre>
+                                            
+                                                        </div>
+                                                    </div>
+                                            
+                                            </div>
+                                            <div id="property_x" class="property item">
+                                                <h3 class="name"><code>x</code></h3>
+                                                <span class="type">Float</span>
+                                            
+                                            
+                                            
+                                            
+                                            
+                                                <div class="meta">
+                                                        <p>Inherited from
+                                                        <a href="../classes/Aex.html#property_x">
+                                                            Aex
+                                                        </a>
+                                                        but overwritten in
+                                            <!-- 
+                                                    <a href="../files/.._aexolgl-js_src_camera.js.html#l39"><code>..&#x2F;aexolgl-js&#x2F;src&#x2F;camera.js:39</code></a>
+                                             -->
+                                                    </p>
+                                            
+                                            
+                                                </div>
+                                            
+                                                <div class="description">
+                                                    <p>x Position of object</p>
+                                            
+                                                </div>
+                                            
+                                            
+                                                    <div class="example">
+                                                        <h4>Example:</h4>
+                                            
+                                                        <div class="example-content">
+                                                            <pre class="code prettyprint"><code>world = new Scene()
+                                            cam = new Camera(0.1,100,45)
+                                            cam.x = 20.0</code></pre>
+                                            
+                                                        </div>
+                                                    </div>
+                                            
+                                            </div>
+                                            <div id="property_y" class="property item">
+                                                <h3 class="name"><code>y</code></h3>
+                                                <span class="type">Float</span>
+                                            
+                                            
+                                            
+                                            
+                                            
+                                                <div class="meta">
+                                                        <p>Inherited from
+                                                        <a href="../classes/Aex.html#property_y">
+                                                            Aex
+                                                        </a>
+                                                        but overwritten in
+                                            <!-- 
+                                                    <a href="../files/.._aexolgl-js_src_camera.js.html#l52"><code>..&#x2F;aexolgl-js&#x2F;src&#x2F;camera.js:52</code></a>
+                                             -->
+                                                    </p>
+                                            
+                                            
+                                                </div>
+                                            
+                                                <div class="description">
+                                                    <p>y Position of object</p>
+                                            
+                                                </div>
+                                            
+                                            
+                                                    <div class="example">
+                                                        <h4>Example:</h4>
+                                            
+                                                        <div class="example-content">
+                                                            <pre class="code prettyprint"><code>world = new Scene()
+                                            cam = new Camera(0.1,100,45)
+                                            cam.y = 20.0</code></pre>
+                                            
+                                                        </div>
+                                                    </div>
+                                            
+                                            </div>
+                                            <div id="property_z" class="property item">
+                                                <h3 class="name"><code>z</code></h3>
+                                                <span class="type">Float</span>
+                                            
+                                            
+                                            
+                                            
+                                            
+                                                <div class="meta">
+                                                        <p>Inherited from
+                                                        <a href="../classes/Aex.html#property_z">
+                                                            Aex
+                                                        </a>
+                                                        but overwritten in
+                                            <!-- 
+                                                    <a href="../files/.._aexolgl-js_src_camera.js.html#l65"><code>..&#x2F;aexolgl-js&#x2F;src&#x2F;camera.js:65</code></a>
+                                             -->
+                                                    </p>
+                                            
+                                            
+                                                </div>
+                                            
+                                                <div class="description">
+                                                    <p>z Position of object</p>
+                                            
+                                                </div>
+                                            
+                                            
+                                                    <div class="example">
+                                                        <h4>Example:</h4>
+                                            
+                                                        <div class="example-content">
+                                                            <pre class="code prettyprint"><code>world = new Scene()
+                                            cam = new Camera(0.1,100,45)
+                                            cam.z = 20.0</code></pre>
+                                            
+                                                        </div>
+                                                    </div>
+                                            
+                                            </div>
+                                    </div>
+                        
+                        
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../assets/vendor/jquery/jquery-1.8.2.min.js"></script>
+<script src="../assets/vendor/bootstrap/js/bootstrap.js"></script>
+<script src="../assets/vendor/prettify/prettify-min.js"></script>
+<script src="../assets/js/yuidoc-bootstrap.js"></script>
+<script>prettyPrint();</script>
+</body>
+</html>

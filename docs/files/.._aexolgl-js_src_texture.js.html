@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>../aexolgl-js/src/texture.js - aexolGL API</title>
+    <link rel="stylesheet" href="http://yui.yahooapis.com/3.7.0/build/cssgrids/cssgrids-min.css">
+    <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
+    <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
+    <link rel="stylesheet" href="../assets/css/custom.css">
+    <link rel="stylesheet" href="../assets/vendor/bootstrap/css/bootstrap.css">
+    <link rel="shortcut icon" type="image/png" href="../assets/favicon.png">
+</head>
+<body class="yui3-skin-sam">
+<div class="container-fluid" style="padding:0;">
+	<div id="topbar" class="row visible-md visible-lg" style="margin:0;">
+        <div class="span1"></div>
+        <div class="span6 docs">
+            <img src="http://gl.aexol.com/static/img/aexol_gl_logo.png"> Docs for Version: <b>1.0a</b>
+        </div>
+        <div class="span5"></div>
+    </div>
+    <div class="row" style="padding:2em;">
+        <div class="span3">
+	    <div>
+	        <h3>APIs</h3>
+	        <div id="sidebar">
+	            <ul id="main-nav" class="nav nav-tabs" style="margin-bottom:0;">
+	                <li class="active"><a href="#classes" data-toggle="tab">Classes</a></li>
+	                <li><a href="#modules" data-toggle="tab">Modules</a></li>
+	            </ul>
+	    
+	            <div id="api-tabview-filter">
+	                <input type="search" placeholder="Type to filter APIs">
+	            </div>
+	    
+	            <div class="tab-content" style="border: 1px solid #DDD; border-top:0;">
+	                <div class="tab-pane active" id="classes">
+	                    <ul id="api-classes" class="nav nav-list">
+	                            <li><a href="../classes/Aex.html">Aex</a></li>
+	                            <li><a href="../classes/aexolGL.html">aexolGL</a></li>
+	                            <li><a href="../classes/Animation.html">Animation</a></li>
+	                            <li><a href="../classes/Buffer.html">Buffer</a></li>
+	                            <li><a href="../classes/Camera.html">Camera</a></li>
+	                            <li><a href="../classes/Fog.html">Fog</a></li>
+	                            <li><a href="../classes/Frustum.html">Frustum</a></li>
+	                            <li><a href="../classes/GameObject.html">GameObject</a></li>
+	                            <li><a href="../classes/Indexer.html">Indexer</a></li>
+	                            <li><a href="../classes/Label.html">Label</a></li>
+	                            <li><a href="../classes/Light.html">Light</a></li>
+	                            <li><a href="../classes/Material.html">Material</a></li>
+	                            <li><a href="../classes/Matrix.html">Matrix</a></li>
+	                            <li><a href="../classes/Matrix3.html">Matrix3</a></li>
+	                            <li><a href="../classes/Mesh.html">Mesh</a></li>
+	                            <li><a href="../classes/MObject.html">MObject</a></li>
+	                            <li><a href="../classes/Pivot.html">Pivot</a></li>
+	                            <li><a href="../classes/Quaternion.html">Quaternion</a></li>
+	                            <li><a href="../classes/Resource.html">Resource</a></li>
+	                            <li><a href="../classes/Scene.html">Scene</a></li>
+	                            <li><a href="../classes/Shader.html">Shader</a></li>
+	                            <li><a href="../classes/Shadow.html">Shadow</a></li>
+	                            <li><a href="../classes/TextNode.html">TextNode</a></li>
+	                            <li><a href="../classes/Texture.html">Texture</a></li>
+	                            <li><a href="../classes/Vector.html">Vector</a></li>
+	                            <li><a href="../classes/Vector4.html">Vector4</a></li>
+	                            <li><a href="../classes/ZBuffer.html">ZBuffer</a></li>
+	                    </ul>
+	                </div>
+	    
+	                <div class="tab-pane" id="modules">
+	                    <ul id="api-modules" class="nav nav-list">
+	                            <li><a href="../modules/aexolGL.html">aexolGL</a></li>
+	                            <li><a href="../modules/Animation.html">Animation</a></li>
+	                            <li><a href="../modules/Buffer.html">Buffer</a></li>
+	                            <li><a href="../modules/camera.html">camera</a></li>
+	                            <li><a href="../modules/Fog.html">Fog</a></li>
+	                            <li><a href="../modules/Font.html">Font</a></li>
+	                            <li><a href="../modules/Game.html">Game</a></li>
+	                            <li><a href="../modules/Light.html">Light</a></li>
+	                            <li><a href="../modules/materialLib.html">materialLib</a></li>
+	                            <li><a href="../modules/Math.html">Math</a></li>
+	                            <li><a href="../modules/Mesh.html">Mesh</a></li>
+	                            <li><a href="../modules/Physics.html">Physics</a></li>
+	                            <li><a href="../modules/Resource.html">Resource</a></li>
+	                            <li><a href="../modules/ShaderLibrary.html">ShaderLibrary</a></li>
+	                            <li><a href="../modules/Shadow.html">Shadow</a></li>
+	                            <li><a href="../modules/start.html">start</a></li>
+	                            <li><a href="../modules/utils.html">utils</a></li>
+	                    </ul>
+	                </div>
+	            </div>
+	        </div>
+	    </div>
+        </div>
+        <div class="span9">
+                <form id="options-form" class="form-inline pull-right">
+                    Show:
+                    <label for="api-show-inherited" class="checkbox">
+                        <input type="checkbox" id="api-show-inherited" checked>
+                        Inherited
+                    </label>
+            
+                    <label for="api-show-protected" class="checkbox">
+                        <input type="checkbox" id="api-show-protected">
+                        Protected
+                    </label>
+            
+                    <label for="api-show-private" class="checkbox">
+                        <input type="checkbox" id="api-show-private">
+                        Private
+                    </label>
+                    <label for="api-show-deprecated" class="checkbox">
+                        <input type="checkbox" id="api-show-deprecated">
+                        Deprecated
+                    </label>
+            
+                </form>
+            
+            <div class="apidocs">
+                <div id="docs-main">
+                    <div class="content">
+                        <div class="page-header">
+                            <h1>../aexolgl-js/src/texture.js <small>File</small></h1>
+                        </div>
+                        
+                        <div class="file">
+                            <pre class="prettyprint linenums">
+                        /**
+                         * Texture class
+                         * @class Texture
+                         * @constructor
+                         */
+                        Texture = function (options) {
+                            this.options = options || {};
+                            this.id = gl.createTexture();
+                            this.binded = false
+                            this.format = this.options.format || gl.RGBA;
+                            this.type = this.options.type || gl.UNSIGNED_BYTE;
+                        };
+                        Texture.prototype.handle2DTexture = function () {
+                            var options = this.options;
+                            gl.bindTexture(gl.TEXTURE_2D, this.id);
+                            gl.pixelStorei(gl.UNPACK_FLIP_Y_WEBGL, 1);
+                            gl.texImage2D(gl.TEXTURE_2D, 0, this.format, this.format, this.type, this.image || null);
+                            gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MAG_FILTER, options.filter || options.magFilter || gl.LINEAR);
+                            if (powerof2(this.image.width) &amp;&amp; powerof2(this.image.height)) {
+                              gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MIN_FILTER, options.filter || options.minFilter || gl.LINEAR_MIPMAP_LINEAR);
+                            }else{
+                              gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MIN_FILTER, options.filter || options.minFilter || gl.LINEAR);
+                            }
+                            gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_S, options.wrap || options.wrapS || gl.CLAMP_TO_EDGE);
+                            gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_T, options.wrap || options.wrapT || gl.CLAMP_TO_EDGE);
+                            if (powerof2(this.image.width) &amp;&amp; powerof2(this.image.height)) {
+                                gl.generateMipmap(gl.TEXTURE_2D)
+                            }
+                            gl.bindTexture(gl.TEXTURE_2D, null)
+                        }
+                        Texture.prototype.handle = function () {
+                            if (this.isAtlas) {
+                                this.handleAtlas()
+                            } else {
+                                this.handle2DTexture()
+                            }
+                        }
+                        Texture.prototype.handleAtlas = function () {
+                            var options = this.options;
+                            gl.bindTexture(gl.TEXTURE_2D, this.id);
+                            gl.pixelStorei(gl.UNPACK_FLIP_Y_WEBGL, 1);
+                            gl.texImage2D(gl.TEXTURE_2D, 0, this.format, this.format, this.type, this.image || null)
+                            gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MAG_FILTER, options.filter || options.magFilter || gl.LINEAR);
+                            gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MIN_FILTER, options.filter || options.minFilter || gl.LINEAR_MIPMAP_LINEAR);
+                            gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_S, options.wrap || options.wrapS || gl.CLAMP_TO_EDGE);
+                            gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_T, options.wrap || options.wrapT || gl.CLAMP_TO_EDGE);
+                            gl.generateMipmap(gl.TEXTURE_2D)
+                        }
+                        Texture.prototype.handleZB = function () {
+                            var options = this.options;
+                            gl.bindTexture(gl.TEXTURE_2D, this.id);
+                            gl.texImage2D(gl.TEXTURE_2D, 0, this.format, this.width, this.height, 0, this.format, this.type, null)
+                            gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MAG_FILTER, options.filter || options.magFilter || gl.LINEAR);
+                            gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MIN_FILTER, options.filter || options.minFilter || gl.LINEAR_MIPMAP_NEAREST);
+                            gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_S, options.wrap || options.wrapS || gl.CLAMP_TO_EDGE);
+                            gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_T, options.wrap || options.wrapT || gl.CLAMP_TO_EDGE);
+                            gl.generateMipmap(gl.TEXTURE_2D);
+                        }
+                        Texture.prototype.handleZBCube = function () {
+                            gl.bindTexture(gl.TEXTURE_CUBE_MAP, this.id);
+                            gl.pixelStorei(gl.UNPACK_FLIP_Y_WEBGL, 1);
+                            gl.texImage2D(gl.TEXTURE_CUBE_MAP_POSITIVE_X, 0, this.format, this.width, this.height, 0,
+                                this.format, this.type, null);
+                            gl.texImage2D(gl.TEXTURE_CUBE_MAP_NEGATIVE_X, 0, this.format, this.width, this.height, 0,
+                                this.format, this.type, null);
+                            gl.texImage2D(gl.TEXTURE_CUBE_MAP_POSITIVE_Y, 0, this.format, this.width, this.height, 0,
+                                this.format, this.type, null);
+                            gl.texImage2D(gl.TEXTURE_CUBE_MAP_NEGATIVE_Y, 0, this.format, this.width, this.height, 0,
+                                this.format, this.type, null);
+                            gl.texImage2D(gl.TEXTURE_CUBE_MAP_POSITIVE_Z, 0, this.format, this.width, this.height, 0,
+                                this.format, this.type, null);
+                            gl.texImage2D(gl.TEXTURE_CUBE_MAP_NEGATIVE_Z, 0, this.format, this.width, this.height, 0,
+                                this.format, this.type, null);
+                            gl.texParameteri(gl.TEXTURE_CUBE_MAP, gl.TEXTURE_MIN_FILTER, gl.NEAREST);
+                            gl.texParameteri(gl.TEXTURE_CUBE_MAP, gl.TEXTURE_MAG_FILTER, gl.NEAREST);
+                            gl.texParameteri(gl.TEXTURE_CUBE_MAP, gl.TEXTURE_WRAP_S, gl.CLAMP_TO_EDGE);
+                            gl.texParameteri(gl.TEXTURE_CUBE_MAP, gl.TEXTURE_WRAP_T, gl.CLAMP_TO_EDGE);
+                        }
+                        Texture.prototype.handleCube = function () {
+                            gl.bindTexture(gl.TEXTURE_CUBE_MAP, this.id);
+                            gl.pixelStorei(gl.UNPACK_FLIP_Y_WEBGL, 1);
+                            gl.texImage2D(gl.TEXTURE_CUBE_MAP_POSITIVE_X, 0, this.format,
+                                this.format, this.type, this.cube[0]);
+                            gl.texImage2D(gl.TEXTURE_CUBE_MAP_NEGATIVE_X, 0, this.format,
+                                this.format, this.type, this.cube[1]);
+                            gl.texImage2D(gl.TEXTURE_CUBE_MAP_POSITIVE_Y, 0, this.format,
+                                this.format, this.type, this.cube[2]);
+                            gl.texImage2D(gl.TEXTURE_CUBE_MAP_NEGATIVE_Y, 0, this.format,
+                                this.format, this.type, this.cube[3]);
+                            gl.texImage2D(gl.TEXTURE_CUBE_MAP_POSITIVE_Z, 0, this.format,
+                                this.format, this.type, this.cube[4]);
+                            gl.texImage2D(gl.TEXTURE_CUBE_MAP_NEGATIVE_Z, 0, this.format,
+                                this.format, this.type, this.cube[5]);
+                            gl.texParameteri(gl.TEXTURE_CUBE_MAP, gl.TEXTURE_MIN_FILTER, gl.LINEAR);
+                            gl.texParameteri(gl.TEXTURE_CUBE_MAP, gl.TEXTURE_MAG_FILTER, gl.LINEAR);
+                            gl.texParameteri(gl.TEXTURE_CUBE_MAP, gl.TEXTURE_WRAP_S, gl.CLAMP_TO_EDGE);
+                            gl.texParameteri(gl.TEXTURE_CUBE_MAP, gl.TEXTURE_WRAP_T, gl.CLAMP_TO_EDGE);
+                            gl.bindTexture(gl.TEXTURE_CUBE_MAP, null)
+                        }
+                        Texture.bindTexture2D = function (t) {
+                            var binder = gl.nTexture;
+                            gl.activeTexture(gl.TEXTURE0 + (gl.nTexture));
+                            gl.bindTexture(gl.TEXTURE_2D, t.id);
+                            gl.nTexture += 1;
+                            gl.nTexture = gl.nTexture % gl.MAX_NUMBER_OF_TEXTURES;
+                            return binder;
+                        }
+                        Texture.bindTextureCube = function (t) {
+                            var binder = gl.cbTexture;
+                            gl.activeTexture(gl.TEXTURE0 + (gl.cbTexture));
+                            gl.bindTexture(gl.TEXTURE_CUBE_MAP, t.id);
+                            gl.cbTexture += 1;
+                            gl.cbTexture = gl.cbTexture % gl.MAX_NUMBER_OF_TEXTURES;
+                            return binder;
+                        }
+                        Texture.prototype.bind = function (unit) {
+                            if (!this.binded) {
+                                gl.nTexture += 1;
+                                this.binded = true;
+                                this.binder = gl.nTexture;
+                                gl.activeTexture(gl.TEXTURE0 + this.binder);
+                                gl.bindTexture(gl.TEXTURE_2D, this.id);
+                            }
+                        }
+                        Texture.prototype.bindCube = function () {
+                            if (!this.binded) {
+                                gl.nTexture += 1;
+                                this.binded = true;
+                                this.binder = gl.nTexture;
+                                gl.activeTexture(gl.TEXTURE0 + this.binder);
+                                gl.bindTexture(gl.TEXTURE_CUBE_MAP, this.id);
+                            }
+                        }
+                        Texture.prototype.unbindCube = function () {
+                            if (this.binded) {
+                                gl.nTexture -= 1;
+                                this.binded = false;
+                                gl.activeTexture(gl.TEXTURE0 + this.binder);
+                                gl.bindTexture(gl.TEXTURE_CUBE_MAP, null);
+                            }
+                        }
+                        Texture.prototype.unbind = function (unit) {
+                            if (this.binded) {
+                                gl.nTexture -= 1;
+                                this.binded = false;
+                                gl.activeTexture(gl.TEXTURE0 + this.binder);
+                                gl.bindTexture(gl.TEXTURE_2D, null);
+                            }
+                        };
+                        Texture.prototype.remove = function () {
+                            TXTS[this.binder] = &quot;empty&quot;
+                        }
+                        /**
+                         * Creates a texture from image file
+                         * @method fromImage
+                         * @param {String} src path to image file
+                         * @param {Dict} options
+                         * @example
+                         *      var imageSuper = Texture.fromImage(&quot;img/imgsuper.png&quot;,{
+                         *          wrap: gl.CLAMP_TO_EDGE,
+                         *          filter: gl.LINEAR_MIPMAP_LINEAR
+                         *      })
+                         * @example
+                         *      var imageSuper = Texture.fromImage(&quot;img/imgsuper.png&quot;,{
+                         *          wrap: gl.REPEAT,
+                         *          filter: gl.LINEAR
+                         *      })
+                         */
+                        Texture.fromImage = function (src, options) {
+                            options = options || {};
+                            var texture = new Texture(0, 0, options);
+                            texture.image = new Image();
+                            texture.complete = 0
+                            texture.options = options
+                            Resource.load(src, function (e) {
+                                texture.image.src = window.URL.createObjectURL(e);
+                                texture.image.onload = function () {
+                                    texture.image = this
+                                    texture.complete = 1
+                                }
+                            })
+                            return texture;
+                        };
+                        Texture.fromCanvas = function (canvas, options) {
+                            var texture = new Texture(0, 0, options);
+                            texture.image = canvas
+                            texture.complete = 1
+                            return texture
+                        }
+                        /**
+                         * Creates a texture cube image files
+                         * @method fromCube
+                         * @param {String[]} srcs array to 6 path to image files
+                         * @param {Dict} options
+                         * @example
+                         *      var imageSuper = Texture.fromCube([&quot;cube1.png&quot;,
+                         *                                         &quot;cube2.png&quot;,
+                         *                                         &quot;cube3.png&quot;,
+                         *                                         &quot;cube4.png&quot;,
+                         *                                         &quot;cube5.png&quot;,
+                         *                                         &quot;cube6.png&quot;],{})
+                         */
+                        Texture.fromCube = function (srcs, options) {
+                            options = options || {};
+                            var texture = new Texture(0, 0, options);
+                            texture.cube = []
+                            texture.complete = 0
+                            for (var s in srcs) {
+                                Resource.load(srcs[s], function (e) {
+                                    texture.cube.push(new Image())
+                                    texture.cube[texture.complete].src = window.URL.createObjectURL(e);
+                                    texture.cube[texture.complete].onload = function () {
+                                        texture.cube[texture.complete] = this
+                                    }
+                                        texture.complete += 1;
+                                })
+                            }
+                            return texture;
+                        };
+                        /**
+                         * Creates a texture from image blob
+                         * @method fromBlob
+                         * @param {String} blob image blov
+                         * @param {Dict} options
+                         */
+                        Texture.fromBlob = function (blob, options) {
+                            options = options || {};
+                            var texture = new Texture(0, 0, options);
+                            texture.image = new Image();
+                            texture.complete = 0
+                            texture.options = options
+                            texture.image.src = blob
+                            texture.image.onload = function () {
+                                texture.image = this
+                                texture.complete = 1
+                            }
+                            return texture;
+                        };
+                        /**
+                         * Creates a texture atlas
+                         * @static
+                         * @method Atlas
+                         * @param {String} srcImage image file name
+                         * @param {String} srcJSON JSON file name
+                         * @param {Dict} options
+                         * @example
+                         *      var imageAtlas = Texture.Atlas(&quot;map.png&quot;,&quot;map.json&quot;)
+                         *      var image = Texture.fromAtlas(imageAtlas,&quot;foot.png&quot;)
+                         *      podstawaMat = new Material({color: [0.3,0.9,0.9]})
+                         *  var tat = Texture.Atlas(&quot;into.png&quot;,&quot;into.json&quot;)
+                         *  podstawaMat.setTexture(&quot;diffuse&quot;,tat,&quot;tap to play.png&quot;)
+                         */
+                        Texture.Atlas = function (srcImage, srcJSON, options) {
+                            var texture = new Texture(0, 0, options);
+                            texture.image = new Image();
+                            texture.complete = 0
+                            gl.loadedElements[srcImage] = 0
+                            texture.options = options || {};
+                            texture.isAtlas = true
+                            Resource.load(src, function (e) {
+                                texture.image.src = window.URL.createObjectURL(e);
+                                texture.image.onload = function () {
+                                    texture.image = this
+                                    texture.resolution = {w: this.width, h: this.height}
+                                    texture.complete = -1
+                                    Resource.load(srcJSON, function (e) {
+                                        texture.json = JSON.parse(e)
+                                        texture.uvd = {}
+                                        for (var j in texture.json) {
+                                            var tjs = texture.json[j]
+                                            var xx = tjs[&quot;x&quot;] / texture.resolution.w
+                                            var yy = tjs[&quot;y&quot;] / texture.resolution.h
+                                            texture.uvd[j] = [xx, xx + tjs[&quot;width&quot;] / texture.resolution.w, yy, yy + tjs[&quot;height&quot;] / texture.resolution.h]
+                                        }
+                                        texture.complete = 1
+                                    })
+                                }
+                            })
+                        
+                            return texture
+                        }
+                        
+                            </pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../assets/vendor/jquery/jquery-1.8.2.min.js"></script>
+<script src="../assets/vendor/bootstrap/js/bootstrap.js"></script>
+<script src="../assets/vendor/prettify/prettify-min.js"></script>
+<script src="../assets/js/yuidoc-bootstrap.js"></script>
+<script>prettyPrint();</script>
+</body>
+</html>

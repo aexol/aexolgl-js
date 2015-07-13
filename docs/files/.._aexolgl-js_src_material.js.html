@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>../aexolgl-js/src/material.js - aexolGL API</title>
+    <link rel="stylesheet" href="http://yui.yahooapis.com/3.7.0/build/cssgrids/cssgrids-min.css">
+    <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
+    <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
+    <link rel="stylesheet" href="../assets/css/custom.css">
+    <link rel="stylesheet" href="../assets/vendor/bootstrap/css/bootstrap.css">
+    <link rel="shortcut icon" type="image/png" href="../assets/favicon.png">
+</head>
+<body class="yui3-skin-sam">
+<div class="container-fluid" style="padding:0;">
+	<div id="topbar" class="row visible-md visible-lg" style="margin:0;">
+        <div class="span1"></div>
+        <div class="span6 docs">
+            <img src="http://gl.aexol.com/static/img/aexol_gl_logo.png"> Docs for Version: <b>1.0a</b>
+        </div>
+        <div class="span5"></div>
+    </div>
+    <div class="row" style="padding:2em;">
+        <div class="span3">
+	    <div>
+	        <h3>APIs</h3>
+	        <div id="sidebar">
+	            <ul id="main-nav" class="nav nav-tabs" style="margin-bottom:0;">
+	                <li class="active"><a href="#classes" data-toggle="tab">Classes</a></li>
+	                <li><a href="#modules" data-toggle="tab">Modules</a></li>
+	            </ul>
+	    
+	            <div id="api-tabview-filter">
+	                <input type="search" placeholder="Type to filter APIs">
+	            </div>
+	    
+	            <div class="tab-content" style="border: 1px solid #DDD; border-top:0;">
+	                <div class="tab-pane active" id="classes">
+	                    <ul id="api-classes" class="nav nav-list">
+	                            <li><a href="../classes/Aex.html">Aex</a></li>
+	                            <li><a href="../classes/aexolGL.html">aexolGL</a></li>
+	                            <li><a href="../classes/Animation.html">Animation</a></li>
+	                            <li><a href="../classes/Buffer.html">Buffer</a></li>
+	                            <li><a href="../classes/Camera.html">Camera</a></li>
+	                            <li><a href="../classes/Fog.html">Fog</a></li>
+	                            <li><a href="../classes/Frustum.html">Frustum</a></li>
+	                            <li><a href="../classes/GameObject.html">GameObject</a></li>
+	                            <li><a href="../classes/Indexer.html">Indexer</a></li>
+	                            <li><a href="../classes/Label.html">Label</a></li>
+	                            <li><a href="../classes/Light.html">Light</a></li>
+	                            <li><a href="../classes/Material.html">Material</a></li>
+	                            <li><a href="../classes/Matrix.html">Matrix</a></li>
+	                            <li><a href="../classes/Matrix3.html">Matrix3</a></li>
+	                            <li><a href="../classes/Mesh.html">Mesh</a></li>
+	                            <li><a href="../classes/MObject.html">MObject</a></li>
+	                            <li><a href="../classes/Pivot.html">Pivot</a></li>
+	                            <li><a href="../classes/Quaternion.html">Quaternion</a></li>
+	                            <li><a href="../classes/Resource.html">Resource</a></li>
+	                            <li><a href="../classes/Scene.html">Scene</a></li>
+	                            <li><a href="../classes/Shader.html">Shader</a></li>
+	                            <li><a href="../classes/Shadow.html">Shadow</a></li>
+	                            <li><a href="../classes/TextNode.html">TextNode</a></li>
+	                            <li><a href="../classes/Texture.html">Texture</a></li>
+	                            <li><a href="../classes/Vector.html">Vector</a></li>
+	                            <li><a href="../classes/Vector4.html">Vector4</a></li>
+	                            <li><a href="../classes/ZBuffer.html">ZBuffer</a></li>
+	                    </ul>
+	                </div>
+	    
+	                <div class="tab-pane" id="modules">
+	                    <ul id="api-modules" class="nav nav-list">
+	                            <li><a href="../modules/aexolGL.html">aexolGL</a></li>
+	                            <li><a href="../modules/Animation.html">Animation</a></li>
+	                            <li><a href="../modules/Buffer.html">Buffer</a></li>
+	                            <li><a href="../modules/camera.html">camera</a></li>
+	                            <li><a href="../modules/Fog.html">Fog</a></li>
+	                            <li><a href="../modules/Font.html">Font</a></li>
+	                            <li><a href="../modules/Game.html">Game</a></li>
+	                            <li><a href="../modules/Light.html">Light</a></li>
+	                            <li><a href="../modules/materialLib.html">materialLib</a></li>
+	                            <li><a href="../modules/Math.html">Math</a></li>
+	                            <li><a href="../modules/Mesh.html">Mesh</a></li>
+	                            <li><a href="../modules/Physics.html">Physics</a></li>
+	                            <li><a href="../modules/Resource.html">Resource</a></li>
+	                            <li><a href="../modules/ShaderLibrary.html">ShaderLibrary</a></li>
+	                            <li><a href="../modules/Shadow.html">Shadow</a></li>
+	                            <li><a href="../modules/start.html">start</a></li>
+	                            <li><a href="../modules/utils.html">utils</a></li>
+	                    </ul>
+	                </div>
+	            </div>
+	        </div>
+	    </div>
+        </div>
+        <div class="span9">
+                <form id="options-form" class="form-inline pull-right">
+                    Show:
+                    <label for="api-show-inherited" class="checkbox">
+                        <input type="checkbox" id="api-show-inherited" checked>
+                        Inherited
+                    </label>
+            
+                    <label for="api-show-protected" class="checkbox">
+                        <input type="checkbox" id="api-show-protected">
+                        Protected
+                    </label>
+            
+                    <label for="api-show-private" class="checkbox">
+                        <input type="checkbox" id="api-show-private">
+                        Private
+                    </label>
+                    <label for="api-show-deprecated" class="checkbox">
+                        <input type="checkbox" id="api-show-deprecated">
+                        Deprecated
+                    </label>
+            
+                </form>
+            
+            <div class="apidocs">
+                <div id="docs-main">
+                    <div class="content">
+                        <div class="page-header">
+                            <h1>../aexolgl-js/src/material.js <small>File</small></h1>
+                        </div>
+                        
+                        <div class="file">
+                            <pre class="prettyprint linenums">
+                        var SHDS = [];
+                        for (var t = 0; t &lt; 500; t++) {
+                            SHDS.push(&quot;empty&quot;);
+                        }
+                        function getShNum() {
+                            for (var i = 1; i &lt; SHDS.length + 1; i++) {
+                                if (SHDS[i] == &quot;empty&quot;) {
+                                    SHDS[i] = &quot;shader&quot;
+                                    return i
+                                }
+                            }
+                        }
+                        
+                        /**
+                         * Material class
+                         * @class Material
+                         * @constructor
+                         * @param {Object} settings Options for the material
+                         */
+                        Material = function (settings) {
+                            MObject.call(this)
+                            this.shaderId = getShNum()
+                            this.compl = 0
+                            /**
+                             * @property settings
+                             * @type Object
+                             * @example
+                             *      mat = new Material()
+                             *      mat.settings{{
+                            *         color: [1.0,0.0,0.0],
+                            *         specularWeight: 1.0,
+                            *         reflectionWeight: 1.0,
+                            *         alpha:1.0
+                            *         }}
+                             */
+                            this.settings = {
+                                id : this.shaderId+&quot;&quot;,
+                                color: [1.0, 1.0, 1.0],
+                                specularWeight: 1.0,
+                                mappingType: 1.0,
+                                shininess:15.0,
+                                alpha: 1.0
+                            }
+                            this._textures={}
+                            if (settings) {
+                                for (var o in settings) {
+                                    var so = settings[o]
+                                    if (so instanceof Texture) {
+                                        this.setTexture(o,so);
+                                    }
+                                    else {
+                                        this.settings[o] = settings[o]
+                                    }
+                                }
+                            }
+                        }
+                        Material.prototype = Object.create(MObject.prototype);
+                        Material.prototype.constructor = Material
+                        /**
+                         * Draw material
+                         * @method draw
+                         */
+                        Material.prototype.draw = function () {
+                            var all = this.completeTextures()
+                            if (all) {
+                                this.bindAll()
+                                var dic ={}
+                                dic[&quot;material&quot;] = this.settings
+                                for(var tx in this._textures){
+                                    var tex = this._textures[tx]
+                                    if (tex instanceof Texture) {
+                                        dic[tx] = tex.binder
+                                        if(tex.isAtlas){
+                                            dic[&quot;atlas&quot;] = tex.uvd[this.atlasName]
+                                        }
+                                    }
+                                }
+                                for (var child in this.children) {
+                                    this.children[child].draw(dic)
+                                }
+                                this.unbindAll()
+                            }
+                        }
+                        /**
+                         * Set diffuse texture
+                         * @method setDiffuse
+                         * @param {String} channel texture channel ( &quot;diffuse&quot;, &quot;specular&quot;, &quot;bump&quot;, &quot;cube&quot; )
+                         * @param {Texture} tex Texture to set on diffuse channel
+                         * @param {String} name required if texture is atlas
+                         */
+                        Material.prototype.setTexture = function(channel,tex,name){
+                            if(tex instanceof Texture){
+                                this.compl = -1
+                            }
+                            this._textures[channel] = tex;
+                            if(tex.isAtlas){
+                                this.atlasName = name
+                            }
+                        }
+                        /**
+                         * Set diffuse texture
+                         * @method setDiffuse
+                         * @param {Texture} tex Texture to set on diffuse channel
+                         */
+                        Material.prototype.setDiffuse = function (tex,name) {
+                            this.setTexture(&quot;diffuse&quot;,tex,name)
+                        }
+                        /**
+                         * Set bump texture
+                         * @method setBump
+                         * @param {Texture} tex Texture to set on bump channel
+                         */
+                        Material.prototype.setBump = function (tex,name) {
+                            this.setTexture(&quot;bump&quot;,tex,name)
+                        }
+                        /**
+                         * Set specular texture
+                         * @method setSpecular
+                         * @param {Texture} tex Texture to set on specular channel
+                         */
+                        Material.prototype.setSpecular = function (tex,name) {
+                            this.setTexture(&quot;specular&quot;,tex,name)
+                        }
+                        /**
+                         * Set cube environment texture
+                         * @method setCube
+                         * @param {Texture} tex Texture to set on environment channel
+                         */
+                        Material.prototype.setCube = function (cube,name) {
+                            this.setTexture(&quot;cube&quot;,cube,name)
+                        }
+                        Material.prototype.bindAll = function () {
+                            for(var tx in this._textures){
+                                var tex = this._textures[tx]
+                                if (tex instanceof Texture) {
+                                    if(tx == &quot;cube&quot;){
+                                        tex.bindCube()
+                                    }else{
+                                        tex.bind()
+                                    }
+                                    this[tx] = tex.binder
+                                }
+                            }
+                        }
+                        Material.prototype.unbindAll = function () {
+                            for(var tx in this._textures){
+                                var tex = this._textures[tx]
+                                if (tex instanceof Texture) {
+                                    if(tx == &quot;cube&quot;){
+                                        tex.unbindCube()
+                                    }else{
+                                        tex.unbind()
+                                    }
+                                }
+                            }
+                        }
+                        Material.prototype.completeTextures = function () {
+                            var compmax = 0
+                            var comps = 0
+                            for(var tx in this._textures){
+                                var tex = this._textures[tx]
+                                compmax +=1
+                                if (tex instanceof Texture) {
+                                    if(tx  != &quot;cube&quot;){
+                                        if(tex.complete == 1){
+                                                tex.handle()
+                                                tex.complete =2
+                                        }else if(tex.complete == 2){
+                                                comps +=1
+                                        }
+                                    }else{
+                                        if(tex.complete == 6){
+                                                tex.handleCube()
+                                                tex.complete =12
+                                        }else if(tex.complete == 12){
+                                                comps +=1
+                                        }
+                                    }
+                                }
+                            }
+                            if (compmax == 0) {
+                                return true
+                            } else {
+                                return ((comps / compmax) == 1.0 ? true : false)
+                            }
+                        }
+                        /**
+                         * Set Material shader uniforms
+                         * @method uniforms
+                         * @param {Dict} uniforms Dictionary of uniforms of shader
+                         */
+                        Material.prototype.uniforms = function (uni) {
+                            var dic = uni || {}
+                            gl.currentShader.uniforms(dic)
+                        }
+                        Material._settable = [
+                            &quot;color&quot;,
+                            &quot;specularWeight&quot;,
+                            &quot;mappingType&quot;,
+                            &quot;alpha&quot;,
+                            &quot;shininess&quot;
+                        ]
+                        
+                            </pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../assets/vendor/jquery/jquery-1.8.2.min.js"></script>
+<script src="../assets/vendor/bootstrap/js/bootstrap.js"></script>
+<script src="../assets/vendor/prettify/prettify-min.js"></script>
+<script src="../assets/js/yuidoc-bootstrap.js"></script>
+<script>prettyPrint();</script>
+</body>
+</html>

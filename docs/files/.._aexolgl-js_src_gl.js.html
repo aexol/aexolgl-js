@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>../aexolgl-js/src/gl.js - aexolGL API</title>
+    <link rel="stylesheet" href="http://yui.yahooapis.com/3.7.0/build/cssgrids/cssgrids-min.css">
+    <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
+    <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
+    <link rel="stylesheet" href="../assets/css/custom.css">
+    <link rel="stylesheet" href="../assets/vendor/bootstrap/css/bootstrap.css">
+    <link rel="shortcut icon" type="image/png" href="../assets/favicon.png">
+</head>
+<body class="yui3-skin-sam">
+<div class="container-fluid" style="padding:0;">
+	<div id="topbar" class="row visible-md visible-lg" style="margin:0;">
+        <div class="span1"></div>
+        <div class="span6 docs">
+            <img src="http://gl.aexol.com/static/img/aexol_gl_logo.png"> Docs for Version: <b>1.0a</b>
+        </div>
+        <div class="span5"></div>
+    </div>
+    <div class="row" style="padding:2em;">
+        <div class="span3">
+	    <div>
+	        <h3>APIs</h3>
+	        <div id="sidebar">
+	            <ul id="main-nav" class="nav nav-tabs" style="margin-bottom:0;">
+	                <li class="active"><a href="#classes" data-toggle="tab">Classes</a></li>
+	                <li><a href="#modules" data-toggle="tab">Modules</a></li>
+	            </ul>
+	    
+	            <div id="api-tabview-filter">
+	                <input type="search" placeholder="Type to filter APIs">
+	            </div>
+	    
+	            <div class="tab-content" style="border: 1px solid #DDD; border-top:0;">
+	                <div class="tab-pane active" id="classes">
+	                    <ul id="api-classes" class="nav nav-list">
+	                            <li><a href="../classes/Aex.html">Aex</a></li>
+	                            <li><a href="../classes/aexolGL.html">aexolGL</a></li>
+	                            <li><a href="../classes/Animation.html">Animation</a></li>
+	                            <li><a href="../classes/Buffer.html">Buffer</a></li>
+	                            <li><a href="../classes/Camera.html">Camera</a></li>
+	                            <li><a href="../classes/Fog.html">Fog</a></li>
+	                            <li><a href="../classes/Frustum.html">Frustum</a></li>
+	                            <li><a href="../classes/GameObject.html">GameObject</a></li>
+	                            <li><a href="../classes/Indexer.html">Indexer</a></li>
+	                            <li><a href="../classes/Label.html">Label</a></li>
+	                            <li><a href="../classes/Light.html">Light</a></li>
+	                            <li><a href="../classes/Material.html">Material</a></li>
+	                            <li><a href="../classes/Matrix.html">Matrix</a></li>
+	                            <li><a href="../classes/Matrix3.html">Matrix3</a></li>
+	                            <li><a href="../classes/Mesh.html">Mesh</a></li>
+	                            <li><a href="../classes/MObject.html">MObject</a></li>
+	                            <li><a href="../classes/Pivot.html">Pivot</a></li>
+	                            <li><a href="../classes/Quaternion.html">Quaternion</a></li>
+	                            <li><a href="../classes/Resource.html">Resource</a></li>
+	                            <li><a href="../classes/Scene.html">Scene</a></li>
+	                            <li><a href="../classes/Shader.html">Shader</a></li>
+	                            <li><a href="../classes/Shadow.html">Shadow</a></li>
+	                            <li><a href="../classes/TextNode.html">TextNode</a></li>
+	                            <li><a href="../classes/Texture.html">Texture</a></li>
+	                            <li><a href="../classes/Vector.html">Vector</a></li>
+	                            <li><a href="../classes/Vector4.html">Vector4</a></li>
+	                            <li><a href="../classes/ZBuffer.html">ZBuffer</a></li>
+	                    </ul>
+	                </div>
+	    
+	                <div class="tab-pane" id="modules">
+	                    <ul id="api-modules" class="nav nav-list">
+	                            <li><a href="../modules/aexolGL.html">aexolGL</a></li>
+	                            <li><a href="../modules/Animation.html">Animation</a></li>
+	                            <li><a href="../modules/Buffer.html">Buffer</a></li>
+	                            <li><a href="../modules/camera.html">camera</a></li>
+	                            <li><a href="../modules/Fog.html">Fog</a></li>
+	                            <li><a href="../modules/Font.html">Font</a></li>
+	                            <li><a href="../modules/Game.html">Game</a></li>
+	                            <li><a href="../modules/Light.html">Light</a></li>
+	                            <li><a href="../modules/materialLib.html">materialLib</a></li>
+	                            <li><a href="../modules/Math.html">Math</a></li>
+	                            <li><a href="../modules/Mesh.html">Mesh</a></li>
+	                            <li><a href="../modules/Physics.html">Physics</a></li>
+	                            <li><a href="../modules/Resource.html">Resource</a></li>
+	                            <li><a href="../modules/ShaderLibrary.html">ShaderLibrary</a></li>
+	                            <li><a href="../modules/Shadow.html">Shadow</a></li>
+	                            <li><a href="../modules/start.html">start</a></li>
+	                            <li><a href="../modules/utils.html">utils</a></li>
+	                    </ul>
+	                </div>
+	            </div>
+	        </div>
+	    </div>
+        </div>
+        <div class="span9">
+                <form id="options-form" class="form-inline pull-right">
+                    Show:
+                    <label for="api-show-inherited" class="checkbox">
+                        <input type="checkbox" id="api-show-inherited" checked>
+                        Inherited
+                    </label>
+            
+                    <label for="api-show-protected" class="checkbox">
+                        <input type="checkbox" id="api-show-protected">
+                        Protected
+                    </label>
+            
+                    <label for="api-show-private" class="checkbox">
+                        <input type="checkbox" id="api-show-private">
+                        Private
+                    </label>
+                    <label for="api-show-deprecated" class="checkbox">
+                        <input type="checkbox" id="api-show-deprecated">
+                        Deprecated
+                    </label>
+            
+                </form>
+            
+            <div class="apidocs">
+                <div id="docs-main">
+                    <div class="content">
+                        <div class="page-header">
+                            <h1>../aexolgl-js/src/gl.js <small>File</small></h1>
+                        </div>
+                        
+                        <div class="file">
+                            <pre class="prettyprint linenums">
+                        /**
+                         * aexolGL class
+                         * @class aexolGL
+                         * @constructor
+                         * @param {Dict} options Options
+                         */
+                        aexolGL = function(options) {
+                            this.settings = {}
+                            gl.projectionMatrix = new Matrix();
+                            gl.uniformsSet = {}
+                            gl.frustum = new Frustum()
+                            gl.angle = 45
+                            gl.pause = false;
+                            this.matrix = null;
+                        
+                            gl.nTexture = 0;
+                            gl.cbTexture = 0;
+                            gl.nShader = 1
+                        
+                            gl.loadedElements = {}
+                            gl.progress = 0.0
+                        
+                            gl.MAX_NUMBER_OF_TEXTURES = 8;
+                        
+                            gl.frame = 0;
+                            /* End of GL overloads */
+                            var __error = function(text) {
+                              if (window.handleError)
+                                window.handleError(text);
+                              throw text;
+                            }
+                          }
+                          /**
+                           * Inits the framebuffer
+                           * @method initGL
+                           */
+                        aexolGL.prototype.initGL = function() {
+                            gl.viewport(0, 0, gl.canvas.width, gl.canvas.height);
+                            gl.clearColor(0.0, 0.0, 0.0, 1);
+                            gl.clear(gl.COLOR_BUFFER_BIT | gl.DEPTH_BUFFER_BIT);
+                            gl.enable(gl.DEPTH_TEST);
+                            gl.enable(gl.BLEND);
+                            gl.blendFunc(gl.SRC_ALPHA, gl.ONE_MINUS_SRC_ALPHA);
+                          }
+                          /**
+                           * Start the engine
+                           * @method init
+                           */
+                        aexolGL.prototype.init = function() {
+                          var t = this
+                          this.initDefaultPreloader()
+                        
+                          function checkIfElementsAreLoaded() {
+                            var le = Resource.loadedElements
+                            var allLoaded = Object.keys(le).length
+                            if (allLoaded == 0) {
+                              t.defaultPreload(100);
+                              t.executeInit()
+                            } else {
+                              var ready = 0
+                              for (var l in le) {
+                                ready += le[l]
+                              }
+                              var percentage = ready / allLoaded
+                              if (percentage == 1.0) {
+                                t.defaultPreload((percentage * 100).toFixed(2));
+                                t.executeInit()
+                              } else {
+                                t.defaultPreload((percentage * 100).toFixed(2));
+                                setTimeout(checkIfElementsAreLoaded, 10)
+                              }
+                            }
+                          }
+                        
+                          setTimeout(checkIfElementsAreLoaded, 10)
+                        }
+                        aexolGL.prototype.initV2 = function() {
+                          var t = this
+                          this.initDefaultPreloader()
+                        
+                          function checkIfElementsAreLoaded() {
+                            var le = Resource.loadedElements
+                            var allLoaded = Object.keys(le).length
+                            if (allLoaded == 0) {
+                              t.defaultPreload(100);
+                              t.executeInitV2()
+                            } else {
+                              var ready = 0
+                              for (var l in le) {
+                                ready += le[l]
+                              }
+                              var percentage = ready / allLoaded
+                              if (percentage == 1.0) {
+                                t.defaultPreload((percentage * 100).toFixed(2));
+                                t.executeInitV2()
+                              } else {
+                                t.defaultPreload((percentage * 100).toFixed(2));
+                                setTimeout(checkIfElementsAreLoaded, 10)
+                              }
+                            }
+                          }
+                        
+                          setTimeout(checkIfElementsAreLoaded, 10)
+                        }
+                        AexolGL = function(canvasId, options) {
+                          var lastTime = 0;
+                          setGL(canvasId)
+                          agl = new aexolGL()
+                          agl.settings = {
+                            setup: function() {
+                        
+                            },
+                            logic: function() {
+                        
+                            },
+                            draw: function() {
+                        
+                            },
+                          };
+                          for (var o in options) {
+                            if (agl.settings.hasOwnProperty(o)) {
+                              agl.settings[o] = options[o]
+                            }
+                          }
+                          agl.settings.setup()
+                          agl.initGL()
+                          agl.initV2()
+                          return agl
+                        }
+                        aexolGL.prototype.executeInitV2 = function() {
+                          var vendors = [&#x27;ms&#x27;, &#x27;moz&#x27;, &#x27;webkit&#x27;, &#x27;o&#x27;];
+                          var that = this
+                          for (var x = 0; x &lt; vendors.length &amp;&amp; !window.requestAnimationFrame; ++x) {
+                            window.requestAnimationFrame = window[vendors[x] + &#x27;RequestAnimationFrame&#x27;];
+                            window.cancelAnimationFrame = window[vendors[x] + &#x27;CancelAnimationFrame&#x27;] || window[vendors[x] + &#x27;CancelRequestAnimationFrame&#x27;];
+                          }
+                          if (!window.requestAnimationFrame) {
+                            window.requestAnimationFrame = function(callback, element) {
+                              var currTime = Date.now(),
+                              timeToCall = Math.max(0, 16 - (currTime - lastTime));
+                              var id = window.setTimeout(function() {
+                                callback(currTime + timeToCall);
+                              }, timeToCall);
+                              lastTime = currTime + timeToCall;
+                              return id;
+                            };
+                          }
+                          if (!window.cancelAnimationFrame) {
+                            window.cancelAnimationFrame = function(id) {
+                              clearTimeout(id);
+                            };
+                          }
+                          gl.enable(gl.DEPTH_TEST);
+                          if (that.animframe) {
+                            window.cancelAnimationFrame(that.animframe);
+                          }
+                          (function animloop() {
+                            if (gl.pause == false) {
+                              that.settings.logic()
+                              that.settings.draw();
+                              gl.frame += 1;
+                            }
+                            that.animframe = window.requestAnimationFrame(animloop, gl.canvas);
+                          })();
+                        }
+                        aexolGL.prototype.executeInit = function() {
+                          var lastTime = 0;
+                          var vendors = [&#x27;ms&#x27;, &#x27;moz&#x27;, &#x27;webkit&#x27;, &#x27;o&#x27;];
+                        
+                          for (var x = 0; x &lt; vendors.length &amp;&amp; !window.requestAnimationFrame; ++x) {
+                        
+                            window.requestAnimationFrame = window[vendors[x] + &#x27;RequestAnimationFrame&#x27;];
+                            window.cancelAnimationFrame = window[vendors[x] + &#x27;CancelAnimationFrame&#x27;] || window[vendors[x] + &#x27;CancelRequestAnimationFrame&#x27;];
+                        
+                          }
+                        
+                          if (!window.requestAnimationFrame) {
+                        
+                            window.requestAnimationFrame = function(callback, element) {
+                        
+                              var currTime = Date.now(),
+                                timeToCall = Math.max(0, 16 - (currTime - lastTime));
+                              var id = window.setTimeout(function() {
+                                callback(currTime + timeToCall);
+                              }, timeToCall);
+                              lastTime = currTime + timeToCall;
+                              return id;
+                        
+                            };
+                        
+                          }
+                        
+                        
+                          if (!window.cancelAnimationFrame) {
+                        
+                            window.cancelAnimationFrame = function(id) {
+                              clearTimeout(id);
+                            };
+                        
+                          }
+                          var draw = function() {
+                            gl.viewport(0, 0, 800, 800);
+                          }
+                          gl.enable(gl.DEPTH_TEST);
+                          if (window.draw) {
+                            if (gl.animframe) {
+                              window.cancelAnimationFrame(gl.animframe);
+                            }
+                            (function animloop() {
+                              gl.GLTD = &quot;&quot;
+                              gl.GLTD = gl.GLTD + gl.GLT
+                              gl.GLT = &quot;&quot;
+                              if (gl.pause == false) {
+                                if (window.logic) {
+                                  window.logic()
+                                }
+                                window.animations()
+                                window.draw();
+                                gl.frame += 1;
+                              }
+                              gl.animframe = window.requestAnimationFrame(animloop, gl.canvas);
+                            })();
+                          } else {
+                            draw();
+                          }
+                        }
+                        aexolGL.prototype.initDefaultPreloader = function() {
+                          if (!window.progress &amp;&amp; !this.settings.progress) {
+                            this.progresstext = document.createElement(&quot;div&quot;)
+                            this.progresstext.style.color = &quot;white&quot;
+                            this.progresstext.style.zIndex = 999
+                            this.progresstext.style.letterSpacing = &quot;2px&quot;
+                            this.progresstext.style.fontVariant = &quot;small-caps&quot;
+                            this.progresstext.style.textAlign = &quot;center&quot;
+                            this.progresstext.style.position = &quot;absolute&quot;
+                            this.progresstext.style.lineHeight = &quot;25px&quot;
+                            this.progresstext.style.marginLeft = (gl.canvas.offsetLeft + gl.canvas.width / 2.0 - 71) + &quot;px&quot;
+                            this.progresstext.style.marginTop = (gl.canvas.height / 2.0 - 12) + &quot;px&quot;
+                            gl.canvas.parentNode.insertBefore(this.progresstext, gl.canvas)
+                          }
+                        }
+                        aexolGL.prototype.defaultPreload = function(e) {
+                          if (!this.settings.progress) {
+                            this.progresstext.innerHTML = &quot;aexolgl is&lt;br&gt;loading &quot; + e + &quot;%&quot;
+                            if (e == 100) {
+                              this.progresstext.remove()
+                            }
+                          } else {
+                            if(!window.progress){
+                              this.settings.progress(e)
+                            }
+                            else{
+                              window.progress
+                            }
+                          }
+                        }
+                        
+                            </pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../assets/vendor/jquery/jquery-1.8.2.min.js"></script>
+<script src="../assets/vendor/bootstrap/js/bootstrap.js"></script>
+<script src="../assets/vendor/prettify/prettify-min.js"></script>
+<script src="../assets/js/yuidoc-bootstrap.js"></script>
+<script>prettyPrint();</script>
+</body>
+</html>

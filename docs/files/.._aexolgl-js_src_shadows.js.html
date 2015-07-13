@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>../aexolgl-js/src/shadows.js - aexolGL API</title>
+    <link rel="stylesheet" href="http://yui.yahooapis.com/3.7.0/build/cssgrids/cssgrids-min.css">
+    <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
+    <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
+    <link rel="stylesheet" href="../assets/css/custom.css">
+    <link rel="stylesheet" href="../assets/vendor/bootstrap/css/bootstrap.css">
+    <link rel="shortcut icon" type="image/png" href="../assets/favicon.png">
+</head>
+<body class="yui3-skin-sam">
+<div class="container-fluid" style="padding:0;">
+	<div id="topbar" class="row visible-md visible-lg" style="margin:0;">
+        <div class="span1"></div>
+        <div class="span6 docs">
+            <img src="http://gl.aexol.com/static/img/aexol_gl_logo.png"> Docs for Version: <b>1.0a</b>
+        </div>
+        <div class="span5"></div>
+    </div>
+    <div class="row" style="padding:2em;">
+        <div class="span3">
+	    <div>
+	        <h3>APIs</h3>
+	        <div id="sidebar">
+	            <ul id="main-nav" class="nav nav-tabs" style="margin-bottom:0;">
+	                <li class="active"><a href="#classes" data-toggle="tab">Classes</a></li>
+	                <li><a href="#modules" data-toggle="tab">Modules</a></li>
+	            </ul>
+	    
+	            <div id="api-tabview-filter">
+	                <input type="search" placeholder="Type to filter APIs">
+	            </div>
+	    
+	            <div class="tab-content" style="border: 1px solid #DDD; border-top:0;">
+	                <div class="tab-pane active" id="classes">
+	                    <ul id="api-classes" class="nav nav-list">
+	                            <li><a href="../classes/Aex.html">Aex</a></li>
+	                            <li><a href="../classes/aexolGL.html">aexolGL</a></li>
+	                            <li><a href="../classes/Animation.html">Animation</a></li>
+	                            <li><a href="../classes/Buffer.html">Buffer</a></li>
+	                            <li><a href="../classes/Camera.html">Camera</a></li>
+	                            <li><a href="../classes/Fog.html">Fog</a></li>
+	                            <li><a href="../classes/Frustum.html">Frustum</a></li>
+	                            <li><a href="../classes/GameObject.html">GameObject</a></li>
+	                            <li><a href="../classes/Indexer.html">Indexer</a></li>
+	                            <li><a href="../classes/Label.html">Label</a></li>
+	                            <li><a href="../classes/Light.html">Light</a></li>
+	                            <li><a href="../classes/Material.html">Material</a></li>
+	                            <li><a href="../classes/Matrix.html">Matrix</a></li>
+	                            <li><a href="../classes/Matrix3.html">Matrix3</a></li>
+	                            <li><a href="../classes/Mesh.html">Mesh</a></li>
+	                            <li><a href="../classes/MObject.html">MObject</a></li>
+	                            <li><a href="../classes/Pivot.html">Pivot</a></li>
+	                            <li><a href="../classes/Quaternion.html">Quaternion</a></li>
+	                            <li><a href="../classes/Resource.html">Resource</a></li>
+	                            <li><a href="../classes/Scene.html">Scene</a></li>
+	                            <li><a href="../classes/Shader.html">Shader</a></li>
+	                            <li><a href="../classes/Shadow.html">Shadow</a></li>
+	                            <li><a href="../classes/TextNode.html">TextNode</a></li>
+	                            <li><a href="../classes/Texture.html">Texture</a></li>
+	                            <li><a href="../classes/Vector.html">Vector</a></li>
+	                            <li><a href="../classes/Vector4.html">Vector4</a></li>
+	                            <li><a href="../classes/ZBuffer.html">ZBuffer</a></li>
+	                    </ul>
+	                </div>
+	    
+	                <div class="tab-pane" id="modules">
+	                    <ul id="api-modules" class="nav nav-list">
+	                            <li><a href="../modules/aexolGL.html">aexolGL</a></li>
+	                            <li><a href="../modules/Animation.html">Animation</a></li>
+	                            <li><a href="../modules/Buffer.html">Buffer</a></li>
+	                            <li><a href="../modules/camera.html">camera</a></li>
+	                            <li><a href="../modules/Fog.html">Fog</a></li>
+	                            <li><a href="../modules/Font.html">Font</a></li>
+	                            <li><a href="../modules/Game.html">Game</a></li>
+	                            <li><a href="../modules/Light.html">Light</a></li>
+	                            <li><a href="../modules/materialLib.html">materialLib</a></li>
+	                            <li><a href="../modules/Math.html">Math</a></li>
+	                            <li><a href="../modules/Mesh.html">Mesh</a></li>
+	                            <li><a href="../modules/Physics.html">Physics</a></li>
+	                            <li><a href="../modules/Resource.html">Resource</a></li>
+	                            <li><a href="../modules/ShaderLibrary.html">ShaderLibrary</a></li>
+	                            <li><a href="../modules/Shadow.html">Shadow</a></li>
+	                            <li><a href="../modules/start.html">start</a></li>
+	                            <li><a href="../modules/utils.html">utils</a></li>
+	                    </ul>
+	                </div>
+	            </div>
+	        </div>
+	    </div>
+        </div>
+        <div class="span9">
+                <form id="options-form" class="form-inline pull-right">
+                    Show:
+                    <label for="api-show-inherited" class="checkbox">
+                        <input type="checkbox" id="api-show-inherited" checked>
+                        Inherited
+                    </label>
+            
+                    <label for="api-show-protected" class="checkbox">
+                        <input type="checkbox" id="api-show-protected">
+                        Protected
+                    </label>
+            
+                    <label for="api-show-private" class="checkbox">
+                        <input type="checkbox" id="api-show-private">
+                        Private
+                    </label>
+                    <label for="api-show-deprecated" class="checkbox">
+                        <input type="checkbox" id="api-show-deprecated">
+                        Deprecated
+                    </label>
+            
+                </form>
+            
+            <div class="apidocs">
+                <div id="docs-main">
+                    <div class="content">
+                        <div class="page-header">
+                            <h1>../aexolgl-js/src/shadows.js <small>File</small></h1>
+                        </div>
+                        
+                        <div class="file">
+                            <pre class="prettyprint linenums">
+                        /**
+                         @module Shadow
+                         */
+                        
+                        var shadowShader = function (options) {
+                            if (options) {
+                                for (var o in options) {
+                                    settings[o] = options[o]
+                                }
+                            }
+                            var bShader = new Shader(&quot;&quot;, &quot;&quot;, 1)
+                            bShader.addVarying(&quot;vec4&quot;, &quot;vPosition&quot;)
+                            bShader.addVertexSource(&#x27;\
+                        			void main(void) {\
+                        			    vPosition = gl_ModelViewMatrix * vec4(Vertex, 1.0);\
+                        			    gl_Position = gl_ProjectionMatrix * vPosition;\
+                        			}&#x27;)
+                            bShader.addUniform(&quot;float&quot;, &quot;near&quot;)
+                            bShader.addUniform(&quot;float&quot;, &quot;far&quot;)
+                            bShader.addUniform(&quot;vec3&quot;, &quot;lightPosition&quot;)
+                            var fragSource = &#x27;void main(void) {\
+                                vec3 vpos = vec3(vPosition.x,vPosition.y,vPosition.z);\
+                                vec3 lpp = lightPosition;\
+                                float distance = length(lpp-vpos);\
+                                float ndepth = distance/far;\
+                                gl_FragColor = vec4(ndepth,ndepth,ndepth,1.0);\
+                            }&#x27;;
+                            bShader.addFragmentSource(fragSource)
+                            bShader._build();
+                            return bShader
+                        }
+                        var varianceDepth = function (options) {
+                            if (options) {
+                                for (var o in options) {
+                                    settings[o] = options[o]
+                                }
+                            }
+                            var bShader = new Shader(&quot;&quot;, &quot;&quot;, 1)
+                            bShader.addVarying(&quot;vec4&quot;, &quot;vPosition&quot;)
+                            bShader.addVertexSource(&#x27;\
+                        			void main(void) {\
+                        			    vPosition = gl_ModelViewMatrix * vec4(Vertex, 1.0);\
+                        			    gl_Position = gl_ProjectionMatrix * vPosition;\
+                        			}&#x27;)
+                            bShader.addUniform(&quot;vec3&quot;, &quot;lightPosition&quot;)
+                            var fragSource = &#x27;//\
+                                void main(){\
+                                    vec3 vpos = vPosition.xyz;\
+                                    vec3 lpp = lightPosition;\
+                                    float distance = min(length(lpp-vpos),near);\
+                                    float depth = max(min(distance/far,0.0),1.0);\
+                                    float dx = dFdx(depth);\
+                                    float dy = dFdy(depth);\
+                                    gl_FragColor = vec4(depth, pow(depth, 2.0) + 0.25*(dx*dx + dy*dy), 0.0, 1.0);\
+                                }&#x27;;
+                            bShader.addFragmentSource(fragSource)
+                            bShader._build();
+                            return bShader
+                        }
+                        /**
+                         * @class Shadow
+                         * @param {Scene} scene
+                         * @param {Vector} lightPosition of pointLight
+                         * @param {float} [near] near shadow plane
+                         * @param {float} [far] far shadow plane
+                         * @param {int} [resolution] shadow map resolution
+                         * @constructor
+                         */
+                        Shadow = function (scene, lightPosition,near,far,resolution) {
+                            this.map = new ZBufferCube({
+                                width:resolution || 512,
+                                height:resolution || 512
+                            })
+                            this.scene = scene
+                            this.far = far || 100.0
+                            this.near = near || 0.1
+                            this.shader = shadowShader()
+                            this.position = lightPosition
+                            this.projectionMatrix = Matrix.perspective(90.0, 1.0, this.near, this.far);
+                        }
+                        /**
+                         * draws shadow
+                         * @method draw
+                         */
+                        Shadow.prototype.draw = function () {
+                            var degs = [
+                                [0, 90, 0],
+                                [0, -90, 0],
+                                [90, 0, 0],
+                                [-90, 0, 0],
+                                [0, 0, 0],
+                                [0, 180, 0]
+                            ]
+                            for (var i = 0; i &lt; 6; i++) {
+                                gl.viewport(0, 0, this.map.width, this.map.height);
+                                this.map.bind(i)
+                                gl.clear(gl.COLOR_BUFFER_BIT | gl.DEPTH_BUFFER_BIT);
+                                var m = this.projectionMatrix
+                                m = m.rotateVector(degs[i][0], degs[i][1], degs[i][2]);
+                                m = m.multiply(Matrix.translate(-this.position.x, -this.position.y, -this.position.z));
+                                this.scene.drawOverride(this.shader, {
+                                    _gl_ProjectionMatrix: m.m,
+                                    lightPosition: this.position.toArray(),
+                                    near:this.near,
+                                    far:this.far
+                                })
+                                this.map.unbind()
+                            }
+                        }
+                            </pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../assets/vendor/jquery/jquery-1.8.2.min.js"></script>
+<script src="../assets/vendor/bootstrap/js/bootstrap.js"></script>
+<script src="../assets/vendor/prettify/prettify-min.js"></script>
+<script src="../assets/js/yuidoc-bootstrap.js"></script>
+<script>prettyPrint();</script>
+</body>
+</html>

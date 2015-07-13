@@ -1,0 +1,4625 @@
+{
+    "project": {
+        "name": "aexolGL API",
+        "description": "The aexolGL API: a library for presenting 3d objects inside browser",
+        "version": "1.0a",
+        "url": "gl.aexol.com",
+        "logo": "http://gl.aexol.com/static/img/aexol_gl_logo.png"
+    },
+    "files": {
+        "../aexolgl-js/src/aexolGL.js": {
+            "name": "../aexolgl-js/src/aexolGL.js",
+            "modules": {
+                "aexolGL": 1
+            },
+            "classes": {
+                "MObject": 1,
+                "Aex": 1,
+                "Scene": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "../aexolgl-js/src/animation.js": {
+            "name": "../aexolgl-js/src/animation.js",
+            "modules": {
+                "Animation": 1
+            },
+            "classes": {
+                "Animation": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "../aexolgl-js/src/buffer.js": {
+            "name": "../aexolgl-js/src/buffer.js",
+            "modules": {
+                "Buffer": 1
+            },
+            "classes": {
+                "Indexer": 1,
+                "Buffer": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "../aexolgl-js/src/camera.js": {
+            "name": "../aexolgl-js/src/camera.js",
+            "modules": {},
+            "classes": {},
+            "fors": {},
+            "namespaces": {}
+        },
+        "../aexolgl-js/src/fog.js": {
+            "name": "../aexolgl-js/src/fog.js",
+            "modules": {
+                "Fog": 1
+            },
+            "classes": {
+                "Fog": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "../aexolgl-js/src/font.js": {
+            "name": "../aexolgl-js/src/font.js",
+            "modules": {
+                "Font": 1
+            },
+            "classes": {
+                "Label": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "../aexolgl-js/src/game.js": {
+            "name": "../aexolgl-js/src/game.js",
+            "modules": {
+                "Game": 1
+            },
+            "classes": {
+                "GameObject": 1,
+                "Pivot": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "../aexolgl-js/src/gl.js": {
+            "name": "../aexolgl-js/src/gl.js",
+            "modules": {},
+            "classes": {
+                "aexolGL": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "../aexolgl-js/src/light.js": {
+            "name": "../aexolgl-js/src/light.js",
+            "modules": {
+                "Light": 1
+            },
+            "classes": {
+                "Light": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "../aexolgl-js/src/material.js": {
+            "name": "../aexolgl-js/src/material.js",
+            "modules": {},
+            "classes": {
+                "Material": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "../aexolgl-js/src/materialLib.js": {
+            "name": "../aexolgl-js/src/materialLib.js",
+            "modules": {
+                "materialLib": 1
+            },
+            "classes": {},
+            "fors": {},
+            "namespaces": {}
+        },
+        "../aexolgl-js/src/math.js": {
+            "name": "../aexolgl-js/src/math.js",
+            "modules": {
+                "Math": 1
+            },
+            "classes": {
+                "Vector": 1,
+                "Vector4": 1,
+                "Matrix3": 1,
+                "Matrix": 1,
+                "Quaternion": 1,
+                "Frustum": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "../aexolgl-js/src/mesh.js": {
+            "name": "../aexolgl-js/src/mesh.js",
+            "modules": {
+                "Mesh": 1
+            },
+            "classes": {
+                "Mesh": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "../aexolgl-js/src/oldcamera.js": {
+            "name": "../aexolgl-js/src/oldcamera.js",
+            "modules": {
+                "camera": 1
+            },
+            "classes": {
+                "Camera": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "../aexolgl-js/src/physics.js": {
+            "name": "../aexolgl-js/src/physics.js",
+            "modules": {
+                "Physics": 1
+            },
+            "classes": {},
+            "fors": {},
+            "namespaces": {}
+        },
+        "../aexolgl-js/src/resource.js": {
+            "name": "../aexolgl-js/src/resource.js",
+            "modules": {
+                "Resource": 1
+            },
+            "classes": {
+                "Resource": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "../aexolgl-js/src/shader.js": {
+            "name": "../aexolgl-js/src/shader.js",
+            "modules": {},
+            "classes": {
+                "Shader": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "../aexolgl-js/src/shaderLib.js": {
+            "name": "../aexolgl-js/src/shaderLib.js",
+            "modules": {
+                "ShaderLibrary": 1
+            },
+            "classes": {},
+            "fors": {},
+            "namespaces": {}
+        },
+        "../aexolgl-js/src/shadows.js": {
+            "name": "../aexolgl-js/src/shadows.js",
+            "modules": {
+                "Shadow": 1
+            },
+            "classes": {
+                "Shadow": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "../aexolgl-js/src/start.js": {
+            "name": "../aexolgl-js/src/start.js",
+            "modules": {
+                "start": 1
+            },
+            "classes": {},
+            "fors": {},
+            "namespaces": {}
+        },
+        "../aexolgl-js/src/texture.js": {
+            "name": "../aexolgl-js/src/texture.js",
+            "modules": {},
+            "classes": {
+                "Texture": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "../aexolgl-js/src/utils.js": {
+            "name": "../aexolgl-js/src/utils.js",
+            "modules": {
+                "utils": 1
+            },
+            "classes": {
+                "TextNode": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "../aexolgl-js/src/zbuffer.js": {
+            "name": "../aexolgl-js/src/zbuffer.js",
+            "modules": {},
+            "classes": {
+                "ZBuffer": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        }
+    },
+    "modules": {
+        "aexolGL": {
+            "name": "aexolGL",
+            "submodules": {},
+            "classes": {
+                "MObject": 1,
+                "Aex": 1,
+                "Scene": 1
+            },
+            "fors": {},
+            "namespaces": {},
+            "tag": "module",
+            "file": "../aexolgl-js/src/aexolGL.js",
+            "line": 465
+        },
+        "Animation": {
+            "name": "Animation",
+            "submodules": {},
+            "classes": {
+                "Animation": 1
+            },
+            "fors": {},
+            "namespaces": {},
+            "tag": "module",
+            "file": "../aexolgl-js/src/animation.js",
+            "line": 5,
+            "description": "All animations are executed during window.logic loop"
+        },
+        "Buffer": {
+            "name": "Buffer",
+            "submodules": {},
+            "classes": {
+                "Indexer": 1,
+                "Buffer": 1
+            },
+            "fors": {},
+            "namespaces": {},
+            "tag": "module",
+            "file": "../aexolgl-js/src/buffer.js",
+            "line": 27
+        },
+        "camera": {
+            "name": "camera",
+            "submodules": {},
+            "classes": {
+                "Camera": 1
+            },
+            "fors": {},
+            "namespaces": {},
+            "tag": "module",
+            "file": "../aexolgl-js/src/oldcamera.js",
+            "line": 4
+        },
+        "Fog": {
+            "name": "Fog",
+            "submodules": {},
+            "classes": {
+                "Fog": 1
+            },
+            "fors": {},
+            "namespaces": {},
+            "tag": "module",
+            "file": "../aexolgl-js/src/fog.js",
+            "line": 4
+        },
+        "Font": {
+            "name": "Font",
+            "submodules": {},
+            "classes": {
+                "Label": 1
+            },
+            "fors": {},
+            "namespaces": {},
+            "tag": "module",
+            "file": "../aexolgl-js/src/font.js",
+            "line": 4
+        },
+        "Game": {
+            "name": "Game",
+            "submodules": {},
+            "classes": {
+                "GameObject": 1,
+                "Pivot": 1,
+                "aexolGL": 1
+            },
+            "fors": {},
+            "namespaces": {},
+            "tag": "module",
+            "file": "../aexolgl-js/src/gl.js",
+            "line": 1
+        },
+        "Light": {
+            "name": "Light",
+            "submodules": {},
+            "classes": {
+                "Light": 1,
+                "Material": 1
+            },
+            "fors": {},
+            "namespaces": {},
+            "tag": "module",
+            "file": "../aexolgl-js/src/material.js",
+            "line": 14
+        },
+        "materialLib": {
+            "name": "materialLib",
+            "submodules": {},
+            "classes": {},
+            "fors": {},
+            "namespaces": {},
+            "tag": "module",
+            "file": "../aexolgl-js/src/materialLib.js",
+            "line": 1
+        },
+        "Math": {
+            "name": "Math",
+            "submodules": {},
+            "classes": {
+                "Vector": 1,
+                "Vector4": 1,
+                "Matrix3": 1,
+                "Matrix": 1,
+                "Quaternion": 1,
+                "Frustum": 1
+            },
+            "fors": {},
+            "namespaces": {},
+            "tag": "module",
+            "file": "../aexolgl-js/src/math.js",
+            "line": 854
+        },
+        "Mesh": {
+            "name": "Mesh",
+            "submodules": {},
+            "classes": {
+                "Mesh": 1
+            },
+            "fors": {},
+            "namespaces": {},
+            "tag": "module",
+            "file": "../aexolgl-js/src/mesh.js",
+            "line": 4
+        },
+        "Physics": {
+            "name": "Physics",
+            "submodules": {},
+            "classes": {},
+            "fors": {},
+            "namespaces": {},
+            "tag": "module",
+            "file": "../aexolgl-js/src/physics.js",
+            "line": 1
+        },
+        "Resource": {
+            "name": "Resource",
+            "submodules": {},
+            "classes": {
+                "Resource": 1,
+                "Shader": 1
+            },
+            "fors": {},
+            "namespaces": {},
+            "tag": "module",
+            "file": "../aexolgl-js/src/shader.js",
+            "line": 16
+        },
+        "ShaderLibrary": {
+            "name": "ShaderLibrary",
+            "submodules": {},
+            "classes": {},
+            "fors": {},
+            "namespaces": {},
+            "tag": "module",
+            "file": "../aexolgl-js/src/shaderLib.js",
+            "line": 1
+        },
+        "Shadow": {
+            "name": "Shadow",
+            "submodules": {},
+            "classes": {
+                "Shadow": 1
+            },
+            "fors": {},
+            "namespaces": {},
+            "tag": "module",
+            "file": "../aexolgl-js/src/shadows.js",
+            "line": 60
+        },
+        "start": {
+            "name": "start",
+            "submodules": {},
+            "classes": {
+                "Texture": 1
+            },
+            "fors": {},
+            "namespaces": {},
+            "tag": "module",
+            "file": "../aexolgl-js/src/texture.js",
+            "line": 1
+        },
+        "utils": {
+            "name": "utils",
+            "submodules": {},
+            "classes": {
+                "TextNode": 1,
+                "ZBuffer": 1
+            },
+            "fors": {},
+            "namespaces": {},
+            "tag": "module",
+            "file": "../aexolgl-js/src/zbuffer.js",
+            "line": 80
+        }
+    },
+    "classes": {
+        "MObject": {
+            "name": "MObject",
+            "shortname": "MObject",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "aexolGL",
+            "namespace": "",
+            "file": "../aexolgl-js/src/aexolGL.js",
+            "line": 4,
+            "description": "MObject class",
+            "is_constructor": 1,
+            "params": [
+                {
+                    "name": "parent",
+                    "description": "of MObject object<br>",
+                    "type": "MObject"
+                }
+            ]
+        },
+        "Aex": {
+            "name": "Aex",
+            "shortname": "Aex",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "aexolGL",
+            "namespace": "",
+            "file": "../aexolgl-js/src/aexolGL.js",
+            "line": 59,
+            "description": "Aex class - Aex objects hold the modelView `Matrix`",
+            "extends": "MObject",
+            "is_constructor": 1,
+            "params": [
+                {
+                    "name": "options",
+                    "description": "{Dict} Dictionary of options when creating Aex object",
+                    "optional": true
+                }
+            ],
+            "return": {
+                "description": "Returns Aex Object",
+                "type": "Aex"
+            },
+            "example": [
+                "\n     var aex = new Aex({\n         uniforms:{\n             tiling:[2.0,2.0]\n         }\n     })"
+            ]
+        },
+        "Scene": {
+            "name": "Scene",
+            "shortname": "Scene",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "aexolGL",
+            "namespace": "",
+            "file": "../aexolgl-js/src/aexolGL.js",
+            "line": 465,
+            "description": "Scene class",
+            "is_constructor": 1,
+            "example": [
+                "\n     var world = new Scene()"
+            ]
+        },
+        "Animation": {
+            "name": "Animation",
+            "shortname": "Animation",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "Animation",
+            "namespace": "",
+            "file": "../aexolgl-js/src/animation.js",
+            "line": 5,
+            "description": "Class for animating `GameObject`'s to desired state",
+            "is_constructor": 1,
+            "params": [
+                {
+                    "name": "parent",
+                    "description": "Parent in render tree",
+                    "type": "GameObject"
+                },
+                {
+                    "name": "time",
+                    "description": "time in miliseconds",
+                    "type": "Int"
+                },
+                {
+                    "name": "options",
+                    "description": "options of Animation",
+                    "optional": true
+                }
+            ],
+            "example": [
+                "\n    var world = new Scene()\n    var gameobject = new GameObject(world,{})\n    var ani = new Animation(gameobject, 500, {\n        x: planet.x + Math.sin(this.angle * Math.degToRad) * (pll - 1),\n        y: planet.y + Math.cos(this.angle * Math.degToRad) * (pll - 1),\n        onComplete: function (e) {\n            e.remove()\n        }\n    })\n    ani.run()"
+            ]
+        },
+        "Indexer": {
+            "name": "Indexer",
+            "shortname": "Indexer",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "Buffer",
+            "namespace": "",
+            "file": "../aexolgl-js/src/buffer.js",
+            "line": 4,
+            "description": "Indexer class (internal)",
+            "is_constructor": 1
+        },
+        "Buffer": {
+            "name": "Buffer",
+            "shortname": "Buffer",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "Buffer",
+            "namespace": "",
+            "file": "../aexolgl-js/src/buffer.js",
+            "line": 27,
+            "description": "Buffer class (internal)",
+            "is_constructor": 1
+        },
+        "Camera": {
+            "name": "Camera",
+            "shortname": "Camera",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "camera",
+            "namespace": "",
+            "file": "../aexolgl-js/src/oldcamera.js",
+            "line": 4,
+            "description": "Camera class",
+            "extends": "Aex",
+            "is_constructor": 1,
+            "params": [
+                {
+                    "name": "near",
+                    "description": "near Plane",
+                    "type": "Float",
+                    "optional": true
+                },
+                {
+                    "name": "far",
+                    "description": "far Plane",
+                    "type": "Float",
+                    "optional": true
+                },
+                {
+                    "name": "angle",
+                    "description": "angle of perspective camera",
+                    "type": "Float",
+                    "optional": true
+                }
+            ],
+            "example": [
+                "\n    world = new Scene()\n    camera = new Camera()\n    camera.position = new Vector(0.1, -1, -10);"
+            ]
+        },
+        "Fog": {
+            "name": "Fog",
+            "shortname": "Fog",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "Fog",
+            "namespace": "",
+            "file": "../aexolgl-js/src/fog.js",
+            "line": 4,
+            "extends": "MObject",
+            "is_constructor": 1,
+            "params": [
+                {
+                    "name": "tableOptions",
+                    "description": "fog options",
+                    "type": "Dict"
+                }
+            ],
+            "example": [
+                "\n\tfog = new Fog({\n\t\tzMinMax:[0.0,100.0],\n\t\tintensity:1.0,\n\t\tcolor:[0.1,0.3,0.9]\n\t})"
+            ]
+        },
+        "Label": {
+            "name": "Label",
+            "shortname": "Label",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "Font",
+            "namespace": "",
+            "file": "../aexolgl-js/src/font.js",
+            "line": 4,
+            "description": "Label class creates single line text located in 3d space",
+            "extends": "GameObject",
+            "is_constructor": 1,
+            "params": [
+                {
+                    "name": "scene",
+                    "description": "scene",
+                    "type": "Scene"
+                },
+                {
+                    "name": "string",
+                    "description": "string for single line text",
+                    "type": "String"
+                },
+                {
+                    "name": "font",
+                    "description": "font to use( Rememeber about loading fonts to document with @font-face )",
+                    "type": "String"
+                },
+                {
+                    "name": "size",
+                    "description": "font size",
+                    "type": "Integer"
+                }
+            ],
+            "example": [
+                "\n    world = new Scene()\n    score = new Label(world, \"0\",\"Helvetica\", 240)"
+            ]
+        },
+        "GameObject": {
+            "name": "GameObject",
+            "shortname": "GameObject",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "Game",
+            "namespace": "",
+            "file": "../aexolgl-js/src/game.js",
+            "line": 16,
+            "description": "Main class for creating objects in aexolGL engine. Takes care for connecting RenderTree objects.",
+            "is_constructor": 1,
+            "params": [
+                {
+                    "name": "scene",
+                    "description": "scene where GameObject exists",
+                    "type": "Scene"
+                }
+            ],
+            "example": [
+                "\n    world = new Scene();\n    gshader = new basicShader()\n    skyMat = new Material({color:[0.4,0.7,1],shininess:13.0,specularWeight:0.0\t})\n    skyMesh = Mesh.sphere().scale(30.0,10.0,30.0)\n    someLight = new Light({\n           lightPosition: new Vector(1.3,4.0,-2.0),\n           attenuation: 40.0,\n           intensity: 1.33,\n           color: [0.8,1.0,1.0]\n       })\n    sky = new GameObject(world,{\n           shader:gshader,\n           material:skyMat,\n           mesh:skyMesh,\n           light:someLight\n       })"
+            ]
+        },
+        "Pivot": {
+            "name": "Pivot",
+            "shortname": "Pivot",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "Game",
+            "namespace": "",
+            "file": "../aexolgl-js/src/game.js",
+            "line": 490,
+            "description": "Main Class for constructing groups and hierarchy",
+            "extends": "Aex",
+            "is_constructor": 1,
+            "example": [
+                "\n     wheel = new Pivot()\n     wheel2 = new Pivot()\n     axis = new Pivot()\n     wheel.add(rim).add(tire)\n     wheel2.add(rim2).add(tire2)\n     rear_axis.add(wheel).add(wheel2)"
+            ]
+        },
+        "aexolGL": {
+            "name": "aexolGL",
+            "shortname": "aexolGL",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "Game",
+            "namespace": "",
+            "file": "../aexolgl-js/src/gl.js",
+            "line": 1,
+            "description": "aexolGL class",
+            "is_constructor": 1,
+            "params": [
+                {
+                    "name": "options",
+                    "description": "Options",
+                    "type": "Dict"
+                }
+            ]
+        },
+        "Light": {
+            "name": "Light",
+            "shortname": "Light",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "Light",
+            "namespace": "",
+            "file": "../aexolgl-js/src/light.js",
+            "line": 4,
+            "extends": "MObject",
+            "is_constructor": 1,
+            "params": [
+                {
+                    "name": "tableOptions",
+                    "description": "light options",
+                    "type": "Dict"
+                }
+            ],
+            "example": [
+                "\nlight = new Light({\n\t\tlightPosition: new Vector(1.3,4.0,-2.0),\n\t\tattenuation: 40.0,\n\t\tintensity: 1.33,\n\t\tlightType:1.0,\n\t\tcolor: [0.8,1.0,1.0]\n\t})\nExample 2:",
+                "\nlight = new Light([\n{\n    lightPosition: new Vector(1.3,4.0,-2.0),\n    attenuation: 400.0,\n    intensity: 1.2,\n    color: [0.8,1.0,1.0]\n},\n{\n    lightPosition: new Vector(0.1,2.0,3.0),\n    attenuation: 100.0,\n    intensity: .33,\n    color: [0.8,0.2,1.0]\n},\n{\n    lightPosition: new Vector(-1.3,4.0,-2.0),\n    attenuation: 140.0,\n    intensity: 1.33,\n    color: [0.8,1.0,1.0]\n}\n])\n Example 3 creating ambient light:",
+                "\nlight = new Light([\n{\n    intensity: 1.2,\n    lightType:2.0,\n    color: [0.8,1.0,1.0]\n},\n])"
+            ]
+        },
+        "Material": {
+            "name": "Material",
+            "shortname": "Material",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "Light",
+            "namespace": "",
+            "file": "../aexolgl-js/src/material.js",
+            "line": 14,
+            "description": "Material class",
+            "is_constructor": 1,
+            "params": [
+                {
+                    "name": "settings",
+                    "description": "Options for the material",
+                    "type": "Object"
+                }
+            ]
+        },
+        "Vector": {
+            "name": "Vector",
+            "shortname": "Vector",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "Math",
+            "namespace": "",
+            "file": "../aexolgl-js/src/math.js",
+            "line": 4,
+            "description": "Vector class",
+            "is_constructor": 1,
+            "params": [
+                {
+                    "name": "x",
+                    "description": "X position",
+                    "type": "Float"
+                },
+                {
+                    "name": "y",
+                    "description": "Y position",
+                    "type": "Float"
+                },
+                {
+                    "name": "z",
+                    "description": "Z position",
+                    "type": "Float"
+                }
+            ]
+        },
+        "Vector4": {
+            "name": "Vector4",
+            "shortname": "Vector4",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "Math",
+            "namespace": "",
+            "file": "../aexolgl-js/src/math.js",
+            "line": 230,
+            "description": "Vector4 class",
+            "is_constructor": 1,
+            "params": [
+                {
+                    "name": "x",
+                    "description": "X position",
+                    "type": "Float"
+                },
+                {
+                    "name": "y",
+                    "description": "Y position",
+                    "type": "Float"
+                },
+                {
+                    "name": "z",
+                    "description": "Z position",
+                    "type": "Float"
+                },
+                {
+                    "name": "w",
+                    "description": "W position",
+                    "type": "Float"
+                }
+            ]
+        },
+        "Matrix3": {
+            "name": "Matrix3",
+            "shortname": "Matrix3",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "Math",
+            "namespace": "",
+            "file": "../aexolgl-js/src/math.js",
+            "line": 255,
+            "description": "Matrix3 class",
+            "is_constructor": 1
+        },
+        "Matrix": {
+            "name": "Matrix",
+            "shortname": "Matrix",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "Math",
+            "namespace": "",
+            "file": "../aexolgl-js/src/math.js",
+            "line": 276,
+            "description": "Matrix class",
+            "is_constructor": 1
+        },
+        "Quaternion": {
+            "name": "Quaternion",
+            "shortname": "Quaternion",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "Math",
+            "namespace": "",
+            "file": "../aexolgl-js/src/math.js",
+            "line": 564,
+            "description": "Quaternion class",
+            "is_constructor": 1
+        },
+        "Frustum": {
+            "name": "Frustum",
+            "shortname": "Frustum",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "Math",
+            "namespace": "",
+            "file": "../aexolgl-js/src/math.js",
+            "line": 854,
+            "description": "Frustum class",
+            "is_constructor": 1
+        },
+        "Mesh": {
+            "name": "Mesh",
+            "shortname": "Mesh",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "Mesh",
+            "namespace": "",
+            "file": "../aexolgl-js/src/mesh.js",
+            "line": 4,
+            "description": "Mesh class contains buffers for 3d objects",
+            "extends": "MObject",
+            "is_constructor": 1,
+            "params": [
+                {
+                    "name": "options",
+                    "description": "{Dict} Dictionary of options when creating Aex object<br>",
+                    "optional": true
+                }
+            ],
+            "return": {
+                "description": "Returns Mesh Object",
+                "type": "Mesh"
+            },
+            "example": [
+                "\n    //Draw a simple triangle\n    var mesh = new Mesh()\n    mesh.vertices = [[0,0,0],[1,1,0],[0,0,-1]]\n    mesh.coords = [[0.0,0.0],[1.0,1.0],[0.0,0.0]]\n    mesh.traingles = [[0,1,2]]\n    mesh.computeNormals()\n    mesh.compile()"
+            ]
+        },
+        "Resource": {
+            "name": "Resource",
+            "shortname": "Resource",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "Resource",
+            "namespace": "",
+            "file": "../aexolgl-js/src/resource.js",
+            "line": 6,
+            "description": "Resource manager for files containing static functions",
+            "is_constructor": 1
+        },
+        "Shader": {
+            "name": "Shader",
+            "shortname": "Shader",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "Resource",
+            "namespace": "",
+            "file": "../aexolgl-js/src/shader.js",
+            "line": 16,
+            "description": "Shader class",
+            "is_constructor": 1,
+            "params": [
+                {
+                    "name": "vertexSource",
+                    "description": "Source of vertex shader",
+                    "type": "String"
+                },
+                {
+                    "name": "fragmentSource",
+                    "description": "Source of fragment shader",
+                    "type": "String"
+                },
+                {
+                    "name": "addons",
+                    "description": "additional attributes",
+                    "type": "String"
+                }
+            ]
+        },
+        "Shadow": {
+            "name": "Shadow",
+            "shortname": "Shadow",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "Shadow",
+            "namespace": "",
+            "file": "../aexolgl-js/src/shadows.js",
+            "line": 60,
+            "params": [
+                {
+                    "name": "scene",
+                    "description": "",
+                    "type": "Scene"
+                },
+                {
+                    "name": "lightPosition",
+                    "description": "of pointLight",
+                    "type": "Vector"
+                },
+                {
+                    "name": "near",
+                    "description": "near shadow plane",
+                    "type": "Float",
+                    "optional": true
+                },
+                {
+                    "name": "far",
+                    "description": "far shadow plane",
+                    "type": "Float",
+                    "optional": true
+                },
+                {
+                    "name": "resolution",
+                    "description": "shadow map resolution",
+                    "type": "Int",
+                    "optional": true
+                }
+            ],
+            "is_constructor": 1
+        },
+        "Texture": {
+            "name": "Texture",
+            "shortname": "Texture",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "start",
+            "namespace": "",
+            "file": "../aexolgl-js/src/texture.js",
+            "line": 1,
+            "description": "Texture class",
+            "is_constructor": 1
+        },
+        "TextNode": {
+            "name": "TextNode",
+            "shortname": "TextNode",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "utils",
+            "namespace": "",
+            "file": "../aexolgl-js/src/utils.js",
+            "line": 4,
+            "description": "TextNode class",
+            "is_constructor": 1,
+            "params": [
+                {
+                    "name": "domNodeID",
+                    "description": "",
+                    "type": "String"
+                }
+            ],
+            "return": {
+                "description": "",
+                "type": "TextNode"
+            }
+        },
+        "ZBuffer": {
+            "name": "ZBuffer",
+            "shortname": "ZBuffer",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "utils",
+            "namespace": "",
+            "file": "../aexolgl-js/src/zbuffer.js",
+            "line": 80,
+            "description": "ZBufferCube class",
+            "is_constructor": 1
+        }
+    },
+    "classitems": [
+        {
+            "file": "../aexolgl-js/src/aexolGL.js",
+            "line": 16,
+            "description": "Sets parent on MObject and unbinds current parent in RenderTree",
+            "itemtype": "method",
+            "name": "addChilds",
+            "params": [
+                {
+                    "name": "mobject",
+                    "description": "mobject object to add as a child to RenderTree",
+                    "type": "MObject"
+                }
+            ],
+            "class": "MObject",
+            "module": "aexolGL"
+        },
+        {
+            "file": "../aexolgl-js/src/aexolGL.js",
+            "line": 26,
+            "description": "Sets parent on MObject and unbinds current parent in RenderTree.\nUsually this is done inside GameObject, but you have also possibility\nto construct RenderTree by yourself.",
+            "itemtype": "method",
+            "name": "setParent",
+            "params": [
+                {
+                    "name": "parent",
+                    "description": "parent object",
+                    "type": "MObject"
+                }
+            ],
+            "example": [
+                "\nworld = new Scene()\ngshader = new basicShader()\nsomeMaterial = new Material({})\ngshader.setParent(world)\nsomeMaterial.setParent(world)"
+            ],
+            "class": "MObject",
+            "module": "aexolGL"
+        },
+        {
+            "file": "../aexolgl-js/src/aexolGL.js",
+            "line": 52,
+            "description": "Removes MObject from RenderTree",
+            "itemtype": "method",
+            "name": "remove",
+            "class": "MObject",
+            "module": "aexolGL"
+        },
+        {
+            "file": "../aexolgl-js/src/aexolGL.js",
+            "line": 114,
+            "description": "Position of object",
+            "itemtype": "property",
+            "name": "position",
+            "type": "Vector",
+            "example": [
+                "\n    world = new Scene()\n    game = new Aex()\n    game.position = new Vector(1.0,2.0,3.0)"
+            ],
+            "class": "Aex",
+            "module": "aexolGL"
+        },
+        {
+            "file": "../aexolgl-js/src/aexolGL.js",
+            "line": 129,
+            "description": "x Position of object",
+            "itemtype": "property",
+            "name": "x",
+            "type": "Float",
+            "example": [
+                "\n    world = new Scene()\n    game = new Aex()\n    game.x = 20.0"
+            ],
+            "class": "Aex",
+            "module": "aexolGL"
+        },
+        {
+            "file": "../aexolgl-js/src/aexolGL.js",
+            "line": 142,
+            "description": "y Position of object",
+            "itemtype": "property",
+            "name": "y",
+            "type": "Float",
+            "example": [
+                "\n    world = new Scene()\n    game = new Aex()\n    game.y = 20.0"
+            ],
+            "class": "Aex",
+            "module": "aexolGL"
+        },
+        {
+            "file": "../aexolgl-js/src/aexolGL.js",
+            "line": 155,
+            "description": "z Position of object",
+            "itemtype": "property",
+            "name": "z",
+            "type": "Float",
+            "example": [
+                "\n    world = new Scene()\n    game = new Aex()\n    game.z = 20.0"
+            ],
+            "class": "Aex",
+            "module": "aexolGL"
+        },
+        {
+            "file": "../aexolgl-js/src/aexolGL.js",
+            "line": 177,
+            "description": "Rotation of object",
+            "itemtype": "property",
+            "name": "rotation",
+            "type": "Vector",
+            "example": [
+                "\n    world = new Scene()\n    game = new Aex()\n    game.rotation = new Vector(0.0,90.0,0.0)"
+            ],
+            "class": "Aex",
+            "module": "aexolGL"
+        },
+        {
+            "file": "../aexolgl-js/src/aexolGL.js",
+            "line": 193,
+            "description": "x Rotation of object",
+            "itemtype": "property",
+            "name": "rotX",
+            "type": "Float",
+            "example": [
+                "\n    world = new Scene()\n    game = new Aex()\n    game.rotX = 20.0"
+            ],
+            "class": "Aex",
+            "module": "aexolGL"
+        },
+        {
+            "file": "../aexolgl-js/src/aexolGL.js",
+            "line": 206,
+            "description": "y Rotation of object",
+            "itemtype": "property",
+            "name": "rotY",
+            "type": "Float",
+            "example": [
+                "\n    world = new Scene()\n    game = new Aex()\n    game.rotY = 20.0"
+            ],
+            "class": "Aex",
+            "module": "aexolGL"
+        },
+        {
+            "file": "../aexolgl-js/src/aexolGL.js",
+            "line": 219,
+            "description": "z Rotation of object",
+            "itemtype": "property",
+            "name": "rotZ",
+            "type": "Float",
+            "example": [
+                "\n    world = new Scene()\n    game = new Aex()\n    game.rotZ = 20.0"
+            ],
+            "class": "Aex",
+            "module": "aexolGL"
+        },
+        {
+            "file": "../aexolgl-js/src/aexolGL.js",
+            "line": 248,
+            "description": "x scale of object",
+            "itemtype": "property",
+            "name": "scaleX",
+            "type": "Float",
+            "example": [
+                "\n    world = new Scene()\n    game = new Aex()\n    game.scaleX = 2.0"
+            ],
+            "class": "Aex",
+            "module": "aexolGL"
+        },
+        {
+            "file": "../aexolgl-js/src/aexolGL.js",
+            "line": 261,
+            "description": "y scale of object",
+            "itemtype": "property",
+            "name": "scaleY",
+            "type": "Float",
+            "example": [
+                "\n    world = new Scene()\n    game = new Aex()\n    game.scaleY = 2.0"
+            ],
+            "class": "Aex",
+            "module": "aexolGL"
+        },
+        {
+            "file": "../aexolgl-js/src/aexolGL.js",
+            "line": 274,
+            "description": "z scale of object",
+            "itemtype": "property",
+            "name": "scaleZ",
+            "type": "Float",
+            "example": [
+                "\n    world = new Scene()\n    game = new Aex()\n    game.scaleZ = 2.0"
+            ],
+            "class": "Aex",
+            "module": "aexolGL"
+        },
+        {
+            "file": "../aexolgl-js/src/aexolGL.js",
+            "line": 302,
+            "description": "Force set shader uniforms",
+            "itemtype": "method",
+            "name": "setUniforms",
+            "example": [
+                "\n     var aex = new Aex()\n     aex.setUniforms()"
+            ],
+            "class": "Aex",
+            "module": "aexolGL"
+        },
+        {
+            "file": "../aexolgl-js/src/aexolGL.js",
+            "line": 314,
+            "description": "Centers pivot of an Aex to parent Mesh",
+            "itemtype": "method",
+            "name": "centerPivot",
+            "class": "Aex",
+            "module": "aexolGL"
+        },
+        {
+            "file": "../aexolgl-js/src/aexolGL.js",
+            "line": 327,
+            "description": "Move object",
+            "itemtype": "method",
+            "name": "move",
+            "params": [
+                {
+                    "name": "x",
+                    "description": "- x axis"
+                },
+                {
+                    "name": "y",
+                    "description": "- y axis"
+                },
+                {
+                    "name": "z",
+                    "description": "- z axis"
+                },
+                {
+                    "name": "r",
+                    "description": "- relative transform"
+                }
+            ],
+            "example": [
+                "\n     var aex = new Aex()\n     aex.move(0,1,2)"
+            ],
+            "class": "Aex",
+            "module": "aexolGL"
+        },
+        {
+            "file": "../aexolgl-js/src/aexolGL.js",
+            "line": 347,
+            "description": "Rotate object",
+            "itemtype": "method",
+            "name": "rotate",
+            "params": [
+                {
+                    "name": "x",
+                    "description": "- angle around x axis"
+                },
+                {
+                    "name": "y",
+                    "description": "- angle around y axis"
+                },
+                {
+                    "name": "z",
+                    "description": "- angle around z axis"
+                },
+                {
+                    "name": "r",
+                    "description": "- relative transform"
+                }
+            ],
+            "example": [
+                "\n     var aex = new Aex()\n     aex.rotate(0,1,2)"
+            ],
+            "class": "Aex",
+            "module": "aexolGL"
+        },
+        {
+            "file": "../aexolgl-js/src/aexolGL.js",
+            "line": 367,
+            "description": "Scale object",
+            "itemtype": "method",
+            "name": "scale",
+            "params": [
+                {
+                    "name": "x",
+                    "description": "- x axis"
+                },
+                {
+                    "name": "y",
+                    "description": "- y axis"
+                },
+                {
+                    "name": "z",
+                    "description": "- z axis"
+                },
+                {
+                    "name": "r",
+                    "description": "- relative transform"
+                }
+            ],
+            "example": [
+                "\n     var aex = new Aex()\n     aex.scale(0,1,2)"
+            ],
+            "class": "Aex",
+            "module": "aexolGL"
+        },
+        {
+            "file": "../aexolgl-js/src/aexolGL.js",
+            "line": 387,
+            "description": "Rotate object around point",
+            "itemtype": "method",
+            "name": "rotateAroundPoint",
+            "params": [
+                {
+                    "name": "center",
+                    "description": "pivot point location",
+                    "type": "Vector"
+                },
+                {
+                    "name": "angle",
+                    "description": "- rotation in degrees"
+                },
+                {
+                    "name": "x",
+                    "description": "- usage of x axis"
+                },
+                {
+                    "name": "y",
+                    "description": "-  usage of y axis"
+                },
+                {
+                    "name": "z",
+                    "description": "-  usage of z axis"
+                }
+            ],
+            "example": [
+                "\n     var aex = new Aex()\n     aex.rotateAroundPoint(new Vector(0,1,1),90,0,1,0)"
+            ],
+            "class": "Aex",
+            "module": "aexolGL"
+        },
+        {
+            "file": "../aexolgl-js/src/aexolGL.js",
+            "line": 431,
+            "description": "Sets aex modelview and Normal matrix. Internal function done after transformations as move, rotate etc..",
+            "internal": "",
+            "itemtype": "method",
+            "name": "setModelView",
+            "class": "Aex",
+            "module": "aexolGL"
+        },
+        {
+            "file": "../aexolgl-js/src/aexolGL.js",
+            "line": 447,
+            "description": "Draw the Aex inside draw function of your Scene",
+            "internal": "",
+            "itemtype": "method",
+            "name": "draw",
+            "class": "Aex",
+            "module": "aexolGL"
+        },
+        {
+            "file": "../aexolgl-js/src/aexolGL.js",
+            "line": 482,
+            "description": "Traverse all items",
+            "access": "private",
+            "tagname": "",
+            "itemtype": "method",
+            "name": "traverse",
+            "class": "Scene",
+            "module": "aexolGL"
+        },
+        {
+            "file": "../aexolgl-js/src/aexolGL.js",
+            "line": 498,
+            "description": "Draw all items inside Scene with connected camera",
+            "itemtype": "method",
+            "name": "draw",
+            "params": [
+                {
+                    "name": "camera",
+                    "description": "showing drawed items",
+                    "type": "Camera",
+                    "optional": true
+                }
+            ],
+            "class": "Scene",
+            "module": "aexolGL"
+        },
+        {
+            "file": "../aexolgl-js/src/aexolGL.js",
+            "line": 519,
+            "description": "Draw all items inside Scene with connected camera",
+            "itemtype": "method",
+            "name": "drawOverride",
+            "params": [
+                {
+                    "name": "shader",
+                    "description": "Shader to override for all items",
+                    "type": "Shader",
+                    "optional": true
+                },
+                {
+                    "name": "uniforms",
+                    "description": "to pass to shader",
+                    "type": "Dict"
+                }
+            ],
+            "class": "Scene",
+            "module": "aexolGL"
+        },
+        {
+            "file": "../aexolgl-js/src/animation.js",
+            "line": 52,
+            "description": "Checks if animation should run and fires it when ready.",
+            "access": "private",
+            "tagname": "",
+            "itemtype": "method",
+            "name": "execute",
+            "class": "Animation",
+            "module": "Animation"
+        },
+        {
+            "file": "../aexolgl-js/src/animation.js",
+            "line": 83,
+            "description": "Runs animation",
+            "access": "private",
+            "tagname": "",
+            "itemtype": "method",
+            "name": "run",
+            "class": "Animation",
+            "module": "Animation"
+        },
+        {
+            "file": "../aexolgl-js/src/buffer.js",
+            "line": 14,
+            "description": "add",
+            "itemtype": "method",
+            "name": "add",
+            "params": [
+                {
+                    "name": "obj",
+                    "description": "",
+                    "type": "Obj"
+                }
+            ],
+            "class": "Indexer",
+            "module": "Buffer"
+        },
+        {
+            "file": "../aexolgl-js/src/buffer.js",
+            "line": 38,
+            "description": "compile",
+            "itemtype": "method",
+            "name": "compile",
+            "params": [
+                {
+                    "name": "type",
+                    "description": "Type of data",
+                    "type": "Type"
+                }
+            ],
+            "class": "Buffer",
+            "module": "Buffer"
+        },
+        {
+            "file": "../aexolgl-js/src/camera.js",
+            "line": 24,
+            "description": "Position of object",
+            "itemtype": "property",
+            "name": "position",
+            "type": "Vector",
+            "example": [
+                "\n    world = new Scene()\n    cam = new Camera(0.1,100,45)\n    cam.position = new Vector(1.0,2.0,3.0)"
+            ],
+            "class": "Camera",
+            "module": "camera"
+        },
+        {
+            "file": "../aexolgl-js/src/camera.js",
+            "line": 39,
+            "description": "x Position of object",
+            "itemtype": "property",
+            "name": "x",
+            "type": "Float",
+            "example": [
+                "\n    world = new Scene()\n    cam = new Camera(0.1,100,45)\n    cam.x = 20.0"
+            ],
+            "class": "Camera",
+            "module": "camera"
+        },
+        {
+            "file": "../aexolgl-js/src/camera.js",
+            "line": 52,
+            "description": "y Position of object",
+            "itemtype": "property",
+            "name": "y",
+            "type": "Float",
+            "example": [
+                "\n    world = new Scene()\n    cam = new Camera(0.1,100,45)\n    cam.y = 20.0"
+            ],
+            "class": "Camera",
+            "module": "camera"
+        },
+        {
+            "file": "../aexolgl-js/src/camera.js",
+            "line": 65,
+            "description": "z Position of object",
+            "itemtype": "property",
+            "name": "z",
+            "type": "Float",
+            "example": [
+                "\n    world = new Scene()\n    cam = new Camera(0.1,100,45)\n    cam.z = 20.0"
+            ],
+            "class": "Camera",
+            "module": "camera"
+        },
+        {
+            "file": "../aexolgl-js/src/camera.js",
+            "line": 87,
+            "description": "Rotation of object",
+            "itemtype": "property",
+            "name": "rotation",
+            "type": "Vector",
+            "example": [
+                "\n    world = new Scene()\n    cam = new Camera(0.1,100,45)\n    cam.rotation = new Vector(0.0,90.0,0.0)"
+            ],
+            "class": "Camera",
+            "module": "camera"
+        },
+        {
+            "file": "../aexolgl-js/src/camera.js",
+            "line": 103,
+            "description": "x Rotation of object",
+            "itemtype": "property",
+            "name": "rotX",
+            "type": "Float",
+            "example": [
+                "\n    world = new Scene()\n    cam = new Camera(0.1,100,45)\n    cam.rotX = 20.0"
+            ],
+            "class": "Camera",
+            "module": "camera"
+        },
+        {
+            "file": "../aexolgl-js/src/camera.js",
+            "line": 116,
+            "description": "y Rotation of object",
+            "itemtype": "property",
+            "name": "rotY",
+            "type": "Float",
+            "example": [
+                "\n    world = new Scene()\n    cam = new Camera(0.1,100,45)\n    cam.rotY = 20.0"
+            ],
+            "class": "Camera",
+            "module": "camera"
+        },
+        {
+            "file": "../aexolgl-js/src/camera.js",
+            "line": 129,
+            "description": "z Rotation of object",
+            "itemtype": "property",
+            "name": "rotZ",
+            "type": "Float",
+            "example": [
+                "\n    world = new Scene()\n    cam = new Camera(0.1,100,45)\n    cam.rotZ = 20.0"
+            ],
+            "class": "Camera",
+            "module": "camera"
+        },
+        {
+            "file": "../aexolgl-js/src/camera.js",
+            "line": 158,
+            "description": "x scale of object",
+            "itemtype": "property",
+            "name": "scaleX",
+            "type": "Float",
+            "example": [
+                "\n    world = new Scene()\n    cam = new Aex()\n    cam.scaleX = 2.0"
+            ],
+            "class": "Camera",
+            "module": "camera"
+        },
+        {
+            "file": "../aexolgl-js/src/camera.js",
+            "line": 171,
+            "description": "y scale of object",
+            "itemtype": "property",
+            "name": "scaleY",
+            "type": "Float",
+            "example": [
+                "\n    world = new Scene()\n    cam = new Camera(0.1,100,45)\n    cam.scaleY = 2.0"
+            ],
+            "class": "Camera",
+            "module": "camera"
+        },
+        {
+            "file": "../aexolgl-js/src/camera.js",
+            "line": 184,
+            "description": "z scale of object",
+            "itemtype": "property",
+            "name": "scaleZ",
+            "type": "Float",
+            "example": [
+                "\n    world = new Scene()\n    cam = new Camera(0.1,100,45)\n    cam.scaleZ = 2.0"
+            ],
+            "class": "Camera",
+            "module": "camera"
+        },
+        {
+            "file": "../aexolgl-js/src/camera.js",
+            "line": 236,
+            "description": "set orthographic projection for camera",
+            "itemtype": "method",
+            "name": "setOrthoPerspective",
+            "class": "Camera",
+            "module": "camera"
+        },
+        {
+            "file": "../aexolgl-js/src/camera.js",
+            "line": 243,
+            "description": "set perspective projection for camera",
+            "itemtype": "method",
+            "name": "setPerspective",
+            "class": "Camera",
+            "module": "camera"
+        },
+        {
+            "file": "../aexolgl-js/src/camera.js",
+            "line": 253,
+            "description": "put the camera at the eye point looking `e`\ntoward the center point `c`  with an up direction of `u`.",
+            "itemtype": "method",
+            "name": "lookAt",
+            "params": [
+                {
+                    "name": "e",
+                    "description": "Eye point",
+                    "type": "Vector"
+                },
+                {
+                    "name": "c",
+                    "description": "Center point",
+                    "type": "Vector"
+                },
+                {
+                    "name": "u",
+                    "description": "Up vector",
+                    "type": "Vector"
+                }
+            ],
+            "return": {
+                "description": "Result matrix",
+                "type": "Matrix"
+            },
+            "class": "Camera",
+            "module": "camera"
+        },
+        {
+            "file": "../aexolgl-js/src/camera.js",
+            "line": 277,
+            "description": "Set table with screen dimensions and coordinates for 2D games",
+            "itemtype": "method",
+            "name": "setDisplay",
+            "class": "Camera",
+            "module": "camera"
+        },
+        {
+            "file": "../aexolgl-js/src/camera.js",
+            "line": 293,
+            "description": "Set camera position",
+            "itemtype": "method",
+            "name": "setCameraPosition",
+            "class": "Camera",
+            "module": "camera"
+        },
+        {
+            "file": "../aexolgl-js/src/camera.js",
+            "line": 328,
+            "description": "DEPRECATED use setters instead\nMove camera left & right",
+            "itemtype": "method",
+            "name": "side",
+            "params": [
+                {
+                    "name": "f",
+                    "description": "distance to move",
+                    "type": "Float"
+                }
+            ],
+            "class": "Camera",
+            "module": "camera"
+        },
+        {
+            "file": "../aexolgl-js/src/camera.js",
+            "line": 343,
+            "description": "DEPRECATED use setters instead\nMove camera up & down",
+            "itemtype": "method",
+            "name": "updown",
+            "params": [
+                {
+                    "name": "f",
+                    "description": "distance to move",
+                    "type": "Float"
+                }
+            ],
+            "class": "Camera",
+            "module": "camera"
+        },
+        {
+            "file": "../aexolgl-js/src/camera.js",
+            "line": 354,
+            "description": "DEPRECATED use setters instead\nRotate on local x axis",
+            "itemtype": "method",
+            "name": "pitch",
+            "params": [
+                {
+                    "name": "change",
+                    "description": "rotation",
+                    "type": "Float"
+                }
+            ],
+            "class": "Camera",
+            "module": "camera"
+        },
+        {
+            "file": "../aexolgl-js/src/camera.js",
+            "line": 363,
+            "description": "DEPRECATED use setters instead\nRotate on local y axis",
+            "itemtype": "method",
+            "name": "pitch",
+            "params": [
+                {
+                    "name": "change",
+                    "description": "rotation",
+                    "type": "Float"
+                }
+            ],
+            "class": "Camera",
+            "module": "camera"
+        },
+        {
+            "file": "../aexolgl-js/src/camera.js",
+            "line": 372,
+            "description": "DEPRECATED use setters instead\nRotate on local z axis",
+            "itemtype": "method",
+            "name": "roll",
+            "params": [
+                {
+                    "name": "change",
+                    "description": "rotation",
+                    "type": "Float"
+                }
+            ],
+            "class": "Camera",
+            "module": "camera"
+        },
+        {
+            "file": "../aexolgl-js/src/camera.js",
+            "line": 381,
+            "description": "DEPRECATED use setters instead\nTurn on standard camera mouse and WSAD operating",
+            "itemtype": "method",
+            "name": "on",
+            "params": [
+                {
+                    "name": "factor",
+                    "description": "sensitivity of camera",
+                    "type": "Float"
+                }
+            ],
+            "class": "Camera",
+            "module": "camera"
+        },
+        {
+            "file": "../aexolgl-js/src/font.js",
+            "line": 30,
+            "itemtype": "property",
+            "name": "color",
+            "type": "String",
+            "example": [
+                "\n    world = new Scene()\n    score = new Label(world, \"0\",\"monospace\", 240)\n    //change text color to red\n    score.color = \"rgb(255,0,0)\""
+            ],
+            "class": "Label",
+            "module": "Font"
+        },
+        {
+            "file": "../aexolgl-js/src/font.js",
+            "line": 44,
+            "itemtype": "property",
+            "name": "size",
+            "type": "Integer",
+            "example": [
+                "\n    world = new Scene()\n    score = new Label(world, \"0\",\"monospace\", 240)\n    //change font size\n    score.size = 42"
+            ],
+            "class": "Label",
+            "module": "Font"
+        },
+        {
+            "file": "../aexolgl-js/src/font.js",
+            "line": 58,
+            "itemtype": "property",
+            "name": "text",
+            "type": "String",
+            "example": [
+                "\n    world = new Scene()\n    score = new Label(world, \"0\",\"monospace\", 240)\n    //change text string\n    score.text = \"Hello worlds!\""
+            ],
+            "class": "Label",
+            "module": "Font"
+        },
+        {
+            "file": "../aexolgl-js/src/font.js",
+            "line": 72,
+            "itemtype": "property",
+            "name": "font",
+            "type": "String",
+            "example": [
+                "\n    world = new Scene()\n    score = new Label(world, \"0\",\"monospace\", 240)\n    //change text string\n    score.font = \"Helvetica\""
+            ],
+            "class": "Label",
+            "module": "Font"
+        },
+        {
+            "file": "../aexolgl-js/src/font.js",
+            "line": 107,
+            "description": "Javascript method of font loading",
+            "itemtype": "method",
+            "name": "loadFont",
+            "static": 1,
+            "params": [
+                {
+                    "name": "fontName",
+                    "description": "font name to be used later",
+                    "type": "String"
+                },
+                {
+                    "name": "url",
+                    "description": "url address of font",
+                    "type": "String"
+                }
+            ],
+            "example": [
+                "\n    world = new Scene()\n    font = Label.loadFont(\"medHelvetica.ttf\")\n    score = new Label(world, \"0\", 240)"
+            ],
+            "class": "Label",
+            "module": "Font"
+        },
+        {
+            "file": "../aexolgl-js/src/game.js",
+            "line": 40,
+            "description": "Aex connected to this game object",
+            "itemtype": "property",
+            "name": "aex",
+            "type": "Aex",
+            "example": [
+                "\n    world = new Scene()\n    game = new GameObject(world,{...})\n    game.aex = new Aex()"
+            ],
+            "class": "GameObject",
+            "module": "Game"
+        },
+        {
+            "file": "../aexolgl-js/src/game.js",
+            "line": 62,
+            "description": "Mesh connected to this game object",
+            "itemtype": "property",
+            "name": "mesh",
+            "type": "Mesh",
+            "example": [
+                "\n    world = new Scene()\n    game = new GameObject(world,{...})\n    game.mesh = Mesh.sphere()"
+            ],
+            "class": "GameObject",
+            "module": "Game"
+        },
+        {
+            "file": "../aexolgl-js/src/game.js",
+            "line": 86,
+            "description": "Material connected to this game object",
+            "itemtype": "property",
+            "name": "material",
+            "type": "Material",
+            "example": [
+                "\n    world = new Scene()\n    game = new GameObject(world,{...})\n    game.material = new Material({})"
+            ],
+            "class": "GameObject",
+            "module": "Game"
+        },
+        {
+            "file": "../aexolgl-js/src/game.js",
+            "line": 115,
+            "description": "Shader connected to this game object",
+            "itemtype": "property",
+            "name": "shader",
+            "type": "Shader",
+            "example": [
+                "\n    world = new Scene()\n    game = new GameObject(world,{...})\n    game.shader = new Shader({})"
+            ],
+            "class": "GameObject",
+            "module": "Game"
+        },
+        {
+            "file": "../aexolgl-js/src/game.js",
+            "line": 145,
+            "description": "Light system connected to this game object",
+            "itemtype": "property",
+            "name": "light",
+            "type": "Light",
+            "example": [
+                "\n    world = new Scene()\n    game = new GameObject(world,{...})\n    game.light = new Light({})"
+            ],
+            "class": "GameObject",
+            "module": "Game"
+        },
+        {
+            "file": "../aexolgl-js/src/game.js",
+            "line": 167,
+            "description": "Uniforms of object",
+            "itemtype": "property",
+            "name": "uniforms",
+            "type": "Dict",
+            "example": [
+                "\n    world = new Scene()\n    game = new GameObject(world,{...})\n    game.uniforms[\"tiling\"] = [1.0,10.0]\nYou can also set uniforms of the material easily",
+                "\n    world = new Scene()\n    game = new GameObject(world,{...})\n    game.uniforms[\"color\"] = [1.0,0.0,0.0]\n    game.uniforms[\"alpha\"] = 0.2"
+            ],
+            "class": "GameObject",
+            "module": "Game"
+        },
+        {
+            "file": "../aexolgl-js/src/game.js",
+            "line": 188,
+            "description": "Position of object",
+            "itemtype": "property",
+            "name": "position",
+            "type": "Vector",
+            "example": [
+                "\n    world = new Scene()\n    game = new GameObject(world,{})\n    game.position = new Vector(1.0,2.0,3.0)"
+            ],
+            "class": "GameObject",
+            "module": "Game"
+        },
+        {
+            "file": "../aexolgl-js/src/game.js",
+            "line": 204,
+            "description": "x Position of object",
+            "itemtype": "property",
+            "name": "x",
+            "type": "Float",
+            "example": [
+                "\n    world = new Scene()\n    game = new GameObject(world,{})\n    game.x = 20.0"
+            ],
+            "class": "GameObject",
+            "module": "Game"
+        },
+        {
+            "file": "../aexolgl-js/src/game.js",
+            "line": 217,
+            "description": "y Position of object",
+            "itemtype": "property",
+            "name": "y",
+            "type": "Float",
+            "example": [
+                "\n    world = new Scene()\n    game = new GameObject(world,{})\n    game.y = 20.0"
+            ],
+            "class": "GameObject",
+            "module": "Game"
+        },
+        {
+            "file": "../aexolgl-js/src/game.js",
+            "line": 230,
+            "description": "z Position of object",
+            "itemtype": "property",
+            "name": "z",
+            "type": "Float",
+            "example": [
+                "\n    world = new Scene()\n    game = new GameObject(world,{})\n    game.z = 20.0"
+            ],
+            "class": "GameObject",
+            "module": "Game"
+        },
+        {
+            "file": "../aexolgl-js/src/game.js",
+            "line": 252,
+            "description": "Rotation of object",
+            "itemtype": "property",
+            "name": "rotation",
+            "type": "Vector",
+            "example": [
+                "\n    world = new Scene()\n    game = new GameObject(world,{})\n    game.rotation = new Vector(0.0,90.0,0.0)"
+            ],
+            "class": "GameObject",
+            "module": "Game"
+        },
+        {
+            "file": "../aexolgl-js/src/game.js",
+            "line": 269,
+            "description": "x Rotation of object",
+            "itemtype": "property",
+            "name": "rotX",
+            "type": "Float",
+            "example": [
+                "\n    world = new Scene()\n    game = new GameObject(world,{})\n    game.rotX = 20.0"
+            ],
+            "class": "GameObject",
+            "module": "Game"
+        },
+        {
+            "file": "../aexolgl-js/src/game.js",
+            "line": 282,
+            "description": "y Rotation of object",
+            "itemtype": "property",
+            "name": "rotY",
+            "type": "Float",
+            "example": [
+                "\n    world = new Scene()\n    game = new GameObject(world,{})\n    game.rotY = 20.0"
+            ],
+            "class": "GameObject",
+            "module": "Game"
+        },
+        {
+            "file": "../aexolgl-js/src/game.js",
+            "line": 295,
+            "description": "z Rotation of object",
+            "itemtype": "property",
+            "name": "rotZ",
+            "type": "Float",
+            "example": [
+                "\n    world = new Scene()\n    game = new GameObject(world,{})\n    game.rotZ = 20.0"
+            ],
+            "class": "GameObject",
+            "module": "Game"
+        },
+        {
+            "file": "../aexolgl-js/src/game.js",
+            "line": 325,
+            "description": "x scale of object",
+            "itemtype": "property",
+            "name": "scaleX",
+            "type": "Float",
+            "example": [
+                "\n    world = new Scene()\n    game = new GameObject(world,{})\n    game.scaleX = 2.0"
+            ],
+            "class": "GameObject",
+            "module": "Game"
+        },
+        {
+            "file": "../aexolgl-js/src/game.js",
+            "line": 338,
+            "description": "y scale of object",
+            "itemtype": "property",
+            "name": "scaleY",
+            "type": "Float",
+            "example": [
+                "\n    world = new Scene()\n    game = new GameObject(world,{})\n    game.scaleY = 2.0"
+            ],
+            "class": "GameObject",
+            "module": "Game"
+        },
+        {
+            "file": "../aexolgl-js/src/game.js",
+            "line": 351,
+            "description": "z scale of object",
+            "itemtype": "property",
+            "name": "scaleZ",
+            "type": "Float",
+            "example": [
+                "\n    world = new Scene()\n    game = new GameObject(world,{})\n    game.scaleZ = 2.0"
+            ],
+            "class": "GameObject",
+            "module": "Game"
+        },
+        {
+            "file": "../aexolgl-js/src/game.js",
+            "line": 393,
+            "description": "Replace modelView in RenderNode",
+            "itemtype": "method",
+            "name": "setModelView",
+            "class": "GameObject",
+            "module": "Game"
+        },
+        {
+            "file": "../aexolgl-js/src/game.js",
+            "line": 400,
+            "description": "Scale the object",
+            "itemtype": "method",
+            "name": "scale",
+            "params": [
+                {
+                    "name": "x",
+                    "description": "Scale in x axis",
+                    "type": "Float"
+                },
+                {
+                    "name": "y",
+                    "description": "Scale in y axis",
+                    "type": "Float"
+                },
+                {
+                    "name": "z",
+                    "description": "Scale in z axis",
+                    "type": "Float"
+                },
+                {
+                    "name": "r",
+                    "description": "Scale relative to actual scale",
+                    "type": "Boolean"
+                }
+            ],
+            "example": [
+                "\n    world = new Scene()\n    game = new GameObject(world,{})\n    //absolute scale\n    game.scale(1.2,1.2,1.3)\n    //relative scale\n    game.scale(0,1,0,1)"
+            ],
+            "class": "GameObject",
+            "module": "Game"
+        },
+        {
+            "file": "../aexolgl-js/src/game.js",
+            "line": 419,
+            "description": "Scale the object uniform in all axes",
+            "itemtype": "method",
+            "name": "scaleUniform",
+            "params": [
+                {
+                    "name": "f",
+                    "description": "Scale factor",
+                    "type": "Float"
+                },
+                {
+                    "name": "r",
+                    "description": "Scale relative to actual scale",
+                    "type": "Boolean"
+                }
+            ],
+            "class": "GameObject",
+            "module": "Game"
+        },
+        {
+            "file": "../aexolgl-js/src/game.js",
+            "line": 429,
+            "description": "Move the object",
+            "itemtype": "method",
+            "name": "move",
+            "params": [
+                {
+                    "name": "x",
+                    "description": "Move in x axis",
+                    "type": "Float"
+                },
+                {
+                    "name": "y",
+                    "description": "Move in y axis",
+                    "type": "Float"
+                },
+                {
+                    "name": "z",
+                    "description": "Move in z axis",
+                    "type": "Float"
+                },
+                {
+                    "name": "r",
+                    "description": "Move relative to actual position",
+                    "type": "Boolean"
+                }
+            ],
+            "example": [
+                "\n    world = new Scene()\n    game = new GameObject(world,{})\n    //absolute move\n    game.move(0,1,0)\n    //relative move\n    game.move(0,1,0,1)"
+            ],
+            "class": "GameObject",
+            "module": "Game"
+        },
+        {
+            "file": "../aexolgl-js/src/game.js",
+            "line": 448,
+            "description": "Rotate the object (degrees)",
+            "itemtype": "method",
+            "name": "rotate",
+            "params": [
+                {
+                    "name": "x",
+                    "description": "Rotate in x axis",
+                    "type": "Float"
+                },
+                {
+                    "name": "y",
+                    "description": "Rotate in y axis",
+                    "type": "Float"
+                },
+                {
+                    "name": "z",
+                    "description": "Rotate in z axis",
+                    "type": "Float"
+                },
+                {
+                    "name": "r",
+                    "description": "Rotate relative to actual rotation",
+                    "type": "Boolean"
+                }
+            ],
+            "example": [
+                "\n    world = new Scene()\n    game = new GameObject(world,{})\n    //absolute rotate\n    game.rotate(0,1,0)\n    //relative rotate\n    game.rotate(0,1,0,1)"
+            ],
+            "class": "GameObject",
+            "module": "Game"
+        },
+        {
+            "file": "../aexolgl-js/src/game.js",
+            "line": 471,
+            "description": "Adds animation to GameObject",
+            "itemtype": "method",
+            "name": "addAnimation",
+            "params": [
+                {
+                    "name": "animation",
+                    "description": "to add to animations.",
+                    "type": "Animation"
+                }
+            ],
+            "class": "GameObject",
+            "module": "Game"
+        },
+        {
+            "file": "../aexolgl-js/src/game.js",
+            "line": 480,
+            "description": "Removes GameObject",
+            "itemtype": "method",
+            "name": "remove",
+            "class": "GameObject",
+            "module": "Game"
+        },
+        {
+            "file": "../aexolgl-js/src/game.js",
+            "line": 509,
+            "description": "Method to add children Aex objects to",
+            "itemtype": "method",
+            "name": "add",
+            "params": [
+                {
+                    "name": "aex",
+                    "description": ""
+                }
+            ],
+            "return": {
+                "description": "",
+                "type": "Pivot"
+            },
+            "class": "Pivot",
+            "module": "Game"
+        },
+        {
+            "file": "../aexolgl-js/src/game.js",
+            "line": 524,
+            "description": "Sets modelview of pivot and its children items",
+            "itemtype": "method",
+            "name": "setModelView",
+            "return": {
+                "description": "",
+                "type": "Pivot"
+            },
+            "class": "Pivot",
+            "module": "Game"
+        },
+        {
+            "file": "../aexolgl-js/src/game.js",
+            "line": 538,
+            "description": "Sets pivot to desired Vector in 3d space without moving the object",
+            "itemtype": "method",
+            "name": "setPivot",
+            "params": [
+                {
+                    "name": "v",
+                    "description": ""
+                }
+            ],
+            "return": {
+                "description": "",
+                "type": "Pivot"
+            },
+            "class": "Pivot",
+            "module": "Game"
+        },
+        {
+            "file": "../aexolgl-js/src/game.js",
+            "line": 554,
+            "description": "Sets pivot to center of contained objects",
+            "itemtype": "method",
+            "name": "setPivotToCenter",
+            "return": {
+                "description": "",
+                "type": "Pivot"
+            },
+            "class": "Pivot",
+            "module": "Game"
+        },
+        {
+            "file": "../aexolgl-js/src/gl.js",
+            "line": 33,
+            "description": "Inits the framebuffer",
+            "itemtype": "method",
+            "name": "initGL",
+            "class": "aexolGL",
+            "module": "Game"
+        },
+        {
+            "file": "../aexolgl-js/src/gl.js",
+            "line": 45,
+            "description": "Start the engine",
+            "itemtype": "method",
+            "name": "init",
+            "class": "aexolGL",
+            "module": "Game"
+        },
+        {
+            "file": "../aexolgl-js/src/light.js",
+            "line": 110,
+            "description": "sets shadow for light system( 1 shadowmap per system allowed now )",
+            "itemtype": "method",
+            "name": "set Shadow",
+            "params": [
+                {
+                    "name": "shadow",
+                    "description": "",
+                    "type": "Shadow"
+                }
+            ],
+            "class": "Light",
+            "module": "Light"
+        },
+        {
+            "file": "../aexolgl-js/src/light.js",
+            "line": 118,
+            "itemtype": "method",
+            "name": "fGI",
+            "static": "Creates fake global Illumination system",
+            "params": [
+                {
+                    "name": "sun",
+                    "description": "if true sun will be drawn",
+                    "type": "Boolean"
+                }
+            ],
+            "class": "Light",
+            "module": "Light"
+        },
+        {
+            "file": "../aexolgl-js/src/material.js",
+            "line": 24,
+            "itemtype": "property",
+            "name": "settings",
+            "type": "Object",
+            "example": [
+                "\n     mat = new Material()\n     mat.settings{{\n        color: [1.0,0.0,0.0],\n        specularWeight: 1.0,\n        reflectionWeight: 1.0,\n        alpha:1.0\n        }}"
+            ],
+            "class": "Material",
+            "module": "Light"
+        },
+        {
+            "file": "../aexolgl-js/src/material.js",
+            "line": 59,
+            "description": "Draw material",
+            "itemtype": "method",
+            "name": "draw",
+            "class": "Material",
+            "module": "Light"
+        },
+        {
+            "file": "../aexolgl-js/src/material.js",
+            "line": 84,
+            "description": "Set diffuse texture",
+            "itemtype": "method",
+            "name": "setDiffuse",
+            "params": [
+                {
+                    "name": "channel",
+                    "description": "texture channel ( \"diffuse\", \"specular\", \"bump\", \"cube\" )",
+                    "type": "String"
+                },
+                {
+                    "name": "tex",
+                    "description": "Texture to set on diffuse channel",
+                    "type": "Texture"
+                },
+                {
+                    "name": "name",
+                    "description": "required if texture is atlas",
+                    "type": "String"
+                }
+            ],
+            "class": "Material",
+            "module": "Light"
+        },
+        {
+            "file": "../aexolgl-js/src/material.js",
+            "line": 100,
+            "description": "Set diffuse texture",
+            "itemtype": "method",
+            "name": "setDiffuse",
+            "params": [
+                {
+                    "name": "tex",
+                    "description": "Texture to set on diffuse channel",
+                    "type": "Texture"
+                }
+            ],
+            "class": "Material",
+            "module": "Light"
+        },
+        {
+            "file": "../aexolgl-js/src/material.js",
+            "line": 108,
+            "description": "Set bump texture",
+            "itemtype": "method",
+            "name": "setBump",
+            "params": [
+                {
+                    "name": "tex",
+                    "description": "Texture to set on bump channel",
+                    "type": "Texture"
+                }
+            ],
+            "class": "Material",
+            "module": "Light"
+        },
+        {
+            "file": "../aexolgl-js/src/material.js",
+            "line": 116,
+            "description": "Set specular texture",
+            "itemtype": "method",
+            "name": "setSpecular",
+            "params": [
+                {
+                    "name": "tex",
+                    "description": "Texture to set on specular channel",
+                    "type": "Texture"
+                }
+            ],
+            "class": "Material",
+            "module": "Light"
+        },
+        {
+            "file": "../aexolgl-js/src/material.js",
+            "line": 124,
+            "description": "Set cube environment texture",
+            "itemtype": "method",
+            "name": "setCube",
+            "params": [
+                {
+                    "name": "tex",
+                    "description": "Texture to set on environment channel",
+                    "type": "Texture"
+                }
+            ],
+            "class": "Material",
+            "module": "Light"
+        },
+        {
+            "file": "../aexolgl-js/src/material.js",
+            "line": 187,
+            "description": "Set Material shader uniforms",
+            "itemtype": "method",
+            "name": "uniforms",
+            "params": [
+                {
+                    "name": "uniforms",
+                    "description": "Dictionary of uniforms of shader",
+                    "type": "Dict"
+                }
+            ],
+            "class": "Material",
+            "module": "Light"
+        },
+        {
+            "file": "../aexolgl-js/src/math.js",
+            "line": 18,
+            "description": "Returns the opposite vector",
+            "itemtype": "method",
+            "name": "negative",
+            "return": {
+                "description": "opposite Vector",
+                "type": "Vector"
+            },
+            "class": "Vector",
+            "module": "Math"
+        },
+        {
+            "file": "../aexolgl-js/src/math.js",
+            "line": 26,
+            "description": "Add vector",
+            "itemtype": "method",
+            "name": "add",
+            "params": [
+                {
+                    "name": "v",
+                    "description": "Vector to add",
+                    "type": "Vector"
+                }
+            ],
+            "return": {
+                "description": "sum of two vectors",
+                "type": "Vector"
+            },
+            "class": "Vector",
+            "module": "Math"
+        },
+        {
+            "file": "../aexolgl-js/src/math.js",
+            "line": 36,
+            "description": "Subtract vector",
+            "itemtype": "method",
+            "name": "subtract",
+            "params": [
+                {
+                    "name": "v",
+                    "description": "Vector to subtract",
+                    "type": "Vector"
+                }
+            ],
+            "return": {
+                "description": "difference of two vectors",
+                "type": "Vector"
+            },
+            "class": "Vector",
+            "module": "Math"
+        },
+        {
+            "file": "../aexolgl-js/src/math.js",
+            "line": 46,
+            "description": "Multiply vector",
+            "itemtype": "method",
+            "name": "multiply",
+            "params": [
+                {
+                    "name": "v",
+                    "description": "Vector to multiply",
+                    "type": "Vector"
+                }
+            ],
+            "return": {
+                "description": "product of two vectors",
+                "type": "Vector"
+            },
+            "class": "Vector",
+            "module": "Math"
+        },
+        {
+            "file": "../aexolgl-js/src/math.js",
+            "line": 56,
+            "description": "Divide vector",
+            "itemtype": "method",
+            "name": "divide",
+            "params": [
+                {
+                    "name": "v",
+                    "description": "Vector to divide",
+                    "type": "Vector"
+                }
+            ],
+            "return": {
+                "description": "quotient of two vectors",
+                "type": "Vector"
+            },
+            "class": "Vector",
+            "module": "Math"
+        },
+        {
+            "file": "../aexolgl-js/src/math.js",
+            "line": 66,
+            "description": "Dot product",
+            "itemtype": "method",
+            "name": "dot",
+            "params": [
+                {
+                    "name": "v",
+                    "description": "Vector",
+                    "type": "Vector"
+                }
+            ],
+            "return": {
+                "description": "Dot product of two vectors",
+                "type": "Vector"
+            },
+            "class": "Vector",
+            "module": "Math"
+        },
+        {
+            "file": "../aexolgl-js/src/math.js",
+            "line": 75,
+            "description": "Cross product",
+            "itemtype": "method",
+            "name": "cross",
+            "params": [
+                {
+                    "name": "v",
+                    "description": "Vector to cross",
+                    "type": "Vector"
+                }
+            ],
+            "return": {
+                "description": "Cross product of two vectors",
+                "type": "Vector"
+            },
+            "class": "Vector",
+            "module": "Math"
+        },
+        {
+            "file": "../aexolgl-js/src/math.js",
+            "line": 84,
+            "description": "Returns the length of vector",
+            "itemtype": "method",
+            "name": "length",
+            "return": {
+                "description": "legth of vector",
+                "type": "Float"
+            },
+            "class": "Vector",
+            "module": "Math"
+        },
+        {
+            "file": "../aexolgl-js/src/math.js",
+            "line": 93,
+            "description": "Returns the unit",
+            "itemtype": "method",
+            "name": "unit",
+            "return": {
+                "description": "Vector divided by its length",
+                "type": "Vector"
+            },
+            "class": "Vector",
+            "module": "Math"
+        },
+        {
+            "file": "../aexolgl-js/src/math.js",
+            "line": 101,
+            "description": "Returns the minimum value of vector axes",
+            "itemtype": "method",
+            "name": "min",
+            "return": {
+                "description": "min value of (x,y,z)",
+                "type": "Float"
+            },
+            "class": "Vector",
+            "module": "Math"
+        },
+        {
+            "file": "../aexolgl-js/src/math.js",
+            "line": 109,
+            "description": "Returns the minimum value of vector axes",
+            "itemtype": "method",
+            "name": "min",
+            "return": {
+                "description": "min value of (x,y,z)",
+                "type": "Float"
+            },
+            "class": "Vector",
+            "module": "Math"
+        },
+        {
+            "file": "../aexolgl-js/src/math.js",
+            "line": 117,
+            "description": "Returns the maximum value of vector axes",
+            "itemtype": "method",
+            "name": "max",
+            "return": {
+                "description": "max value of (x,y,z)",
+                "type": "Float"
+            },
+            "class": "Vector",
+            "module": "Math"
+        },
+        {
+            "file": "../aexolgl-js/src/math.js",
+            "line": 125,
+            "description": "Returns the maximum value of vector absolute axes",
+            "itemtype": "method",
+            "name": "max",
+            "return": {
+                "description": "max value of (abs(x),abs(y),abs(z))",
+                "type": "Float"
+            },
+            "class": "Vector",
+            "module": "Math"
+        },
+        {
+            "file": "../aexolgl-js/src/math.js",
+            "line": 133,
+            "description": "Returns the normalized vector",
+            "itemtype": "method",
+            "name": "normalize",
+            "return": {
+                "description": "Vector normalized",
+                "type": "Vector"
+            },
+            "class": "Vector",
+            "module": "Math"
+        },
+        {
+            "file": "../aexolgl-js/src/math.js",
+            "line": 150,
+            "description": "Returns the array of axes",
+            "itemtype": "method",
+            "name": "toArray",
+            "return": {
+                "description": "Array [x,y,z]",
+                "type": "Array[3]"
+            },
+            "class": "Vector",
+            "module": "Math"
+        },
+        {
+            "file": "../aexolgl-js/src/math.js",
+            "line": 164,
+            "description": "Gives distance between two Vector objects",
+            "params": [
+                {
+                    "name": "v",
+                    "description": "",
+                    "type": "Vector"
+                },
+                {
+                    "name": "v2",
+                    "description": "",
+                    "type": "Vector"
+                }
+            ],
+            "return": {
+                "description": "",
+                "type": "Float|*"
+            },
+            "class": "Vector",
+            "module": "Math"
+        },
+        {
+            "file": "../aexolgl-js/src/math.js",
+            "line": 245,
+            "description": "Dot product",
+            "itemtype": "method",
+            "name": "dot",
+            "params": [
+                {
+                    "name": "v",
+                    "description": "Vector4",
+                    "type": "Vector4"
+                }
+            ],
+            "return": {
+                "description": "Dot product of two vectors",
+                "type": "Vector4"
+            },
+            "class": "Vector4",
+            "module": "Math"
+        },
+        {
+            "file": "../aexolgl-js/src/math.js",
+            "line": 266,
+            "description": "Exchanges columns for rows.",
+            "itemtype": "method",
+            "name": "transpose",
+            "return": {
+                "description": "Transposed matrix3",
+                "type": "Matrix3"
+            },
+            "class": "Matrix3",
+            "module": "Math"
+        },
+        {
+            "file": "../aexolgl-js/src/math.js",
+            "line": 288,
+            "description": "Returns the matrix that when multiplied with this matrix results in the\nidentity matrix.",
+            "itemtype": "method",
+            "name": "inverse",
+            "return": {
+                "description": "Inverted matrix",
+                "type": "Matrix"
+            },
+            "class": "Matrix",
+            "module": "Math"
+        },
+        {
+            "file": "../aexolgl-js/src/math.js",
+            "line": 305,
+            "description": "Returns the matrix that when multiplied with this matrix results in the\nidentity matrix3.",
+            "itemtype": "method",
+            "name": "toInverseMat3",
+            "return": {
+                "description": "Inverted matrix3",
+                "type": "Matrix3"
+            },
+            "class": "Matrix",
+            "module": "Math"
+        },
+        {
+            "file": "../aexolgl-js/src/math.js",
+            "line": 370,
+            "description": "Exchanges columns for rows.",
+            "itemtype": "method",
+            "name": "transpose",
+            "return": {
+                "description": "Transposed matrix",
+                "type": "Matrix"
+            },
+            "class": "Matrix",
+            "module": "Math"
+        },
+        {
+            "file": "../aexolgl-js/src/math.js",
+            "line": 380,
+            "description": "Concatenates the transforms for this matrix and `matrix`.",
+            "itemtype": "method",
+            "name": "multiply",
+            "params": [
+                {
+                    "name": "matrix",
+                    "description": "Matrix to multiply",
+                    "type": "Matrix"
+                }
+            ],
+            "return": {
+                "description": "Multiplied matrix",
+                "type": "Matrix"
+            },
+            "class": "Matrix",
+            "module": "Math"
+        },
+        {
+            "file": "../aexolgl-js/src/math.js",
+            "line": 390,
+            "description": "Transforms the vector as a point with a w coordinate of 1. This\nmeans translations will have an effect, for example.",
+            "itemtype": "method",
+            "name": "transformPoint",
+            "return": {
+                "description": "Transformed Vector",
+                "type": "Vector"
+            },
+            "class": "Matrix",
+            "module": "Math"
+        },
+        {
+            "file": "../aexolgl-js/src/math.js",
+            "line": 414,
+            "description": "Transforms the vector as a vector with a w coordinate of 0. This\nmeans translations will have no effect, for example.",
+            "itemtype": "method",
+            "name": "transformVector",
+            "return": {
+                "description": "Transformed Vector",
+                "type": "Vector"
+            },
+            "class": "Matrix",
+            "module": "Math"
+        },
+        {
+            "file": "../aexolgl-js/src/math.js",
+            "line": 425,
+            "description": "Sets up a perspective transform, which makes far away objects appear smaller\nthan nearby objects. The `aspect` argument is the width divided by the height\nof your viewport and `fov` is the top-to-bottom angle of the field of view in\ndegrees.",
+            "itemtype": "method",
+            "name": "perspective",
+            "params": [
+                {
+                    "name": "fov",
+                    "description": "Field of View",
+                    "type": "Float"
+                },
+                {
+                    "name": "aspect",
+                    "description": "Aspect ratio",
+                    "type": "Float"
+                },
+                {
+                    "name": "near",
+                    "description": "Near plane",
+                    "type": "Float"
+                },
+                {
+                    "name": "far",
+                    "description": "Far plane",
+                    "type": "Float"
+                }
+            ],
+            "return": {
+                "description": "Result matrix",
+                "type": "Matrix"
+            },
+            "class": "Matrix",
+            "module": "Math"
+        },
+        {
+            "file": "../aexolgl-js/src/math.js",
+            "line": 443,
+            "description": "Sets up a viewing frustum, which is shaped like a truncated pyramid with the\ncamera where the point of the pyramid would be. This emulates the OpenGL",
+            "itemtype": "method",
+            "name": "frustum",
+            "params": [
+                {
+                    "name": "l",
+                    "description": "Left",
+                    "type": "Float"
+                },
+                {
+                    "name": "r",
+                    "description": "Right",
+                    "type": "Float"
+                },
+                {
+                    "name": "b",
+                    "description": "Bottom",
+                    "type": "Float"
+                },
+                {
+                    "name": "t",
+                    "description": "Top",
+                    "type": "Float"
+                },
+                {
+                    "name": "n",
+                    "description": "Near",
+                    "type": "Float"
+                },
+                {
+                    "name": "f",
+                    "description": "Far",
+                    "type": "Float"
+                }
+            ],
+            "return": {
+                "description": "Result matrix",
+                "type": "Matrix"
+            },
+            "class": "Matrix",
+            "module": "Math"
+        },
+        {
+            "file": "../aexolgl-js/src/math.js",
+            "line": 458,
+            "description": "Sets up an ortho perspective transform. The `aspect` argument is the width divided by the height\nof your viewport and `fov` is the top-to-bottom angle of the field of view in\ndegrees.",
+            "itemtype": "method",
+            "name": "orthoPerspective",
+            "params": [
+                {
+                    "name": "fov",
+                    "description": "Field of View",
+                    "type": "Float"
+                },
+                {
+                    "name": "aspect",
+                    "description": "Aspect ratio",
+                    "type": "Float"
+                },
+                {
+                    "name": "near",
+                    "description": "Near plane",
+                    "type": "Float"
+                },
+                {
+                    "name": "far",
+                    "description": "Far plane",
+                    "type": "Float"
+                }
+            ],
+            "return": {
+                "description": "Result matrix",
+                "type": "Matrix"
+            },
+            "class": "Matrix",
+            "module": "Math"
+        },
+        {
+            "file": "../aexolgl-js/src/math.js",
+            "line": 474,
+            "description": "Creates an orthographic projection, in which objects are the same size no\nmatter how far away or nearby they are.",
+            "itemtype": "method",
+            "name": "ortho",
+            "params": [
+                {
+                    "name": "l",
+                    "description": "Left",
+                    "type": "Float"
+                },
+                {
+                    "name": "r",
+                    "description": "Right",
+                    "type": "Float"
+                },
+                {
+                    "name": "b",
+                    "description": "Bottom",
+                    "type": "Float"
+                },
+                {
+                    "name": "t",
+                    "description": "Top",
+                    "type": "Float"
+                },
+                {
+                    "name": "n",
+                    "description": "Near",
+                    "type": "Float"
+                },
+                {
+                    "name": "f",
+                    "description": "Far",
+                    "type": "Float"
+                }
+            ],
+            "return": {
+                "description": "Result matrix",
+                "type": "Matrix"
+            },
+            "class": "Matrix",
+            "module": "Math"
+        },
+        {
+            "file": "../aexolgl-js/src/math.js",
+            "line": 489,
+            "description": "Creates a matrix that scales by the vector `x, y, z`.",
+            "itemtype": "method",
+            "name": "scale",
+            "params": [
+                {
+                    "name": "x",
+                    "description": "Vector X value",
+                    "type": "Float"
+                },
+                {
+                    "name": "y",
+                    "description": "Vector Y value",
+                    "type": "Float"
+                },
+                {
+                    "name": "z",
+                    "description": "Vector Z value",
+                    "type": "Float"
+                }
+            ],
+            "return": {
+                "description": "Result matrix",
+                "type": "Matrix"
+            },
+            "class": "Matrix",
+            "module": "Math"
+        },
+        {
+            "file": "../aexolgl-js/src/math.js",
+            "line": 500,
+            "description": "Creates a matrix that translates by the vector `x, y, z`.",
+            "itemtype": "method",
+            "name": "translate",
+            "params": [
+                {
+                    "name": "x",
+                    "description": "Vector X value",
+                    "type": "Float"
+                },
+                {
+                    "name": "y",
+                    "description": "Vector Y value",
+                    "type": "Float"
+                },
+                {
+                    "name": "z",
+                    "description": "Vector Z value",
+                    "type": "Float"
+                }
+            ],
+            "return": {
+                "description": "Result matrix",
+                "type": "Matrix"
+            },
+            "class": "Matrix",
+            "module": "Math"
+        },
+        {
+            "file": "../aexolgl-js/src/math.js",
+            "line": 511,
+            "description": "Creates a matrix that rotates by `a` degrees around the vector `x, y, z`.",
+            "itemtype": "method",
+            "name": "rotate",
+            "params": [
+                {
+                    "name": "a",
+                    "description": "Angle in degrees",
+                    "type": "Float"
+                },
+                {
+                    "name": "x",
+                    "description": "Vector X value",
+                    "type": "Float"
+                },
+                {
+                    "name": "y",
+                    "description": "Vector Y value",
+                    "type": "Float"
+                },
+                {
+                    "name": "z",
+                    "description": "Vector Z value",
+                    "type": "Float"
+                }
+            ],
+            "return": {
+                "description": "Result matrix",
+                "type": "Matrix"
+            },
+            "class": "Matrix",
+            "module": "Math"
+        },
+        {
+            "file": "../aexolgl-js/src/math.js",
+            "line": 533,
+            "description": "Creates a matrix that rotates in three axes `x, y, z`.",
+            "itemtype": "method",
+            "name": "rotate",
+            "params": [
+                {
+                    "name": "xAngle",
+                    "description": "in degrees",
+                    "type": "Float"
+                },
+                {
+                    "name": "yAngle",
+                    "description": "in degrees",
+                    "type": "Float"
+                },
+                {
+                    "name": "zAngle",
+                    "description": "in degrees",
+                    "type": "Float"
+                }
+            ],
+            "return": {
+                "description": "Result matrix",
+                "type": "Matrix"
+            },
+            "class": "Matrix",
+            "module": "Math"
+        },
+        {
+            "file": "../aexolgl-js/src/math.js",
+            "line": 548,
+            "description": "Create a matrix that puts the camera at the eye point `ex, ey, ez` looking\ntoward the center point `cx, cy, cz` with an up direction of `ux, uy, uz`.",
+            "itemtype": "method",
+            "name": "lookAt",
+            "params": [
+                {
+                    "name": "e",
+                    "description": "Eye point",
+                    "type": "Vector"
+                },
+                {
+                    "name": "c",
+                    "description": "Center point",
+                    "type": "Vector"
+                },
+                {
+                    "name": "u",
+                    "description": "Up vector",
+                    "type": "Vector"
+                }
+            ],
+            "return": {
+                "description": "Result matrix",
+                "type": "Matrix"
+            },
+            "class": "Matrix",
+            "module": "Math"
+        },
+        {
+            "file": "../aexolgl-js/src/math.js",
+            "line": 586,
+            "itemtype": "method",
+            "name": "getMatrix\nReturns the quaternion matrix",
+            "return": {
+                "description": "",
+                "type": "Matrix"
+            },
+            "class": "Quaternion",
+            "module": "Math"
+        },
+        {
+            "file": "../aexolgl-js/src/math.js",
+            "line": 625,
+            "itemtype": "method",
+            "name": "negative\nReturns negative quaternion",
+            "return": {
+                "description": "",
+                "type": "Quaternion"
+            },
+            "class": "Quaternion",
+            "module": "Math"
+        },
+        {
+            "file": "../aexolgl-js/src/math.js",
+            "line": 633,
+            "itemtype": "method",
+            "name": "subtract",
+            "params": [
+                {
+                    "name": "q",
+                    "description": "\nSubtracts one quaternion from another",
+                    "type": "Quaternion"
+                }
+            ],
+            "return": {
+                "description": "",
+                "type": "Quaternion"
+            },
+            "class": "Quaternion",
+            "module": "Math"
+        },
+        {
+            "file": "../aexolgl-js/src/math.js",
+            "line": 642,
+            "itemtype": "method",
+            "name": "add",
+            "params": [
+                {
+                    "name": "q",
+                    "description": "\nAdds 2 quaternions",
+                    "type": "Quaternion"
+                }
+            ],
+            "return": {
+                "description": "",
+                "type": "Quaternion"
+            },
+            "class": "Quaternion",
+            "module": "Math"
+        },
+        {
+            "file": "../aexolgl-js/src/math.js",
+            "line": 651,
+            "itemtype": "method",
+            "name": "multiply",
+            "params": [
+                {
+                    "name": "q",
+                    "description": "\nMultiplies 2 quaternions",
+                    "type": "Quaternion"
+                }
+            ],
+            "return": {
+                "description": "",
+                "type": "Quaternion"
+            },
+            "class": "Quaternion",
+            "module": "Math"
+        },
+        {
+            "file": "../aexolgl-js/src/math.js",
+            "line": 664,
+            "itemtype": "method",
+            "name": "divide",
+            "params": [
+                {
+                    "name": "q",
+                    "description": "\nDivides 2 quaternions",
+                    "type": "Quaternion"
+                }
+            ],
+            "return": {
+                "description": "",
+                "type": "Quaternion"
+            },
+            "class": "Quaternion",
+            "module": "Math"
+        },
+        {
+            "file": "../aexolgl-js/src/math.js",
+            "line": 677,
+            "itemtype": "method",
+            "name": "magnitudeSquared\nReturns the squared length of quaternion",
+            "return": {
+                "description": "",
+                "type": "Float"
+            },
+            "class": "Quaternion",
+            "module": "Math"
+        },
+        {
+            "file": "../aexolgl-js/src/math.js",
+            "line": 685,
+            "itemtype": "method",
+            "name": "magnitude\nReturns the length of quaternion",
+            "return": {
+                "description": "",
+                "type": "Float"
+            },
+            "class": "Quaternion",
+            "module": "Math"
+        },
+        {
+            "file": "../aexolgl-js/src/math.js",
+            "line": 693,
+            "itemtype": "method",
+            "name": "inverse\nReturns inverted quaternion",
+            "return": {
+                "description": "",
+                "type": "Quaternion"
+            },
+            "class": "Quaternion",
+            "module": "Math"
+        },
+        {
+            "file": "../aexolgl-js/src/math.js",
+            "line": 702,
+            "itemtype": "method",
+            "name": "rotateVector",
+            "params": [
+                {
+                    "name": "v",
+                    "description": "\nRotate Vector with quaternion",
+                    "type": "Vector"
+                }
+            ],
+            "return": {
+                "description": "",
+                "type": "Vector"
+            },
+            "class": "Quaternion",
+            "module": "Math"
+        },
+        {
+            "file": "../aexolgl-js/src/math.js",
+            "line": 714,
+            "itemtype": "method",
+            "name": "getQuaternionFromEulerAnglesRad",
+            "params": [
+                {
+                    "name": "x",
+                    "description": "",
+                    "type": "Float"
+                },
+                {
+                    "name": "y",
+                    "description": "",
+                    "type": "Float"
+                },
+                {
+                    "name": "z",
+                    "description": "\nCreate quaternion from rotation XYZ in Radians",
+                    "type": "Float"
+                }
+            ],
+            "return": {
+                "description": "",
+                "type": "Quaternion"
+            },
+            "class": "Quaternion",
+            "module": "Math"
+        },
+        {
+            "file": "../aexolgl-js/src/math.js",
+            "line": 738,
+            "itemtype": "method",
+            "name": "getQuaternionFromEulerAnglesRad",
+            "params": [
+                {
+                    "name": "x",
+                    "description": "",
+                    "type": "Float"
+                },
+                {
+                    "name": "y",
+                    "description": "",
+                    "type": "Float"
+                },
+                {
+                    "name": "z",
+                    "description": "\nCreate quaternion from rotation XYZ in Degrees",
+                    "type": "Float"
+                }
+            ],
+            "return": {
+                "description": "",
+                "type": "Quaternion"
+            },
+            "class": "Quaternion",
+            "module": "Math"
+        },
+        {
+            "file": "../aexolgl-js/src/math.js",
+            "line": 749,
+            "itemtype": "method",
+            "name": "getQuaternionFromAxisAngle",
+            "params": [
+                {
+                    "name": "v",
+                    "description": "\nCreate quaternion from axis angle in radians",
+                    "type": "Vector"
+                }
+            ],
+            "return": {
+                "description": "",
+                "type": "Quaternion"
+            },
+            "class": "Quaternion",
+            "module": "Math"
+        },
+        {
+            "file": "../aexolgl-js/src/math.js",
+            "line": 772,
+            "itemtype": "method",
+            "name": "getQuaternionFromAxisAngle",
+            "params": [
+                {
+                    "name": "v",
+                    "description": "\nCreate quaternion from axis angle in degrees",
+                    "type": "Vector"
+                }
+            ],
+            "return": {
+                "description": "",
+                "type": "Quaternion"
+            },
+            "class": "Quaternion",
+            "module": "Math"
+        },
+        {
+            "file": "../aexolgl-js/src/math.js",
+            "line": 781,
+            "itemtype": "method",
+            "name": "getQuaternionFromMatrix",
+            "params": [
+                {
+                    "name": "m",
+                    "description": "\nCreate quaternion from Matrix",
+                    "type": "Matrix"
+                }
+            ],
+            "return": {
+                "description": "",
+                "type": "Quaternion"
+            },
+            "class": "Quaternion",
+            "module": "Math"
+        },
+        {
+            "file": "../aexolgl-js/src/math.js",
+            "line": 818,
+            "itemtype": "method",
+            "name": "getQuaternionFromSpherical",
+            "params": [
+                {
+                    "name": "latitude",
+                    "description": "",
+                    "type": "Float"
+                },
+                {
+                    "name": "longtitude",
+                    "description": "",
+                    "type": "Float"
+                },
+                {
+                    "name": "angle",
+                    "description": "\nCreate quaternion from spherical coordinates",
+                    "type": "Float"
+                }
+            ],
+            "return": {
+                "description": "",
+                "type": "Quaternion"
+            },
+            "class": "Quaternion",
+            "module": "Math"
+        },
+        {
+            "file": "../aexolgl-js/src/math.js",
+            "line": 842,
+            "itemtype": "method",
+            "name": "getRotationTo",
+            "params": [
+                {
+                    "name": "fromV",
+                    "description": "",
+                    "type": "Vector"
+                },
+                {
+                    "name": "toV",
+                    "description": "\nget Quaternion from rotation from one Vector to another.",
+                    "type": "Vector"
+                }
+            ],
+            "return": {
+                "description": "",
+                "type": "Quaternion"
+            },
+            "class": "Quaternion",
+            "module": "Math"
+        },
+        {
+            "file": "../aexolgl-js/src/mesh.js",
+            "line": 47,
+            "description": "Drawes a Mesh",
+            "itemtype": "method",
+            "name": "draw",
+            "params": [
+                {
+                    "name": "name",
+                    "description": "Name of buffer",
+                    "type": "String"
+                },
+                {
+                    "name": "attribute",
+                    "description": "gl name",
+                    "type": "String"
+                }
+            ],
+            "class": "Mesh",
+            "module": "Mesh"
+        },
+        {
+            "file": "../aexolgl-js/src/mesh.js",
+            "line": 77,
+            "description": "Creates a vertex Buffer\nfor example:\nthis.addVertexBuffer('normals', 'gl_Normal');",
+            "itemtype": "method",
+            "name": "addVertexBuffer",
+            "params": [
+                {
+                    "name": "name",
+                    "description": "Name of buffer",
+                    "type": "String"
+                },
+                {
+                    "name": "attribute",
+                    "description": "gl name",
+                    "type": "String"
+                }
+            ],
+            "class": "Mesh",
+            "module": "Mesh"
+        },
+        {
+            "file": "../aexolgl-js/src/mesh.js",
+            "line": 90,
+            "description": "Creates a index Buffer\nfor example:\nthis.addIndexBuffer('triangles');",
+            "itemtype": "method",
+            "name": "addIndexBuffer",
+            "params": [
+                {
+                    "name": "name",
+                    "description": "Name of buffer",
+                    "type": "String"
+                }
+            ],
+            "class": "Mesh",
+            "module": "Mesh"
+        },
+        {
+            "file": "../aexolgl-js/src/mesh.js",
+            "line": 101,
+            "description": "Recompile the mesh ( for example: if vertices were edited )",
+            "itemtype": "method",
+            "name": "compile",
+            "class": "Mesh",
+            "module": "Mesh"
+        },
+        {
+            "file": "../aexolgl-js/src/mesh.js",
+            "line": 121,
+            "description": "Transform the mesh with matrix",
+            "itemtype": "method",
+            "name": "transform",
+            "params": [
+                {
+                    "name": "matV",
+                    "description": "Transformation matrix",
+                    "type": "Matrix"
+                }
+            ],
+            "class": "Mesh",
+            "module": "Mesh"
+        },
+        {
+            "file": "../aexolgl-js/src/mesh.js",
+            "line": 153,
+            "description": "Moves mesh",
+            "itemtype": "method",
+            "name": "move",
+            "params": [
+                {
+                    "name": "x",
+                    "description": "",
+                    "type": "Float"
+                },
+                {
+                    "name": "y",
+                    "description": "",
+                    "type": "Float"
+                },
+                {
+                    "name": "z",
+                    "description": "",
+                    "type": "Float"
+                }
+            ],
+            "class": "Mesh",
+            "module": "Mesh"
+        },
+        {
+            "file": "../aexolgl-js/src/mesh.js",
+            "line": 163,
+            "description": "Rotates mesh",
+            "itemtype": "method",
+            "name": "rotate",
+            "params": [
+                {
+                    "name": "x",
+                    "description": "",
+                    "type": "Float"
+                },
+                {
+                    "name": "y",
+                    "description": "",
+                    "type": "Float"
+                },
+                {
+                    "name": "z",
+                    "description": "",
+                    "type": "Float"
+                }
+            ],
+            "class": "Mesh",
+            "module": "Mesh"
+        },
+        {
+            "file": "../aexolgl-js/src/mesh.js",
+            "line": 176,
+            "description": "Scales mesh",
+            "itemtype": "method",
+            "name": "scale",
+            "params": [
+                {
+                    "name": "x",
+                    "description": "",
+                    "type": "Float"
+                },
+                {
+                    "name": "y",
+                    "description": "",
+                    "type": "Float"
+                },
+                {
+                    "name": "z",
+                    "description": "",
+                    "type": "Float"
+                }
+            ],
+            "class": "Mesh",
+            "module": "Mesh"
+        },
+        {
+            "file": "../aexolgl-js/src/mesh.js",
+            "line": 186,
+            "description": "Scales uniformly mesh",
+            "itemtype": "method",
+            "name": "scaleUniform",
+            "params": [
+                {
+                    "name": "f",
+                    "description": "",
+                    "type": "Float"
+                }
+            ],
+            "class": "Mesh",
+            "module": "Mesh"
+        },
+        {
+            "file": "../aexolgl-js/src/mesh.js",
+            "line": 194,
+            "description": "Recompute normals",
+            "itemtype": "method",
+            "name": "computeNormals",
+            "class": "Mesh",
+            "module": "Mesh"
+        },
+        {
+            "file": "../aexolgl-js/src/mesh.js",
+            "line": 220,
+            "description": "Recompute wireframe",
+            "itemtype": "method",
+            "name": "computeWireframe",
+            "class": "Mesh",
+            "module": "Mesh"
+        },
+        {
+            "file": "../aexolgl-js/src/mesh.js",
+            "line": 237,
+            "description": "Get mesh bounding box",
+            "itemtype": "method",
+            "name": "getAABB",
+            "class": "Mesh",
+            "module": "Mesh"
+        },
+        {
+            "file": "../aexolgl-js/src/mesh.js",
+            "line": 253,
+            "description": "Get mesh bounding sphere",
+            "itemtype": "method",
+            "name": "getBoundingSphere",
+            "params": [
+                {
+                    "name": "aabb",
+                    "description": ""
+                }
+            ],
+            "class": "Mesh",
+            "module": "Mesh"
+        },
+        {
+            "file": "../aexolgl-js/src/mesh.js",
+            "line": 268,
+            "description": "Get center point of meshcar.t",
+            "itemtype": "method",
+            "name": "getCenter",
+            "class": "Mesh",
+            "module": "Mesh"
+        },
+        {
+            "file": "../aexolgl-js/src/mesh.js",
+            "line": 277,
+            "description": "Get vertex by id",
+            "itemtype": "method",
+            "name": "getVertex",
+            "params": [
+                {
+                    "name": "id",
+                    "description": "Vertex id",
+                    "type": "Int"
+                }
+            ],
+            "return": {
+                "description": "position of vertex",
+                "type": "Array[3]"
+            },
+            "class": "Mesh",
+            "module": "Mesh"
+        },
+        {
+            "file": "../aexolgl-js/src/mesh.js",
+            "line": 301,
+            "description": "Check if there are two vertices in the same place( useful to recognize bad import)",
+            "itemtype": "method",
+            "name": "checkRepeat",
+            "class": "Mesh",
+            "module": "Mesh"
+        },
+        {
+            "file": "../aexolgl-js/src/mesh.js",
+            "line": 314,
+            "description": "Get vertex by id",
+            "itemtype": "method",
+            "name": "getVertex",
+            "params": [
+                {
+                    "name": "id",
+                    "description": "Vertex id",
+                    "type": "Int"
+                }
+            ],
+            "return": {
+                "description": "position of vertex",
+                "type": "Vector"
+            },
+            "class": "Mesh",
+            "module": "Mesh"
+        },
+        {
+            "file": "../aexolgl-js/src/mesh.js",
+            "line": 323,
+            "description": "Set Position of Vertex",
+            "itemtype": "method",
+            "name": "setVertex",
+            "params": [
+                {
+                    "name": "id",
+                    "description": "Vertex id",
+                    "type": "Int"
+                },
+                {
+                    "name": "vector",
+                    "description": "New vertex position",
+                    "type": "Vector or array"
+                }
+            ],
+            "class": "Mesh",
+            "module": "Mesh"
+        },
+        {
+            "file": "../aexolgl-js/src/mesh.js",
+            "line": 335,
+            "description": "Create a plane",
+            "itemtype": "method",
+            "name": "plane",
+            "static": 1,
+            "params": [
+                {
+                    "name": "detailX",
+                    "description": "X segments",
+                    "type": "Integer"
+                },
+                {
+                    "name": "detailY",
+                    "description": "Y segments",
+                    "type": "Integer"
+                },
+                {
+                    "name": "options",
+                    "description": "additional options",
+                    "type": "Dict"
+                }
+            ],
+            "return": {
+                "description": "Compiled mesh (plane)",
+                "type": "Mesh"
+            },
+            "example": [
+                "\nsomeMesh = Mesh.plane(10,10)"
+            ],
+            "class": "Mesh",
+            "module": "Mesh"
+        },
+        {
+            "file": "../aexolgl-js/src/mesh.js",
+            "line": 383,
+            "description": "Create a cube",
+            "itemtype": "method",
+            "name": "cube",
+            "static": 1,
+            "return": {
+                "description": "Compiled mesh (cube)",
+                "type": "Mesh"
+            },
+            "example": [
+                "\nsomeMesh = Mesh.cube()"
+            ],
+            "class": "Mesh",
+            "module": "Mesh"
+        },
+        {
+            "file": "../aexolgl-js/src/mesh.js",
+            "line": 412,
+            "description": "Coombine two meshes into one",
+            "itemtype": "method",
+            "name": "combine",
+            "params": [
+                {
+                    "name": "mesh",
+                    "description": "additional mesh",
+                    "type": "Mesh"
+                },
+                {
+                    "name": "noCompile",
+                    "description": "flag if set to true doesnt compile mesh",
+                    "type": "Boolean"
+                }
+            ],
+            "return": {
+                "description": "Compiled mesh (cube)",
+                "type": "Mesh"
+            },
+            "class": "Mesh",
+            "module": "Mesh"
+        },
+        {
+            "file": "../aexolgl-js/src/mesh.js",
+            "line": 437,
+            "description": "Create a sphere",
+            "itemtype": "method",
+            "name": "sphere",
+            "static": 1,
+            "params": [
+                {
+                    "name": "detail",
+                    "description": "sphere resolution",
+                    "type": "Int"
+                },
+                {
+                    "name": "options",
+                    "description": "additional options",
+                    "type": "Dict"
+                }
+            ],
+            "return": {
+                "description": "Compiled mesh (sphere)",
+                "type": "Mesh"
+            },
+            "example": [
+                "\nsomeMesh = Mesh.sphere(10)"
+            ],
+            "class": "Mesh",
+            "module": "Mesh"
+        },
+        {
+            "file": "../aexolgl-js/src/mesh.js",
+            "line": 506,
+            "description": "Load 3d model from json",
+            "itemtype": "method",
+            "name": "load",
+            "params": [
+                {
+                    "name": "json",
+                    "description": "model in json format",
+                    "type": "String"
+                },
+                {
+                    "name": "options",
+                    "description": "additional options",
+                    "type": "Dict"
+                }
+            ],
+            "return": {
+                "description": "Compiled mesh (loaded model)",
+                "type": "Mesh"
+            },
+            "class": "Mesh",
+            "module": "Mesh"
+        },
+        {
+            "file": "../aexolgl-js/src/mesh.js",
+            "line": 529,
+            "description": "Copy mesh",
+            "itemtype": "method",
+            "name": "load",
+            "params": [
+                {
+                    "name": "mesh",
+                    "description": "to copy",
+                    "type": "Mesh"
+                }
+            ],
+            "return": {
+                "description": "Compiled mesh (copied model)",
+                "type": "Mesh"
+            },
+            "class": "Mesh",
+            "module": "Mesh"
+        },
+        {
+            "file": "../aexolgl-js/src/mesh.js",
+            "line": 550,
+            "description": "Load 3d model from itself",
+            "itemtype": "method",
+            "name": "load",
+            "params": [
+                {
+                    "name": "dict",
+                    "description": "of model",
+                    "type": "String"
+                },
+                {
+                    "name": "options",
+                    "description": "additional options",
+                    "type": "Dict"
+                }
+            ],
+            "return": {
+                "description": "Compiled mesh (loaded model)",
+                "type": "Mesh"
+            },
+            "class": "Mesh",
+            "module": "Mesh"
+        },
+        {
+            "file": "../aexolgl-js/src/mesh.js",
+            "line": 573,
+            "description": "Load 3d model from obj",
+            "itemtype": "method",
+            "name": "obj",
+            "params": [
+                {
+                    "name": "url",
+                    "description": "path to .obj file",
+                    "type": "String"
+                },
+                {
+                    "name": "callback",
+                    "description": "function that happen after successful mesh loading",
+                    "type": "Function"
+                },
+                {
+                    "name": "opts",
+                    "description": "optional parameters listed in example",
+                    "type": "Dict",
+                    "optional": true
+                }
+            ],
+            "example": [
+                "\ncharacterJaw = new GameObject(world, {\n       shader: gshader,\n       material: planetMat,\n       mesh: ludekMesh2,\n   })\nMesh.obj(\"obj/jaw.obj\", function (e) {\n       var meshy = e\n       meshy.rotate(0, 90, 0)\n       meshy.scale(-0.25, 0.25, 0.25)\n       meshy.move(0, 0.05, 0)\n       characterJaw.mesh = meshy\n   })"
+            ],
+            "class": "Mesh",
+            "module": "Mesh"
+        },
+        {
+            "file": "../aexolgl-js/src/oldcamera.js",
+            "line": 50,
+            "description": "Set table with screen dimensions and coordinates for 2D games",
+            "itemtype": "method",
+            "name": "setDisplay",
+            "class": "Camera",
+            "module": "camera"
+        },
+        {
+            "file": "../aexolgl-js/src/oldcamera.js",
+            "line": 67,
+            "description": "Set camera position",
+            "itemtype": "method",
+            "name": "setCameraPosition",
+            "class": "Camera",
+            "module": "camera"
+        },
+        {
+            "file": "../aexolgl-js/src/oldcamera.js",
+            "line": 76,
+            "description": "Move camera forward & backward",
+            "itemtype": "method",
+            "name": "forward",
+            "params": [
+                {
+                    "name": "f",
+                    "description": "distance to move",
+                    "type": "Float"
+                }
+            ],
+            "class": "Camera",
+            "module": "camera"
+        },
+        {
+            "file": "../aexolgl-js/src/oldcamera.js",
+            "line": 94,
+            "description": "Move camera left & right",
+            "itemtype": "method",
+            "name": "side",
+            "params": [
+                {
+                    "name": "f",
+                    "description": "distance to move",
+                    "type": "Float"
+                }
+            ],
+            "class": "Camera",
+            "module": "camera"
+        },
+        {
+            "file": "../aexolgl-js/src/oldcamera.js",
+            "line": 111,
+            "description": "Move camera up & down",
+            "itemtype": "method",
+            "name": "updown",
+            "params": [
+                {
+                    "name": "f",
+                    "description": "distance to move",
+                    "type": "Float"
+                }
+            ],
+            "class": "Camera",
+            "module": "camera"
+        },
+        {
+            "file": "../aexolgl-js/src/oldcamera.js",
+            "line": 122,
+            "description": "Rotate on local x axis",
+            "itemtype": "method",
+            "name": "pitch",
+            "params": [
+                {
+                    "name": "change",
+                    "description": "rotation",
+                    "type": "Float"
+                }
+            ],
+            "class": "Camera",
+            "module": "camera"
+        },
+        {
+            "file": "../aexolgl-js/src/oldcamera.js",
+            "line": 130,
+            "description": "Rotate on local y axis",
+            "itemtype": "method",
+            "name": "pitch",
+            "params": [
+                {
+                    "name": "change",
+                    "description": "rotation",
+                    "type": "Float"
+                }
+            ],
+            "class": "Camera",
+            "module": "camera"
+        },
+        {
+            "file": "../aexolgl-js/src/oldcamera.js",
+            "line": 138,
+            "description": "Rotate on local z axis",
+            "itemtype": "method",
+            "name": "roll",
+            "params": [
+                {
+                    "name": "change",
+                    "description": "rotation",
+                    "type": "Float"
+                }
+            ],
+            "class": "Camera",
+            "module": "camera"
+        },
+        {
+            "file": "../aexolgl-js/src/oldcamera.js",
+            "line": 146,
+            "description": "this method is called as the first method in scene draw call transforming the gl.projectionMatrix",
+            "itemtype": "method",
+            "name": "transforms",
+            "class": "Camera",
+            "module": "camera"
+        },
+        {
+            "file": "../aexolgl-js/src/oldcamera.js",
+            "line": 193,
+            "description": "Turn on standard camera mouse and WSAD operating",
+            "itemtype": "method",
+            "name": "on",
+            "class": "Camera",
+            "module": "camera"
+        },
+        {
+            "file": "../aexolgl-js/src/resource.js",
+            "line": 44,
+            "description": "Loads objects and pass it to callbacks",
+            "params": [
+                {
+                    "name": "String",
+                    "description": "path to file",
+                    "optional": true
+                },
+                {
+                    "name": "Function",
+                    "description": "resp callback function",
+                    "optional": true
+                }
+            ],
+            "class": "Resource",
+            "module": "Resource"
+        },
+        {
+            "file": "../aexolgl-js/src/shader.js",
+            "line": 196,
+            "description": "Set shader uniforms",
+            "itemtype": "method",
+            "name": "uniforms",
+            "params": [
+                {
+                    "name": "uniforms",
+                    "description": "Dictionary of uniforms of shader",
+                    "type": "Dict"
+                }
+            ],
+            "class": "Shader",
+            "module": "Resource"
+        },
+        {
+            "file": "../aexolgl-js/src/shader.js",
+            "line": 256,
+            "description": "Draw with this shader",
+            "itemtype": "method",
+            "name": "draw",
+            "class": "Shader",
+            "module": "Resource"
+        },
+        {
+            "file": "../aexolgl-js/src/shader.js",
+            "line": 311,
+            "description": "Loads shader from .fs files",
+            "itemtype": "method",
+            "name": "fromFile",
+            "params": [
+                {
+                    "name": "vertexUrl",
+                    "description": "",
+                    "type": "String"
+                },
+                {
+                    "name": "fragmentUrl",
+                    "description": "",
+                    "type": "String"
+                }
+            ],
+            "class": "Shader",
+            "module": "Resource"
+        },
+        {
+            "file": "../aexolgl-js/src/shaderLib.js",
+            "line": 86,
+            "description": "Constructs shader - This is done this way to minify the shader structure",
+            "itemtype": "method",
+            "name": "basicShader",
+            "params": [
+                {
+                    "name": "options",
+                    "description": "Options of shader construction",
+                    "type": "Object"
+                }
+            ],
+            "example": [
+                "\n    //Simple shader considering light and diffuse texture\n    var shader = basicShader({\n         useBump: false,\n         useDiffuse: false,\n         useAtlas: false,\n         useSpecular: false,\n         useLights: false,\n         useTiling: false,\n         useReflection:false,\n         useSky:false\n    });"
+            ],
+            "class": "Shadow",
+            "module": "ShaderLibrary"
+        },
+        {
+            "file": "../aexolgl-js/src/shadows.js",
+            "line": 81,
+            "description": "draws shadow",
+            "itemtype": "method",
+            "name": "draw",
+            "class": "Shadow",
+            "module": "Shadow"
+        },
+        {
+            "file": "../aexolgl-js/src/start.js",
+            "line": 19,
+            "description": "Starts webgl",
+            "itemtype": "method",
+            "name": "glStart()",
+            "static": 1,
+            "class": "Texture",
+            "module": "start"
+        },
+        {
+            "file": "../aexolgl-js/src/texture.js",
+            "line": 153,
+            "description": "Creates a texture from image file",
+            "itemtype": "method",
+            "name": "fromImage",
+            "params": [
+                {
+                    "name": "src",
+                    "description": "path to image file",
+                    "type": "String"
+                },
+                {
+                    "name": "options",
+                    "description": "",
+                    "type": "Dict"
+                }
+            ],
+            "example": [
+                "\n     var imageSuper = Texture.fromImage(\"img/imgsuper.png\",{\n         wrap: gl.CLAMP_TO_EDGE,\n         filter: gl.LINEAR_MIPMAP_LINEAR\n     })",
+                "\n     var imageSuper = Texture.fromImage(\"img/imgsuper.png\",{\n         wrap: gl.REPEAT,\n         filter: gl.LINEAR\n     })"
+            ],
+            "class": "Texture",
+            "module": "start"
+        },
+        {
+            "file": "../aexolgl-js/src/texture.js",
+            "line": 190,
+            "description": "Creates a texture cube image files",
+            "itemtype": "method",
+            "name": "fromCube",
+            "params": [
+                {
+                    "name": "srcs",
+                    "description": "array to 6 path to image files",
+                    "type": "String[]"
+                },
+                {
+                    "name": "options",
+                    "description": "",
+                    "type": "Dict"
+                }
+            ],
+            "example": [
+                "\n     var imageSuper = Texture.fromCube([\"cube1.png\",\n                                        \"cube2.png\",\n                                        \"cube3.png\",\n                                        \"cube4.png\",\n                                        \"cube5.png\",\n                                        \"cube6.png\"],{})"
+            ],
+            "class": "Texture",
+            "module": "start"
+        },
+        {
+            "file": "../aexolgl-js/src/texture.js",
+            "line": 220,
+            "description": "Creates a texture from image blob",
+            "itemtype": "method",
+            "name": "fromBlob",
+            "params": [
+                {
+                    "name": "blob",
+                    "description": "image blov",
+                    "type": "String"
+                },
+                {
+                    "name": "options",
+                    "description": "",
+                    "type": "Dict"
+                }
+            ],
+            "class": "Texture",
+            "module": "start"
+        },
+        {
+            "file": "../aexolgl-js/src/texture.js",
+            "line": 239,
+            "description": "Creates a texture atlas",
+            "static": 1,
+            "itemtype": "method",
+            "name": "Atlas",
+            "params": [
+                {
+                    "name": "srcImage",
+                    "description": "image file name",
+                    "type": "String"
+                },
+                {
+                    "name": "srcJSON",
+                    "description": "JSON file name",
+                    "type": "String"
+                },
+                {
+                    "name": "options",
+                    "description": "",
+                    "type": "Dict"
+                }
+            ],
+            "example": [
+                "\n     var imageAtlas = Texture.Atlas(\"map.png\",\"map.json\")\n     var image = Texture.fromAtlas(imageAtlas,\"foot.png\")\n     podstawaMat = new Material({color: [0.3,0.9,0.9]})\n var tat = Texture.Atlas(\"into.png\",\"into.json\")\n podstawaMat.setTexture(\"diffuse\",tat,\"tap to play.png\")"
+            ],
+            "class": "Texture",
+            "module": "start"
+        },
+        {
+            "file": "../aexolgl-js/src/utils.js",
+            "line": 27,
+            "itemtype": "method",
+            "name": "aGLExists",
+            "static": 1,
+            "class": "TextNode",
+            "module": "utils"
+        },
+        {
+            "file": "../aexolgl-js/src/utils.js",
+            "line": 51,
+            "itemtype": "method",
+            "name": "setGL",
+            "static": 1,
+            "class": "TextNode",
+            "module": "utils"
+        },
+        {
+            "file": "../aexolgl-js/src/utils.js",
+            "line": 61,
+            "itemtype": "method",
+            "name": "aLoadFile",
+            "static": 1,
+            "params": [
+                {
+                    "name": "url",
+                    "description": "",
+                    "type": "String"
+                }
+            ],
+            "return": {
+                "description": "contents of file",
+                "type": "String"
+            },
+            "class": "TextNode",
+            "module": "utils"
+        },
+        {
+            "file": "../aexolgl-js/src/utils.js",
+            "line": 75,
+            "itemtype": "method",
+            "name": "aLoadJSON",
+            "static": 1,
+            "params": [
+                {
+                    "name": "url",
+                    "description": "",
+                    "type": "String"
+                }
+            ],
+            "return": {
+                "description": "contents of file",
+                "type": "JSON"
+            },
+            "class": "TextNode",
+            "module": "utils"
+        },
+        {
+            "file": "../aexolgl-js/src/utils.js",
+            "line": 86,
+            "itemtype": "method",
+            "name": "toVector",
+            "static": 1,
+            "params": [
+                {
+                    "name": "args",
+                    "description": "Array[3] or (x,y,z) arguments",
+                    "type": "Args"
+                }
+            ],
+            "return": {
+                "description": "vector",
+                "type": "Vector"
+            },
+            "class": "TextNode",
+            "module": "utils"
+        },
+        {
+            "file": "../aexolgl-js/src/zbuffer.js",
+            "line": 54,
+            "description": "Bind cube framebuffer before drawing",
+            "itemtype": "method",
+            "name": "bindCube",
+            "params": [
+                {
+                    "name": "cubeFace",
+                    "description": "Face of the cube ENUM"
+                }
+            ],
+            "class": "ZBuffer",
+            "module": "utils"
+        },
+        {
+            "file": "../aexolgl-js/src/zbuffer.js",
+            "line": 63,
+            "description": "Bind framebuffer before drawing",
+            "itemtype": "method",
+            "name": "bind",
+            "class": "ZBuffer",
+            "module": "utils"
+        },
+        {
+            "file": "../aexolgl-js/src/zbuffer.js",
+            "line": 70,
+            "description": "Unbind framebuffer",
+            "itemtype": "method",
+            "name": "unbind",
+            "class": "ZBuffer",
+            "module": "utils"
+        },
+        {
+            "file": "../aexolgl-js/src/zbuffer.js",
+            "line": 117,
+            "description": "Bind framebuffer before drawing",
+            "itemtype": "method",
+            "name": "bind",
+            "class": "ZBuffer",
+            "module": "utils"
+        },
+        {
+            "file": "../aexolgl-js/src/zbuffer.js",
+            "line": 124,
+            "description": "Unbind framebuffer",
+            "itemtype": "method",
+            "name": "unbind",
+            "class": "ZBuffer",
+            "module": "utils"
+        },
+        {
+            "file": "../aexolgl-js/src/zbuffer.js",
+            "line": 131,
+            "description": "Draw Scene into framebuffer cube texture",
+            "itemtype": "method",
+            "name": "draw",
+            "params": [
+                {
+                    "name": "drawFunction(uniforms)",
+                    "description": "drawFunction to pass uniforms to"
+                }
+            ],
+            "example": [
+                "\n     var cube = new ZBufferCube()\n     cube.draw(function(uniforms){\n         world.draw();\n     })",
+                "\n     var cube = new ZBufferCube()\n     var shaderOverride = basicShader({color:[1.0,0.0,0.0]})\n     cube.draw(function(uniforms){\n         world.drawOverride(shaderOverride,uniforms);\n     })"
+            ],
+            "class": "ZBuffer",
+            "module": "utils"
+        }
+    ],
+    "warnings": [
+        {
+            "message": "unknown tag: internal",
+            "line": " ../aexolgl-js/src/aexolGL.js:431"
+        },
+        {
+            "message": "unknown tag: internal",
+            "line": " ../aexolgl-js/src/aexolGL.js:447"
+        },
+        {
+            "message": "replacing incorrect tag: returns with return",
+            "line": " ../aexolgl-js/src/game.js:509"
+        },
+        {
+            "message": "replacing incorrect tag: returns with return",
+            "line": " ../aexolgl-js/src/game.js:524"
+        },
+        {
+            "message": "replacing incorrect tag: returns with return",
+            "line": " ../aexolgl-js/src/game.js:538"
+        },
+        {
+            "message": "replacing incorrect tag: returns with return",
+            "line": " ../aexolgl-js/src/game.js:554"
+        },
+        {
+            "message": "replacing incorrect tag: returns with return",
+            "line": " ../aexolgl-js/src/math.js:164"
+        },
+        {
+            "message": "Missing item type\nGives distance between two Vector objects",
+            "line": " ../aexolgl-js/src/math.js:164"
+        },
+        {
+            "message": "Missing item type\nLoads objects and pass it to callbacks",
+            "line": " ../aexolgl-js/src/resource.js:44"
+        }
+    ]
+}

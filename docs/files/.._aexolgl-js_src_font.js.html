@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>../aexolgl-js/src/font.js - aexolGL API</title>
+    <link rel="stylesheet" href="http://yui.yahooapis.com/3.7.0/build/cssgrids/cssgrids-min.css">
+    <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
+    <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
+    <link rel="stylesheet" href="../assets/css/custom.css">
+    <link rel="stylesheet" href="../assets/vendor/bootstrap/css/bootstrap.css">
+    <link rel="shortcut icon" type="image/png" href="../assets/favicon.png">
+</head>
+<body class="yui3-skin-sam">
+<div class="container-fluid" style="padding:0;">
+	<div id="topbar" class="row visible-md visible-lg" style="margin:0;">
+        <div class="span1"></div>
+        <div class="span6 docs">
+            <img src="http://gl.aexol.com/static/img/aexol_gl_logo.png"> Docs for Version: <b>1.0a</b>
+        </div>
+        <div class="span5"></div>
+    </div>
+    <div class="row" style="padding:2em;">
+        <div class="span3">
+	    <div>
+	        <h3>APIs</h3>
+	        <div id="sidebar">
+	            <ul id="main-nav" class="nav nav-tabs" style="margin-bottom:0;">
+	                <li class="active"><a href="#classes" data-toggle="tab">Classes</a></li>
+	                <li><a href="#modules" data-toggle="tab">Modules</a></li>
+	            </ul>
+	    
+	            <div id="api-tabview-filter">
+	                <input type="search" placeholder="Type to filter APIs">
+	            </div>
+	    
+	            <div class="tab-content" style="border: 1px solid #DDD; border-top:0;">
+	                <div class="tab-pane active" id="classes">
+	                    <ul id="api-classes" class="nav nav-list">
+	                            <li><a href="../classes/Aex.html">Aex</a></li>
+	                            <li><a href="../classes/aexolGL.html">aexolGL</a></li>
+	                            <li><a href="../classes/Animation.html">Animation</a></li>
+	                            <li><a href="../classes/Buffer.html">Buffer</a></li>
+	                            <li><a href="../classes/Camera.html">Camera</a></li>
+	                            <li><a href="../classes/Fog.html">Fog</a></li>
+	                            <li><a href="../classes/Frustum.html">Frustum</a></li>
+	                            <li><a href="../classes/GameObject.html">GameObject</a></li>
+	                            <li><a href="../classes/Indexer.html">Indexer</a></li>
+	                            <li><a href="../classes/Label.html">Label</a></li>
+	                            <li><a href="../classes/Light.html">Light</a></li>
+	                            <li><a href="../classes/Material.html">Material</a></li>
+	                            <li><a href="../classes/Matrix.html">Matrix</a></li>
+	                            <li><a href="../classes/Matrix3.html">Matrix3</a></li>
+	                            <li><a href="../classes/Mesh.html">Mesh</a></li>
+	                            <li><a href="../classes/MObject.html">MObject</a></li>
+	                            <li><a href="../classes/Pivot.html">Pivot</a></li>
+	                            <li><a href="../classes/Quaternion.html">Quaternion</a></li>
+	                            <li><a href="../classes/Resource.html">Resource</a></li>
+	                            <li><a href="../classes/Scene.html">Scene</a></li>
+	                            <li><a href="../classes/Shader.html">Shader</a></li>
+	                            <li><a href="../classes/Shadow.html">Shadow</a></li>
+	                            <li><a href="../classes/TextNode.html">TextNode</a></li>
+	                            <li><a href="../classes/Texture.html">Texture</a></li>
+	                            <li><a href="../classes/Vector.html">Vector</a></li>
+	                            <li><a href="../classes/Vector4.html">Vector4</a></li>
+	                            <li><a href="../classes/ZBuffer.html">ZBuffer</a></li>
+	                    </ul>
+	                </div>
+	    
+	                <div class="tab-pane" id="modules">
+	                    <ul id="api-modules" class="nav nav-list">
+	                            <li><a href="../modules/aexolGL.html">aexolGL</a></li>
+	                            <li><a href="../modules/Animation.html">Animation</a></li>
+	                            <li><a href="../modules/Buffer.html">Buffer</a></li>
+	                            <li><a href="../modules/camera.html">camera</a></li>
+	                            <li><a href="../modules/Fog.html">Fog</a></li>
+	                            <li><a href="../modules/Font.html">Font</a></li>
+	                            <li><a href="../modules/Game.html">Game</a></li>
+	                            <li><a href="../modules/Light.html">Light</a></li>
+	                            <li><a href="../modules/materialLib.html">materialLib</a></li>
+	                            <li><a href="../modules/Math.html">Math</a></li>
+	                            <li><a href="../modules/Mesh.html">Mesh</a></li>
+	                            <li><a href="../modules/Physics.html">Physics</a></li>
+	                            <li><a href="../modules/Resource.html">Resource</a></li>
+	                            <li><a href="../modules/ShaderLibrary.html">ShaderLibrary</a></li>
+	                            <li><a href="../modules/Shadow.html">Shadow</a></li>
+	                            <li><a href="../modules/start.html">start</a></li>
+	                            <li><a href="../modules/utils.html">utils</a></li>
+	                    </ul>
+	                </div>
+	            </div>
+	        </div>
+	    </div>
+        </div>
+        <div class="span9">
+                <form id="options-form" class="form-inline pull-right">
+                    Show:
+                    <label for="api-show-inherited" class="checkbox">
+                        <input type="checkbox" id="api-show-inherited" checked>
+                        Inherited
+                    </label>
+            
+                    <label for="api-show-protected" class="checkbox">
+                        <input type="checkbox" id="api-show-protected">
+                        Protected
+                    </label>
+            
+                    <label for="api-show-private" class="checkbox">
+                        <input type="checkbox" id="api-show-private">
+                        Private
+                    </label>
+                    <label for="api-show-deprecated" class="checkbox">
+                        <input type="checkbox" id="api-show-deprecated">
+                        Deprecated
+                    </label>
+            
+                </form>
+            
+            <div class="apidocs">
+                <div id="docs-main">
+                    <div class="content">
+                        <div class="page-header">
+                            <h1>../aexolgl-js/src/font.js <small>File</small></h1>
+                        </div>
+                        
+                        <div class="file">
+                            <pre class="prettyprint linenums">
+                        /**
+                         * @module Font
+                         */
+                        /**
+                         * Label class creates single line text located in 3d space
+                         * @class Label
+                         * @extends GameObject
+                         * @constructor
+                         * @param scene {Scene} scene
+                         * @param string {String} string for single line text
+                         * @param font {String} font to use( Rememeber about loading fonts to document with @font-face )
+                         * @param size {Integer} font size
+                         * @example
+                         *     world = new Scene()
+                         *     score = new Label(world, &quot;0&quot;,&quot;Helvetica&quot;, 240)
+                         */
+                        Label = function (scene, string, font, size) {
+                            this._text = string
+                            this._size = size
+                            this._font = font
+                            this._color = &quot;rgba(255,255,255,1)&quot;
+                            this.generateCanvas()
+                        
+                            GameObject.call(this,
+                                scene, {
+                                    shader: new basicShader({useDiffuse:true}),
+                                    material: new Material({color: [1, 1, 1], diffuse: Texture.fromCanvas(this.canvas)}),
+                                    mesh: Mesh.plane()
+                                })
+                            /**
+                             * @property color
+                             * @type String
+                             * @example
+                             *     world = new Scene()
+                             *     score = new Label(world, &quot;0&quot;,&quot;monospace&quot;, 240)
+                             *     //change text color to red
+                             *     score.color = &quot;rgb(255,0,0)&quot;
+                             */
+                            this.__defineSetter__(&quot;color&quot;, function (val) {
+                                this._color = val;
+                                this.changeText()
+                                this.changeTexture()
+                            });
+                            /**
+                             * @property size
+                             * @type Integer
+                             * @example
+                             *     world = new Scene()
+                             *     score = new Label(world, &quot;0&quot;,&quot;monospace&quot;, 240)
+                             *     //change font size
+                             *     score.size = 42
+                             */
+                            this.__defineSetter__(&quot;size&quot;, function (val) {
+                                this._size = val;
+                                this.changeText()
+                                this.changeTexture()
+                            });
+                            /**
+                             * @property text
+                             * @type String
+                             * @example
+                             *     world = new Scene()
+                             *     score = new Label(world, &quot;0&quot;,&quot;monospace&quot;, 240)
+                             *     //change text string
+                             *     score.text = &quot;Hello worlds!&quot;
+                             */
+                            this.__defineSetter__(&quot;text&quot;, function (val) {
+                                this._text = val;
+                                this.changeText()
+                                this.changeTexture()
+                            });
+                            /**
+                             * @property font
+                             * @type String
+                             * @example
+                             *     world = new Scene()
+                             *     score = new Label(world, &quot;0&quot;,&quot;monospace&quot;, 240)
+                             *     //change text string
+                             *     score.font = &quot;Helvetica&quot;
+                             */
+                            this.__defineSetter__(&quot;font&quot;, function (val) {
+                                this._font = val;
+                                this.changeText()
+                                this.changeTexture()
+                            });
+                        }
+                        Label.prototype = Object.create(GameObject.prototype);
+                        Label.prototype.constructor = Label
+                        Label.prototype.generateCanvas = function () {
+                            this.canvas = document.createElement(&#x27;canvas&#x27;);
+                            this.canvas.width = 1024
+                            this.canvas.height = 1024
+                            this.ctx = this.canvas.getContext(&#x27;2d&#x27;);
+                            this.ctx.textAlign = &quot;center&quot;;	// This determines the alignment of text, e.g. left, center, right
+                            this.ctx.textBaseline = &quot;middle&quot;;	// This determines the baseline of the text, e.g. top, middle, bottom
+                            this.changeText()
+                        }
+                        Label.prototype.changeText = function () {
+                            this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
+                            this.ctx.font = this._size + &quot;px &quot; + this._font;
+                            this.ctx.fillStyle = this._color;
+                            this.ctx.fillText(this._text, this.canvas.width / 2, this.canvas.height / 2);
+                        }
+                        Label.prototype.changeTexture = function () {
+                            this.material.setDiffuse(Texture.fromCanvas(this.canvas))
+                        }
+                        /**
+                        Javascript method of font loading
+                        @method loadFont
+                        @static
+                        @param fontName {String} font name to be used later
+                        @param url {String} url address of font
+                        @example
+                            world = new Scene()
+                            font = Label.loadFont(&quot;medHelvetica.ttf&quot;)
+                            score = new Label(world, &quot;0&quot;, 240)
+                        */
+                        Label.loadFont = function (fontName, url) {
+                            var newStyle = document.createElement(&#x27;style&#x27;);
+                            var formatt = url.split(&quot;.&quot;)
+                            var format = formatt[formatt.length]
+                            newStyle.appendChild(document.createTextNode(&quot;\
+                        @font-face {\
+                            font-family: &#x27;&quot; + fontName + &quot;&#x27;;\
+                            src: url(&#x27;&quot; + url + &quot;&#x27;) format(&quot; + format + &quot;);\
+                        }\
+                        \
+                        &quot;));
+                            document.head.appendChild(newStyle);
+                        }
+                            </pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../assets/vendor/jquery/jquery-1.8.2.min.js"></script>
+<script src="../assets/vendor/bootstrap/js/bootstrap.js"></script>
+<script src="../assets/vendor/prettify/prettify-min.js"></script>
+<script src="../assets/js/yuidoc-bootstrap.js"></script>
+<script>prettyPrint();</script>
+</body>
+</html>

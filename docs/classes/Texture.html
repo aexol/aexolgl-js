@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Texture - aexolGL API</title>
+    <link rel="stylesheet" href="http://yui.yahooapis.com/3.7.0/build/cssgrids/cssgrids-min.css">
+    <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
+    <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
+    <link rel="stylesheet" href="../assets/css/custom.css">
+    <link rel="stylesheet" href="../assets/vendor/bootstrap/css/bootstrap.css">
+    <link rel="shortcut icon" type="image/png" href="../assets/favicon.png">
+</head>
+<body class="yui3-skin-sam">
+<div class="container-fluid" style="padding:0;">
+	<div id="topbar" class="row visible-md visible-lg" style="margin:0;">
+        <div class="span1"></div>
+        <div class="span6 docs">
+            <img src="http://gl.aexol.com/static/img/aexol_gl_logo.png"> Docs for Version: <b>1.0a</b>
+        </div>
+        <div class="span5"></div>
+    </div>
+    <div class="row" style="padding:2em;">
+        <div class="span3">
+	    <div>
+	        <h3>APIs</h3>
+	        <div id="sidebar">
+	            <ul id="main-nav" class="nav nav-tabs" style="margin-bottom:0;">
+	                <li class="active"><a href="#classes" data-toggle="tab">Classes</a></li>
+	                <li><a href="#modules" data-toggle="tab">Modules</a></li>
+	            </ul>
+	    
+	            <div id="api-tabview-filter">
+	                <input type="search" placeholder="Type to filter APIs">
+	            </div>
+	    
+	            <div class="tab-content" style="border: 1px solid #DDD; border-top:0;">
+	                <div class="tab-pane active" id="classes">
+	                    <ul id="api-classes" class="nav nav-list">
+	                            <li><a href="../classes/Aex.html">Aex</a></li>
+	                            <li><a href="../classes/aexolGL.html">aexolGL</a></li>
+	                            <li><a href="../classes/Animation.html">Animation</a></li>
+	                            <li><a href="../classes/Buffer.html">Buffer</a></li>
+	                            <li><a href="../classes/Camera.html">Camera</a></li>
+	                            <li><a href="../classes/Fog.html">Fog</a></li>
+	                            <li><a href="../classes/Frustum.html">Frustum</a></li>
+	                            <li><a href="../classes/GameObject.html">GameObject</a></li>
+	                            <li><a href="../classes/Indexer.html">Indexer</a></li>
+	                            <li><a href="../classes/Label.html">Label</a></li>
+	                            <li><a href="../classes/Light.html">Light</a></li>
+	                            <li><a href="../classes/Material.html">Material</a></li>
+	                            <li><a href="../classes/Matrix.html">Matrix</a></li>
+	                            <li><a href="../classes/Matrix3.html">Matrix3</a></li>
+	                            <li><a href="../classes/Mesh.html">Mesh</a></li>
+	                            <li><a href="../classes/MObject.html">MObject</a></li>
+	                            <li><a href="../classes/Pivot.html">Pivot</a></li>
+	                            <li><a href="../classes/Quaternion.html">Quaternion</a></li>
+	                            <li><a href="../classes/Resource.html">Resource</a></li>
+	                            <li><a href="../classes/Scene.html">Scene</a></li>
+	                            <li><a href="../classes/Shader.html">Shader</a></li>
+	                            <li><a href="../classes/Shadow.html">Shadow</a></li>
+	                            <li><a href="../classes/TextNode.html">TextNode</a></li>
+	                            <li><a href="../classes/Texture.html">Texture</a></li>
+	                            <li><a href="../classes/Vector.html">Vector</a></li>
+	                            <li><a href="../classes/Vector4.html">Vector4</a></li>
+	                            <li><a href="../classes/ZBuffer.html">ZBuffer</a></li>
+	                    </ul>
+	                </div>
+	    
+	                <div class="tab-pane" id="modules">
+	                    <ul id="api-modules" class="nav nav-list">
+	                            <li><a href="../modules/aexolGL.html">aexolGL</a></li>
+	                            <li><a href="../modules/Animation.html">Animation</a></li>
+	                            <li><a href="../modules/Buffer.html">Buffer</a></li>
+	                            <li><a href="../modules/camera.html">camera</a></li>
+	                            <li><a href="../modules/Fog.html">Fog</a></li>
+	                            <li><a href="../modules/Font.html">Font</a></li>
+	                            <li><a href="../modules/Game.html">Game</a></li>
+	                            <li><a href="../modules/Light.html">Light</a></li>
+	                            <li><a href="../modules/materialLib.html">materialLib</a></li>
+	                            <li><a href="../modules/Math.html">Math</a></li>
+	                            <li><a href="../modules/Mesh.html">Mesh</a></li>
+	                            <li><a href="../modules/Physics.html">Physics</a></li>
+	                            <li><a href="../modules/Resource.html">Resource</a></li>
+	                            <li><a href="../modules/ShaderLibrary.html">ShaderLibrary</a></li>
+	                            <li><a href="../modules/Shadow.html">Shadow</a></li>
+	                            <li><a href="../modules/start.html">start</a></li>
+	                            <li><a href="../modules/utils.html">utils</a></li>
+	                    </ul>
+	                </div>
+	            </div>
+	        </div>
+	    </div>
+        </div>
+        <div class="span9">
+                <form id="options-form" class="form-inline pull-right">
+                    Show:
+                    <label for="api-show-inherited" class="checkbox">
+                        <input type="checkbox" id="api-show-inherited" checked>
+                        Inherited
+                    </label>
+            
+                    <label for="api-show-protected" class="checkbox">
+                        <input type="checkbox" id="api-show-protected">
+                        Protected
+                    </label>
+            
+                    <label for="api-show-private" class="checkbox">
+                        <input type="checkbox" id="api-show-private">
+                        Private
+                    </label>
+                    <label for="api-show-deprecated" class="checkbox">
+                        <input type="checkbox" id="api-show-deprecated">
+                        Deprecated
+                    </label>
+            
+                </form>
+            
+            <div class="apidocs">
+                <div id="docs-main">
+                    <div class="content">
+                        <div class="page-header">
+                            <h1>Texture <small>Class</small></h1>
+                        </div>
+                        
+                        <div class="well well-small">
+                        
+                        
+                        <!-- 
+                                <div class="foundat">
+                                    Defined in: <a href="../files/.._aexolgl-js_src_texture.js.html#l1"><code>..&#x2F;aexolgl-js&#x2F;src&#x2F;texture.js:1</code></a>
+                                </div>
+                         -->
+                        
+                                    Module: <a href="../modules/start.html">start</a>
+                        
+                        </div>
+                        
+                        
+                        <div class="well well-small">
+                            <p>Texture class</p>
+                        
+                        </div>
+                        
+                            <div class="constructor">
+                                <h2>Constructor</h2>
+                                <div id="method_Texture" class="method item">
+                                    <h3 class="name"><code>Texture</code></h3>
+                                
+                                        <span class="paren">()</span>
+                                
+                                
+                                
+                                
+                                
+                                
+                                
+                                
+                                    <div class="meta">
+                                                <p>
+                                <!-- 
+                                                Defined in
+                                 -->
+                                <!-- 
+                                        <a href="../files/.._aexolgl-js_src_texture.js.html#l1"><code>..&#x2F;aexolgl-js&#x2F;src&#x2F;texture.js:1</code></a>
+                                 -->
+                                        </p>
+                                
+                                
+                                
+                                    </div>
+                                
+                                    <div class="description">
+                                        
+                                    </div>
+                                
+                                
+                                
+                                </div>
+                            </div>
+                        
+                        <div>
+                            <ul class="nav nav-tabs">
+                                <li class="active"><a data-toggle="tab" href="#index">Index</a></li>
+                        
+                                    <li><a data-toggle="tab" href="#methods">Methods</a></li>
+                            </ul>
+                        
+                            <div class="tab-content">
+                                <div id="index" class="tab-pane active">
+                                    <h2 class="off-left">Item Index</h2>
+                        
+                                        <div class="index-section methods">
+                                            <h3>Methods</h3>
+                        
+                                            <ul class="index-list methods">
+                                                    <li class="index-item method">
+                                                        <a href="#" data-tabid="#methods" data-anchor="#method_Atlas" data-tablink="Atlas">Atlas</a>
+                        
+                                                            <span class="flag static">static</span>
+                                                    </li>
+                                                    <li class="index-item method">
+                                                        <a href="#" data-tabid="#methods" data-anchor="#method_fromBlob" data-tablink="fromBlob">fromBlob</a>
+                        
+                                                    </li>
+                                                    <li class="index-item method">
+                                                        <a href="#" data-tabid="#methods" data-anchor="#method_fromCube" data-tablink="fromCube">fromCube</a>
+                        
+                                                    </li>
+                                                    <li class="index-item method">
+                                                        <a href="#" data-tabid="#methods" data-anchor="#method_fromImage" data-tablink="fromImage">fromImage</a>
+                        
+                                                    </li>
+                                                    <li class="index-item method">
+                                                        <a href="#" data-tabid="#methods" data-anchor="#method_glStart()" data-tablink="glStart()">glStart()</a>
+                        
+                                                            <span class="flag static">static</span>
+                                                    </li>
+                                            </ul>
+                                        </div>
+                        
+                        
+                        
+                                </div>
+                        
+                                    <div id="methods" class="tab-pane">
+                                        <h2 class="off-left">Methods</h2>
+                        
+                                            <div id="method_Atlas" class="method item">
+                                                <h3 class="name"><code>Atlas</code></h3>
+                                            
+                                                    <div class="args">
+                                                        <span class="paren">(</span><ul class="args-list inline commas">
+                                                            <li class="arg">
+                                                                    <code>srcImage</code>
+                                                            </li>
+                                                            <li class="arg">
+                                                                    <code>srcJSON</code>
+                                                            </li>
+                                                            <li class="arg">
+                                                                    <code>options</code>
+                                                            </li>
+                                                        </ul><span class="paren">)</span>
+                                                    </div>
+                                            
+                                            
+                                            
+                                            
+                                            
+                                                    <span class="flag static">static</span>
+                                            
+                                            
+                                            
+                                                <div class="meta">
+                                                            <p>
+                                            <!-- 
+                                                            Defined in
+                                             -->
+                                            <!-- 
+                                                    <a href="../files/.._aexolgl-js_src_texture.js.html#l239"><code>..&#x2F;aexolgl-js&#x2F;src&#x2F;texture.js:239</code></a>
+                                             -->
+                                                    </p>
+                                            
+                                            
+                                            
+                                                </div>
+                                            
+                                                <div class="description">
+                                                    <p>Creates a texture atlas</p>
+                                            
+                                                </div>
+                                            
+                                                    <div class="params">
+                                                        <h4>Parameters:</h4>
+                                            
+                                                        <ul class="params-list">
+                                                            <li class="param">
+                                                                    <code class="param-name">srcImage</code>
+                                                                    <span class="type">String</span>
+                                            
+                                            
+                                                                <div class="param-description">
+                                                                    <p>image file name</p>
+                                            
+                                                                </div>
+                                            
+                                                            </li>
+                                                            <li class="param">
+                                                                    <code class="param-name">srcJSON</code>
+                                                                    <span class="type">String</span>
+                                            
+                                            
+                                                                <div class="param-description">
+                                                                    <p>JSON file name</p>
+                                            
+                                                                </div>
+                                            
+                                                            </li>
+                                                            <li class="param">
+                                                                    <code class="param-name">options</code>
+                                                                    <span class="type">Dict</span>
+                                            
+                                            
+                                                                <div class="param-description">
+                                                                     
+                                                                </div>
+                                            
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                            
+                                            
+                                                    <div class="example">
+                                                        <h4>Example:</h4>
+                                            
+                                                        <div class="example-content">
+                                                            <pre class="code prettyprint"><code> var imageAtlas = Texture.Atlas("map.png","map.json")
+                                             var image = Texture.fromAtlas(imageAtlas,"foot.png")
+                                             podstawaMat = new Material({color: [0.3,0.9,0.9]})
+                                            </code></pre>
+                                            <p>var tat = Texture.Atlas("into.png","into.json")
+                                            podstawaMat.setTexture("diffuse",tat,"tap to play.png")</p>
+                                            
+                                                        </div>
+                                                    </div>
+                                            </div>
+                                            <div id="method_fromBlob" class="method item">
+                                                <h3 class="name"><code>fromBlob</code></h3>
+                                            
+                                                    <div class="args">
+                                                        <span class="paren">(</span><ul class="args-list inline commas">
+                                                            <li class="arg">
+                                                                    <code>blob</code>
+                                                            </li>
+                                                            <li class="arg">
+                                                                    <code>options</code>
+                                                            </li>
+                                                        </ul><span class="paren">)</span>
+                                                    </div>
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                                <div class="meta">
+                                                            <p>
+                                            <!-- 
+                                                            Defined in
+                                             -->
+                                            <!-- 
+                                                    <a href="../files/.._aexolgl-js_src_texture.js.html#l220"><code>..&#x2F;aexolgl-js&#x2F;src&#x2F;texture.js:220</code></a>
+                                             -->
+                                                    </p>
+                                            
+                                            
+                                            
+                                                </div>
+                                            
+                                                <div class="description">
+                                                    <p>Creates a texture from image blob</p>
+                                            
+                                                </div>
+                                            
+                                                    <div class="params">
+                                                        <h4>Parameters:</h4>
+                                            
+                                                        <ul class="params-list">
+                                                            <li class="param">
+                                                                    <code class="param-name">blob</code>
+                                                                    <span class="type">String</span>
+                                            
+                                            
+                                                                <div class="param-description">
+                                                                    <p>image blov</p>
+                                            
+                                                                </div>
+                                            
+                                                            </li>
+                                                            <li class="param">
+                                                                    <code class="param-name">options</code>
+                                                                    <span class="type">Dict</span>
+                                            
+                                            
+                                                                <div class="param-description">
+                                                                     
+                                                                </div>
+                                            
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                            
+                                            
+                                            </div>
+                                            <div id="method_fromCube" class="method item">
+                                                <h3 class="name"><code>fromCube</code></h3>
+                                            
+                                                    <div class="args">
+                                                        <span class="paren">(</span><ul class="args-list inline commas">
+                                                            <li class="arg">
+                                                                    <code>srcs</code>
+                                                            </li>
+                                                            <li class="arg">
+                                                                    <code>options</code>
+                                                            </li>
+                                                        </ul><span class="paren">)</span>
+                                                    </div>
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                                <div class="meta">
+                                                            <p>
+                                            <!-- 
+                                                            Defined in
+                                             -->
+                                            <!-- 
+                                                    <a href="../files/.._aexolgl-js_src_texture.js.html#l190"><code>..&#x2F;aexolgl-js&#x2F;src&#x2F;texture.js:190</code></a>
+                                             -->
+                                                    </p>
+                                            
+                                            
+                                            
+                                                </div>
+                                            
+                                                <div class="description">
+                                                    <p>Creates a texture cube image files</p>
+                                            
+                                                </div>
+                                            
+                                                    <div class="params">
+                                                        <h4>Parameters:</h4>
+                                            
+                                                        <ul class="params-list">
+                                                            <li class="param">
+                                                                    <code class="param-name">srcs</code>
+                                                                    <span class="type">String</span>
+                                            
+                                            
+                                                                <div class="param-description">
+                                                                    <p>array to 6 path to image files</p>
+                                            
+                                                                </div>
+                                            
+                                                            </li>
+                                                            <li class="param">
+                                                                    <code class="param-name">options</code>
+                                                                    <span class="type">Dict</span>
+                                            
+                                            
+                                                                <div class="param-description">
+                                                                     
+                                                                </div>
+                                            
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                            
+                                            
+                                                    <div class="example">
+                                                        <h4>Example:</h4>
+                                            
+                                                        <div class="example-content">
+                                                            <pre class="code prettyprint"><code> var imageSuper = Texture.fromCube(["cube1.png",
+                                                                                "cube2.png",
+                                                                                "cube3.png",
+                                                                                "cube4.png",
+                                                                                "cube5.png",
+                                                                                "cube6.png"],{})</code></pre>
+                                            
+                                                        </div>
+                                                    </div>
+                                            </div>
+                                            <div id="method_fromImage" class="method item">
+                                                <h3 class="name"><code>fromImage</code></h3>
+                                            
+                                                    <div class="args">
+                                                        <span class="paren">(</span><ul class="args-list inline commas">
+                                                            <li class="arg">
+                                                                    <code>src</code>
+                                                            </li>
+                                                            <li class="arg">
+                                                                    <code>options</code>
+                                                            </li>
+                                                        </ul><span class="paren">)</span>
+                                                    </div>
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                                <div class="meta">
+                                                            <p>
+                                            <!-- 
+                                                            Defined in
+                                             -->
+                                            <!-- 
+                                                    <a href="../files/.._aexolgl-js_src_texture.js.html#l153"><code>..&#x2F;aexolgl-js&#x2F;src&#x2F;texture.js:153</code></a>
+                                             -->
+                                                    </p>
+                                            
+                                            
+                                            
+                                                </div>
+                                            
+                                                <div class="description">
+                                                    <p>Creates a texture from image file</p>
+                                            
+                                                </div>
+                                            
+                                                    <div class="params">
+                                                        <h4>Parameters:</h4>
+                                            
+                                                        <ul class="params-list">
+                                                            <li class="param">
+                                                                    <code class="param-name">src</code>
+                                                                    <span class="type">String</span>
+                                            
+                                            
+                                                                <div class="param-description">
+                                                                    <p>path to image file</p>
+                                            
+                                                                </div>
+                                            
+                                                            </li>
+                                                            <li class="param">
+                                                                    <code class="param-name">options</code>
+                                                                    <span class="type">Dict</span>
+                                            
+                                            
+                                                                <div class="param-description">
+                                                                     
+                                                                </div>
+                                            
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                            
+                                            
+                                                    <div class="example">
+                                                        <h4>Example:</h4>
+                                            
+                                                        <div class="example-content">
+                                                            <pre class="code prettyprint"><code> var imageSuper = Texture.fromImage("img/imgsuper.png",{
+                                                 wrap: gl.CLAMP_TO_EDGE,
+                                                 filter: gl.LINEAR_MIPMAP_LINEAR
+                                             })</code></pre>
+                                            <pre class="code prettyprint"><code> var imageSuper = Texture.fromImage("img/imgsuper.png",{
+                                                 wrap: gl.REPEAT,
+                                                 filter: gl.LINEAR
+                                             })</code></pre>
+                                            
+                                                        </div>
+                                                    </div>
+                                            </div>
+                                            <div id="method_glStart()" class="method item">
+                                                <h3 class="name"><code>glStart()</code></h3>
+                                            
+                                                    <span class="paren">()</span>
+                                            
+                                            
+                                            
+                                            
+                                            
+                                                    <span class="flag static">static</span>
+                                            
+                                            
+                                            
+                                                <div class="meta">
+                                                            <p>
+                                            <!-- 
+                                                            Defined in
+                                             -->
+                                            <!-- 
+                                                    <a href="../files/.._aexolgl-js_src_start.js.html#l19"><code>..&#x2F;aexolgl-js&#x2F;src&#x2F;start.js:19</code></a>
+                                             -->
+                                                    </p>
+                                            
+                                            
+                                            
+                                                </div>
+                                            
+                                                <div class="description">
+                                                    <p>Starts webgl</p>
+                                            
+                                                </div>
+                                            
+                                            
+                                            
+                                            </div>
+                                    </div>
+                        
+                        
+                        
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../assets/vendor/jquery/jquery-1.8.2.min.js"></script>
+<script src="../assets/vendor/bootstrap/js/bootstrap.js"></script>
+<script src="../assets/vendor/prettify/prettify-min.js"></script>
+<script src="../assets/js/yuidoc-bootstrap.js"></script>
+<script>prettyPrint();</script>
+</body>
+</html>

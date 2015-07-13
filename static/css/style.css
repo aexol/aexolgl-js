@@ -185,6 +185,9 @@ nav  ul li a.button {
   line-height: 25px;
   padding: 0 40px !important;
 }
+.footer-unia{
+  border-top: rgb(222,222,222) solid 1px;
+}
 footer [class*="col-"]{
     margin-bottom: -99999px;
     padding-bottom: 99999px;

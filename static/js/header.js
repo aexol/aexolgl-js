@@ -54,7 +54,7 @@ pivots = {
 shadery = {
   sfera: niebo
 }
-Mesh.obj("/aexolgl-js/static/obj/flappy3d.obj", function(e) {
+Mesh.obj("./static/obj/flappy3d.obj", function(e) {
   console.log(e)
   for (var i in e) {
 

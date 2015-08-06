@@ -125,7 +125,7 @@ var basicShader = function (options) {
     bShader.addVarying("vec3", "normalEye")
     bShader.addVertexSource('\
 			void main(void) {\
-			    normalEye = (NormalMatrix*Normal);\
+			    normalEye = normalize(NormalMatrix*Normal);\
 			    vNormal = Normal;\
 			    vPosition = gl_ModelViewMatrix * vec4(Vertex, 1.0);\
 			    dZ = (gl_ProjectionMatrix * vPosition).xyz;\
@@ -185,7 +185,6 @@ var basicShader = function (options) {
         bShader.addUniform("Fog", "fog")
     }
     var fragSource = '\
-      vec3 realNormal = normalize(normalEye);\
 			float rand(vec2 co){\
     			return fract(sin(dot(co.xy ,vec2(12.9898,78.233))) * 43758.5453);\
 			}' + (settings.useShadow ? 'float shadowFac(vec3 ld){\
@@ -209,8 +208,8 @@ var basicShader = function (options) {
                 float att = max(li.attenuation-distance,0.0)/li.attenuation;\
 				vec3 lightDirection = normalize(lightSub);\
 				vec3 eyeDirection = normalize(-dZ.xyz);\
-				float dW = max(0.0,dot(realNormal,lightDirection));\
-        		vec3 reflectionDirection = reflect(-lightDirection, realNormal);\
+				float dW = max(0.0,dot(normalEye,lightDirection));\
+        		vec3 reflectionDirection = reflect(-lightDirection, normalEye);\
         		float shininess = material.shininess;\
             float specularT = 0.0;\
             vec3 returnedLight = vec3(0.0,0.0,0.0);\
@@ -257,7 +256,7 @@ var basicShader = function (options) {
 				vec4 clr = vec4(material.color,1.0);\
 				' + (settings.useDiffuse ? 'clr = texture2D(diffuse, tiler);\
 				clr = vec4(clr.rgb*material.color,clr.a);' : '') + (settings.useReflection ? '\
-        vec3 thh = reflect(dZ,realNormal);\
+        vec3 thh = reflect(dZ,normalEye);\
 		vec4 txc = textureCube(cube,thh);\
 		clr = vec4(clr.rgb*(1.0-material.reflectionWeight)+txc.rgb*material.reflectionWeight,clr.a);\
         ' : '') + (settings.useLights ?

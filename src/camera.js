@@ -269,6 +269,7 @@ Camera.prototype.transforms = function(){
 	}
 	var m = this.modelView
 	this.uniforms._gl_ProjectionMatrix = m.m
+	this.uniforms._cameraPosition = this.position.toArray()
 	gl.frustum.fromPerspectiveMatrix(m)
 }
 

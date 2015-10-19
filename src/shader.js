@@ -29,6 +29,7 @@ Shader = function(vertexSource,fragmentSource,noBuild) {
     this.construct = {
                         "varying":[],
                         "uniforms":[],
+                        "defines":[],
                         "structs":{},
                         "mainFragment":fragmentSource,
                         "mainVertex":vertexSource
@@ -46,6 +47,9 @@ Shader.prototype =  Object.create(MObject.prototype);
 Shader.prototype.constructor = Shader
 Shader.prototype.addUniform = function(type,name){
     this.construct.uniforms.push([type,name])
+}
+Shader.prototype.define = function(name){
+    this.construct.defines.push(name)
 }
 Shader.prototype.addVarying = function(type,name){
     this.construct.varying.push([type,name])
@@ -68,6 +72,11 @@ Shader.prototype.addFragmentSource = function(source){
 Shader.prototype.reconstruct = function(){
     this.vertexLines = "";
     this.fragmentLines = "";
+    for(var v in this.construct.defines){
+        var vv = this.construct.defines[v]
+        var line = "\n#define "+vv+" 1 \n"
+        this.fragmentLines += line
+    }
     for(var v in this.construct.varying){
         var vv = this.construct.varying[v]
         var line = "varying "+vv[0]+" "+vv[1]+";\n"

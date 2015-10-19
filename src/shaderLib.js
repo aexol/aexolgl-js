@@ -285,7 +285,7 @@ var basicShader = function (options) {
     bShader._build();
     return bShader
 }
- var OrenNayar = function (options) {
+var OrenNayar = function (options) {
     var settings = {
         useBump: false,
         useDiffuse: false,
@@ -296,12 +296,15 @@ var basicShader = function (options) {
         useReflection: false,
         useSky: false
     }
+    var bShader = new Shader("", "", 1)
     if (options) {
         for (var o in options) {
             settings[o] = options[o]
+            if (options[o] == true){
+                bShader.define(o);
+            }
         }
     }
-    var bShader = new Shader("", "", 1)
     bShader.addVarying("vec2", "vTex")
     bShader.addVarying("vec4", "vPosition")
     bShader.addVarying("vec3", "normalEye")
@@ -345,7 +348,7 @@ var basicShader = function (options) {
         bShader.addUniform("samplerCube", "cube")
         bShader.addToStruct("Material", "float", "reflectionWeight")
     }
-    var fragSource =  '\
+    var fragSource =  "\
     float orenNayarDiffuse(\
       vec3 lightDirection,\
       vec3 viewDirection,\
@@ -360,45 +363,71 @@ var basicShader = function (options) {
       float sigma2 = roughness * roughness;\
       float A = 1.0 + sigma2 * (albedo / (sigma2 + 0.13) + 0.5 / (sigma2 + 0.33));\
       float B = 0.45 * sigma2 / (sigma2 + 0.09);\
-      return albedo * max(0.0, NdotL) * (A + B * s / t) / 3.14;\
+      float result = albedo * max(0.0, NdotL) * (A + B * s / t) / 3.14;\
+      return result;\
     }\
+    \n#ifdef useShadow\n\
+    float shadowFac(vec3 ld){\
+            vec3 ld2 = vec3(-ld.x,ld.y,ld.z);\
+            float sd = textureCube(shadows,ld2).r;\
+            float eps = 1.0/cameraFar;\
+            float distance = length(ld)/cameraFar;\
+            if(distance<=(sd+eps)){\
+                return 1.0;\
+            }\
+            else{\
+                return 0.5;\
+            }\
+    }\
+    \n#endif\n\
     void main(void) {\
-            vec2 tiler;' + (settings.useAtlas ? "\
+        vec2 tiler;\
+        tiler = vTex;\
+        \n#ifdef useAtlas\n\
             float aU = atlas.y-atlas.x;\
             float aV = atlas.w-atlas.z;\
             tiler = vec2(atlas.x+vTex.x*aU,atlas.z+vTex.y*aV);\
-            " : "\
-            tiler = vTex;") +
-        (settings.useTiling ?
-            'tiler = vec2(vTex.s*tiling.x,vTex.t*tiling.y);\
-            ' : '') + (settings.boxMapping ? '\
-                    if(abs(vNormal.z)>0.5){\
-                        tiler = vec2(vPosition.x*tiling.x,vPosition.y*tiling.y);\
-                    }else{\
-                        if(abs(vNormal.y)>0.5){\
-                            tiler = vec2(vPosition.z*tiling.x,vPosition.x*tiling.x);\
-                        }\
-                        else{\
-                            tiler = vec2(vPosition.z*tiling.x,vPosition.y*tiling.y);\
-                        }\
-                    }' : '') + '\
-                vec3 dWei = vec3(0.0,0.0,0.0);\
-                vec4 clr = vec4(material.color,1.0);\
-                ' + (settings.useLights ?
-        '\
-        for(int i = 0;i<32;i++){\
-            if( i >= int(numlights)){\
-            break;\
-            };\
-            Light li = lights[i];\
-            if(li.lightType == 1.0){\
-            dWei += orenNayarDiffuse(normalize(li.lightPosition-vPosition.xyz),normalize(cameraPosition-vPosition.xyz),normalEye,material.roughness,material.albedo);\
+        \n#endif\n\
+        \n#ifdef useTiling\n\
+            tiler = vec2(vTex.s*tiling.x,vTex.t*tiling.y);\
+        \n#endif\n\
+        \n#ifdef boxMapping\n\
+            if(abs(vNormal.z)>0.5){\
+                tiler = vec2(vPosition.x*tiling.x,vPosition.y*tiling.y);\
             }else{\
-            dWei += li.color*li.intensity;\
+                if(abs(vNormal.y)>0.5){\
+                    tiler = vec2(vPosition.z*tiling.x,vPosition.x*tiling.x);\
+                }\
+                else{\
+                    tiler = vec2(vPosition.z*tiling.x,vPosition.y*tiling.y);\
+                }\
             }\
-        };' : 'dWei = vec3(1.0,1.0,1.0);') + 'clr = vec4(clr.rgb*dWei,clr.a);' + '\
+        \n#endif\n\
+        vec3 dWei = vec3(1.0,1.0,1.0);\
+        vec4 clr = vec4(material.color,1.0);\
+        \n#ifdef useLights\n\
+            dWei = vec3(0.0,0.0,0.0);\
+            for(int i = 0;i<32;i++){\
+                if( i >= int(numlights)){\
+                break;\
+                };\
+                Light li = lights[i];\
+                if(li.lightType == 1.0){\
+                    dWei += orenNayarDiffuse(normalize(li.lightPosition-vPosition.xyz),normalize(cameraPosition-vPosition.xyz),normalEye,material.roughness,material.albedo);\
+                    \n#ifdef useShadow\n\
+                    if(li.shadow){\
+                        dWei = dW*shadowFac(lightSub);\
+                    }\
+                    \n#endif\n\
+                }\
+                else{\
+                    dWei += li.color*li.intensity;\
+                }\
+            };\
+        \n#endif\n\
+        clr = vec4(clr.rgb*dWei,clr.a);\
         gl_FragColor = vec4(clr.rgb,clr.a*material.alpha);\
-    }';
+    }";
     bShader.addFragmentSource(fragSource)
     bShader._build();
     return bShader

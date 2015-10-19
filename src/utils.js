@@ -33,7 +33,7 @@ var aGLExists = function (el) {
     var canvas = document.getElementById(el);
     if (!canvas)
         return null;
-    var gl = canvas.getContext("webgl", {alpha: false}) || canvas.getContext("experimental-webgl", {alpha: false});
+    var gl = canvas.getContext("webgl", {alpha: false});
     if (!gl) {
         alert("No webgl supporta");
         return null;

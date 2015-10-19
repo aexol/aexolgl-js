@@ -158,6 +158,9 @@ Vector.prototype.toArray = function(n) {
 Vector.prototype.isZero = function() {
 	return (this.x == 0.0 && this.y == 0.0 && this.z == 0.0)
 }
+Vector.prototype.copy = function(v){
+	return new Vector(this.x, this.y, this.z)
+}
 Vector.copy = function(v){
 	return new Vector(v.x, v.y, v.z)
 }

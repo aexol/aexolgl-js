@@ -33,7 +33,7 @@ var aGLExists = function (el) {
     var canvas = document.getElementById(el);
     if (!canvas)
         return null;
-    var gl = canvas.getContext("webgl", {alpha: false}) || canvas.getContext("experimental-webgl", {alpha: false});
+    var gl = canvas.getContext("webgl", {alpha: false});
     if (!gl) {
         alert("No webgl supporta");
         return null;
@@ -360,6 +360,9 @@ Vector.prototype.toArray = function(n) {
 };
 Vector.prototype.isZero = function() {
 	return (this.x == 0.0 && this.y == 0.0 && this.z == 0.0)
+}
+Vector.prototype.copy = function(v){
+	return new Vector(this.x, this.y, this.z)
 }
 Vector.copy = function(v){
 	return new Vector(v.x, v.y, v.z)
@@ -2484,6 +2487,7 @@ Shader = function(vertexSource,fragmentSource,noBuild) {
     this.construct = {
                         "varying":[],
                         "uniforms":[],
+                        "defines":[],
                         "structs":{},
                         "mainFragment":fragmentSource,
                         "mainVertex":vertexSource
@@ -2501,6 +2505,9 @@ Shader.prototype =  Object.create(MObject.prototype);
 Shader.prototype.constructor = Shader
 Shader.prototype.addUniform = function(type,name){
     this.construct.uniforms.push([type,name])
+}
+Shader.prototype.define = function(name){
+    this.construct.defines.push(name)
 }
 Shader.prototype.addVarying = function(type,name){
     this.construct.varying.push([type,name])
@@ -2523,6 +2530,11 @@ Shader.prototype.addFragmentSource = function(source){
 Shader.prototype.reconstruct = function(){
     this.vertexLines = "";
     this.fragmentLines = "";
+    for(var v in this.construct.defines){
+        var vv = this.construct.defines[v]
+        var line = "\n#define "+vv+" 1 \n"
+        this.fragmentLines += line
+    }
     for(var v in this.construct.varying){
         var vv = this.construct.varying[v]
         var line = "varying "+vv[0]+" "+vv[1]+";\n"
@@ -3718,6 +3730,153 @@ var basicShader = function (options) {
         ' : '') + '\
         gl_FragColor = vec4(clr.rgb,clr.a*material.alpha);\
     }';
+    bShader.addFragmentSource(fragSource)
+    bShader._build();
+    return bShader
+}
+var OrenNayar = function (options) {
+    var settings = {
+        useBump: false,
+        useDiffuse: false,
+        useAtlas: false,
+        useSpecular: false,
+        useLights: false,
+        useTiling: false,
+        useReflection: false,
+        useSky: false
+    }
+    var bShader = new Shader("", "", 1)
+    if (options) {
+        for (var o in options) {
+            settings[o] = options[o]
+            if (options[o] == true){
+                bShader.define(o);
+            }
+        }
+    }
+    bShader.addVarying("vec2", "vTex")
+    bShader.addVarying("vec4", "vPosition")
+    bShader.addVarying("vec3", "normalEye")
+    bShader.addVertexSource('\
+            void main(void) {\
+                normalEye = normalize(NormalMatrix*Normal);\
+                vPosition = gl_ModelViewMatrix * vec4(Vertex, 1.0);\
+                vTex = TexCoord;\
+                gl_Position = gl_ProjectionMatrix * vPosition;\
+            }')
+
+    bShader.addStruct("Material")
+    bShader.addToStruct("Material", "vec3", "color")
+    bShader.addStruct("Light")
+    bShader.addToStruct("Light", "vec3", "lightPosition")
+    bShader.addToStruct("Light", "vec3", "color")
+    bShader.addToStruct("Light", "float", "attenuation")
+    bShader.addToStruct("Light", "float", "intensity")
+    bShader.addToStruct("Light", "float", "lightType")
+    bShader.addUniform("float", "numlights")
+    bShader.addUniform("Light", "lights[32]")
+    bShader.addToStruct("Light", "bool", "shadow")
+    bShader.addToStruct("Material", "float", "roughness")
+    bShader.addToStruct("Material", "float", "albedo")
+    bShader.addToStruct("Material", "float", "alpha")
+    bShader.addUniform("Material", "material")
+    bShader.addUniform("float", "cameraNear")
+    bShader.addUniform("float", "cameraFar")
+    bShader.addUniform("vec3", "cameraPosition")
+    bShader.addUniform("vec3", "cameraDirection")
+    if (settings.useAtlas) {
+        bShader.addUniform("vec4", "atlas")
+    }
+    if (settings.useTiling) {
+        bShader.addUniform("vec2", "tiling")
+    }
+    if (settings.useDiffuse) {
+        bShader.addUniform("sampler2D", "diffuse")
+    }
+    if (settings.useReflection || settings.useSky) {
+        bShader.addUniform("samplerCube", "cube")
+        bShader.addToStruct("Material", "float", "reflectionWeight")
+    }
+    var fragSource =  "\
+    float orenNayarDiffuse(\
+      vec3 lightDirection,\
+      vec3 viewDirection,\
+      vec3 surfaceNormal,\
+      float roughness,\
+      float albedo) {\
+      float LdotV = dot(lightDirection, viewDirection);\
+      float NdotL = dot(lightDirection, surfaceNormal);\
+      float NdotV = dot(surfaceNormal, viewDirection);\
+      float s = LdotV - NdotL * NdotV;\
+      float t = mix(1.0, max(NdotL, NdotV), step(0.0, s));\
+      float sigma2 = roughness * roughness;\
+      float A = 1.0 + sigma2 * (albedo / (sigma2 + 0.13) + 0.5 / (sigma2 + 0.33));\
+      float B = 0.45 * sigma2 / (sigma2 + 0.09);\
+      float result = albedo * max(0.0, NdotL) * (A + B * s / t) / 3.14;\
+      return result;\
+    }\
+    \n#ifdef useShadow\n\
+    float shadowFac(vec3 ld){\
+            vec3 ld2 = vec3(-ld.x,ld.y,ld.z);\
+            float sd = textureCube(shadows,ld2).r;\
+            float eps = 1.0/cameraFar;\
+            float distance = length(ld)/cameraFar;\
+            if(distance<=(sd+eps)){\
+                return 1.0;\
+            }\
+            else{\
+                return 0.5;\
+            }\
+    }\
+    \n#endif\n\
+    void main(void) {\
+        vec2 tiler;\
+        tiler = vTex;\
+        \n#ifdef useAtlas\n\
+            float aU = atlas.y-atlas.x;\
+            float aV = atlas.w-atlas.z;\
+            tiler = vec2(atlas.x+vTex.x*aU,atlas.z+vTex.y*aV);\
+        \n#endif\n\
+        \n#ifdef useTiling\n\
+            tiler = vec2(vTex.s*tiling.x,vTex.t*tiling.y);\
+        \n#endif\n\
+        \n#ifdef boxMapping\n\
+            if(abs(vNormal.z)>0.5){\
+                tiler = vec2(vPosition.x*tiling.x,vPosition.y*tiling.y);\
+            }else{\
+                if(abs(vNormal.y)>0.5){\
+                    tiler = vec2(vPosition.z*tiling.x,vPosition.x*tiling.x);\
+                }\
+                else{\
+                    tiler = vec2(vPosition.z*tiling.x,vPosition.y*tiling.y);\
+                }\
+            }\
+        \n#endif\n\
+        vec3 dWei = vec3(1.0,1.0,1.0);\
+        vec4 clr = vec4(material.color,1.0);\
+        \n#ifdef useLights\n\
+            dWei = vec3(0.0,0.0,0.0);\
+            for(int i = 0;i<32;i++){\
+                if( i >= int(numlights)){\
+                break;\
+                };\
+                Light li = lights[i];\
+                if(li.lightType == 1.0){\
+                    dWei += orenNayarDiffuse(normalize(li.lightPosition-vPosition.xyz),normalize(cameraPosition-vPosition.xyz),normalEye,material.roughness,material.albedo);\
+                    \n#ifdef useShadow\n\
+                    if(li.shadow){\
+                        dWei = dW*shadowFac(lightSub);\
+                    }\
+                    \n#endif\n\
+                }\
+                else{\
+                    dWei += li.color*li.intensity;\
+                }\
+            };\
+        \n#endif\n\
+        clr = vec4(clr.rgb*dWei,clr.a);\
+        gl_FragColor = vec4(clr.rgb,clr.a*material.alpha);\
+    }";
     bShader.addFragmentSource(fragSource)
     bShader._build();
     return bShader

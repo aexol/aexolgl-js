@@ -294,7 +294,8 @@ var OrenNayar = function (options) {
         useLights: false,
         useTiling: false,
         useReflection: false,
-        useSky: false
+        useSky: false,
+        boxMapping:false,
     }
     var bShader = new Shader("", "", 1)
     if (options) {
@@ -308,11 +309,13 @@ var OrenNayar = function (options) {
     bShader.addVarying("vec2", "vTex")
     bShader.addVarying("vec4", "vPosition")
     bShader.addVarying("vec3", "normalEye")
+    bShader.addVarying("vec3", "vNormal")
     bShader.addVertexSource('\
             void main(void) {\
                 normalEye = normalize(NormalMatrix*Normal);\
                 vPosition = gl_ModelViewMatrix * vec4(Vertex, 1.0);\
                 vTex = TexCoord;\
+                vNormal = Normal;\
                 gl_Position = gl_ProjectionMatrix * vPosition;\
             }')
 
@@ -405,6 +408,10 @@ var OrenNayar = function (options) {
         \n#endif\n\
         vec3 dWei = vec3(1.0,1.0,1.0);\
         vec4 clr = vec4(material.color,1.0);\
+        \n#ifdef useDiffuse\n\
+        clr = texture2D(diffuse, tiler);\
+        clr = vec4(clr.rgb*material.color,clr.a);\
+        \n#endif\n\
         \n#ifdef useLights\n\
             dWei = vec3(0.0,0.0,0.0);\
             for(int i = 0;i<32;i++){\

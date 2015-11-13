@@ -34,6 +34,8 @@ Resource.loadFunction = function (path, resp) {
     }else{
         request.responseType = "blob";
     }
+    request.crossOrigin = "anonymous"
+    gl.fisie = request.crossOrigin
     request.onload = function (e) {
         resp(e.target.response);
         Resource.loadedElements[path] = 1
